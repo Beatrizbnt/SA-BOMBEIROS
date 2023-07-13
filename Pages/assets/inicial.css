@@ -37,3 +37,37 @@ body {
 .sub-titulo-menu{
     font-size: 16px;
 }
+
+.menu-lado-direito{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    
+    
+}
+#boneco_menu{
+    display: flex;
+    width: 3vw;
+    height: 6vh;
+    margin-right: 10px;
+}
+
+.Codigo-bombeiro {
+    display: flex;
+    padding: -5vw;
+    font-size: 16px;
+    font-family: 'DM Serif Display', serif;
+}
+.Codigo-bombeiro p:hover {
+    background-color: #00000062;
+    border-radius: 1vh;
+    padding: 0.1vw;
+
+}
+    
+#Logout{
+    display: flex;
+    width: 3vw;
+    height: 6vh;
+    margin-right: 10px;
+}
