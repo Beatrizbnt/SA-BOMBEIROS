@@ -71,3 +71,11 @@ body {
     height: 6vh;
     margin-right: 10px;
 }
+.faixa2 {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 45vh;
+    align-items: center;
+    justify-content: space-around;
+}
