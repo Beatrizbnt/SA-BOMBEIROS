@@ -1,14 +1,14 @@
-body {
-    padding: 0;
-    background-color: #EBECF0;
-    margin: 0;
-    width: auto;
-    overflow-x: hidden;
-    /* impede a barra de rolar na horizontal */
+body, html{
+    height:100%;
+    margin:0;
 }
 
+
 #imagem_fundo{
-   width: 100vw;
-   height: 200vw;
- 
+   background-image: url(/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg);
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   filter: blur(8px);
 }
