@@ -1,14 +1,20 @@
 body, html{
-    height:100%;
+    height:100%;/* Define a altura como 100% da altura da viewport */
     margin:0;
 }
 
 
 #imagem_fundo{
-   background-image: url(/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg);
-   height: 100%;
+   background-image: url(/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg);/*imagem de fundo*/
+   height: 100%;/* Define a altura como 100% da altura da viewport */
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-   filter: blur(8px);
+   filter: blur(8px);/*deixa a imagem desfocada*/
+}
+.caixinha_azul{
+    width: 70vh; /* Define a largura como 70% da altura da viewport */
+    height: 76vh; /* Define a altura como 76% da altura da viewport */
+    background-color: #1d37ad; /* Define a cor de fundo */
+    
 }
