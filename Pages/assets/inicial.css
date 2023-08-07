@@ -1,73 +1,20 @@
-body {
-    padding: 0;
-    background-color: #EBECF0;
-    margin: 0;
-    width: auto;
-    overflow-x: hidden;
-    /* impede a barra de rolar na horizontal */
-}
-.faixa1{
-    width: 100PX;
-    height: 80PX;
-    display: flex;
-    height: 8.8vh;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background: linear-gradient(to right, #6d0b0b, #d6621c);
-    padding: 20px;
-    color: #ffffff;
+body, html{
+    height:100%;/* Define a altura como 100% da altura da viewport */
+    margin:0;
 }
 
-#logo_pequena {
-    display: flex;
-    height: 13vh;
-    margin-left: -1vw;
-  }
 
-.titulo-menu{
-    padding-left:16px;
-    display: flex;
-    flex-direction: column;
-    font-size: 25px;
-    font-family: 'DM Serif Display', serif;
+#imagem_fundo{
+   background-image: url(/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg);/*imagem de fundo*/
+   height: 100%;/* Define a altura como 100% da altura da viewport */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   filter: blur(8px);/*deixa a imagem desfocada*/
 }
- 
-.sub-titulo-menu{
-    font-size: 16px;
-}
-
-.menu-lado-direito{
-    width: 50%;
-    display: flex;
-    justify-content: end;
+.caixinha_azul{
+    width: 70vh; /* Define a largura como 70% da altura da viewport */
+    height: 76vh; /* Define a altura como 76% da altura da viewport */
+    background-color: #1d37ad; /* Define a cor de fundo */
     
-    
-}
-#boneco_menu{
-    display: flex;
-    width: 3vw;
-    height: 6vh;
-    margin-right: 10px;
-}
-
-.Codigo-bombeiro {
-    display: flex;
-    padding: -5vw;
-    font-size: 16px;
-    font-family: 'DM Serif Display', serif;
-}
-.Codigo-bombeiro p:hover {
-    background-color: #00000062;
-    border-radius: 1vh;
-    padding: 0.1vw;
-
-}
-    
-#Logout{
-    display: flex;
-    width: 3vw;
-    height: 6vh;
-    margin-right: 10px;
 }
