@@ -6,27 +6,32 @@ header{
     padding: 20px 10px;
     background: linear-gradient(to right, #6d0b0b, #d6621c);
     color: #ffffff;
+    display: flex;
 }
 
 header img{
-    width: 7%;
+  padding: 1%;
+    width: 18%;
   }
 
-.header-titulo{
+.header-nome{
     color: white;
     padding: 12px;
     text-decoration: none;
     font-family: 'DM Serif Display', serif;
 }
  
-.header-subtitulo{
-    font-size: 16px;
-}
-
 .header-direito{
   float: right;
-    
 }
 
+#boneco{
+  width: 10%;
+  float:left;
+}
+
+header h3{
+  
+}
 
 
