@@ -14,24 +14,15 @@ header img{
     width: 18%;
   }
 
-.header-nome{
-    color: white;
-    padding: 12px;
-    text-decoration: none;
-    font-family: 'DM Serif Display', serif;
+.sigla{
+    width: 50%;
 }
  
 .header-direito{
-  float: right;
+ float: right;
 }
 
-#boneco{
-  width: 10%;
-  float:left;
-}
 
-header h3{
-  
-}
+
 
 
