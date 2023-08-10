@@ -1,0 +1,12 @@
+.fundo{
+    background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
+    filter: blur(8px);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body{
+    margin: 0
+}
+
