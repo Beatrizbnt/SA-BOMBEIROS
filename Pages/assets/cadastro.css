@@ -1,7 +1,7 @@
 .fundo{
     background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
-    filter: blur(8px);
-    height: 100%; 
+    /*filter: blur(4px); desfoca a imagem de fundo mas deixei comentado porque ta deixando o form desfocado tambem e não sei como arrumar*/
+    height: 100vh; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
