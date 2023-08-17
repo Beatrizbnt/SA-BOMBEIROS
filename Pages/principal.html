@@ -2,38 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOAR</title>
-    <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
-    <link rel="stylesheet" href="/Pages/assets/principal.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOAR</title>
+  <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
+  <link rel="stylesheet" href="/Pages/assets/principal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 </html>
 
 <body>
-    <header>
-        <img src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" /><!-- Link com a logo -->
-        <div class="sigla">
-            <h1>
-                NOAR
-            </h1>
-            <h3>
-                Núcleo de Operações Aéreas e Resgate.
-            </h3>
-        </div>
-        <div class="header-direito">
-           
-            
-       
-          </div>
-         
-    </header>
-   
+  <header>
+    <img src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" /><!-- Link com a logo -->
+    <div class="sigla">
+      <h1>
+        NOAR
+      </h1>
+      <h3>
+        Núcleo de Operações Aéreas e Resgate.
+      </h3>
+    </div>
+    <div class="header-direito">
+      <a href="#login">Login</a>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <menu class="overlay-content">
+          <a href="#">INFORMAÇÃO DO PACIENTE</a>
+          <a href="#">INFORMAÇÃO ACOMPANHANTE</a>
+          <a href="#">ANMANESE DA EMERGÊNCIA MÉDICA</a>
+          <a href="#">ANMANESE DA EMERGÊNCIA GESTACIONAL</a>
+          <a href="#">TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR)</a>
+          <a href="#">PROBLEMAS ENCONTRADOS SUSPEITOS</a>
+          <a href="#">AVALIAÇÃO DO PACIENTE (GLASGOW)</a>
+          <a href="#">SINAIS VITAIS</a>
+          <a href="#">LOCAL DE TRAUMAS</a>
+          <a href="#">VÍTIMA ERA</a>
+          <a href="#">DECISÃO TRANSPORTE</a>
+          <a href="#">FORMA DE CONDUÇÃO</a>
+          <a href="#">HISTÓRICO DA OCORRÊNCIA</a>
+          <a href="#">PROCEDIMENTOS EFETUADOS</a>
+          <a href="#">MATERIAIS ULTILIZADOS</a>
+          <a href="#">AVALIAÇÃO CINEMAÁTICA</a>
+          <a href="#">OBSERVAÇÕES IMPORTANTES</a>
+          <a href="#">KM FINAL</a>
+          <a href="#">EQUIPE DE ATENDIMENTO</a>
+          <a href="#">RESPONSÁVEL PELO PREENCHIMENTO</a>
+        </menu>
+      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+  </header>
+  <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+
+      
 </body>
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+
+  window.onscroll = function () { myFunction() };
+
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+</script>
 
 </html>
