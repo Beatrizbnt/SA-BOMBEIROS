@@ -1,28 +1,103 @@
-body {
-    margin: 0;
+* {
+  margin: 0;
+
 }
 
-header{
-    padding: 20px 10px;
-    background: linear-gradient(to right, #6d0b0b, #d6621c);
-    color: #ffffff;
-    display: flex;
+header {
+  padding: 20px 10px;
+  background: linear-gradient(to right, #6d0b0b, #d6621c);
+  color: #ffffff;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
 }
 
-header img{
-  padding: 1%;
-    width: 18%;
+header img {
+  border: 1px solid black;
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+
+.sigla {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+}
+
+.header-direito {
+  display: flex;
+  width: 50%;
+  border: 1px solid black;
+  float: right;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0, 0, 0, 0.678);
+  overflow-y: hidden;
+  transition: 0.5s;
+  margin: 0 auto;
+}
+
+.overlay-content {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
   }
-
-.sigla{
-    width: 50%;
-}
- 
-.header-direito{
- float: right;
 }
 
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+  position: fixed;
+}
 
-
-
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
+}
 
