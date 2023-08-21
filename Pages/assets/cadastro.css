@@ -1,12 +1,17 @@
-.fundo{
+body{
     background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
-    /* filter: blur(4px); /*desfoca a imagem de fundo mas deixei comentado porque ta deixando o form desfocado tambem e não sei como arrumar */
-
-    
-    height: 100vh; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+}
+.fundo{
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    
 }
 *{
     margin: 0; 
@@ -17,14 +22,32 @@
     margin: 0;
 }
 
-
 form{ 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:bisque;
-    backdrop-filter: blur(4px);
+    color:rgb(255, 255, 255);
+    
 }
+
+input{
+    color: brown;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.Caixa-transparente {
+  
+    width: 450px;
+    height: 550px;
+    background: linear-gradient(to bottom, rgba(30, 25, 59, 0.781), rgba(27, 14, 141, 0.705), rgba(44, 41, 71, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+}
+
