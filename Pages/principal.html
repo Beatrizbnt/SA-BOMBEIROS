@@ -11,23 +11,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
 </head>
 
 </html>
 
 <body>
+  <header class="total">
   <header>
     <img src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" /><!-- Link com a logo -->
     <div class="sigla">
       <h1>
-        NOAR
+        BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
       </h1>
       <h3>
-        Núcleo de Operações Aéreas e Resgate.
+        NOAR (Núcleo de Operações Aéreas e Resgate).
       </h3>
     </div>
     <div class="header-direito">
-      <a href="#login">Login</a>
+      <a class="login" href="#login">
+        <img src="/Pages/img/bonequinho.png" alt="Login">
+      </a>
       <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <menu class="overlay-content">
@@ -53,14 +59,32 @@
           <a href="#">RESPONSÁVEL PELO PREENCHIMENTO</a>
         </menu>
       </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
   </header>
   <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+  </header>
 
-      
+  <div class="faixa-titulo">
+    <p>FICHA DE ATENDIMENTO</p>
+  </div>
+  <section class="ficha">
+    
+  <div class="ficha-container">
+    <div class="selecao"></div>
+    <div id="data"></div>
+  <section id="paciente">
+    <div class="caixa-selecao">
+    </div>
+    <div class="caixa-texto">
+    </div>
+  </section>
+  </div>
+  </section>
+
+
 </body>
 <script>
   function openNav() {
