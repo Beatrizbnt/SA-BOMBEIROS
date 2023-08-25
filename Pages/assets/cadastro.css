@@ -4,6 +4,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    
 }
 .fundo{
     backdrop-filter: blur(8px);
@@ -11,8 +12,9 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh; 
-    
+   
 }
+
 *{
     margin: 0; 
     
@@ -28,26 +30,43 @@ form{
     align-items: center;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:rgb(255, 255, 255);
+    color:rgb(255, 252, 252);
+    /* font-size: 14px ; */
     
 }
 
-input{
-    color: brown;
-    background-color: white;
+form > input{
+    color: white;
+    background-color: rgb(85, 79, 79);
     border-radius: 5px;
-    border-color: white;
+    border-color:  rgb(85, 79, 79);
+    border: rgb(85, 79, 79) ;
+    height: 20px;
+    height: 20px;
+    font-size: 14px;
 }
 
 .Caixa-transparente {
   
-    width: 450px;
-    height: 550px;
+    width: 390px;
+    height: 490px;
     background: linear-gradient(to bottom, rgba(30, 25, 59, 0.781), rgba(27, 14, 141, 0.705), rgba(44, 41, 71, 0.7));
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
   
+}
+
+.botao > input{
+    color:white;
+    background: green;
+    border: green;
+    border-radius: 5px;
+    height: 30px;
+    width: 102px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+
 }
 
