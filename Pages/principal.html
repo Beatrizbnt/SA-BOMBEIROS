@@ -19,7 +19,7 @@
 </html>
 
 <body>
-  <header class="total">
+  <!-- <header class="total"> -->
   <header>
     <img src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" /><!-- Link com a logo -->
     <div class="sigla">
@@ -62,26 +62,34 @@
       <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
   </header>
-  <div class="progress-container">
+  <!-- <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
-  </div>
-  </header>
+  </div> -->
+  <!-- </header> -->
 
   <div class="faixa-titulo">
     <p>FICHA DE ATENDIMENTO</p>
   </div>
+
   <section class="ficha">
-    
-  <div class="ficha-container">
-    <div class="selecao"></div>
-    <div id="data"></div>
-  <section id="paciente">
-    <div class="caixa-selecao">
-    </div>
-    <div class="caixa-texto">
-    </div>
-  </section>
-  </div>
+      <div class="selecao">
+       <h4>PACIENTE IDENTIFICADO</h4><input id="p-identificado" type="checkbox">
+       <h4>DATA:</h4> <input id="data" type="date" value=""> 
+       </div>
+      <section id="info-paciente">
+        <div class="sexo">
+        <h4>MASCULINO</h4><input id="masculino" name="masculino" type="checkbox">
+        <h4>FEMININO</h4><input id="feminino" name="feminino" type="checkbox">
+        </div>
+        <h4>NOME DO PACIENTE: </h4><input id="nome-p" name="nome-p" type="text" >
+        <h4>RG/CPF DO PACIENTE: </h4><input id="RG/CPF" name="RG/CPF" type="text">
+        <h4>IDADE DO PACIENTE: </h4><input id="idade-p" name="idade-p" type="text">
+        <h4>TELEFONE DO PACIENTE: </h4><input id="telefone-p" name="telefone-p" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+      </section>
+      <section id="info-acompanhante">
+        <h4>NOME DO ACOMPANHANTE: </h4><input id="nome-a" name="nome-a" type="text" >
+        <h4>TELEFONE DO ACOMPANHANTE: </h4><input id="telefone-a" name="telefone-a" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+      </section>
   </section>
 
 
@@ -103,6 +111,32 @@
     var scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
   }
+
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	id('telefone-p').onkeyup = function(){
+		mascara( this, mtel );
+	}
+  id('telefone-a').onkeyup = function(){
+		mascara( this, mtel );
+	}
+}
 </script>
 
 </html>

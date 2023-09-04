@@ -98,7 +98,7 @@ header img {
   }
 }
 
-.progress-container {
+/* .progress-container {
   width: 100%;
   height: 8px;
   background: #ccc;
@@ -112,7 +112,7 @@ header img {
   height: 8px;
   background: #04AA6D;
   width: 0%;
-}
+} */
 
 
 .faixa-titulo{
@@ -128,47 +128,39 @@ header img {
 }
 
 .ficha{
+  margin-top: 30px;
   border: 1px solid black;
   display: flex;
-  align-items: center; 
-  justify-content: center;
+  /* align-items: center; 
+  justify-content: center; */
 }
 
-.ficha-container{
-  border: 1px solid black;
-  margin-top: 30px;
-  height: 599px;
-  width: 70%;
-  display: flex;
-  /* align-items: center;  */
-  /* justify-content: center; */
-}
 
 .selecao{
-
+  border: 1px solid black;
 }
 
 #data{
-  background-color: #CBCDC9;
+ 
   border: 1px solid black;
+ 
 
 }
 
 #paciente{
-  background-color: #ffffff;
+
   border: 1px solid black;
-  height: 70%;
-  display: flex;
+  
   
 }
 
 .caixa-selecao{
-  background-color: #CBCDC9;
+
   border: 1px solid black;
+  
 }
 
 .caixa-texto{
-  background-color: #CBCDC9;
-  border: 1px solid black;
 
+  border: 1px solid black;
 }
