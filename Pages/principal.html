@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOAR</title>
+  <title>Bombeiros Voluntários de Guaramirim</title>
   <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
   <link rel="stylesheet" href="/Pages/assets/principal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 </html>
 
 <body>
-  <!-- <header class="total"> -->
+  
   <header>
     <img src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" /><!-- Link com a logo -->
     <div class="sigla">
@@ -66,34 +66,51 @@
     <div class="progress-bar" id="myBar"></div>
   </div> -->
   <!-- </header> -->
-
+<div class="fundo">
   <div class="faixa-titulo">
     <p>FICHA DE ATENDIMENTO</p>
   </div>
 
-  <section class="ficha">
-      <div class="selecao">
-       <h4>PACIENTE IDENTIFICADO</h4><input id="p-identificado" type="checkbox">
-       <h4>DATA:</h4> <input id="data" type="date" value=""> 
+  <form class="ficha">
+      <div class="ident-data">
+        <div class="form-group">
+       <label for="p-identificado">PACIENTE IDENTIFICADO</label>
+       <input id="p-identificado" type="checkbox">
+      </div>
+      <div class="form-group">
+       <label for="data">DATA:</label>
+       <input id="data" type="date">
+      </div>
        </div>
       <section id="info-paciente">
         <div class="sexo">
-        <h4>MASCULINO</h4><input id="masculino" name="masculino" type="checkbox">
-        <h4>FEMININO</h4><input id="feminino" name="feminino" type="checkbox">
+         <label for="sexo">SEXO: </label>
+       <input id="feminino" name="sexo" type="radio">
+       <label for="feminino">FEMININO</label>
+       <input id="masculino" name="sexo" type="radio">
+       <label for="MASCULINO">MASCULINO</label>
         </div>
-        <h4>NOME DO PACIENTE: </h4><input id="nome-p" name="nome-p" type="text" >
-        <h4>RG/CPF DO PACIENTE: </h4><input id="RG/CPF" name="RG/CPF" type="text">
-        <h4>IDADE DO PACIENTE: </h4><input id="idade-p" name="idade-p" type="text">
-        <h4>TELEFONE DO PACIENTE: </h4><input id="telefone-p" name="telefone-p" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+        <div class="texto">
+        <Label for="nome-p">NOME DO PACINTE: </Label>
+        <input id="nome-p" name="nome-p" type="text" placeholder="Digite o nome">
+        <label for="RG/CPF">RG ou CPF DO PACIENTE</label>
+        <input id="RG/CPF" name="RG/CPF" type="text" placeholder="Digite o RG ou CPF">
+        <label for="idade-p">IDADE DO PACIENTE: </label>
+        <input id="idade-p" name="idade-p" type="text" placeholder="Digite a idade">
+        <label for="telefone-p">TELEFONE DE CONTATO: </label>
+        <input id="telefone-p" name="telefone-p" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+      </div>
       </section>
       <section id="info-acompanhante">
-        <h4>NOME DO ACOMPANHANTE: </h4><input id="nome-a" name="nome-a" type="text" >
-        <h4>TELEFONE DO ACOMPANHANTE: </h4><input id="telefone-a" name="telefone-a" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+        <label for="nome-a">NOME DO ACOMPANHANTE: </label>
+        <input id="nome-a" name="nome-a" type="text" placeholder="Digite o nome">
+        <label for="telefone-a">TELEFONE DO ACOMPANHANTE: </label>
+        <input id="telefone-a" name="telefone-a" type="tel" maxlength="15" placeholder="(00) 00000-0000">
       </section>
-  </section>
-
-
+    </form>
+  </div>
 </body>
+
 <script>
   function openNav() {
     document.getElementById("myNav").style.height = "100%";
@@ -137,6 +154,8 @@ window.onload = function(){
 		mascara( this, mtel );
 	}
 }
+
+
 </script>
 
 </html>

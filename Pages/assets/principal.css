@@ -114,7 +114,13 @@ header img {
   width: 0%;
 } */
 
-
+.fundo{
+  margin: 0;
+  padding: 0;
+  display:grid;
+  justify-content: center;
+  background-color: #f0f0f0; 
+}
 .faixa-titulo{
   background-color: #CBCDC9;
   border: 1px solid black;
@@ -131,36 +137,11 @@ header img {
   margin-top: 30px;
   border: 1px solid black;
   display: flex;
-  /* align-items: center; 
-  justify-content: center; */
+  flex-direction: column;
+  width: 70%;
 }
 
-
-.selecao{
-  border: 1px solid black;
-}
-
-#data{
- 
-  border: 1px solid black;
- 
-
-}
-
-#paciente{
-
-  border: 1px solid black;
-  
-  
-}
-
-.caixa-selecao{
-
-  border: 1px solid black;
-  
-}
-
-.caixa-texto{
-
-  border: 1px solid black;
+.ident-data{
+  display: flex;
+  justify-content: space-around;
 }
