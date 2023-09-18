@@ -30,14 +30,14 @@ form{
     align-items: center;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:rgb(255, 252, 252);
+    color:rgb(255, 255, 255);
     /* font-size: 14px ; */
     
 }
 
 form > input{
-    color: white;
-    background-color: rgb(85, 79, 79);
+    color: rgb(0, 0, 0);
+    background-color: rgb(199, 199, 199);
     border-radius: 5px;
     border-color:  rgb(85, 79, 79);
     border: rgb(85, 79, 79) ;
@@ -64,9 +64,21 @@ form > input{
     border-radius: 5px;
     height: 30px;
     width: 102px;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
 
 }
 
+.cadastro img {
+    width: 110%;
+    height: 90%;
+} 
+ 
+.boneco-cadastro{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+  
+}
+ 
