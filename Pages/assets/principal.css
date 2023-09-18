@@ -1,6 +1,6 @@
 * {
   margin: 0;
-
+  
 }
 
 header {
@@ -10,6 +10,10 @@ header {
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 header img {
@@ -98,10 +102,12 @@ header img {
   }
 }
 
-/* .progress-container {
+.progress-container {
   width: 100%;
   height: 8px;
   background: #ccc;
+  position: fixed;
+  top: 25%;
  
 }
 .total{
@@ -112,20 +118,14 @@ header img {
   height: 8px;
   background: #04AA6D;
   width: 0%;
-} */
-
-.fundo{
-  margin: 0;
-  padding: 0;
-  display:grid;
-  justify-content: center;
-  background-color: #f0f0f0; 
+  position: fixed;
 }
+
 .faixa-titulo{
   background-color: #CBCDC9;
   border: 1px solid black;
   height: 40px;
-  margin-top: 30px;
+  margin-top: 15%;
   font-family: 'Rubik', sans-serif;
   font-weight: 800;
   display: flex;
@@ -133,15 +133,64 @@ header img {
   justify-content: center;
 }
 
-.ficha{
-  margin-top: 30px;
-  border: 1px solid black;
+.fundo {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  }
+
+.ficha{
+  border: 1px solid black;
+  justify-content: center;
   width: 70%;
 }
 
 .ident-data{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#info-paciente, #info-acompanhante{
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitulo{
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 750;
+}
+
+input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+
+.linhas{
+  background-color: #DFDEDE;
+  margin-top: 15px;
+  padding: 8px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+
+
+input[type="checkbox"] {
+  appearance: none;
+  background: url(/Pages/img/checkbox.png) no-repeat;
+  width: 20px;
+  height: 20px;
+}
+ 
+input[type="checkbox"]:checked {
+  background: url(checkmark-selected.svg) no-repeat;
 }
