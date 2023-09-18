@@ -36,8 +36,8 @@ form{
 }
 
 form > input{
-    color: white;
-    background-color: rgb(85, 79, 79);
+    color: rgb(0, 0, 0);
+    background-color: rgb(199, 199, 199);
     border-radius: 5px;
     border-color:  rgb(85, 79, 79);
     border: rgb(85, 79, 79) ;
@@ -63,10 +63,22 @@ form > input{
     border: green;
     border-radius: 5px;
     height: 30px;
-    width: 80px;
-    font-size: 15px;
+    width: 72px;
+    font-size: 14px;
     display: flex;
     align-items: center;
 
 }
 
+.login img {
+    width: 110%;
+    height: 90%;
+} 
+ 
+.boneco-login{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+  
+}
+ 
