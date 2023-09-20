@@ -32,42 +32,35 @@ body{
 }
 .login img {
     width: 110%;
-    height: 80%;
+    height: 68%;
     align-items: center;
 } 
  
 .boneco-login{
-    display: flex;
+    /* display: flex; */
     width: 28%;
-    justify-content: center;
+    /* justify-content: center; */
   
 }
  
 .cadastro img {
     width: 110%;
     height: 90%;
+    align-items: center;
 } 
  
 .boneco-cadastro{
-    display: flex;
-    width: 32%;
-    justify-content: center;
+    /* display: flex; */
+    width: 29%;
+    /* justify-content: center; */
   
 }
-h1 {
-    width: 28%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+h1{
+    font-size:larger;
+    text-align: center;
     color:white;
-
 }
 
-h2 {
-    width: 32%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    color:white;
-
+a {
+    text-decoration: none;
 }
