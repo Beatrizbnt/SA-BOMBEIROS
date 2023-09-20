@@ -8,16 +8,17 @@ header {
   background: linear-gradient(to right, #6d0b0b, #d6621c);
   color: #ffffff;
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: space-between;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  
 }
 
 header img {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   max-width: 120px;
   max-height: auto;
@@ -25,7 +26,7 @@ header img {
 }
 
 .sigla {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -36,7 +37,7 @@ header img {
 .header-direito {
   display: flex;
   width: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   float: right;
   justify-content: space-around;
   align-self: center;
@@ -102,45 +103,46 @@ header img {
   }
 }
 
-.progress-container {
+#fundo{
+  background-color: #F6F3F2;
+  margin-top: 15%;
+}
+
+/* .progress-container {
   width: 100%;
   height: 8px;
   background: #ccc;
-  position: fixed;
-  top: 25%;
- 
-}
-.total{
-  position: fixed;
+
 }
 
 .progress-bar {
   height: 8px;
   background: #04AA6D;
   width: 0%;
-  position: fixed;
-}
+} */
 
 .faixa-titulo{
   background-color: #CBCDC9;
   border: 1px solid black;
   height: 40px;
-  margin-top: 15%;
+  margin-top: 5%;
   font-family: 'Rubik', sans-serif;
   font-weight: 800;
   display: flex;
   align-items: center; 
   justify-content: center;
+  width: 100%;
 }
 
-.fundo {
+
+.fundo-ficha {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;width: 100%;
   }
 
 .ficha{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: center;
   width: 70%;
 }
@@ -182,15 +184,3 @@ input{
   border-radius: 5px;
 }
 
-
-
-input[type="checkbox"] {
-  appearance: none;
-  background: url(/Pages/img/checkbox.png) no-repeat;
-  width: 20px;
-  height: 20px;
-}
- 
-input[type="checkbox"]:checked {
-  background: url(checkmark-selected.svg) no-repeat;
-}
