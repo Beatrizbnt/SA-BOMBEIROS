@@ -1,14 +1,23 @@
-* {
+body { 
   margin: 0;
-  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "progress-container progress-container"
+        "section section";
+    grid-gap: 20px; /* Espaçamento entre as células do grid */
+    height: 100vh; /*Tornar o grid ocupar a altura total da janela */
 }
-
+  
 header {
+  grid-area: header;
   padding: 20px 10px;
   background: linear-gradient(to right, #6d0b0b, #d6621c);
   color: #ffffff;
   display: flex;
-  /* border: 1px solid black; */
+  border: 1px solid black; 
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -18,29 +27,62 @@ header {
 }
 
 header img {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 100%;
   max-width: 120px;
   max-height: auto;
   align-self: center;
 }
 
+@media screen and (max-width: 700px) {
+  header img {
+    border: 1px solid black;
+    width: 100%;
+    max-width: 90px;
+    max-height: auto;
+    align-self: center;
+  }
+}
+
 .sigla {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-self: center;
   width: 100%;
-  font-family: 'Fjalla One', sans-serif;
 }
 
+header h1{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 600;
+  font-size: large;
+}
+
+@media screen and (max-width: 700px) {
+  header h1 {
+      font-size: 12px;
+  }
+}
+
+header h3{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 600;
+  font-size: medium;
+}
+
+@media screen and (max-width: 700px) {
+  header h3 {
+      font-size: 9px;
+  }
+}
 .header-direito {
   display: flex;
-  width: 50%;
-  /* border: 1px solid black; */
+  width: 40%;
+  border: 1px solid black;
   float: right;
   justify-content: space-around;
   align-self: center;
+  align-items: center;
 }
 
 .login img{
@@ -62,8 +104,6 @@ header img {
   transition: 0.5s;
   margin: 0 auto;
 }
-
-
 
 .overlay-content {
   position: relative;
@@ -103,29 +143,28 @@ header img {
   }
 }
 
-#fundo{
-  background-color: #F6F3F2;
-  margin-top: 15%;
-}
-
-/* .progress-container {
+.progress-container {
   width: 100%;
   height: 8px;
   background: #ccc;
-
 }
 
 .progress-bar {
   height: 8px;
   background: #04AA6D;
   width: 0%;
-} */
+}
+
+#fundo{
+  grid-area: section;
+  margin-top: 150px;
+  /* align-items: center; */
+}
 
 .faixa-titulo{
   background-color: #CBCDC9;
   border: 1px solid black;
   height: 40px;
-  margin-top: 5%;
   font-family: 'Rubik', sans-serif;
   font-weight: 800;
   display: flex;
@@ -138,13 +177,15 @@ header img {
 .fundo-ficha {
   display: flex;
   flex-direction: column;
-  align-items: center;width: 100%;
+  align-items: center;
+  width: 100%;
   }
 
 .ficha{
   /* border: 1px solid black; */
   justify-content: center;
   width: 70%;
+  margin-bottom: 40px;
 }
 
 .ident-data{
@@ -154,16 +195,19 @@ header img {
   margin-bottom: 10px;
 }
 
-#info-paciente, #info-acompanhante{
+#info-paciente, #info-acompanhante, #info-anmanese{
   padding: 8px;
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
+form{
+  margin-top: 30px;
+}
 .subtitulo{
   display: flex;
   align-self: center;
-  margin-top: 10px;
   font-family: 'Rubik', sans-serif;
   font-weight: 750;
 }
