@@ -10,11 +10,15 @@ body {
     grid-gap: 20px; /* Espaçamento entre as células do grid */
     height: 100vh; /*Tornar o grid ocupar a altura total da janela */
 }
+
+  .navbar{
+    background: linear-gradient(to right, #6d0b0b, #d6621c);
+  }
   
 header {
   grid-area: header;
   padding: 20px 10px;
-  background: linear-gradient(to right, #6d0b0b, #d6621c);
+  
   color: #ffffff;
   display: flex;
   border: 1px solid black; 
