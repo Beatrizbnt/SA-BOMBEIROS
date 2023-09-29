@@ -190,3 +190,15 @@ input{
   display: flex;
   flex-direction: column;
 }
+
+.linha-coluna{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.colunas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -119,7 +119,12 @@
         <input id="feminino" name="sexo" type="radio">
         <label for="feminino">FEMININO</label>
         <input id="masculino" name="sexo" type="radio">
-        <label for="MASCULINO">MASCULINO</label>
+        <label for="masculino">MASCULINO</label>
+        <div class="linhas" id="gestante">
+          <label for="gestante">É GESTANTE?: </label>
+          <input name="gestante-sim" type="radio">SIM
+          <input name="gestante-nao" type="radio">NÃO
+        </div>
       </div>
       <div class="linhas" id="nome-p">
         <Label for="nome-p">NOME DO PACIENTE: </Label>
@@ -168,27 +173,22 @@
         <div class="linhas">
           <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
           <input name="outras-vezes-sim" type="radio">SIM
-          <input name="outras-vezes-não" type="radio">NÃO
+          <input name="outras-vezes-nao" type="radio">NÃO
         </div>
       
       <div class="linhas">
         <label for="uso-medicacao">FAZ USO DE MEDICAÇÃO?:</label>
         <input name="outras-vezes-sim" type="radio">SIM
-        <input name="outras-vezes-não" type="radio">NÃO
-      </div>
-    
-    <div class="linhas">
-      <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
-      <input name="outras-vezes-sim" type="radio">SIM
-      <input name="outras-vezes-nao" type="radio">NÃO
+        <input name="outras-vezes-nao" type="radio">NÃO
+      
       <div class="linhas-escondidas">
         <div>
         <label for="q-medicacao">QUAIS?:</label>
-        <input type="text" id="q-medicacao">
+        <input type="text" id="q-medicacao" placeholder="Digite quais foram as medicações">
       </div>
       <div>
         <label for="h-medicacao">HORÁRIO DA ULTIMA MEDICAÇÃO?:</label>
-        <input type="text" id="h-medicacao">
+        <input type="text" id="h-medicacao" placeholder="Digite o horário">
       </div>
       </div>
     </div>
@@ -199,7 +199,7 @@
         <div class="linhas-escondidas">
           <div>
         <label for="e-alergico">ESPECIFIQUE:</label>
-        <input type="text" id="e-alergico">
+        <input type="text" id="e-alergico" placeholder="Digite uma especificação">
       </div>
       </div>
     </div>
@@ -210,14 +210,12 @@
       <div class="linhas-escondidas">
         <div>
       <label for="h-alimento/liquido">HORARIO:</label>
-      <input type="text" id="h-alimento/liquido">
+      <input type="time" id="h-alimento/liquido">
     </div>
     </div>
   </div>
     </div>
-  </div>
     </form>
-    </div>
 
     <div class="faixa-titulo">
       <p>ANMANESE GESTACIONAL</p>
@@ -227,14 +225,103 @@
       <div class="container ficha">
         <div class="linhas" id="per-gestacao">
           <Label for="nome-p">PERÍODO DA GESTAÇÃO: </Label>
-          <input id="nome-p" name="nome-p" type="text" placeholder="Digite o nome">
+          <input id="nome-p" name="nome-p" type="text" placeholder="Digite o perído">
         </div>  
         <div class="linhas">
-          <label for="outras-vezes">FEZ PRÉ-NATAL??:</label>
-          <input name="outras-vezes-sim" type="radio">SIM
-          <input name="outras-vezes-nao" type="radio">NÃO
+          <label for="pre-natal">FEZ PRÉ-NATAL?:</label>
+          <input name="pre-natal-sim" type="radio">SIM
+          <input name="pre-natal-nao" type="radio">NÃO
           </div>
+          <div class="linhas" id="nome-medico">
+            <Label for="nome-medico">NOME DO MÉDICO:</Label>
+            <input id="nome-medico" name="nome-medico" type="text" placeholder="Digite o nome do médico">
+          </div>  
+          <div class="linhas">
+            <label for="complicacoes">EXISTE POSSIBILIDADE DE COMPLICAÇÕES?:</label>
+            <input name="complicacoes-sim" type="radio">SIM
+            <input name="complicacoes-nao" type="radio">NÃO
+            </div>
+            <div class="linhas">
+              <label for="p-filho">É O PRIMEIRO FILHO?:</label>
+              <input name="p-filho-sim" type="radio">SIM
+              <input name="p-filho-nao" type="radio">NÃO
+              </div>
+              <div class="linhas" id="h-contracoes">
+                <Label for="h-contracoes">QUE HORAS INICIARAM AS CONTRAÇÕES?:</Label>
+                <input id="h-contracoes"  type="time" >
+              </div>  
+              <div class="temp-contracoes" id="temp-contracoes">
+                <Label for="temp-contracoes">TEMPO DAS CONTRAÇÕES:</Label>
+                <input id="temp-contracoes"  type="time" >
+              </div>  
+              <div class="int-contracoes" id="iten-contracoes">
+                <Label for="int-contracoes">INTERVALO:</Label>
+                <input id="int-contracoes"  type="text" >
+              </div>  
+              <div class="linhas">
+                <label for="quadrl-evacuar">SENTE PRESSÃO NO QUADRIL OU VONTADE DE EVACUAR?:</label>
+                <input name="quadril-evacuar-sim" type="radio">SIM
+                <input name="quadril-evacuar-nao" type="radio">NÃO
+                </div>
+                <div class="linhas">
+                  <label for="ruptura-bolsa">JÁ HOUVE RUPTURA DA BOLSA?:</label>
+                  <input name="ruptura-bolsa-sim" type="radio">SIM
+                  <input name="ruptura-bolsa-nao" type="radio">NÃO
+                  </div>
+                  <div class="linhas">
+                    <label for="inspecao-visual">FOI FEITO INSPEÇÃO VISUAL?:</label>
+                    <input name="inspecao-visual-sim" type="radio">SIM
+                    <input name="inspecao-visual-nao" type="radio">NÃO
+                    </div>
+                    <div class="linhas">
+                      <label for="parto">PARTO REALIZADO?:</label>
+                      <input name="parto-sim" type="radio">SIM
+                      <input name="parto-nao" type="radio">NÃO
+                      </div>
+                      <div class="linhas">
+                        <label for="sexo-bebe">SEXO DO BEBÊ: </label>
+                        <input id="feminino-bebe" name="sexo" type="radio">
+                        <label for="feminino-bebe">FEMININO</label>
+                        <input id="masculino-bebe" name="sexo" type="radio">
+                        <label for="masculino-bebe">MASCULINO</label>
+                        </div>
+                        <div class="linhas" id="h-nascimento">
+                          <Label for="h-nascimento">HORA DO NASCIMENTO:</Label>
+                          <input id="h-nascimento"  type="time" >
+                        </div>
+
+                        <div class="linhas" id="nome-bebe">
+                          <Label for="nome-bebe">NOME DO BEBÊ:</Label>
+                          <input id="nome-bebe"  type="text" >
+                        </div>      
         </form>
+        </div>
+
+        <div class="faixa-titulo">
+          <p>TIPO DE COCORRÊNCIA (PRÉ- HOSPITALAR)</p>
+        </div>
+
+        <div class="container ficha">
+          <form action="">
+            <div class="linhas">
+              <div class="linha-coluna">
+                <div class="colunas">
+                <input class="form-control me-2" type="search" placeholder="PESQUISA" >
+                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg></button>
+              </div>
+              <div class="colunas">
+                <input type="checkbox" form="form-control me-2">
+                <input class="form-control me-2" type="search" placeholder="OUTRO" aria-label="Search">
+                
+              </div>
+              </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
 
 
 
