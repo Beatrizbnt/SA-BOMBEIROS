@@ -138,55 +138,26 @@ header h3{
 }
 
 #fundo{
-  grid-area: section;
   margin-top: 150px;
-  /* align-items: center; */
 }
 
 .faixa-titulo{
   background-color: #CBCDC9;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 40px;
   font-family: 'Rubik', sans-serif;
   font-weight: 800;
   display: flex;
-  align-items: center; 
   justify-content: center;
-  width: 100%;
+  align-self: center;
+  margin-bottom: 2em;
 }
 
-
-.fundo-ficha {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  }
-
-.ficha{
-  /* border: 1px solid black; */
-  justify-content: center;
-  width: 70%;
-  margin-bottom: 40px;
-}
-
-.ident-data{
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
-#info-paciente, #info-acompanhante, #info-anmanese{
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
 
 form{
   margin-top: 30px;
 }
+
 .subtitulo{
   display: flex;
   align-self: center;
@@ -208,5 +179,14 @@ input{
   font-family: 'Rubik', sans-serif;
   font-weight: 700;
   border-radius: 5px;
+} 
+
+.ficha{
+  margin-bottom: 2em;
+  width: 70%;
 }
 
+.linhas-escondidas{
+  display: flex;
+  flex-direction: column;
+}
