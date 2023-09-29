@@ -36,7 +36,7 @@
             - ml-auto: Indica que a margem esquerda é automática (ml é de margin-left). -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block w-100">
       <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-between">
           <a class="row navbar-brand mb-0 h1 col-7" href="#">
             <img class="col-2" src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" />
             <span class="col-5"><h1>
@@ -84,9 +84,6 @@
           </ul>
         </div>
       </div>
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>
     </nav>
   </header>
 
@@ -101,17 +98,29 @@
     <div class="fundo-ficha">
       <form class="row gx-3 gy-2 align-items-center">
         <div c class="col-12">
-          <label class="visually-hidden" for="inlineFormInputGroupUsername" name="p-identificado">PACIENTE
-            IDENTIFICADO</label>
-          <input id="p-identificado" type="checkbox" class="checkbox">
+          
+          <input >
           <span class="checkmark"></span>
         </div>
-      </form>
+
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <label class="visually-hidden" for="inlineFormInputGroupUsername" name="p-identificado">PACIENTE
+            IDENTIFICADO</label>
+              <input id="p-identificado" type="checkbox" class="checkbox" class="form-control" >
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+        </form>
 
       <div class="linhas">
         <label for="data">DATA:</label>
         <input id="data" type="date">
       </div>
+    </form>
     </div>
     <div id="info-paciente">
       <div class="subtitulo"> INFORMAÇÕES DO PACIENTE</div>

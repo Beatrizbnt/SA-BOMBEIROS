@@ -1,24 +1,14 @@
-body { 
-  margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header header"
-        "progress-container progress-container"
-        "section section";
-    grid-gap: 20px; /* Espaçamento entre as células do grid */
-    height: 100vh; /*Tornar o grid ocupar a altura total da janela */
+body { /*Corpo da página*/
+  margin: 0; 
 }
 
-  .navbar{
+  .navbar{ /*navbar menu*/
     background: linear-gradient(to right, #6d0b0b, #d6621c);
   }
   
-header {
+header { /*parte de cima da página*/
   grid-area: header;
   padding: 20px 10px;
-  
   color: #ffffff;
   display: flex;
   border: 1px solid black; 
@@ -145,18 +135,6 @@ header h3{
   top: 15px;
   right: 35px;
   }
-}
-
-.progress-container {
-  width: 100%;
-  height: 8px;
-  background: #ccc;
-}
-
-.progress-bar {
-  height: 8px;
-  background: #04AA6D;
-  width: 0%;
 }
 
 #fundo{
