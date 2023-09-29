@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOAR</title>
-    <link rel="stylesheet" href="/Pages/assets/ajuda.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bombeiros Voluntários de Guaramirim</title>
+  <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
+  <link rel="stylesheet" href="/Pages/assets/ajuda.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
-<body>
-    
-</body>
+
 </html>
+
+<body>
+  <header class="container-fluid m-0 p-0">
+    <!-- - navbar-expand-lg: Indica ao Bootstrap que a barra de navegação utilizará toda a tela somente em resoluções maiores que 992px.
+            Caso contrário, o menu é colapsado para um ícone de hambúrguer em telas menores.
+            - navbar-light: Esquema de cores claro (texto preto em fundo branco) para a barra de navegação.
+            - bg-light: Indica que o plano de fundo da barra de navegação será claro (branco).
+            - d-none: Indica ao Bootstrap para esconder o menu de navegação padrão em qualquer resolução de tela.
+            - d-lg-block: Indica que o menu de navegação padrão só irá aparecer em telas acima de 992px.
+            - nav-brand: Classe que define comportamento de logotipo ou nome da marca.
+            - mb-0: Indica ao Bootstrap que a margem inferior é 0 (mb é de margin-bottom).
+            - h1: Indica que o nome da marca terá comportamento de título ao invés de link.
+            - navbar-nav: Indica ao Bootstrap a criação de uma lista de elementos de menu horizontal.
+            - ml-auto: Indica que a margem esquerda é automática (ml é de margin-left). -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block w-100">
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <a class="row navbar-brand mb-0 h1 col-7" href="#">
+            <img class="col-2" src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" />
+            <span class="col-5"><h1>
+              BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
+            </h1>
+            <h3>
+              NOAR (Núcleo de Operações Aéreas e Resgate).
+            </h3>
+          </span>
+          </a>
+          <ul class="navbar-nav ml-auto col-4">
+            <li class="nav-item">
+              <a class="nav-link" href="#"> <img src="/Pages/img/bonequinho.png" alt="Login" id="boneco_perfil"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div id="myNav" class="overlay">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <menu class="overlay-content">
+                    <a href="#">INFORMAÇÃO DO PACIENTE</a>
+                    <a href="#">INFORMAÇÃO ACOMPANHANTE</a>
+                    <a href="#">ANMANESE DA EMERGÊNCIA MÉDICA</a>
+                    <a href="#">ANMANESE DA EMERGÊNCIA GESTACIONAL</a>
+                    <a href="#">TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR)</a>
+                    <a href="#">PROBLEMAS ENCONTRADOS SUSPEITOS</a>
+                    <a href="#">AVALIAÇÃO DO PACIENTE (GLASGOW)</a>
+                    <a href="#">SINAIS VITAIS</a>
+                    <a href="#">LOCAL DE TRAUMAS</a>
+                    <a href="#">VÍTIMA ERA</a>
+                    <a href="#">DECISÃO TRANSPORTE</a>
+                    <a href="#">FORMA DE CONDUÇÃO</a>
+                    <a href="#">HISTÓRICO DA OCORRÊNCIA</a>
+                    <a href="#">PROCEDIMENTOS EFETUADOS</a>
+                    <a href="#">MATERIAIS ULTILIZADOS</a>
+                    <a href="#">AVALIAÇÃO CINEMAÁTICA</a>
+                    <a href="#">OBSERVAÇÕES IMPORTANTES</a>
+                    <a href="#">KM FINAL</a>
+                    <a href="#">EQUIPE DE ATENDIMENTO</a>
+                    <a href="#">RESPONSÁVEL PELO PREENCHIMENTO</a>
+                  </menu>
+                </div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
