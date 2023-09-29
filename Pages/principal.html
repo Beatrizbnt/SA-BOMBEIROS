@@ -88,41 +88,31 @@
   </header>
 
 
-
-
   <section id="fundo">
 
     <div class="faixa-titulo">
       <p>FICHA DE ATENDIMENTO</p>
     </div>
-    <div class="fundo-ficha">
-      <form class="row gx-3 gy-2 align-items-center">
-        <div c class="col-12">
-          
-          <input >
-          <span class="checkmark"></span>
+    <div class="container">
+    <form class="row row-cols-lg-auto" action="">
+      <div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+          <label class="form-check-label" for="inlineFormCheck">
+            PACIENTE IDENTIFICADO
+          </label>
         </div>
-
-        <form>
-          <div class="form-row">
-            <div class="col">
-              <label class="visually-hidden" for="inlineFormInputGroupUsername" name="p-identificado">PACIENTE
-            IDENTIFICADO</label>
-              <input id="p-identificado" type="checkbox" class="checkbox" class="form-control" >
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last name">
-            </div>
-          </div>
-        </form>
-
-      <div class="linhas">
-        <label for="data">DATA:</label>
-        <input id="data" type="date">
+      </div>
+      <div>
+          <label for="data">
+            DATA:
+          </label >
+          <input type="date" id="data">
       </div>
     </form>
     </div>
-    <div id="info-paciente">
+
+    <div class="container ficha col-md" id="info-paciente">
       <div class="subtitulo"> INFORMAÇÕES DO PACIENTE</div>
       <div class="linhas" id="sexo">
         <label for="sexo">SEXO: </label>
@@ -148,7 +138,7 @@
         <input id="telefone-p" name="telefone-p" type="tel" maxlength="15" placeholder="(00) 00000-0000">
       </div>
     </div>
-    <div id="info-acompanhante">
+    <div class="container ficha" id="info-acompanhante">
       <div class="subtitulo"> INFORMAÇÕES DO ACOMPANHANTE</div>
       <div class="linhas">
         <label for="a-identificado">HÁ UM ACOMPANHANTE?</label>
@@ -169,23 +159,96 @@
       <p>ANMANESE DA EMERGÊNCIA MÉDICA</p>
     </div>
     <form>
-      <div id="#info-anmnese">
+      <div class="container ficha" id="#info-anmnese">
         <label for="sinais-sintomas">
-          <P>O QUE ACONTECEU?</p><br>
+          <P>O QUE ACONTECEU?</p>
           <p>(SINAIS E SINTOMAS)</p>
         </label>
-        <input id="sinais-sintomas" type="text">
-
+        <textarea class="form-control" id="message" placeholder="Digite sua mensagem"></textarea>
         <div class="linhas">
           <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
           <input name="outras-vezes-sim" type="radio">SIM
           <input name="outras-vezes-não" type="radio">NÃO
         </div>
+      
+      <div class="linhas">
+        <label for="uso-medicacao">FAZ USO DE MEDICAÇÃO?:</label>
+        <input name="outras-vezes-sim" type="radio">SIM
+        <input name="outras-vezes-não" type="radio">NÃO
       </div>
-
+    
+    <div class="linhas">
+      <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
+      <input name="outras-vezes-sim" type="radio">SIM
+      <input name="outras-vezes-nao" type="radio">NÃO
+      <div class="linhas-escondidas">
+        <div>
+        <label for="q-medicacao">QUAIS?:</label>
+        <input type="text" id="q-medicacao">
+      </div>
+      <div>
+        <label for="h-medicacao">HORÁRIO DA ULTIMA MEDICAÇÃO?:</label>
+        <input type="text" id="h-medicacao">
+      </div>
+      </div>
+    </div>
+    <div class="linhas">
+        <label for="alergico">ALÉRGICO A ALGUMA COISA?:</label>
+        <input name="alergico-sim" type="radio">SIM
+      <input name="alergico-nao" type="radio">NÃO
+        <div class="linhas-escondidas">
+          <div>
+        <label for="e-alergico">ESPECIFIQUE:</label>
+        <input type="text" id="e-alergico">
+      </div>
+      </div>
+    </div>
+    <div class="linhas">
+      <label for="alimento/liquido">INGERIU ALIMENTO OU LÍQUIDO >= 6 HORAS:</label>
+      <input name="alimento/liquido-sim" type="radio">SIM
+    <input name="alimento/liquido-nao" type="radio">NÃO
+      <div class="linhas-escondidas">
+        <div>
+      <label for="h-alimento/liquido">HORARIO:</label>
+      <input type="text" id="h-alimento/liquido">
+    </div>
+    </div>
+  </div>
+    </div>
+  </div>
     </form>
     </div>
+
+    <div class="faixa-titulo">
+      <p>ANMANESE GESTACIONAL</p>
+    </div>
+
+    <form>
+      <div class="container ficha">
+        <div class="linhas" id="per-gestacao">
+          <Label for="nome-p">PERÍODO DA GESTAÇÃO: </Label>
+          <input id="nome-p" name="nome-p" type="text" placeholder="Digite o nome">
+        </div>  
+        <div class="linhas">
+          <label for="outras-vezes">FEZ PRÉ-NATAL??:</label>
+          <input name="outras-vezes-sim" type="radio">SIM
+          <input name="outras-vezes-nao" type="radio">NÃO
+          </div>
+        </form>
+
+
+
+
   </section>
+
+
+
+
+
+
+
+
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
