@@ -7,28 +7,96 @@ body { /*Corpo da página*/
   }
   
 header { /*parte de cima da página*/
-  grid-area: header;
-  padding: 20px 10px;
   color: #ffffff;
-  display: flex;
   border: 1px solid black; 
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  height: 2em;
   
 }
 
 header img {
   border: 1px solid black;
   width: 100%;
-  max-width: 120px;
+  max-width: 150px;
   max-height: auto;
   align-self: center;
 }
 
-@media screen and (max-width: 700px) {
+.selecao{
+  background-color:#DFDEDE;
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  
+}
+
+.selecao input{
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+}
+
+.check{
+  left:0;
+  top:0;
+  width: 25px;
+  height: 25px;
+  background-color:white ;
+  border: 3px solid #000;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.selecao input:checked ~ .check {
+  background-color: white;
+}
+
+.selecao .check:after{
+  /* top:0;
+  left: 9px;
+  width: 5px;
+  height: 10px;
+  
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); */
+  font-weight:bolder;
+  content: '\2573'; /* Código Unicode para o caractere 'X' */
+  font-size: 15px;
+  color: #c00b0b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.check:after{
+  content:"";
+  position: absolute;
+  display:none;
+
+}
+
+.selecao input:checked~.check:after{
+  display:block;
+}
+
+/*
+.selecao input + label::before{
+  content: '';
+  width: ;
+  height: 108px;
+  border-radius: 2px;
+  background-color:white;
+  border:2px solid black;
+  vertical-align: middle;
+  margin-right: 8px;
+
+} */
+
+
+/* @media screen and (max-width: 700px) {
   header img {
     border: 1px solid black;
     width: 100%;
@@ -36,15 +104,15 @@ header img {
     max-height: auto;
     align-self: center;
   }
-}
+} */
 
-.sigla {
+/* .sigla {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-self: center;
   width: 100%;
-}
+} */
 
 header h1{
   font-family: 'Fjalla One', sans-serif;
@@ -52,11 +120,6 @@ header h1{
   font-size: large;
 }
 
-@media screen and (max-width: 700px) {
-  header h1 {
-      font-size: 12px;
-  }
-}
 
 header h3{
   font-family: 'Fjalla One', sans-serif;
@@ -138,19 +201,18 @@ header h3{
 }
 
 #fundo{
-  margin-top: 150px;
+  background-color:#F6F3F2;
+  padding-top: 9em;
 }
 
+.faixa{
+  
+}
 .faixa-titulo{
   background-color: #CBCDC9;
   /* border: 1px solid black; */
-  height: 40px;
   font-family: 'Rubik', sans-serif;
-  font-weight: 800;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  margin-bottom: 2em;
+  font-weight:bold;
 }
 
 
@@ -171,7 +233,7 @@ input{
   border-bottom: 1px solid #000;
 }
 
-
+/* 
 .linhas{
   background-color: #DFDEDE;
   margin-top: 15px;
@@ -201,4 +263,4 @@ input{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
