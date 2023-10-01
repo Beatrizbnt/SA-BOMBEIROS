@@ -21,14 +21,21 @@ header img {
   align-self: center;
 }
 
+/* essa classe define a forma das caixinhas checkbox */
+.selecao-caixa{
+  background-color: #DFDEDE;
+  padding: 0.6em;
+  border-radius: 0.4em;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* essas classes são a personalização do input checkbox */
 .selecao{
-  background-color:#DFDEDE;
   display: block;
   position: relative;
-  padding-left: 45px;
-  margin-bottom: 12px;
+  padding-left: 2em;
   cursor: pointer;
-  
 }
 
 .selecao input{
@@ -53,18 +60,9 @@ header img {
 }
 
 .selecao .check:after{
-  /* top:0;
-  left: 9px;
-  width: 5px;
-  height: 10px;
-  
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg); */
-  font-weight:bolder;
-  content: '\2573'; /* Código Unicode para o caractere 'X' */
-  font-size: 15px;
-  color: #c00b0b;
+  content: '\2716'; /* Código Unicode para o caractere 'X' */
+  font-size: 15px; 
+  color: #7f0d0d;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,43 +80,55 @@ header img {
   display:block;
 }
 
-/*
-.selecao input + label::before{
-  content: '';
-  width: ;
-  height: 108px;
-  border-radius: 2px;
-  background-color:white;
-  border:2px solid black;
-  vertical-align: middle;
-  margin-right: 8px;
 
-} */
-
-
-/* @media screen and (max-width: 700px) {
-  header img {
-    border: 1px solid black;
-    width: 100%;
-    max-width: 90px;
-    max-height: auto;
-    align-self: center;
-  }
-} */
-
-/* .sigla {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  width: 100%;
-} */
-
-header h1{
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 600;
-  font-size: large;
+.form{
+  background-color: #DFDEDE;
+  padding: 0.6em;
+  border-radius: 0.4em;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
 }
+
+.form .form-element{
+  position:relative;
+  padding: 10px 0px;
+}
+
+.form .form-element input{
+  display: none;
+}
+
+.form .form-element label{
+  position: relative;
+  display:block;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.form .form-element label:before{
+  content: ;
+}
+
+/* essa é uma personalização especifica da data */
+.data-caixa{
+  background-color: #DFDEDE;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  width: 15.4em;
+}
+
+#data{
+  background-color:transparent;
+  border: 2px solid #CBCDC9 ;
+  font-weight: bold;
+  color: #818181;
+  font-size: 16px;
+  border-radius: 0.4em;
+  height: 1.7em;
+}
+
 
 
 header h3{
@@ -132,6 +142,7 @@ header h3{
       font-size: 9px;
   }
 }
+
 .header-direito {
   display: flex;
   width: 40%;
@@ -148,6 +159,7 @@ header h3{
   align-self: center;
 }
 
+/* o menu escondido */
 .overlay {
   height: 0%;
   width: 100%;
@@ -200,38 +212,26 @@ header h3{
   }
 }
 
+/* fundo da tela */
 #fundo{
   background-color:#F6F3F2;
   padding-top: 9em;
 }
 
-.faixa{
-  
-}
+/* titulos */
 .faixa-titulo{
   background-color: #CBCDC9;
-  /* border: 1px solid black; */
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight:bold;
 }
 
-
-form{
-  margin-top: 30px;
-}
-
 .subtitulo{
-  display: flex;
-  align-self: center;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 750;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:600;
 }
 
-input{
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #000;
-}
+
+
 
 /* 
 .linhas{
