@@ -95,7 +95,9 @@ header img {
 }
 
 .form .form-element input{
-  display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .form .form-element label{
@@ -106,7 +108,33 @@ header img {
 }
 
 .form .form-element label:before{
-  content: ;
+  content:" ";
+  position: absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #00acee;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.02);
+}
+
+.form .form:after{
+  content: '\2716'; /* Código Unicode para o caractere 'X' */
+  font-size: 15px; 
+  color: #7f0d0d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form:after{
+  content:"";
+  position: absolute;
+  display:none;
+
 }
 
 /* essa é uma personalização especifica da data */
