@@ -76,5 +76,5 @@ a {
 @media screen and (max-height: 700px) {
     .overlay {overflow-y: auto;}
     .overlay a {font-size: 20px}
-    .overlay .closebtn
- }          
+    .overlay .closebtn{}
+ }  
