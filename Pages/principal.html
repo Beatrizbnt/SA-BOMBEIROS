@@ -79,17 +79,17 @@
     </nav>
   </header> -->
 
-  <header class="container-fluid m-0 p-0 border border-primary">
-    <nav class="container-fluid border border-primary fixed-top">
-      <div class="row p-2 text-primary">
-        <div class="col-3 m-0">
-          <a href="/Pages/principal.html"><img class="w-auto" src="/Pages/img/logo_pequena.png" alt="Logo"
+  <!-- <header class="container-fluid m-0 p-0 border border-primary">
+    <nav class="container-fluid border border-primary fixed-top text-center">
+      <div class="row p-2 text-primary align-items-center">
+        <div class="col m-0">
+          <a href="/Pages/principal.html"><img class="" style="width: 50%;" src="/Pages/img/logo_pequena.png" alt="Logo"
               id="logo_pequena" /></a>
         </div>
-        <div class="col-5">
+        <div class="col">
           <a href="/Pages/principal.html">
             <span>
-              <h1 class="fs-3">
+              <h1>
                 BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
               </h1>
               <h3>
@@ -106,7 +106,7 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header> -->
 
   <!-- fundo da tela que separa da header e da a cor do fundo -->
   <div class="wrapper bg-light">
@@ -118,14 +118,19 @@
         </div>
       </div>
     </div>
-    <div class="container text-center w-75 d-flex flex-column">
+    <div class="container justify-content-center text-center w-75 d-flex flex-column">
       <div class="container d-flex flex-wrap justify-content-between  align-items-center p-4">
-        <div class="mb-3 mb-md-0 selecao-caixa">
-          <label class="selecao d-flex align-items-center">PACIENTE IDENTIFICADO
-            <input type="checkbox" class="ms-2">
-            <span class="check"></span>
-          </label>
+        <div class="mb-3 mb-md-0 ">
+          <div class="form-group selecao-caixa">
+            <label class="selecao d-flex align-items-center">PACIENTE IDENTIFICADO
+              <div class="form-group">
+                <input type="checkbox" class="form-control input-check ms-2">
+                <span class="check"></span>
+              </div>
+            </label>
+          </div>
         </div>
+
         <div class="form-group data-caixa mb-3 mb-md-0 d-flex align-items-center">
           <label for="data" class="me-2">DATA:</label>
           <input type="date" class="form-control w-100" id="data">
@@ -137,44 +142,63 @@
         </div>
       </div>
 
-      <div class="container w-75 d-flex p-4">
-        <div class="form d-flex align-items-center selecao-subcaixa p-4">
-          <p class="">SEXO:</p>
-          <div class="mb-3 mb-md-0 subcaixa">
-            <label class="selecao">FEMININO
-              <input type="radio" checked="checked" name="radio" class="ms-2">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="mb-3 mb-md-0 subcaixa">
-            <label class="selecao ">MASCULINO
-              <input type="radio" name="radio" class="ms-2">
-              <span class="checkmark"></span>
-            </label>
+      <div class="container p-4">
+        <div class="container align-items-center selecao-subcaixa">
+          <p>SEXO:</p>
+          <div class="row g-3">
+            <div class="col-md-6 form-group  mb-3 mb-md-0 subcaixa">
+              <label class="selecao">FEMININO
+                <div class="form-control">
+                  <input type="radio" name="radio" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample" class="ms-2">
+                  <span class="checkmark"></span>
+                </div>
+              </label>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when
+                  the user activates the relevant trigger.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group  mb-3 mb-md-0 subcaixa">
+              <label class="selecao ">MASCULINO
+                <div class="form-control">
+                  <input type="radio" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
+                    aria-controls="collapseExample" name="radio" class="ms-2">
+                  <span class="checkmark"></span>
+                </div>
+              </label>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="container w-75 d-flex align-items-start ">
-        <div class="container-fluid row flex-column d-flex align-items-start">
-        <div class="linhas" id="nome-p">
-          <Label class="label-linhas" for="nome-p">NOME DO PACIENTE: </Label>
-          <input class="input-linhas" id="nome-p" name="nome-p" type="text" placeholder="Digite o nome">
+        <form class="container-fluid row flex-column d-flex align-items-start">
+          <div class="linhas" id="nome-p">
+            <Label class="label-linhas" for="nome-p">NOME DO PACIENTE: </Label>
+            <div class="form-group">
+            <input class="input-linhas form-control" id="nome-p" name="nome-p" type="text" placeholder="Digite o nome">
+          </div>
+          </div>
+          <div class="linhas" id="RG/CPF">
+            <label class="label-linhas" for="RG/CPF">RG ou CPF DO PACIENTE:</label>
+            <div class="form-group">
+            <input class="input-linhas form-control" id="RG/CPF" name="RG/CPF" type="text" placeholder="Digite o RG ou CPF">
+          </div>
         </div>
-        <div class="linhas" id="RG/CPF">
-          <label class="label-linhas" for="RG/CPF">RG ou CPF DO PACIENTE:</label>
-          <input class="input-linhas" id="RG/CPF" name="RG/CPF" type="text" placeholder="Digite o RG ou CPF">
-        </div>
-        <div class="linhas" id="idade-p">
-          <label class="label-linhas" for="idade-p">IDADE DO PACIENTE: </label>
-          <input class="input-linhas" id="idade-p" name="idade-p" type="text" placeholder="Digite a idade">
-        </div>
-        <div class="linhas" id="telefone-p">
-          <label class="label-linhas" for="telefone-p">TELEFONE DE CONTATO: </label>
-          <input class="input-linhas" id="telefone-p" name="telefone-p" type="tel" maxlength="15" placeholder="(00) 00000-0000">
-        </div>
+          <div class="linhas" id="idade-p">
+            <label class="label-linhas" for="idade-p">IDADE DO PACIENTE: </label>
+            <input class="input-linhas" id="idade-p" name="idade-p" type="text" placeholder="Digite a idade">
+          </div>
+          <div class="linhas" id="telefone-p">
+            <label class="label-linhas" for="telefone-p">TELEFONE DE CONTATO: </label>
+            <input class="input-linhas" id="telefone-p" name="telefone-p" type="tel" maxlength="15"
+              placeholder="(00) 00000-0000">
+          </div>
+        </form>
       </div>
-</div>
     </div>
 
     <div class="container ficha" id="info-acompanhante">
@@ -184,622 +208,531 @@
         </div>
       </div>
     </div>
-    
+
     <div class="container w-75 d-flex align-items-start ">
       <div class="container-fluid row flex-column d-flex align-items-start">
-      <div class="mb-3 mb-md-0 selecao-caixa">
-        <label class="selecao d-flex align-items-center" for="a-identificado">HÁ UM ACOMPANHANTE?</label>
-        <input id="a-identificado" type="checkbox" class="ms-2">
-        <span class="check"></span>
-      </div>
+        <form class="mb-3 mb-md-0 selecao-caixa">
+          <label class="selecao" for="a-identificado">HÁ UM ACOMPANHANTE?</label>
+          <div class="form-group">
+            <input id="a-identificado" type="checkbox" class="form-control ms-2">
+            <span class="check"></span>
+          </div>
+        </form>
 
-      <div class="linhas" id="nome-">
-        <label for="nome-a">NOME DO ACOMPANHANTE: </label>
-        <input id="nome-a" name="nome-a" type="text" placeholder="Digite o nome">
-      </div>
 
-      <div class="linhas" id="telefone-a">
-        <label for="idade-a">IDADE DO ACOMPANHANTE: </label>
-        <input id="idade-a" name="idade-a" type="text" placeholder="Digite a idade">
-      </div>
+        <div class="container w-75 d-flex align-items-start ">
+          <form class="container-fluid row flex-column d-flex align-items-start">
+            <div class="linhas">
+              <label for="nome-a">NOME DO ACOMPANHANTE: </label>
+              <div class="form-group">
+                <input id="nome-a" class="form-control" name="nome-a" type="text" placeholder="Digite o nome">
+              </div>
+            </div>
+            <div class="linhas">
+              <label for="idade-a">IDADE DO ACOMPANHANTE: </label>
+              <div class="form-group">
+                <input class="form-control" id="idade-a" name="idade-a" type="text" placeholder="Digite a idade">
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
-
-    <div class="container-fluid faixa">
-      <div class="row">
-        <div class="col-12 faixa-titulo p-2 ">
-          <p class="m-0 text-center fs-5">ANMANESE DA EMERGÊNCIA MÉDICA</p>
+      <div class="container-fluid faixa">
+        <div class="row">
+          <div class="col-12 faixa-titulo p-2 ">
+            <p class="m-0 text-center fs-5">ANMANESE DA EMERGÊNCIA MÉDICA</p>
+          </div>
         </div>
       </div>
+
+      <form>
+        <div class="container w-75 justify-content-center ficha" id="#info-anmnese">
+          <div class="text-center mt-4">
+            <P>O QUE ACONTECEU?</p>
+            <p>(SINAIS E SINTOMAS)</p>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Digite  aqui</label>
+            </div>
+            <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
+            <input name="outras-vezes-sim" type="radio">SIM
+            <input name="outras-vezes-nao" type="radio">NÃO
+          </div>
+
+          <div class="linhas">
+            <label for="uso-medicacao">FAZ USO DE MEDICAÇÃO?:</label>
+            <input name="outras-vezes-sim" type="radio">SIM
+            <input name="outras-vezes-nao" type="radio">NÃO
+
+            <div class="linhas-escondidas">
+              <div>
+                <label for="q-medicacao">QUAIS?:</label>
+                <input type="text" id="q-medicacao" placeholder="Digite quais foram as medicações">
+              </div>
+              <div>
+                <label for="h-medicacao">HORÁRIO DA ULTIMA MEDICAÇÃO?:</label>
+                <input type="text" id="h-medicacao" placeholder="Digite o horário">
+              </div>
+            </div>
+          </div>
+          <div class="linhas">
+            <label for="alergico">ALÉRGICO A ALGUMA COISA?:</label>
+            <input name="alergico-sim" type="radio">SIM
+            <input name="alergico-nao" type="radio">NÃO
+            <div class="linhas-escondidas">
+              <div>
+                <label for="e-alergico">ESPECIFIQUE:</label>
+                <input type="text" id="e-alergico" placeholder="Digite uma especificação">
+              </div>
+            </div>
+          </div>
+          <div class="linhas">
+            <label for="alimento/liquido">INGERIU ALIMENTO OU LÍQUIDO >= 6 HORAS:</label>
+            <input name="alimento/liquido-sim" type="radio">SIM
+            <input name="alimento/liquido-nao" type="radio">NÃO
+            <div class="linhas-escondidas">
+              <div>
+                <label for="h-alimento/liquido">HORARIO:</label>
+                <input type="time" id="h-alimento/liquido">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="faixa-titulo">
+        <p>ANMANESE GESTACIONAL</p>
+      </div>
+
+      <form>
+        <div class="container ficha">
+          <div class="linhas" id="per-gestacao">
+            <Label for="nome-p">PERÍODO DA GESTAÇÃO: </Label>
+            <input id="nome-p" name="nome-p" type="text" placeholder="Digite o perído">
+          </div>
+          <div class="linhas">
+            <label for="pre-natal">FEZ PRÉ-NATAL?:</label>
+            <input name="pre-natal-sim" type="radio">SIM
+            <input name="pre-natal-nao" type="radio">NÃO
+          </div>
+          <div class="linhas" id="nome-medico">
+            <Label for="nome-medico">NOME DO MÉDICO:</Label>
+            <input id="nome-medico" name="nome-medico" type="text" placeholder="Digite o nome do médico">
+          </div>
+          <div class="linhas">
+            <label for="complicacoes">EXISTE POSSIBILIDADE DE COMPLICAÇÕES?:</label>
+            <input name="complicacoes-sim" type="radio">SIM
+            <input name="complicacoes-nao" type="radio">NÃO
+          </div>
+          <div class="linhas">
+            <label for="p-filho">É O PRIMEIRO FILHO?:</label>
+            <input name="p-filho-sim" type="radio">SIM
+            <input name="p-filho-nao" type="radio">NÃO
+          </div>
+          <div class="linhas" id="h-contracoes">
+            <Label for="h-contracoes">QUE HORAS INICIARAM AS CONTRAÇÕES?:</Label>
+            <input id="h-contracoes" type="time">
+          </div>
+          <div class="temp-contracoes" id="temp-contracoes">
+            <Label for="temp-contracoes">TEMPO DAS CONTRAÇÕES:</Label>
+            <input id="temp-contracoes" type="time">
+          </div>
+          <div class="int-contracoes" id="iten-contracoes">
+            <Label for="int-contracoes">INTERVALO:</Label>
+            <input id="int-contracoes" type="text">
+          </div>
+          <div class="linhas">
+            <label for="quadrl-evacuar">SENTE PRESSÃO NO QUADRIL OU VONTADE DE EVACUAR?:</label>
+            <input name="quadril-evacuar-sim" type="radio">SIM
+            <input name="quadril-evacuar-nao" type="radio">NÃO
+          </div>
+          <div class="linhas">
+            <label for="ruptura-bolsa">JÁ HOUVE RUPTURA DA BOLSA?:</label>
+            <input name="ruptura-bolsa-sim" type="radio">SIM
+            <input name="ruptura-bolsa-nao" type="radio">NÃO
+          </div>
+          <div class="linhas">
+            <label for="inspecao-visual">FOI FEITO INSPEÇÃO VISUAL?:</label>
+            <input name="inspecao-visual-sim" type="radio">SIM
+            <input name="inspecao-visual-nao" type="radio">NÃO
+          </div>
+          <div class="linhas">
+            <label for="parto">PARTO REALIZADO?:</label>
+            <input name="parto-sim" type="radio">SIM
+            <input name="parto-nao" type="radio">NÃO
+          </div>
+          <div class="linhas">
+            <label for="sexo-bebe">SEXO DO BEBÊ: </label>
+            <input id="feminino-bebe" name="sexo" type="radio">
+            <label for="feminino-bebe">FEMININO</label>
+            <input id="masculino-bebe" name="sexo" type="radio">
+            <label for="masculino-bebe">MASCULINO</label>
+          </div>
+          <div class="linhas" id="h-nascimento">
+            <Label for="h-nascimento">HORA DO NASCIMENTO:</Label>
+            <input id="h-nascimento" type="time">
+          </div>
+
+          <div class="linhas" id="nome-bebe">
+            <Label for="nome-bebe">NOME DO BEBÊ:</Label>
+            <input id="nome-bebe" type="text">
+          </div>
+      </form>
     </div>
-
-    <form>
-      <div class="container ficha" id="#info-anmnese">
-        <label for="sinais-sintomas">
-          <P>O QUE ACONTECEU?</p>
-          <p>(SINAIS E SINTOMAS)</p>
-        </label>
-        <textarea class="form-control" id="message" placeholder="Digite sua mensagem"></textarea>
-        <div class="linhas">
-          <label for="outras-vezes">ACONTECEU OUTRAS VEZES?:</label>
-          <input name="outras-vezes-sim" type="radio">SIM
-          <input name="outras-vezes-nao" type="radio">NÃO
-        </div>
-
-        <div class="linhas">
-          <label for="uso-medicacao">FAZ USO DE MEDICAÇÃO?:</label>
-          <input name="outras-vezes-sim" type="radio">SIM
-          <input name="outras-vezes-nao" type="radio">NÃO
-
-          <div class="linhas-escondidas">
-            <div>
-              <label for="q-medicacao">QUAIS?:</label>
-              <input type="text" id="q-medicacao" placeholder="Digite quais foram as medicações">
-            </div>
-            <div>
-              <label for="h-medicacao">HORÁRIO DA ULTIMA MEDICAÇÃO?:</label>
-              <input type="text" id="h-medicacao" placeholder="Digite o horário">
-            </div>
-          </div>
-        </div>
-        <div class="linhas">
-          <label for="alergico">ALÉRGICO A ALGUMA COISA?:</label>
-          <input name="alergico-sim" type="radio">SIM
-          <input name="alergico-nao" type="radio">NÃO
-          <div class="linhas-escondidas">
-            <div>
-              <label for="e-alergico">ESPECIFIQUE:</label>
-              <input type="text" id="e-alergico" placeholder="Digite uma especificação">
-            </div>
-          </div>
-        </div>
-        <div class="linhas">
-          <label for="alimento/liquido">INGERIU ALIMENTO OU LÍQUIDO >= 6 HORAS:</label>
-          <input name="alimento/liquido-sim" type="radio">SIM
-          <input name="alimento/liquido-nao" type="radio">NÃO
-          <div class="linhas-escondidas">
-            <div>
-              <label for="h-alimento/liquido">HORARIO:</label>
-              <input type="time" id="h-alimento/liquido">
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
 
     <div class="faixa-titulo">
-      <p>ANMANESE GESTACIONAL</p>
+      <p>TIPO DE COCORRÊNCIA (PRÉ- HOSPITALAR)</p>
     </div>
 
-    <form>
-      <div class="container ficha">
-        <div class="linhas" id="per-gestacao">
-          <Label for="nome-p">PERÍODO DA GESTAÇÃO: </Label>
-          <input id="nome-p" name="nome-p" type="text" placeholder="Digite o perído">
-        </div>
+    <div class="container ficha">
+      <form action="">
         <div class="linhas">
-          <label for="pre-natal">FEZ PRÉ-NATAL?:</label>
-          <input name="pre-natal-sim" type="radio">SIM
-          <input name="pre-natal-nao" type="radio">NÃO
-        </div>
-        <div class="linhas" id="nome-medico">
-          <Label for="nome-medico">NOME DO MÉDICO:</Label>
-          <input id="nome-medico" name="nome-medico" type="text" placeholder="Digite o nome do médico">
-        </div>
-        <div class="linhas">
-          <label for="complicacoes">EXISTE POSSIBILIDADE DE COMPLICAÇÕES?:</label>
-          <input name="complicacoes-sim" type="radio">SIM
-          <input name="complicacoes-nao" type="radio">NÃO
-        </div>
-        <div class="linhas">
-          <label for="p-filho">É O PRIMEIRO FILHO?:</label>
-          <input name="p-filho-sim" type="radio">SIM
-          <input name="p-filho-nao" type="radio">NÃO
-        </div>
-        <div class="linhas" id="h-contracoes">
-          <Label for="h-contracoes">QUE HORAS INICIARAM AS CONTRAÇÕES?:</Label>
-          <input id="h-contracoes" type="time">
-        </div>
-        <div class="temp-contracoes" id="temp-contracoes">
-          <Label for="temp-contracoes">TEMPO DAS CONTRAÇÕES:</Label>
-          <input id="temp-contracoes" type="time">
-        </div>
-        <div class="int-contracoes" id="iten-contracoes">
-          <Label for="int-contracoes">INTERVALO:</Label>
-          <input id="int-contracoes" type="text">
-        </div>
-        <div class="linhas">
-          <label for="quadrl-evacuar">SENTE PRESSÃO NO QUADRIL OU VONTADE DE EVACUAR?:</label>
-          <input name="quadril-evacuar-sim" type="radio">SIM
-          <input name="quadril-evacuar-nao" type="radio">NÃO
-        </div>
-        <div class="linhas">
-          <label for="ruptura-bolsa">JÁ HOUVE RUPTURA DA BOLSA?:</label>
-          <input name="ruptura-bolsa-sim" type="radio">SIM
-          <input name="ruptura-bolsa-nao" type="radio">NÃO
-        </div>
-        <div class="linhas">
-          <label for="inspecao-visual">FOI FEITO INSPEÇÃO VISUAL?:</label>
-          <input name="inspecao-visual-sim" type="radio">SIM
-          <input name="inspecao-visual-nao" type="radio">NÃO
-        </div>
-        <div class="linhas">
-          <label for="parto">PARTO REALIZADO?:</label>
-          <input name="parto-sim" type="radio">SIM
-          <input name="parto-nao" type="radio">NÃO
-        </div>
-        <div class="linhas">
-          <label for="sexo-bebe">SEXO DO BEBÊ: </label>
-          <input id="feminino-bebe" name="sexo" type="radio">
-          <label for="feminino-bebe">FEMININO</label>
-          <input id="masculino-bebe" name="sexo" type="radio">
-          <label for="masculino-bebe">MASCULINO</label>
-        </div>
-        <div class="linhas" id="h-nascimento">
-          <Label for="h-nascimento">HORA DO NASCIMENTO:</Label>
-          <input id="h-nascimento" type="time">
-        </div>
+          <div class="linha-coluna">
+            <div class="colunas">
+              <input class="form-control me-2" type="search" placeholder="PESQUISA">
+              <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                  height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg></button>
+            </div>
+            <div class="colunas">
+              <input type="checkbox" form="form-control me-2">
+              <input class="form-control me-2" type="search" placeholder="OUTRO" aria-label="Search">
 
-        <div class="linhas" id="nome-bebe">
-          <Label for="nome-bebe">NOME DO BEBÊ:</Label>
-          <input id="nome-bebe" type="text">
-        </div>
-    </form>
-  </div>
-
-  <div class="faixa-titulo">
-    <p>TIPO DE COCORRÊNCIA (PRÉ- HOSPITALAR)</p>
-  </div>
-
-  <div class="container ficha">
-    <form action="">
-      <div class="linhas">
-        <div class="linha-coluna">
-          <div class="colunas">
-            <input class="form-control me-2" type="search" placeholder="PESQUISA">
-            <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-              </svg></button>
-          </div>
-          <div class="colunas">
-            <input type="checkbox" form="form-control me-2">
-            <input class="form-control me-2" type="search" placeholder="OUTRO" aria-label="Search">
-
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label" for="flexCheckDefault">
-          AFOGAMENTO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          AGRESSÃO
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label" for="flexCheckDefault">
-          ATROPELAMENTO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          CAUSADO POR ANIMAIS
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label" for="flexCheckDefault">
-          CHOQUE ELÉTRICO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          COM MEIO DE TRANSPORTE
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label" for="flexCheckDefault">
-          DESABAMENTO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          DESMONORAMENTO/DESLIZAMENTO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckDefault">
-          DOMÉSTICO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          ESPORTIVO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckDefault">
-          EMERGÊNCIA MÉDICA
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          INTOXICAÇÃO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckDefault">
-          QUEDA
-        </label>
         <div class="form-check">
-
           <label class="form-check-label" for="flexCheckDefault">
-            BICICLETA
+            AFOGAMENTO
           </label>
         </div>
         <div class="form-check">
 
           <label class="form-check-label" for="flexCheckChecked">
-            QUEDA ALTURA 2M
+            AGRESSÃO
           </label>
         </div>
         <div class="form-check">
-
           <label class="form-check-label" for="flexCheckDefault">
-            QUEDA NIVEL MENOR QUE 2M
+            ATROPELAMENTO
           </label>
         </div>
         <div class="form-check">
 
           <label class="form-check-label" for="flexCheckChecked">
-            QUEDA MOTO
+            CAUSADO POR ANIMAIS
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="flexCheckDefault">
+            CHOQUE ELÉTRICO
+          </label>
+        </div>
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckChecked">
+            COM MEIO DE TRANSPORTE
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="flexCheckDefault">
+            DESABAMENTO
+          </label>
+        </div>
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckChecked">
+            DESMONORAMENTO/DESLIZAMENTO
           </label>
         </div>
         <div class="form-check">
 
           <label class="form-check-label" for="flexCheckDefault">
-            QUEDA PRÓPRIA ALTURA
-          </label>
-        </div>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          TENTATIVA DE SUICÍDIO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckDefault">
-          TRABALHO
-        </label>
-      </div>
-      <div class="form-check">
-
-        <label class="form-check-label" for="flexCheckChecked">
-          TRANFERÊNCIA
-        </label>
-      </div>
-  </div>
-
-  <div class="faixa-titulo">
-    <p>PROBLEMAS ENCONTRADOS SUSPEITOS</p>
-  </div>
-
-  <div class="container ficha">
-    <form action="">
-      <div class="form-check">
-
-
-        <label class="form-check-label" for="flexRadioDefault1">
-          PSIQUIÁTRICO
-        </label>
-      </div>
-      <div class="form-check">
-
-
-        <label class="form-check-label" for="flexRadioDefault1">
-          RESPIRIRATÓRIO
-        </label>
-        <div class="form-check">
-
-
-          <label class="form-check-label" for="flexRadioDefault1">
-            DPOC
+            DOMÉSTICO
           </label>
         </div>
         <div class="form-check">
 
-
-          <label class="form-check-label" for="flexRadioDefault1">
-            INALAÇÃO FUMAÇA
-          </label>
-        </div>
-      </div>
-      <div class="form-check">
-
-
-        <label class="form-check-label" for="flexRadioDefault1">
-          DIABETES
-        </label>
-        <div class="form-check">
-
-
-          <label class="form-check-label" for="flexRadioDefault1">
-            HIPERGLECIMIA
+          <label class="form-check-label" for="flexCheckChecked">
+            ESPORTIVO
           </label>
         </div>
         <div class="form-check">
 
-
-          <label class="form-check-label" for="flexRadioDefault1">
-            HIPOGLECEMIA
+          <label class="form-check-label" for="flexCheckDefault">
+            EMERGÊNCIA MÉDICA
           </label>
         </div>
-      </div>
-      <div class="form-check">
+        <div class="form-check">
 
+          <label class="form-check-label" for="flexCheckChecked">
+            INTOXICAÇÃO
+          </label>
+        </div>
+        <div class="form-check">
 
-        <label class="form-check-label" for="flexRadioDefault1">
-          OBSTÉTRICO
-        </label>
+          <label class="form-check-label" for="flexCheckDefault">
+            QUEDA
+          </label>
+          <div class="form-check">
+
+            <label class="form-check-label" for="flexCheckDefault">
+              BICICLETA
+            </label>
+          </div>
+          <div class="form-check">
+
+            <label class="form-check-label" for="flexCheckChecked">
+              QUEDA ALTURA 2M
+            </label>
+          </div>
+          <div class="form-check">
+
+            <label class="form-check-label" for="flexCheckDefault">
+              QUEDA NIVEL MENOR QUE 2M
+            </label>
+          </div>
+          <div class="form-check">
+
+            <label class="form-check-label" for="flexCheckChecked">
+              QUEDA MOTO
+            </label>
+          </div>
+          <div class="form-check">
+
+            <label class="form-check-label" for="flexCheckDefault">
+              QUEDA PRÓPRIA ALTURA
+            </label>
+          </div>
+        </div>
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckChecked">
+            TENTATIVA DE SUICÍDIO
+          </label>
+        </div>
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckDefault">
+            TRABALHO
+          </label>
+        </div>
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckChecked">
+            TRANFERÊNCIA
+          </label>
+        </div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>PROBLEMAS ENCONTRADOS SUSPEITOS</p>
+    </div>
+
+    <div class="container ficha">
+      <form action="">
         <div class="form-check">
 
 
           <label class="form-check-label" for="flexRadioDefault1">
-            PARTO EMERGENCIAL
+            PSIQUIÁTRICO
+          </label>
+        </div>
+        <div class="form-check">
+
+
+          <label class="form-check-label" for="flexRadioDefault1">
+            RESPIRIRATÓRIO
           </label>
           <div class="form-check">
 
 
             <label class="form-check-label" for="flexRadioDefault1">
-              GESTANTE
+              DPOC
             </label>
           </div>
           <div class="form-check">
 
 
             <label class="form-check-label" for="flexRadioDefault1">
-              HEMORRAGIA EXCESSIVA
+              INALAÇÃO FUMAÇA
             </label>
           </div>
         </div>
-      </div>
-      <div class="form-check">
-
-
-        <label class="form-check-label" for="flexRadioDefault1">
-          TRANSPORTES
-        </label>
         <div class="form-check">
 
 
           <label class="form-check-label" for="flexRadioDefault1">
-            AÉREO
+            DIABETES
           </label>
-        </div>
-        <div class="form-check">
+          <div class="form-check">
 
 
-          <label class="form-check-label" for="flexRadioDefault1">
-            CLÍNICO
-          </label>
-        </div>
-        <div class="form-check">
+            <label class="form-check-label" for="flexRadioDefault1">
+              HIPERGLECIMIA
+            </label>
+          </div>
+          <div class="form-check">
 
 
-          <label class="form-check-label" for="flexRadioDefault1">
-            EMERGENCIAL
-          </label>
+            <label class="form-check-label" for="flexRadioDefault1">
+              HIPOGLECEMIA
+            </label>
+          </div>
         </div>
         <div class="form-check">
 
 
           <label class="form-check-label" for="flexRadioDefault1">
-            PÓS-TRAUMA
+            OBSTÉTRICO
           </label>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              PARTO EMERGENCIAL
+            </label>
+            <div class="form-check">
+
+
+              <label class="form-check-label" for="flexRadioDefault1">
+                GESTANTE
+              </label>
+            </div>
+            <div class="form-check">
+
+
+              <label class="form-check-label" for="flexRadioDefault1">
+                HEMORRAGIA EXCESSIVA
+              </label>
+            </div>
+          </div>
         </div>
         <div class="form-check">
 
 
           <label class="form-check-label" for="flexRadioDefault1">
-            SAMU
+            TRANSPORTES
           </label>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              AÉREO
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              CLÍNICO
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              EMERGENCIAL
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              PÓS-TRAUMA
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              SAMU
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              SEM REMOÇÃO
+            </label>
+          </div>
+          <div class="form-check">
+
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              OUTRO
+            </label>
+          </div>
         </div>
-        <div class="form-check">
+      </form>
+    </div>
 
+    <div class="faixa-titulo">
+      <p>AVALIAÇÃO DO PACIENTE (GLASCOW) MAIORES DE 5 ANOS</p>
+    </div>
+    <div class="sub-titulo">
+      <p>Nível de Consciencia</p>
+    </div>
 
-          <label class="form-check-label" for="flexRadioDefault1">
-            SEM REMOÇÃO
-          </label>
+    <div class="container">
+      <div class="glasgow-esquerdo">
+        <div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="form-check">
-
-
-          <label class="form-check-label" for="flexRadioDefault1">
-            OUTRO
-          </label>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
         </div>
       </div>
-    </form>
-  </div>
+      <div class="glasgow-direito">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
 
-  <div class="faixa-titulo">
-    <p>AVALIAÇÃO DO PACIENTE (GLASCOW) MAIORES DE 5 ANOS</p>
-  </div>
-  <div class="sub-titulo">
-    <p>Nível de Consciencia</p>
-  </div>
+      <div>
 
-  <div class="container">
-    <div class="glasgow-esquerdo">
-      <div>
-        <div></div>
-        <div></div>
       </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="glasgow-direito">
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <div>
-
-    </div>
-
-  </div>
-
-  <div class="faixa-titulo">
-    <p>AVALIAÇÃO DO PACIENTE (GLASCOW) MENORES DE 5 ANOS</p>
-  </div>
-  <div class="sub-titulo">
-    <p>Nível de Consciencia</p>
-  </div>
-
-  <div class="container">
-    <div class="glasgow-esquerdo">
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="glasgow-direito">
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <div>
 
     </div>
 
-  </div>
-
-  <div class="faixa-titulo">
-    <p>SINAIS VITAIS</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="faixa-titulo">
+      <p>AVALIAÇÃO DO PACIENTE (GLASCOW) MENORES DE 5 ANOS</p>
     </div>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="sub-titulo">
+      <p>Nível de Consciencia</p>
     </div>
-  </div>
 
-  <div class="faixa-titulo">
-    <p>LOCAL DE TRAUMAS</p>
-  </div>
-
-  <div class="container">
-    <div>
-      <div class="traumas-esquerdo">
-        <div></div>
-        <div></div>
-      </div>
-      <div class="traumas-direito">
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
+    <div class="container">
+      <div class="glasgow-esquerdo">
         <div>
           <div></div>
           <div></div>
@@ -813,423 +746,526 @@
           <div></div>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="faixa-titulo">
-        <p>FERIMENTOS / FRATURAS / ENTORSES / LUXAÇÃO / CONTUSÃO</p>
+      <div class="glasgow-direito">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-      <div></div>
+
+      <div>
+
+      </div>
 
     </div>
-  </div>
 
-  <div class="faixa-titulo">
-    <p>SINAIS E SINTOMAS</p>
-  </div>
-
-  <div class="container">
-    <div></div>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="faixa-titulo">
+      <p>SINAIS VITAIS</p>
     </div>
-  </div>
-  <div class="faixa-titulo">
-    <p>VÍTIMA ERA</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div></div>
-    <div>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
       <div>
         <div></div>
         <div></div>
+        <div></div>
       </div>
-    </div>
-    <div></div>
-    <div>
       <div>
         <div></div>
         <div></div>
         <div></div>
       </div>
     </div>
-    <div></div>
-  </div>
 
-  <div class="faixa-titulo">
-    <p>DECISÃO TRANSPORTE</p>
-  </div>
-  <div class="container">
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
+    <div class="faixa-titulo">
+      <p>LOCAL DE TRAUMAS</p>
     </div>
-    <div>
 
-    </div>
-  </div>
-
-  <div class="faixa-titulo">
-    <p>HISTÓRICO DA OCORRÊNCIA</p>
-  </div>
-  <div class="faixa-subtitulo">
-    <p>PROCEDIMENTOS EFETUADOS</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div>
-      <div></div>
+    <div class="container">
       <div>
-        <div>
-          <div></div>
+        <div class="traumas-esquerdo">
           <div></div>
           <div></div>
         </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-        </div>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="traumas-direito">
           <div>
             <div></div>
             <div></div>
           </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="faixa-titulo">
+          <p>FERIMENTOS / FRATURAS / ENTORSES / LUXAÇÃO / CONTUSÃO</p>
+        </div>
+        <div></div>
+
+      </div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>SINAIS E SINTOMAS</p>
+    </div>
+
+    <div class="container">
+      <div></div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="faixa-titulo">
+      <p>VÍTIMA ERA</p>
+    </div>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>DECISÃO TRANSPORTE</p>
+    </div>
+    <div class="container">
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>HISTÓRICO DA OCORRÊNCIA</p>
+    </div>
+    <div class="faixa-subtitulo">
+      <p>PROCEDIMENTOS EFETUADOS</p>
+    </div>
+    <div class="container">
+      <div></div>
+      <div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>MATERIAIS ULTILIZADOS</p>
+    </div>
+    <div class="faixa-subtitulo">
+      <p>DESCARTÁVEL</p>
+    </div>
+    <div class="container">
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
           <div></div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="faixa-subtitulo">
+      <p>DEIXADOS NO HOSPITAL</p>
+    </div>
+    <div class="container">
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
 
-  <div class="faixa-titulo">
-    <p>MATERIAIS ULTILIZADOS</p>
-  </div>
-  <div class="faixa-subtitulo">
-    <p>DESCARTÁVEL</p>
-  </div>
-  <div class="container">
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    <div class="faixa-titulo">
+      <p>AVALIAÇÃO CINEMAÁTICA</p>
     </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  </div>
-  <div class="faixa-subtitulo">
-    <p>DEIXADOS NO HOSPITAL</p>
-  </div>
-  <div class="container">
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="faixa-titulo">
-    <p>AVALIAÇÃO CINEMAÁTICA</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="faixa-titulo">
-    <p>OBSEVAÇÕES IMPORTANTES</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div>
+    <div class="container">
       <div></div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="faixa-titulo">
+      <p>OBSEVAÇÕES IMPORTANTES</p>
+    </div>
+    <div class="container">
+      <div></div>
+      <div></div>
       <div></div>
       <div></div>
       <div>
         <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
         <div></div>
+        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="faixa-titulo">
-    <p>EQUIPE DE ATENDIMENTO</p>
-  </div>
-  <div class="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+    <div class="faixa-titulo">
+      <p>EQUIPE DE ATENDIMENTO</p>
+    </div>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 
 

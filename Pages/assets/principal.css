@@ -150,6 +150,7 @@ header img {
   border-radius: 0.4em;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
+  display: block;
 }
 
 .subcaixa{
@@ -193,7 +194,7 @@ header img {
 }
 
 
-header h3{
+/* header h3{
   font-family: 'Fjalla One', sans-serif;
   font-weight: 600;
   font-size: medium;
@@ -203,7 +204,7 @@ header h3{
   header h3 {
       font-size: 9px;
   }
-}
+} */
 
 .header-direito {
   display: flex;
