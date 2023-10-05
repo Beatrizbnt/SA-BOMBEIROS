@@ -37,10 +37,8 @@ body{
 } 
  
 .boneco-login{
-    /* display: flex; */
     width: 28%;
-    /* justify-content: center; */
-  
+   
 }
  
 .cadastro img {
@@ -50,18 +48,16 @@ body{
 } 
  
 .boneco-cadastro{
-    /* display: flex; */
     width: 29%;
-    /* justify-content: center; */
   
 }
 
 .ajuda-img {
     width: 10px;
-    margin-top: 100vh;
-    float: left;
-    margin-right: 500px;
-
+    margin-bottom: 50vh;
+    transform: scale(0.1);
+  
+    
 }
 
 h1{
@@ -73,8 +69,8 @@ h1{
 a {
     text-decoration: none;
 }
-@media screen and (max-height: 700px) {
+/* @media screen and (max-height: 700px) {
     .overlay {overflow-y: auto;}
     .overlay a {font-size: 20px}
     .overlay .closebtn{}
- }  
+ }   */
