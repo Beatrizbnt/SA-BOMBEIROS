@@ -1,26 +1,55 @@
 .caixa-cinza {
   
-    width: 380px;
-    height: 220px;
+    /* width: 350px;
+    height: 200px; */
     background:#adaaaa;
-    display: flex;
+    /* display: flex; */
     /* margin-top: vh; */
-    position: relative;
-    left: 486px;
+    /* position: relative; */
     border-radius: 6px;
 }
 
 h1 {
     margin-top: 20vh;
-    position: relative;
-    left: 500px;
+    /* position: relative; */
+    left: 510px;
+    font-size: 30px;
 }
 
 h2 {
-    position:relative;
+    /* position:relative; */
     left: 130px;
-    font-size: 25px;
+    font-size: 23px;
+    margin-top: 5vh;
 }
-.PDF  {
 
+.botao-laranja > input{
+    color:white;
+    background: orangered;
+    border: orangered;
+    border-radius: 5px;
+    /* height: 50px;
+    width: 320px; */
+    font-size: 20px;
+    /* display: flex;
+    align-items: center; */
+    /* margin-top: 18vh;   */
+    /* position: relative; */
+    left: 16px;
+    /* justify-content: center; */
+    /* padding: 10px 20px; */
+    font-weight: bold;
+}
+
+/* center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */
+
+.pdf {
+    /* width: 50px;
+    height: 50px; */
+    transform: scale(0.1);
 }
