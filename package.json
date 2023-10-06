@@ -1,0 +1,14 @@
+{
+  "name": "sa-bombeiros-6",
+  "version": "1.0.0",
+  "description": "SA para a automatização da ficha de ocorrências dos Bombeiros Voluntários de Guaramirim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
