@@ -4,11 +4,22 @@
   "description": "SA para a automatização da ficha de ocorrências dos Bombeiros Voluntários de Guaramirim",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "mysql2": "^3.6.1",
+    "node": "^20.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beatrizbnt/SA-BOMBEIROS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Beatrizbnt/SA-BOMBEIROS/issues"
+  },
+  "homepage": "https://github.com/Beatrizbnt/SA-BOMBEIROS#readme"
 }
