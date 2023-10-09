@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
-  <link rel="stylesheet" href="/Pages/assets/cadastro.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Pages/assets/cadastro.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
     <div class="Caixa-transparente">
 
-      <form action="">
+      <form action="/cadastro" method="post">
         <div class="boneco-cadastro">
           <a class="cadastro" href="#cadastro">
             <img src="/Pages/img/boneco-cadastro.png" alt="cadastro">
@@ -24,28 +24,22 @@
         </div>
         <h1>CADASTRO</h1><br>
 
-        <label for="fname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Nome completo"><br>
+        <label for="nome"></label>
+        <input type="text" name="nome" placeholder="Nome completo"><br>
 
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Cód. Identificação"><br>
+        <label for="telefone"></label>
+        <input type="text" name="telefone" placeholder="N° de telefone"><br>
 
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="N° de telefone"><br>
+        <label for="cpf"></label>
+        <input type="text" name="cpf" placeholder="cpf"><br>
 
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="cpf"><br>
-
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Crie uma senha"><br>
-
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Confirmar senha"><br>
+        <label for="senha"></label>
+        <input type="password" name="senha" placeholder="Crie uma senha"><br>
 
         <p>Já tenho cadastro!</p><br>
 
         <div class="botao">
-          <input type="submit" value="CADASTRAR">
+          <button>CADASTRAR</button>
         </div>
       </form>
 
