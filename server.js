@@ -31,7 +31,7 @@ conexao.connect((err) => {
   console.log('Conectado ao banco de dados MySQL como ID ' + conexao.threadId);
 });
 
-router.post('/Pages/cadastro', (req, res) => {
+router.post('cadastro', (req, res) => {
     const nome = req.body.nome;
     const telefone = req.body.telefone;
     const cpf = req.body.cpf;
@@ -49,8 +49,35 @@ router.post('/Pages/cadastro', (req, res) => {
     });
 });
 
+// ... Your existing code for serving static files and database connection ...
+
+// Route for handling login
+router.post('/login', (req, res) => {
+    const email = req.body.email;
+    const senha = req.body.senha;
+
+    const sql = `SELECT email, senha FROM usuario WHERE email = ? AND senha = ?`;
+
+    conexao.query(sql, [email, senha], (err, results) => {
+        if (err) {
+            res.send('Erro ao realizar o login: ' + err.message);
+        } else {
+            if (results.length > 0) {
+                // Successful login, redirect to a different page (e.g., Google)
+                res.redirect('https://www.google.com');
+            } else {
+                // Invalid email or password, redirect to login page
+                res.redirect('/login.html');
+                // Alternatively, you can send an error message to the client
+                // res.send('E-mail ou senha inválidos');
+            }
+        }
+    });
+});
+
+
 app.use('/', router);
 
-app.listen(8086, () => {
-    console.log('O servidor está rodando na porta 8081');
+app.listen(8082, () => {
+    console.log('O servidor está rodando na porta 8082');
   });
