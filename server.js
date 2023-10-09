@@ -31,7 +31,7 @@ conexao.connect((err) => {
   console.log('Conectado ao banco de dados MySQL como ID ' + conexao.threadId);
 });
 
-router.post('cadastro', (req, res) => {
+router.post('/Pages/cadastro', (req, res) => {
     const nome = req.body.nome;
     const telefone = req.body.telefone;
     const cpf = req.body.cpf;
@@ -52,13 +52,14 @@ router.post('cadastro', (req, res) => {
 // ... Your existing code for serving static files and database connection ...
 
 // Route for handling login
-router.post('/login', (req, res) => {
-    const email = req.body.email;
+router.post('/Pages/login', (req, res) => {
+    const nome = req.body.nome;
+    const cpf = req.body.cpf;
     const senha = req.body.senha;
 
-    const sql = `SELECT email, senha FROM usuario WHERE email = ? AND senha = ?`;
+    const sql = `SELECT nome_cadastro, cpf_cadastro, senha_cadastro FROM cadastro WHERE nome_cadastro = ? AND cpf_cadastro = ? AND senha_cadastro = ?`;
 
-    conexao.query(sql, [email, senha], (err, results) => {
+    conexao.query(sql, [nome, cpf, senha], (err, results) => {
         if (err) {
             res.send('Erro ao realizar o login: ' + err.message);
         } else {
@@ -67,7 +68,7 @@ router.post('/login', (req, res) => {
                 res.redirect('https://www.google.com');
             } else {
                 // Invalid email or password, redirect to login page
-                res.redirect('/login.html');
+                res.redirect('/Pages/login.html');
                 // Alternatively, you can send an error message to the client
                 // res.send('E-mail ou senha inválidos');
             }
@@ -79,5 +80,5 @@ router.post('/login', (req, res) => {
 app.use('/', router);
 
 app.listen(8082, () => {
-    console.log('O servidor está rodando na porta 8082');
+    console.log('O servidor está rodando na porta 8083');
   });

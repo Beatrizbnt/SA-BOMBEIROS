@@ -12,25 +12,19 @@
 
   <div class="fundo">
     <div class="Caixa-transparente">
-      <form action="">
+      <form action="/Pages/login" method="post">
         <div class="boneco-login">
           <a class="login" href="#login">
             <img src="/Pages/img/boneco-login.png" alt="login">
           </a>
         </div>
         <h1>LOGIN</h1><br>
-        <label for="fname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Nome completo"><br>
-
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Cód. Identificação"><br>
-
-        <label for="lname"></label>
-        <input type="text" id="lname" name="lname" placeholder="Senha"><br>
+        <input type="text" name="nome" placeholder="Nome completo"><br>
+        <input type="text"  name="cpf" placeholder="CPF"><br>
+        <input type="text"  name="senha" placeholder="Senha"><br>
         <p>Esqueci minha senha!</p><br>
         <div class="botao">
-          <!-- <a class="tela-principal" href="/Pages/principal.html"></a> LINK DO BOTÃO  -->
-          <input type="submit" value="ENTRAR">
+         <button>ENTRAR</button>
         </div>
 
       </form>
