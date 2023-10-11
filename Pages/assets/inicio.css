@@ -40,11 +40,9 @@ body{
 }
 
 .ajuda-img {
-    width: 100px;
-    /* margin-bottom: 50vh; */
-    transform: scale(0.1);
-  
-    
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 h1{
@@ -53,11 +51,6 @@ h1{
     color:white;
 }
 
-a {
+a:link, a:visited {
     text-decoration: none;
 }
-/* @media screen and (max-height: 700px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
-    .overlay .closebtn{}
- }   */
