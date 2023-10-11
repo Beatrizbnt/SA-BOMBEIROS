@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/Pages/assets/cadastro.css">
+  <script src="/Pages/scripts/cadastro.js"></script>
 </head>
 
 <body>
@@ -25,13 +26,13 @@
         <h1>CADASTRO</h1><br>
 
         <label for="nome"></label>
-        <input type="text" name="nome" placeholder="Nome completo"><br>
+        <input type="text" name="nome" placeholder="Nome completo" onkeydown="return validarNome(event)"><br>
 
         <label for="telefone"></label>
-        <input type="text" name="telefone" placeholder="N° de telefone"><br>
+        <input type="text" name="telefone" placeholder="N° de telefone" onkeydown="return mascaraTelefone(event)"><br>
 
         <label for="cpf"></label>
-        <input type="text" name="cpf" placeholder="cpf"><br>
+        <input type="text" name="cpf" placeholder="cpf" onkeydown="return mascaraCPF(event)"><br>
 
         <label for="senha"></label>
         <input type="password" name="senha" placeholder="Crie uma senha"><br>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link rel="stylesheet" href="/Pages/assets/login.css">
+  <script src="/Pages/scripts/login.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,9 @@
           </a>
         </div>
         <h1>LOGIN</h1><br>
-        <input type="text" name="nome" placeholder="Nome completo"><br>
-        <input type="text"  name="cpf" placeholder="CPF"><br>
-        <input type="text"  name="senha" placeholder="Senha"><br>
-        <p>Esqueci minha senha!</p><br>
+        <input type="text"  name="cpf" placeholder="CPF" onkeydown="return mascaraCPF(event)"><br>
+        <input type="password"  name="senha" placeholder="Senha"><br>
+        <a href="/Pages/esquecisenha.html"><p>Esqueci minha senha!</p></a><br>
         <div class="botao">
          <button>ENTRAR</button>
         </div>
