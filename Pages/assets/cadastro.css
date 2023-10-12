@@ -2,7 +2,7 @@ body{
     background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 108vh;
+    height: 100vh;
     backdrop-filter: blur(8px);
     /* height: 100vh;  */
     
@@ -55,13 +55,22 @@ form > input{
 
 }
 
-/* .cadastro img {
+ /* .cadastro img {
     width: 110%;
     height: 90%;
-}  */
+}  
  
-/* .boneco-cadastro{
+.boneco-cadastro{
     /* display: flex; */
-    /* width: 30%; */
-    /* justify-content: center; */
-  
+    /* width: 67%; */
+     /* justify-content: center; */
+
+
+
+.ajuda-img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    } 
+
+   
