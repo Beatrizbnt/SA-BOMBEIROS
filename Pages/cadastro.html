@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOAR</title>
+  <link rel="stylesheet" href="/Pages/assets/cadastro.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="d-flex align-items-center justify-content-center">
+  
+  <div class="position-fixed d-flex align-items-center justify-content-center" >
+ 
+    <div class="container m-5 align-items-center ">
+   
+    <div class="row mb-3 align-items-center justify-content-center Caixa-transparente" >
+     
+        
+      <form action="/Pages/cadastro" method="post" class="col-md-8 "> 
+        <div class="   boneco-cadastro">
+          <a class="cadastro" href="#cadastro">
+            <img src="/Pages/img/boneco-cadastro.png" alt="cadastro" class="img-fluid mx-auto d-block ">
+          </a>
+        </div>
+        <h1 class="mx-auto d-block" style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">CADASTRO</h1> 
+
+        <div class="form-group">
+          <label for="nome"></label>
+          <input type="text" name="nome" class="form-control" placeholder="Nome completo" onkeydown="return validarNome(event)">
+        </div>
+
+        <div class="form-group">
+          <label for="telefone"></label>
+          <input type="text" name="telefone" class="form-control" placeholder="N° de telefone" onkeydown="return mascaraTelefone(event)">
+        </div>
+
+        <div class="form-group">
+          <label for="cpf"></label>
+          <input type="text" name="cpf" class="form-control" placeholder="cpf" onkeydown="return mascaraCPF(event)">
+        </div>
+
+        <div class="form-group"> 
+          <label for="senha"></label>
+          <input type="password" name="senha" class="form-control" placeholder="Crie uma senha">
+        </div>
+        <a href="/Pages/login.html" class="link" style="text-align: center;">
+        <p style="color: white;">Já tenho cadastro!</p>
+       </a>
+        <div class="botao" style="text-align: center;">
+          <button type="submit" class="btn btn-primary" style=" color:white; background: green;border: green; border-radius: 5px;">CADASTRAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mt-3">
+      <a href="/Pages/ajuda.html">
+        <img src="/Pages/img/ajuda.png" alt="ajuda" id="ajuda" class="img-fluid mx-auto d-block ajuda-img" style="width: 3%;">
+      </a>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
+  <link rel="stylesheet" href="/Pages/assets/cadastro.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/Pages/assets/cadastro.css">
-  <script src="/Pages/scripts/cadastro.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
-  <div class="fundo">
-
-    <div class="Caixa-transparente">
+<body class="d-flex align-items-center justify-content-center">
+  
+  <div class="container m-5">
+    
+    <div class="row align-items-center justify-content-center Caixa-transparente">
 
       <form action="/Pages/cadastro" method="post">
         <div class="boneco-cadastro">
@@ -43,9 +119,14 @@
           <button>CADASTRAR</button>
         </div>
       </form>
-
+</div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
 </body>
 
-</html>
+</html> -->
