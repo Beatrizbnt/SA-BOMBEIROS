@@ -24,89 +24,63 @@
 </html>
 
 <body>
-  <!-- <header class="container-fluid m-0 p-0">
-    <nav class="row navbar navbar-expand-lg d-lg-block w-100 fixed-top m-0">
-        <div class="container">
-          <a class="row navbar-brand mb-0 h1 col-7" href="#">
-            <img class="col-4" src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" />
-            <span class="col-3">
-              <h1>
-                BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
-              </h1>
-              <h3>
-                NOAR (Núcleo de Operações Aéreas e Resgate).
-              </h3>
-            </span>
-          </a>
-          <div class="row">
-          <ul class="navbar-nav ml-auto col-4">
-            <li class="nav-item">
-              <a class="nav-link" href="#"> <img class="w-auto" src="/Pages/img/bonequinho.png" alt="Login"></a>
-            </li>
-            <li class="col-2 nav-item">
-              <a class="nav-link" href="#">
-                <div id="myNav" class="overlay">
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  <menu class="overlay-content">
-                    <a href="#">INFORMAÇÃO DO PACIENTE</a>
-                    <a href="#">INFORMAÇÃO ACOMPANHANTE</a>
-                    <a href="#">ANMANESE DA EMERGÊNCIA MÉDICA</a>
-                    <a href="#">ANMANESE DA EMERGÊNCIA GESTACIONAL</a>
-                    <a href="#">TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR)</a>
-                    <a href="#">PROBLEMAS ENCONTRADOS SUSPEITOS</a>
-                    <a href="#">AVALIAÇÃO DO PACIENTE (GLASGOW)</a>
-                    <a href="#">SINAIS VITAIS</a>
-                    <a href="#">LOCAL DE TRAUMAS</a>
-                    <a href="#">VÍTIMA ERA</a>
-                    <a href="#">DECISÃO TRANSPORTE</a>
-                    <a href="#">FORMA DE CONDUÇÃO</a>
-                    <a href="#">HISTÓRICO DA OCORRÊNCIA</a>
-                    <a href="#">PROCEDIMENTOS EFETUADOS</a>
-                    <a href="#">MATERIAIS ULTILIZADOS</a>
-                    <a href="#">AVALIAÇÃO CINEMAÁTICA</a>
-                    <a href="#">OBSERVAÇÕES IMPORTANTES</a>
-                    <a href="#">KM FINAL</a>
-                    <a href="#">EQUIPE DE ATENDIMENTO</a>
-                    <a href="#">RESPONSÁVEL PELO PREENCHIMENTO</a>
-                  </menu>
-                </div>
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        </div>
-    </nav>
-  </header> -->
+  <header>
+    <nav class="navbar fixed-top shadow-md p-0 navbar-expand-lg bg-body-tertiary">
+        <div class="navbar-tamanho p-0 h-100 container-fluid m-0 row d-flex align-items-center">
+            <div class="logo-sigla col-9 p-3">
+                <a class="sigla p-1 d-flex align-items-center" href="/Pages/principal.html">
+                    <img src="/Pages/img/logo_pequena.png" width="70" alt="logo">
+                    <span class="ms-3">
+                        <p class="s-bombeiros mb-0 fs-5">BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM </p>
+                        <p class="s-noar mb-0 fs-6">NOAR (Núcleo de Operações Aéreas e Resgate)</p>
+                    </span>
+                </a>
+            </div>
 
-  <!-- <header class="container-fluid m-0 p-0 border border-primary">
-    <nav class="container-fluid border border-primary fixed-top text-center">
-      <div class="row p-2 text-primary align-items-center">
-        <div class="col m-0">
-          <a href="/Pages/principal.html"><img class="" style="width: 50%;" src="/Pages/img/logo_pequena.png" alt="Logo"
-              id="logo_pequena" /></a>
+            <div class="col d-flex justify-content-between menu p-2 ms-auto ">
+                <div class="perfil d-flex align-items-center text-center justify-content-between">
+                    <a href="/Pages/perfil.html"> <img src="/Pages/img/bonequinho.png" width="70" alt="perfil"></a>
+                    <a href="/Pages/perfil.html">
+                        Acessar Conta</a>
+                </div>
+
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <menu class="overlay-content">
+                        <a href="#info-paciente">
+                            INFORMAÇÃO DO PACIENTE</a>
+                        <a href="#info-acompanhante">
+                            INFORMAÇÃO ACOMPANHANTE</a>
+                        <a href="#anmanese-medica">
+                            ANMANESE DA EMERGÊNCIA MÉDICA</a>
+                        <a href="#anmanese-gestacional">
+                            ANMANESE DA EMERGÊNCIA GESTACIONAL</a>
+                        <a href="#tipo-ocorrencia">
+                            TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR)</a>
+                        <a href="#problemas-suspeitos">PROBLEMAS ENCONTRADOS SUSPEITOS</a>
+                        <a href="#avaliacao-paciente">AVALIAÇÃO DO PACIENTE (GLASGOW)</a>
+                        <a href="#sinais-vitais">SINAIS VITAIS</a>
+                        <a href="#local-traumas">LOCAL DE TRAUMAS</a>
+                        <a href="#vitima-era">VÍTIMA ERA</a>
+                        <a href="#decisao-transporte">DECISÃO TRANSPORTE</a>
+                        <a href="#forma-conducao">FORMA DE CONDUÇÃO</a>
+                        <a href="#historico-ocorrencia">HISTÓRICO DA OCORRÊNCIA</a>
+                        <a href="#procedimentos">PROCEDIMENTOS EFETUADOS</a>
+                        <a href="#materiais">MATERIAIS ULTILIZADOS</a>
+                        <a href="#avaliacao-cinematica">AVALIAÇÃO CINEMÁTICA</a>
+                        <a href="#obs-importantes">OBSERVAÇÕES IMPORTANTES</a>
+                        <a href="#km-final">KM FINAL</a>
+                        <a href="#equipe-atendimento">EQUIPE DE ATENDIMENTO</a>
+                        <a href="#resp-preenchimento">RESPONSÁVEL PELO PREENCHIMENTO</a>
+                    </menu>
+                </div>
+                <span class="icon-menu me-4 ms-4" style="font-size: 30px; color: white; cursor:pointer"
+                    onclick="openNav()">&#9776</span>
+            </div>
         </div>
-        <div class="col">
-          <a href="/Pages/principal.html">
-            <span>
-              <h1>
-                BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
-              </h1>
-              <h3>
-                NOAR (Núcleo de Operações Aéreas e Resgate).
-              </h3>
-            </span>
-          </a>
         </div>
-        <div class="col">
-          <div class="row">
-            <div class="col">bonequinho</div>
-            <div class="col">menu</div>
-          </div>
-        </div>
-      </div>
     </nav>
-  </header> -->
+</header>
 
   <!-- fundo da tela que separa da header e da a cor do fundo -->
   <div class="wrapper bg-light">
@@ -138,7 +112,7 @@
       </div>
       <div class="row">
         <div class="col-12 subtitulo d-flex justify-content-center p-2 ">
-          <p class="m-0 text-center fs-5">INFORMAÇÕES DO PACIENTE</p>
+          <p class="m-0 text-center fs-5" id="info-paciente">INFORMAÇÕES DO PACIENTE</p>
         </div>
       </div>
 

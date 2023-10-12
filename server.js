@@ -82,6 +82,6 @@ router.post('/Pages/login', (req, res) => {
 
 app.use('/', router);
 
-app.listen(8084, () => {
-    console.log('O servidor está rodando na porta 8084');
+app.listen(8083, () => {
+    console.log('O servidor está rodando na porta 8083');
 }); 

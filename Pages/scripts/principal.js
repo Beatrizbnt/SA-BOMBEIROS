@@ -1,19 +1,34 @@
 function openNav() {
-    document.getElementById("myNav").style.height = "100%";
+  document.getElementById("myNav").style.height = "100%";
+  
+  // Adicione um evento de clique a todos os itens do menu para fechar o menu quando um item é selecionado
+  var menuItems = document.querySelectorAll(".overlay-content a");
+  menuItems.forEach(function(item) {
+      item.addEventListener("click", function() {
+          closeNav();
+      });
+  });
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+
+// Verificar o estado do menu no localStorage ao carregar a página
+window.onload = function() {
+  var menuState = localStorage.getItem("menuState");
+  // Se o menu estava aberto, mantenha-o aberto
+  if (menuState === "open") {
+      openNav();
+  } else {
+      closeNav();
   }
 
-  function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-  }
-
-  window.onscroll = function () { myFunction() };
-
-  function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-  }
+  // Adicione um evento de rolagem para fechar o menu
+  window.onscroll = function() {
+      closeNav();
+  };
+};
 
   function mascara(o, f) {
     v_obj = o
