@@ -1,3 +1,8 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 .caixa-cinza {
   
     /* width: 350px;
@@ -18,8 +23,8 @@ h1 {
 
 h2 {
     /* position:relative; */
-    left: 130px;
-    font-size: 23px;
+    /* left: 130px; */
+    /* font-size: 23px; */
     /* margin-top: 5vh; */
 }
 
