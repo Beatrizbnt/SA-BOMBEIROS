@@ -22,43 +22,65 @@
 </html>
 
 <body>
-  <header class="container-fluid m-0 p-0">
-    <!-- - navbar-expand-lg: Indica ao Bootstrap que a barra de navegação utilizará toda a tela somente em resoluções maiores que 992px.
-            Caso contrário, o menu é colapsado para um ícone de hambúrguer em telas menores.
-            - navbar-light: Esquema de cores claro (texto preto em fundo branco) para a barra de navegação.
-            - bg-light: Indica que o plano de fundo da barra de navegação será claro (branco).
-            - d-none: Indica ao Bootstrap para esconder o menu de navegação padrão em qualquer resolução de tela.
-            - d-lg-block: Indica que o menu de navegação padrão só irá aparecer em telas acima de 992px.
-            - nav-brand: Classe que define comportamento de logotipo ou nome da marca.
-            - mb-0: Indica ao Bootstrap que a margem inferior é 0 (mb é de margin-bottom).
-            - h1: Indica que o nome da marca terá comportamento de título ao invés de link.
-            - navbar-nav: Indica ao Bootstrap a criação de uma lista de elementos de menu horizontal.
-            - ml-auto: Indica que a margem esquerda é automática (ml é de margin-left). -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block w-100">
-      <div class="container">
-        <div class="row d-flex justify-content-between">
-          <a class="row navbar-brand mb-0 h1 col-7" href="#">
-            <img class="col-2" src="/Pages/img/logo_pequena.png" alt="Logo" id="logo_pequena" />
-            <span class="col-5"><h1>
-              BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM
-            </h1>
-            <h3>
-              NOAR (Núcleo de Operações Aéreas e Resgate).
-            </h3>
-          </span>
-          </a>
-          <ul class="navbar-nav ml-auto col-4">
-            <li class="nav-item">
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+  <header>
+    <nav class="navbar fixed-top shadow-md p-0 navbar-expand-lg bg-body-tertiary">
+        <div class="navbar-tamanho p-0 h-100 container-fluid m-0 row d-flex align-items-center">
+            <div class="logo-sigla col-9 p-3">
+                <a class="sigla p-1 d-flex align-items-center" href="/Pages/principal.html">
+                    <img src="/Pages/img/logo_pequena.png" width="70" alt="logo">
+                    <span class="ms-3">
+                        <p class="s-bombeiros mb-0 fs-5">BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM </p>
+                        <p class="s-noar mb-0 fs-6">NOAR (Núcleo de Operações Aéreas e Resgate)</p>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col d-flex justify-content-between menu p-2 ms-auto ">
+                <div class="perfil d-flex align-items-center text-center justify-content-between">
+                    <a href="/Pages/perfil.html"> <img src="/Pages/img/bonequinho.png" width="70" alt="perfil"></a>
+                    <a href="/Pages/perfil.html">
+                        Acessar Conta</a>
+                </div>
+
                 <div id="myNav" class="overlay">
-                  
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-              </a>
-            </li>
-          </ul>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <menu class="overlay-content">
+                        <a href="#info-paciente">
+                            INFORMAÇÃO DO PACIENTE</a>
+                        <a href="#info-acompanhante">
+                            INFORMAÇÃO ACOMPANHANTE</a>
+                        <a href="#anmanese-medica">
+                            ANMANESE DA EMERGÊNCIA MÉDICA</a>
+                        <a href="#anmanese-gestacional">
+                            ANMANESE DA EMERGÊNCIA GESTACIONAL</a>
+                        <a href="#tipo-ocorrencia">
+                            TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR)</a>
+                        <a href="#problemas-suspeitos">PROBLEMAS ENCONTRADOS SUSPEITOS</a>
+                        <a href="#avaliacao-paciente">AVALIAÇÃO DO PACIENTE (GLASGOW)</a>
+                        <a href="#sinais-vitais">SINAIS VITAIS</a>
+                        <a href="#local-traumas">LOCAL DE TRAUMAS</a>
+                        <a href="#vitima-era">VÍTIMA ERA</a>
+                        <a href="#decisao-transporte">DECISÃO TRANSPORTE</a>
+                        <a href="#forma-conducao">FORMA DE CONDUÇÃO</a>
+                        <a href="#historico-ocorrencia">HISTÓRICO DA OCORRÊNCIA</a>
+                        <a href="#procedimentos">PROCEDIMENTOS EFETUADOS</a>
+                        <a href="#materiais">MATERIAIS ULTILIZADOS</a>
+                        <a href="#avaliacao-cinematica">AVALIAÇÃO CINEMÁTICA</a>
+                        <a href="#obs-importantes">OBSERVAÇÕES IMPORTANTES</a>
+                        <a href="#km-final">KM FINAL</a>
+                        <a href="#equipe-atendimento">EQUIPE DE ATENDIMENTO</a>
+                        <a href="#resp-preenchimento">RESPONSÁVEL PELO PREENCHIMENTO</a>
+                    </menu>
+                </div>
+                <span class="icon-menu me-4 ms-4" style="font-size: 30px; color: white; cursor:pointer"
+                    onclick="openNav()">&#9776</span>
+            </div>
         </div>
-      </div>
+        </div>
     </nav>
-  </header>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
