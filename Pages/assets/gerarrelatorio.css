@@ -2,49 +2,51 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
+    backdrop-filter: blur(8px); 
 }
 .caixa-cinza {
   
     /* width: 350px;
     height: 200px; */
-    background:#adaaaa;
+    background:#bbbaba;
     /* display: flex; */
     /* margin-top: vh; */
     /* position: relative; */
     border-radius: 6px;
 }
 
-h1 {
+/* h1 { */
     /* margin-top: 20vh; */
     /* position: relative; */
-    left: 510px;
-    font-size: 30px;
-}
+    /* left: 510px; */
+    /* font-size: 30px; */
+/* }
 
-h2 {
+h2 { */
     /* position:relative; */
     /* left: 130px; */
     /* font-size: 23px; */
     /* margin-top: 5vh; */
-}
+/* } */
 
-.botao-laranja > input{
-    color:white;
+/* .botao-laranja > input{ */
+    /* color:white;
     background: orangered;
     border: orangered;
-    border-radius: 5px;
+    border-radius: 5px; */
     /* height: 50px;
     width: 320px; */
-    font-size: 20px;
+    /* font-size: 20px; */
     /* display: flex;
     align-items: center; */
     /* margin-top: 18vh;   */
     /* position: relative; */
-    left: 16px;
+    /* left: 16px; */
     /* justify-content: center; */
     /* padding: 10px 20px; */
-    font-weight: bold;
-}
+    /* font-weight: bold; */
+/* } */
 
 /* center-text {
     display: flex;
@@ -53,8 +55,14 @@ h2 {
     height: 100%;
 } */
 
-.pdf {
+/* .pdf {
     /* width: 50px;
     height: 50px; */
-    transform: scale(0.1);
-}
+    /* transform: scale(0.1); */
+
+    .ajuda-img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    } 
+
