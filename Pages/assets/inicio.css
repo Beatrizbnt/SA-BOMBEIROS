@@ -1,50 +1,76 @@
-body{
+body {
     background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    backdrop-filter: blur(8px); 
+    backdrop-filter: blur(8px);
 }
 
+
 .Caixa-transparente {
-  
-    width: auto;
-    height: 220px;
-    background: linear-gradient(to bottom, rgba(30, 25, 59, 0.781), rgba(27, 14, 141, 0.705), rgba(44, 41, 71, 0.7));
-    /* display: flex;
-    align-items: center;
-    justify-content: center;  
-   */
+    border-radius: 9px;
+    height: 380px;
+    background: linear-gradient(to bottom, rgba(27, 16, 93, 0.781), rgba(67, 64, 105, 0.705), rgba(49, 46, 79, 0.7));
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
 }
-.login img {
-    width: 110%;
-    height: 68%;
-    /* align-items: center; */
-} 
- 
-.boneco-login{
-    width: 28%;
-   
+
+.col a{
+    color:white ;
+    text-decoration: none;
+  }
+
+  .col a:hover{
+    color:white ;
+    text-decoration: none;
+  }
+
+  p{
+    font-size: 30px;
+  }
+
+  .caixa:hover{
+    background-color: rgba(33, 33, 33, 0.381);
+    border-radius: 7px;
+    transition: 0.6s;
+    transform: scale(1.05);
+  }
+
+
+.login-cadastro{
+    width: 70%;
 }
- 
-.cadastro img {
-    width: 110%;
-    height: 90%;
-    /* align-items: center; */
-} 
- 
-.boneco-cadastro{
-    width: 29%;
-  
-}
+
+@media (max-width: 914px) { 
+    .Caixa-transparente {
+        width: 80%;
+        height: 280px;
+    }
+
+    .login-cadastro{
+        width: 80%;
+    }
+
+    p{
+        font-size: 15px;
+      }
+
+      .col img{
+        width: 60px;
+      }
+ }
+
+
+
 
 .ajuda-img {
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-bottom: 15px;
 }
+
 h1{
     /* font-size:larger;
     text-align: center; */
