@@ -59,4 +59,13 @@ body {
 
 }
 
-
+h2{
+  position: absolute;
+  bottom: 400px;
+  left: 0;
+}
+.faixa-titulo {
+  background-color: #CBCDC9;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
