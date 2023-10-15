@@ -3,6 +3,7 @@ body {
   margin: 0;
 }
 
+
 /*navbar menu*/
 .navbar {
   text-decoration: none;
@@ -47,10 +48,13 @@ body {
   transform: scale(1.08);
 }
 
-
+/* envelopamento dos elementos abaixo da nav */
+.wrapper {
+  margin-top: 150px;
+}
 
 /* ajustando o estilo para uma tela menor  */
-@media (max-width: 875px) { 
+@media (max-width: 878px) { 
   .menu{
     background-color: rgba(0, 0, 0, 0.3);
     min-width: 100%;
@@ -69,8 +73,23 @@ body {
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
   }
 
+  .wrapper {
+    margin-top: 200px;
+  }
 }
 
+
+@media (max-width: 574px) { 
+  .wrapper {
+    margin-top: 210px;
+  }
+}
+
+@media (max-width: 389px) { 
+  .wrapper {
+    margin-top: 220px;
+  }
+}
 
 
 /* essa classe define a forma das caixinhas checkbox */
@@ -228,7 +247,6 @@ body {
   border-radius: 0.4em;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
-  width: 15.4em;
 }
 
 #data {
@@ -238,7 +256,7 @@ body {
   color: #818181;
   font-size: 16px;
   border-radius: 0.4em;
-  height: 1.7em;
+  height: 1.8em;
   transition: 0.5s;
 }
 
@@ -303,7 +321,7 @@ body {
   transition: 0.3s;
 }
 
-.overlay-contet a:hover,
+.overlay-content a:hover,
 .overlay-content a:focus {
   color: #f1f1f1;
   background-color: rgba(0, 0, 0, 0.3);
@@ -330,16 +348,13 @@ body {
     top: 15px;
     right: 35px;
   }
+
+  
+
 }
 
 /* fundo da tela */
-#cor-fundo {
-  background-color: #F6F3F2;
-}
 
-.wrapper {
-  margin-top: 150px;
-}
 
 /* titulos */
 .faixa-titulo {

@@ -14,21 +14,7 @@ function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 
-// Verificar o estado do menu no localStorage ao carregar a página
-window.onload = function() {
-  var menuState = localStorage.getItem("menuState");
-  // Se o menu estava aberto, mantenha-o aberto
-  if (menuState === "open") {
-      openNav();
-  } else {
-      closeNav();
-  }
 
-  // Adicione um evento de rolagem para fechar o menu
-  window.onscroll = function() {
-      closeNav();
-  };
-};
 
   function mascara(o, f) {
     v_obj = o
