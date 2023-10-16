@@ -95,7 +95,6 @@ body {
 /* essa classe define a forma das caixinhas checkbox */
 .selecao-caixa {
   background-color: #DFDEDE;
-  padding: 0.6em;
   border-radius: 0.4em;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
@@ -116,7 +115,7 @@ body {
 }
 
 .check {
-  left: 0;
+
   top: 0;
   width: 25px;
   height: 25px;
@@ -132,7 +131,6 @@ body {
 
 .selecao .check:after {
   content: '\2716';
-  /* Código Unicode para o caractere 'X' */
   font-size: 15px;
   color: #7f0d0d;
   position: absolute;
@@ -176,7 +174,6 @@ body {
 }
 
 .checkmark {
-  left: 0;
   top: 0;
   width: 25px;
   height: 25px;
