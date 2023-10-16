@@ -199,7 +199,8 @@ body {
     padding: 6px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #818181;
   }
 
    #data{
@@ -207,8 +208,68 @@ body {
     border:1px solid #818181;
    }
 
+   #data:focus{
+    background-color: rgb(194, 194, 194);
+    border: 2px solid #818181;
+    box-shadow: none;
+   }
 
+
+   .input-text input{
+    background-color: rgb(207, 207, 207);
+    width: 100%;
+   }
+
+   .input-text input:hover{
+    background-color: rgb(194, 194, 194);
+    border: 2px solid #818181;
+   }
+
+   .input-text input:focus{
+    background-color: rgb(194, 194, 194);
+    border: 2px solid #818181;
+    box-shadow: none;
+   }
+
+  .input-radio input:checked{
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    background-image: url(/Pages/img/fechar.png);
+    background-color: #f1f1f1;
+    border: 2px solid #818181;
+  }
+
+  .input-radio input:not(:checked) {
+    box-shadow: none;
+    border: none;
+    background-color: #ffffff;
+    border-radius:3px;
+    border: 2px solid #818181;
+  }
+ 
+
+  .text-area label{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  }
 
   
+  .text-area textarea{
+    background-color: rgb(207, 207, 207);
+    width: 100%;
+    border: 1px solid #818181;
+   }
+
+   .text-area textarea:hover{
+    background-color: rgb(194, 194, 194);
+    border: 2px solid #818181;
+   }
+
+   .text-area textarea:focus{
+    background-color: rgb(194, 194, 194);
+    border: 2px solid #818181;
+    box-shadow: none;
+   }
 
 

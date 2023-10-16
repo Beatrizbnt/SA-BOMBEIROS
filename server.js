@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
+const { showAlert } = require('./alerts.js');
 app.use(express.json()); // Para analisar dados JSON no corpo da solicitação
 app.use(express.urlencoded({ extended: true })); // Para analisar dados de formulário no corpo da solicitação
 
@@ -37,7 +38,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!nome || !telefone || !cpf || !senha) {
-        return res.send('<script>alert("Por favor, preencha todos os campos."); window.location.href = "/Pages/cadastro.html";</script>');
+        return showAlert('Por favor, preencha todos os campos.', '/Pages/cadastro.html');
     }
 
     const sql = `INSERT INTO cadastro(nome_cadastro, telefone_cadastro, cpf_cadastro, senha_cadastro) 
@@ -45,7 +46,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
     conexao.query(sql, (err, result) => {
         if (err) {
-            return res.send('<script>alert("Erro ao cadastrar usuário: ' + err.message + '"); window.location.href = "/Pages/cadastro.html";</script>');
+            return showAlert('Erro ao cadastrar usuário: ' + err.message + '/Pages/cadastro.html');
         } else {
             console.log('Usuário cadastrado com sucesso');
             res.redirect('/Pages/principal.html');
@@ -59,14 +60,14 @@ router.post('/Pages/login', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!cpf || !senha) {
-        return res.send('<script>alert("Por favor, preencha todos os campos."); window.location.href = "/Pages/login.html";</script>');
+        return showAlert('Por favor, preencha todos os campos.', '/Pages/login.html');
     }
 
     const sql = `SELECT cpf_cadastro, senha_cadastro FROM cadastro WHERE cpf_cadastro = ? AND senha_cadastro = ?`;
 
     conexao.query(sql, [cpf, senha], (err, results) => {
         if (err) {
-            return res.send('<script>alert("Erro ao realizar o login: ' + err.message + '"); window.location.href = "/Pages/login.html";</script>');
+            return showAlert('Erro ao realizar o login: ' + err.message, + '/Pages/login.html');
         } else {
             if (results.length > 0) {
                 // Login bem-sucedido,
@@ -74,7 +75,7 @@ router.post('/Pages/login', (req, res) => {
                 res.redirect('/Pages/principal.html');
             } else {
                 // CPF ou senha inválidos, redirecione para a página de login
-                return res.send('<script>alert("CPF ou senha inválidos."); window.location.href = "/Pages/login.html";</script>');
+                return showAlert('CPF ou senha inválidos.', '/Pages/login.html');
             }
         }
     });
@@ -82,6 +83,6 @@ router.post('/Pages/login', (req, res) => {
 
 app.use('/', router);
 
-app.listen(8083, () => {
-    console.log('O servidor está rodando na porta 8083');
+app.listen(8082, () => {
+    console.log('O servidor está rodando na porta 8082');
 }); 

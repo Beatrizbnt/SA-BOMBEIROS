@@ -75,4 +75,3 @@ function validarNome(event) {
 const nomeInput = document.getElementById('nome');
 
 nomeInput.addEventListener('input', validarNome);
-
