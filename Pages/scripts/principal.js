@@ -41,3 +41,18 @@ function closeNav() {
       mascara(this, mtel);
     }
   }
+
+
+// Adiciona um evento de mudança aos inputs de sexo
+const femininoInput = document.getElementById('feminino');
+const gestanteDiv = document.getElementById('gestanteDiv');
+
+femininoInput.addEventListener('change', function() {
+  // Se o sexo feminino for selecionado, mostra o input de gestante
+  if (femininoInput.checked) {
+    gestanteDiv.style.display = 'block';
+  } else {
+    // Se o sexo masculino for selecionado, esconde o input de gestante
+    gestanteDiv.style.display = 'none';
+  }
+});
