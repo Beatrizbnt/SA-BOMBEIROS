@@ -203,6 +203,16 @@ body {
     border: 1px solid #818181;
   }
 
+  .selecao-subcaixa{
+    background-color:#CDCDCD;
+    border-radius: 7px;
+    padding: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #818181;
+  }
+
    #data{
     background-color:rgba(0, 0, 0, 0.09);
     border: none;
@@ -215,6 +225,23 @@ body {
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
    }
 
+
+   .selecao-subcaixa .input-text input{
+    background-color: rgb(189, 189, 189);
+    width: 100%;
+    border: none;
+   }
+
+   .selecao-subcaixa .input-text input:hover{
+    background-color: rgb(177, 177, 177);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
+   }
+
+   .selecao-subcaixa .input-text input:focus{
+    background-color: rgb(177, 177, 177);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
+    border: none;
+   }
 
    .input-text input{
     background-color: rgb(207, 207, 207);
@@ -262,7 +289,7 @@ body {
 
   
   .text-area textarea{
-    background-color: rgb(207, 207, 207);
+    background-color: #DFDEDE;
     width: 100%;
     border: 1px solid #818181;
    }

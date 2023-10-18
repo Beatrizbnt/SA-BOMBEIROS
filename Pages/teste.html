@@ -133,6 +133,7 @@
                 </div>
             </div>
 
+            <div id="paciente" style="display: none;">
             <div class="container-fluid faixa">
                 <div class="row">
                     <div class="col-12 subtitulo p-4 ">
@@ -148,41 +149,40 @@
                     <div class="col">
                         <div class="row">
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteSim" value="sim">
-                                <label class="form-check-label" for="pacienteSim">
+                                <input class="form-check-input " type="radio" name="sexo"
+                                    id="sexofem">
+                                <label class="form-check-label" for="sexofem">
                                     FEMININO
                                 </label>
                             </div>
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteNao" value="nao">
-                                <label class="form-check-label" for="pacienteNao">
+                                <input class="form-check-input " type="radio" name="sexo"
+                                    id="sexomasc">
+                                <label class="form-check-label" for="sexomasc">
                                     MASCULINO
                                 </label>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <div class="CAIXA mb-3 container">
+            <div class="CAIXA mb-3 container" id="gestante"  style="display: none;">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">É GESTANTE?</label>
                     <div class="col">
                         <div class="row">
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteSim" value="sim">
-                                <label class="form-check-label" for="pacienteSim">
+                                <input class="form-check-input " type="radio" name="gestante"
+                                    id="gestsim" value="sim">
+                                <label class="form-check-label" for="gestsim">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteNao" value="nao">
-                                <label class="form-check-label" for="pacienteNao">
+                                <input class="form-check-input " type="radio" name="gestante"
+                                    id="gestnao" value="nao">
+                                <label class="form-check-label" for="gestnao">
                                     NÃO
                                 </label>
                             </div>
@@ -241,7 +241,7 @@
 
                 </div>
             </div>
-
+        </div>
             <div class="container-fluid faixa">
                 <div class="row">
                     <div class="col-12 subtitulo p-4 ">
@@ -257,16 +257,16 @@
                     <div class="col">
                         <div class="row">
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteSim" value="sim">
-                                <label class="form-check-label" for="pacienteSim">
+                                <input class="form-check-input " type="radio" name="acompanhante"
+                                    id="acompsim" value="sim">
+                                <label class="form-check-label" for="acompsim">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteNao" value="nao">
-                                <label class="form-check-label" for="pacienteNao">
+                                <input class="form-check-input " type="radio" name="acompanhante"
+                                    id="acompnao" value="nao">
+                                <label class="form-check-label" for="acompnao">
                                     NÃO
                                 </label>
                             </div>
@@ -274,7 +274,7 @@
                     </div>
                 </div>
             </div>
-
+            <div id="acompanhante" style="display: none;">
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -295,6 +295,7 @@
                     </div>
 
                 </div>
+            </div>
             </div>
         </div>
 
@@ -324,16 +325,16 @@
                     <div class="col">
                         <div class="row">
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteSim" value="sim">
-                                <label class="form-check-label" for="pacienteSim">
+                                <input class="form-check-input " type="radio" name="aconteceu"
+                                    id="aconteceusim" value="sim">
+                                <label class="form-check-label" for="aconteceusim">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                    id="pacienteNao" value="nao">
-                                <label class="form-check-label" for="pacienteNao">
+                                <input class="form-check-input " type="radio" name="aconteceu"
+                                    id="aconteceunao" value="nao">
+                                <label class="form-check-label" for="aconteceunao">
                                     NÃO
                                 </label>
                             </div>
@@ -342,6 +343,107 @@
                 </div>
             </div>
 
+            <div class="CAIXA mb-3 container">
+                <Div class="form-group row selecao-caixa d-flex align-items-center">
+
+                    <label class="col">FAZ USO DE MEDICAÇÃO?</label>
+                    <div class="col">
+                        <div class="row">
+                            <div class="form-check col input-radio">
+                                <input class="form-check-input " type="radio" name="uso_medicacao"
+                                    id="uso_medicacaosim" value="sim">
+                                <label class="form-check-label" for="uso_medicacaosim">
+                                    SIM
+                                </label>
+                            </div>
+                            <div class="form-check col input-radio">
+                                <input class="form-check-input " type="radio" name="uso_medicacao"
+                                    id="uso_medicacaonao" value="nao">
+                                <label class="form-check-label" for="uso_medicacaonao">
+                                    NÃO
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+    
+                    <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2" id="quais_medicacao" style="display: none;">
+
+                        <label class="col text-center">QUAIS?:</label>
+                        <div class="col form-group input-text justify-content-start d-flex w-100">
+                            <input type="text" class="form-control">
+                        </div>
+    
+                    </div>
+
+                    <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2 d-flex" id="horas_medicacao" style="display: none;">
+
+                        <label class="text-center">HORÁRIO DA ÚLTIMA MEDICAÇÃO?</label>
+                        <div class="form-group input-text justify-content-start d-flex w-100">
+                            <input type="datetime" class="form-control">
+                        </div>
+    
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    
+            <script>
+                // Função para mostrar/ocultar o campo de paciente
+                document.getElementById('pacienteSim').addEventListener('change', function() {
+                    var paciente = document.getElementById('paciente');
+                    paciente.style.display = this.checked ? 'block' : 'none';
+                });
+        
+                document.getElementById('pacienteNao').addEventListener('change', function() {
+                    var paciente = document.getElementById('paciente');
+                    paciente.style.display = this.checked ? 'none' : 'block';
+                });
+
+                // Função para mostrar/ocultar o campo de gestante com base na seleção de sexo
+                document.getElementById('sexofem').addEventListener('change', function() {
+                    var gestanteDiv = document.getElementById('gestante');
+                    gestanteDiv.style.display = this.checked ? 'block' : 'none';
+                });
+        
+                document.getElementById('sexomasc').addEventListener('change', function() {
+                    var gestanteDiv = document.getElementById('gestante');
+                    gestanteDiv.style.display = this.checked ? 'none' : 'block';
+                });
+
+
+                // Função para mostrar/ocultar o campo de acompanhante
+                document.getElementById('acompsim').addEventListener('change', function() {
+                    var acompanhante = document.getElementById('acompanhante');
+                    acompanhante.style.display = this.checked ? 'block' : 'none';
+                });
+        
+                document.getElementById('acompnao').addEventListener('change', function() {
+                    var acompanhante = document.getElementById('acompanhante');
+                    acompanhante.style.display = this.checked ? 'none' : 'block';
+                });
+
+                 // Função para mostrar/ocultar o campo de medicação
+                 document.getElementById('uso_medicacaosim').addEventListener('change', function() {
+                    var quais_medicacao = document.getElementById('quais_medicacao');
+                    var horas_medicacao = document.getElementById('horas_medicacao');
+                    quais_medicacao.style.display = this.checked ? 'block' : 'none';
+                    horas_medicacao.style.display = this.checked ? 'block' : 'none';
+                });
+        
+                document.getElementById('uso_medicacaonao').addEventListener('change', function() {
+                    var quais_medicacao = document.getElementById('quais_medicacao');
+                    var horas_medicacao = document.getElementById('horas_medicacao');
+                    quais_medicacao.style.display = this.checked ? 'none' : 'block';
+                    horas_medicacao.style.display = this.checked ? 'none' : 'block';
+                });
+            </script>
+    
+        
+           
 
 
         </div>
