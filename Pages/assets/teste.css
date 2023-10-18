@@ -213,6 +213,12 @@ body {
     border: 1px solid #818181;
   }
 
+  .caixa-pesquisa{
+    display: flex;
+    justify-content: center;
+    
+
+  }
    #data{
     background-color:rgba(0, 0, 0, 0.09);
     border: none;
@@ -278,6 +284,28 @@ body {
   }
  
   .input-radio input:hover{
+    cursor: pointer;
+    background-color: #DFDEDE;
+  }
+
+  .input-check input:checked{
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    background-image: url(/Pages/img/fechar.png);
+    background-color: #f1f1f1;
+    border: 2px solid #818181;
+  }
+
+  .input-check input:not(:checked) {
+    box-shadow: none;
+    border: none;
+    background-color: #ffffff;
+    border-radius:3px;
+    border: 2px solid #818181;
+  }
+ 
+  .input-check input:hover{
     cursor: pointer;
     background-color: #DFDEDE;
   }
