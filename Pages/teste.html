@@ -33,8 +33,8 @@
                             Acessar Conta</a>
                     </div>
 
-                    <!-- <div id="myNav" class="overlay">
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn">&times;</a>
                         <menu class="overlay-content">
                             <a href="#info-paciente">
                                 INFORMAÇÃO DO PACIENTE</a>
@@ -79,7 +79,7 @@
                         </menu>
                     </div>
                     <span class="icon-menu me-4 ms-4" style="font-size: 30px; color: white; cursor:pointer"
-                        onclick="openNav()">&#9776</span> -->
+                        id="clickmenu">&#9776</span>
                 </div>
             </div>
             </div>
@@ -128,7 +128,8 @@
                         <Div class=" d-flex justify-content-center align-items-center selecao-caixa">
                             <div class="container row align-items-center text-center">
                                 <div class="col d-flex form-group text-center justify-content-center">DATA:</div>
-                                <input type="date" id="data" class="col d-flex form-control justify-content-center" required>
+                                <input type="date" id="data" class="col d-flex form-control justify-content-center"
+                                    required>
                             </div>
                         </Div>
                     </div>
@@ -853,7 +854,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label" for="afogamento">
-                                               DESABAMENTO
+                                                DESABAMENTO
                                             </label>
                                         </div>
 
@@ -868,7 +869,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label" for="afogamento">
-                                               DESMORONAMENTO / DESLIZAMENTO
+                                                DESMORONAMENTO / DESLIZAMENTO
                                             </label>
                                         </div>
 
@@ -883,7 +884,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label " for="afogamento">
-                                               DOMÉSTICO
+                                                DOMÉSTICO
                                             </label>
                                         </div>
 
@@ -898,7 +899,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label " for="afogamento">
-                                               ESPORTIVO
+                                                ESPORTIVO
                                             </label>
                                         </div>
 
@@ -913,7 +914,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label " for="afogamento">
-                                               EMERGÊNCIA MÉDICA
+                                                EMERGÊNCIA MÉDICA
                                             </label>
                                         </div>
 
@@ -930,7 +931,7 @@
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" name="afogamento" value="">
                                             <label class="form-check-label " for="afogamento">
-                                               EMERGÊNCIA MÉDICA
+                                                EMERGÊNCIA MÉDICA
                                             </label>
                                         </div>
 
@@ -938,7 +939,7 @@
 
                                 </div>
                             </div>
-                            <div class="p-2  border border-primary">
+                            <div class="p-2">
                                 <Div class="form-group  selecao-caixa d-flex align-items-center">
                                     <div class="justify-content-center d-flex">
                                         <div class="form-check input-check">
@@ -957,7 +958,7 @@
 
                                         <div class="form-check input-check">
                                             <input class="form-check-input " type="checkbox" id="queda">
-                                            <label class="form-check-label" >
+                                            <label class="form-check-label">
                                                 QUEDA
                                             </label>
                                         </div>
@@ -965,58 +966,58 @@
 
                                     <div style="display: none;" id="tipo_queda">
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-            
+
                                             <div class="form-check col input-radio">
                                                 <input class="form-check-input " type="radio" name="queda">
                                                 <label class="form-check-label" for="queda" id="queda_bicicleta">
                                                     BICICLETA
                                                 </label>
-                                            </div> 
-            
+                                            </div>
+
                                         </div>
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-            
+
                                             <div class="form-check col input-radio">
-                                                <input class="form-check-input " type="radio" name="queda" id="queda_2m"
-                                                    >
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_2m">
                                                 <label class="form-check-label" for="queda">
                                                     QUEDA DE ALTURA 2M
                                                 </label>
                                             </div>
-            
+
                                         </div>
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-            
+
                                             <div class="form-check col input-radio">
-                                                <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
-                                                    >
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
                                                 <label class="form-check-label" for="queda">
                                                     QUEDA NIVEL MENOR QUE 2M
                                                 </label>
                                             </div>
-            
+
                                         </div>
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-            
+
                                             <div class="form-check col input-radio">
-                                                <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
-                                                    >
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
                                                 <label class="form-check-label" for="queda">
                                                     QUEDA MOTO
                                                 </label>
                                             </div>
-            
+
                                         </div>
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-            
+
                                             <div class="form-check col input-radio">
-                                                <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
-                                                    >
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
                                                 <label class="form-check-label" for="queda">
                                                     QUEDA PRÓPRIA ALTURA
                                                 </label>
                                             </div>
-            
+
                                         </div>
                                     </div>
 
@@ -1072,8 +1073,395 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
 
+            <div class="container-fluid faixa">
+                <div class="row">
+                    <div class="col-12 faixa-titulo p-2 ">
+                        <p class="m-0 text-center fs-5">PROBLEMAS ENCONTRADOS SUSPEITOS</p>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="container tamanho-container w-75 p-4">
+                <div class="CAIXA mb-3 container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="psiquiátrico">
+                                            <label class="form-check-label" for="psiquiatrico">
+                                                PSIQUIÁTRICO
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" id="queda">
+                                            <label class="form-check-label">
+                                                QUEDA
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: none;" id="tipo_queda">
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda">
+                                                <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                                    BICICLETA
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA DE ALTURA 2M
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA NIVEL MENOR QUE 2M
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA MOTO
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA PRÓPRIA ALTURA
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                ATROPELAMENTO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                CAUSADO POR ANIMAIS
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                CHOQUE ELÉTRICO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                COM MEIO DE TRANSPORTE
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                DESABAMENTO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                DESMORONAMENTO / DESLIZAMENTO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label " for="afogamento">
+                                                DOMÉSTICO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label " for="afogamento">
+                                                ESPORTIVO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label " for="afogamento">
+                                                EMERGÊNCIA MÉDICA
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIM DA PRIMEIRA COLUNA -->
+
+                        <div class="col">
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label " for="afogamento">
+                                                EMERGÊNCIA MÉDICA
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                INTOXICAÇÃO
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" id="queda">
+                                            <label class="form-check-label">
+                                                QUEDA
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: none;" id="tipo_queda">
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda">
+                                                <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                                    BICICLETA
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA DE ALTURA 2M
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA NIVEL MENOR QUE 2M
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA MOTO
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+
+                                            <div class="form-check col input-radio">
+                                                <input class="form-check-input " type="radio" name="queda"
+                                                    id="queda_menor_2m">
+                                                <label class="form-check-label" for="queda">
+                                                    QUEDA PRÓPRIA ALTURA
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="p-2">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                TENTATIVA DE SUICÍDIO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                TRABALHO
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="p-2 ">
+                                <Div class="form-group  selecao-caixa d-flex align-items-center">
+                                    <div class="justify-content-center d-flex">
+
+                                        <div class="form-check input-check">
+                                            <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                            <label class="form-check-label" for="afogamento">
+                                                TRANFERÊNCIA
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -1166,7 +1554,7 @@
                 tipo_queda.style.display = this.checked ? 'block' : 'none';
             });
 
-    
+
         </script>
 
 
@@ -1179,13 +1567,7 @@
 
 
 
-        <div class="container-fluid faixa">
-            <div class="row">
-                <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">PROBLEMAS ENCONTRADOS SUSPEITOS</p>
-                </div>
-            </div>
-        </div>
+
 
         <div class="container-fluid faixa">
             <div class="row">
@@ -1293,38 +1675,7 @@
 
 
     </div>
-    </div>
-    </div>
-
-    <div class="container mt-5">
-        <form>
-            <div class="form-group">
-                <label for="sexo">Selecione o sexo:</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sexo" id="feminino" value="feminino">
-                    <label class="form-check-label" for="feminino">Feminino</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sexo" id="masculino" value="masculino">
-                    <label class="form-check-label" for="masculino">Masculino</label>
-                </div>
-            </div>
-
-            <div class="form-group" id="gestanteDiv" style="display: none;">
-                <label for="gestante">Você está gestante?</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gestante" id="sim" value="sim">
-                    <label class="form-check-label" for="sim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gestante" id="nao" value="nao">
-                    <label class="form-check-label" for="nao">Não</label>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-    </div>
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
