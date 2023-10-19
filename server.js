@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
-const { showAlert } = require('./alerts.js');
+
 app.use(express.json()); // Para analisar dados JSON no corpo da solicitação
 app.use(express.urlencoded({ extended: true })); // Para analisar dados de formulário no corpo da solicitação
 
@@ -38,15 +38,15 @@ router.post('/Pages/cadastro', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!nome || !telefone || !cpf || !senha) {
-        return showAlert('Por favor, preencha todos os campos.', '/Pages/cadastro.html');
+        
     }
 
-    const sql = `INSERT INTO cadastro(nome_cadastro, telefone_cadastro, cpf_cadastro, senha_cadastro) 
+    const sql = `INSERT INTO usuario(nome_usuario, telefone_usuario, cpf_usuario, senha_usuario) 
                  VALUES ('${nome}', '${telefone}', '${cpf}', '${senha}')`;
 
     conexao.query(sql, (err, result) => {
         if (err) {
-            return showAlert('Erro ao cadastrar usuário: ' + err.message + '/Pages/cadastro.html');
+            
         } else {
             console.log('Usuário cadastrado com sucesso');
             res.redirect('/Pages/principal.html');
@@ -60,14 +60,14 @@ router.post('/Pages/login', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!cpf || !senha) {
-        return showAlert('Por favor, preencha todos os campos.', '/Pages/login.html');
+       
     }
 
     const sql = `SELECT cpf_cadastro, senha_cadastro FROM cadastro WHERE cpf_cadastro = ? AND senha_cadastro = ?`;
 
     conexao.query(sql, [cpf, senha], (err, results) => {
         if (err) {
-            return showAlert('Erro ao realizar o login: ' + err.message, + '/Pages/login.html');
+            
         } else {
             if (results.length > 0) {
                 // Login bem-sucedido,
@@ -75,14 +75,64 @@ router.post('/Pages/login', (req, res) => {
                 res.redirect('/Pages/principal.html');
             } else {
                 // CPF ou senha inválidos, redirecione para a página de login
-                return showAlert('CPF ou senha inválidos.', '/Pages/login.html');
+                
             }
         }
     });
 });
 
+
+router.post('/Pages/teste', (req, res) => {
+    const pacienteIdentificado = req.body.pacienteIdentificado;
+    const nome_paciente = req.body.nome_paciente;
+
+   
+
+
+    const sql = `INSERT INTO informacao_paciente(identificacao_paciente, nome_paciente) 
+                 VALUES ('${pacienteIdentificado}','${nome_paciente}')`;
+
+    conexao.query(sql, (err, result) => {
+        if (err) {
+            console.log('Erro no envio dos dados: ' + err.message);
+        }else{
+            console.log('Dados enviados com sucesso');
+            res.redirect('/Pages/principal.html');
+        }
+    });
+
+    if (!nome_paciente) {
+        console.log('O nome do paciente não foi fornecido ou é inválido.');
+        // Lógica adicional, se necessário
+    } else {
+        const sql = `INSERT INTO informacao_paciente(nome_paciente) VALUES (?)`;
+    
+        conexao.query(sql, [nome_paciente], (err, result) => {
+            if (err) {
+                console.log('Erro no envio dos dados: ' + err.message);
+            } else {
+                
+            }
+        });
+
+  
+    }
+
+
+    conexao.query(sql, [pacienteIdentificado], (err, result) => {
+        if (err) {
+            console.log('Erro ao inserir no banco de dados: ' + err.message);
+            // Trate o erro adequadamente
+        } else {
+            console.log('Dados inseridos com sucesso');
+            // Redirecione ou envie uma resposta ao cliente, se necessário
+        }
+    });
+});
+
+
 app.use('/', router);
 
-app.listen(8082, () => {
-    console.log('O servidor está rodando na porta 8082');
+app.listen(8083, () => {
+    console.log('O servidor está rodando na porta 8083');
 }); 
