@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TESTE</title>
-    <script src="/Pages/scripts/principal.js"></script>
-    <link rel="stylesheet" href="/Pages/assets/teste.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+<!-- Define o conjunto de caracteres da página como UTF-8 -->
+<meta charset="UTF-8">
+
+<!-- Configura a visualização em dispositivos móveis -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Define o título da página exibido na guia do navegador -->
+<title>Bombeiros Voluntários de Guaramirim</title>
+
+<!-- JavaScript externo -->
+<script src="/Pages/scripts/principal.js"></script>
+
+<!-- biblioteca jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- CSS externo  -->
+<link rel="stylesheet" href="/Pages/assets/teste.css">
+
+<!-- arquivo Bootstrap CSS externo de uma CDN (Content Delivery Network) com integridade e configuração de origem segura -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 <body>
-
+    <!-- aqui começa a header -->
     <header>
+        <!-- navbar -->
         <nav class="navbar fixed-top shadow-md p-0 navbar-expand-lg bg-body-tertiary">
             <div class="navbar-tamanho p-0 h-100 container-fluid m-0 row d-flex align-items-center">
                 <div class="logo-sigla col-9 p-3">
                     <a class="sigla p-1 d-flex align-items-center" href="/Pages/principal.html">
+                        <!-- imagem logo -->
                         <img src="/Pages/img/logo_pequena.png" width="70" alt="logo">
+                        <!-- titulo e sigla -->
                         <span class="ms-3">
                             <p class="s-bombeiros mb-0 fs-5">BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIRIM </p>
                             <p class="s-noar mb-0 fs-6">NOAR (Núcleo de Operações Aéreas e Resgate)</p>
                         </span>
                     </a>
                 </div>
-
+                <!-- lado direito da navbar -->
                 <div class="col d-flex justify-content-between menu p-2 ms-auto ">
+                    <!-- link para acessar o perfil da conta -->
                     <div class="perfil d-flex align-items-center text-center justify-content-between">
                         <a href="/Pages/perfil.html"> <img src="/Pages/img/bonequinho.png" width="70" alt="perfil"></a>
                         <a href="/Pages/perfil.html">
                             Acessar Conta</a>
                     </div>
-
+                    <!-- div escondida do menu -->
                     <div id="myNav" class="overlay">
                         <a href="javascript:void(0)" class="closebtn">&times;</a>
+                        <!-- menu com todos os topicos do formulario para ajudar a localizar os itens da página -->
                         <menu class="overlay-content">
                             <a href="#info-paciente">
                                 INFORMAÇÃO DO PACIENTE</a>
@@ -78,15 +95,16 @@
                                 RESPONSÁVEL PELO PREENCHIMENTO</a>
                         </menu>
                     </div>
+                    <!-- icone do menu -->
                     <span class="icon-menu me-4 ms-4" style="font-size: 30px; color: white; cursor:pointer"
                         id="clickmenu">&#9776</span>
                 </div>
             </div>
-            </div>
         </nav>
     </header>
-
+    <!-- envelopamento dos elementos da página -->
     <div class="wrapper bg-light">
+        <!-- inicio do forms -->
         <form action="/Pages/teste" method="post">
             <!-- Título de cada parte da ficha ele é padrao em todos os outros, aqui também inicia a ficha -->
             <div class="container-fluid faixa">
@@ -96,17 +114,19 @@
                     </div>
                 </div>
             </div>
-
+            <!-- aqui começa o primeiro tópico da ficha -->
             <div class="container tamanho-container w-75 p-4">
+                <!-- definine os tamanhos da caixa de selacao -->
                 <div class="CAIXA mb-3 container">
+                    <!-- aqui é uma caixa de selecao. Ela é padrao para os diferente campos de input -->
                     <Div class="form-group row selecao-caixa d-flex align-items-center">
-
+                        <!-- elementos da caixa de selecao. Essa é a unica parte que muda porcausa dos diferentes inputs -->
                         <label class="col">PACIENTE IDENTIFICADO</label>
                         <div class="col">
                             <div class="row">
                                 <div class="form-check col input-radio">
                                     <input class="form-check-input " type="radio" name="pacienteIdentificado"
-                                        id="pacienteSim" value="sim" >
+                                        id="pacienteSim" value="sim">
                                     <label class="form-check-label">
                                         SIM
                                     </label>
@@ -123,17 +143,21 @@
 
                     </div>
                 </div>
+
                 <div class="CAIXA mb-3 container">
                     <div class="row d-flex align-items-center justify-content-center">
+                        <!-- aqui é uma caixa de selecao  -->
                         <Div class=" d-flex justify-content-center align-items-center selecao-caixa">
                             <div class="container row align-items-center text-center">
                                 <div class="col d-flex form-group text-center justify-content-center">DATA:</div>
-                                <input type="date" id="data" class="col d-flex form-control justify-content-center" name="data">
+                                <input type="date" id="data" class="col d-flex form-control justify-content-center"
+                                    name="data">
                             </div>
                         </Div>
                     </div>
                 </div>
-
+                <!--   esse é um tópico escondido. Ele só aparece quando o usuário seleciona um campo especifico que precisara de mais detalhes. Por exemplo, 
+                esse campo possui as informações dos pacientes,ele só ira aparecer quando o usuario selecionar sim para paciente identificado. -->
                 <div id="paciente" style="display: none;">
                     <div class="container-fluid faixa">
                         <div class="row">
@@ -144,19 +168,23 @@
                     </div>
 
                     <div class="CAIXA mb-3 container">
+                        <!-- mais uma caixa de selecao, que influencia no aparecimento de outra caixa: gestante. 
+                            Se o usuário selecionar feminino para sexo, aparecera o campo gestante sim ou não. -->
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                             <label class="col text-center">SEXO:</label>
                             <div class="col">
                                 <div class="row">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="sexo" id="sexofem">
+                                        <input class="form-check-input " type="radio" name="sexo" id="sexofem"
+                                            value="feminino">
                                         <label class="form-check-label" for="sexofem">
                                             FEMININO
                                         </label>
                                     </div>
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="sexo" id="sexomasc">
+                                        <input class="form-check-input " type="radio" name="sexo" id="sexomasc"
+                                            value="masculino">
                                         <label class="form-check-label" for="sexomasc">
                                             MASCULINO
                                         </label>
@@ -165,6 +193,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- caixa de selecao escondida de gestante. -->
                     <div class="CAIXA mb-3 container" id="gestante" style="display: none;">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -187,9 +216,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                    <!-- mais uma caixa de selecao. -->
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -200,42 +229,35 @@
 
                         </div>
                     </div>
+                    <!-- mais uma caixa de selecao. -->
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                             <label class="col text-center">RG/CPF DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row ">
+                                <input type="text" class="form-control row" name="rg/cpf_paciente">
                             </div>
 
                         </div>
                     </div>
-                    <div class="CAIXA mb-3 container">
-                        <Div class="form-group row selecao-caixa d-flex align-items-center">
-
-                            <label class="col text-center">NOME DO PACIENTE:</label>
-                            <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row ">
-                            </div>
-
-                        </div>
-                    </div>
+                    <!-- mais uma caixa de selecao. -->
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                             <label class="col text-center">IDADE DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row ">
+                                <input type="text" class="form-control row" name="idade_paciente">
                             </div>
 
                         </div>
                     </div>
+                    <!-- mais uma caixa de selecao. -->
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                             <label class="col text-center">TELEFONE DE CONTATO (DDD):</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100 ">
-                                <input type="text" class="form-control row ">
+                                <input type="text" class="form-control row" name="telefone_paciente">
                             </div>
                         </div>
                     </div>
@@ -243,7 +265,7 @@
                 <button>enviar</button>
         </form>
 
-
+        <!-- Título -->
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 subtitulo p-4 ">
@@ -251,7 +273,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- mais uma caixa de selecao. -->
         <div class="CAIXA mb-3 container">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -274,31 +296,32 @@
                 </div>
             </div>
         </div>
+        <!-- mais uma caixa de selecao escondida para informações do acompanhante. -->
         <div id="acompanhante" style="display: none;">
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">NOME DO ACOMPANHANTE:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row ">
+                        <input type="text" class="form-control row" name="nome_acompanhante">
                     </div>
 
                 </div>
             </div>
-
+            <!-- mais uma caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">IDADE DO ACOMPANHANTE:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row ">
+                        <input type="text" class="form-control row" name="idade_acompanhante">
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- Título -->
     <div class="container-fluid faixa">
         <div class="row">
             <div class="col-12 faixa-titulo p-2 ">
@@ -306,7 +329,7 @@
             </div>
         </div>
     </div>
-
+    <!-- caixa de selecao. -->
     <div class="container tamanho-container w-75 p-4">
 
         <div class="CAIXA mb-3 container">
@@ -314,11 +337,11 @@
                 <label class="col text-center p-2">O QUE ACONTECEU?<br>(SINAIS E SINTOMAS)</label>
                 <div class="form-floating ">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
+                        style="height: 100px" name="sinais_sintomas"></textarea>
                 </div>
             </div>
         </div>
-
+        <!-- caixa de selecao. -->
         <div class="CAIXA mb-3 container">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -343,7 +366,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- caixa de selecao. -->
         <div class="CAIXA mb-3 container">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -366,13 +389,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- caixa de selecao escondida. -->
                 <div style="display: none;" id="medicacao">
                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                         <label class="col text-center">QUAIS?:</label>
                         <div class="col form-group input-text justify-content-start d-flex w-100">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="quais_medicacao">
                         </div>
 
                     </div>
@@ -381,14 +404,14 @@
                         <div class="row">
                             <label class="text-center col">HORÁRIO DA ÚLTIMA MEDICAÇÃO?</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="time" class="form-control">
+                                <input type="time" class="form-control" name="horas_medicacao">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- caixa de selecao. -->
         <div class="CAIXA mb-3 container">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -409,20 +432,20 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- caixa de selecao escondida. -->
                 <div style="display: none;" id="especi_alergico">
                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                         <label class="col text-center">SE SIM, ESPECIFIQUE:</label>
                         <div class="col form-group input-text justify-content-start d-flex w-100">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="especi_alergico">
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- caixa de selecao. -->
         <div class="CAIXA mb-3 container">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -445,13 +468,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- caixa de selecao escondida. -->
                 <div style="display: none;" id="horas_aliment_liquid">
                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                         <label class="col text-center">SE SIM, ESPECIFIQUE:</label>
                         <div class="col form-group input-text justify-content-start d-flex w-100">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="especi_aliment_liquid">
                         </div>
 
                     </div>
@@ -461,7 +484,7 @@
 
 
     </div>
-
+    <!-- títutlo. -->
     <div id="gestacional" style="display: none;">
         <div class="container-fluid faixa">
             <div class="row">
@@ -470,7 +493,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- caixa de selecao. -->
         <div class="container tamanho-container w-75 p-4">
 
             <div class="CAIXA mb-3 container">
@@ -478,12 +501,12 @@
 
                     <label class="col text-center">PERÍODO DA GESTAÇÃO:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row ">
+                        <input type="text" class="form-control row" name="periodo_gestacao">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -506,18 +529,18 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">NOME DO MÉDICO:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row ">
+                        <input type="text" class="form-control row" name="nome_medico">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -540,7 +563,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -563,40 +586,40 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">QUE HORAS INICIARAM AS CONTRAÇÕES?:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="time" class="form-control row ">
+                        <input type="time" class="form-control row" name="horas_contracoes">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">TEMPO DAS CONTRAÇÕES:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="time" class="form-control row ">
+                        <input type="time" class="form-control row" name="tempo_contracoes">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">INTERVALO:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="time" class="form-control row ">
+                        <input type="time" class="form-control row" name="intervalo_contracoes">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -619,7 +642,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -642,7 +665,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -665,7 +688,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -688,7 +711,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
@@ -696,13 +719,13 @@
                     <div class="col">
                         <div class="row">
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="sexo_bebe">
+                                <input class="form-check-input " type="radio" name="sexo_bebe" value="feminino">
                                 <label class="form-check-label" for="sexo_bebe_fem">
                                     FEMININO
                                 </label>
                             </div>
                             <div class="form-check col input-radio">
-                                <input class="form-check-input " type="radio" name="sexo_bebe">
+                                <input class="form-check-input " type="radio" name="sexo_bebe" value="masculino">
                                 <label class="form-check-label" for="sexo_bebe_masc">
                                     MASCULINO
                                 </label>
@@ -711,24 +734,24 @@
                     </div>
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">HORA DO NASCIMENTO:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="time" class="form-control row ">
+                        <input type="time" class="form-control row" name="hora_nascimento">
                     </div>
 
                 </div>
             </div>
-
+            <!-- caixa de selecao. -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa d-flex align-items-center">
 
                     <label class="col text-center">NOME DO BEBÊ:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row ">
+                        <input type="text" class="form-control row" name="nome_bebe">
                     </div>
 
                 </div>
@@ -736,7 +759,7 @@
 
         </div>
     </div>
-
+    <!-- título. -->
     <div class="container-fluid faixa">
         <div class="row">
             <div class="col-12 faixa-titulo p-2 ">
@@ -744,7 +767,7 @@
             </div>
         </div>
     </div>
-
+    <!-- caixa de selecao. -->
     <div class="container tamanho-container w-75 p-4">
         <div class="CAIXA mb-3 container">
             <div class="row">
@@ -753,7 +776,8 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
+                                    <input class="form-check-input " type="checkbox" name="afogamento"
+                                        value="afogamento">
                                     <label class="form-check-label" for="afogamento">
                                         AFOGAMENTO
                                     </label>
@@ -761,14 +785,14 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- caixa de selecao. -->
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="agressao" value="agressao">
+                                    <label class="form-check-label" for="agressao">
                                         AGRESSÃO
                                     </label>
                                 </div>
@@ -777,14 +801,15 @@
 
                         </div>
                     </div>
-
+                    <!-- caixa de selecao. -->
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="atropelamento"
+                                        value="atropelamento">
+                                    <label class="form-check-label" for="atropelamento">
                                         ATROPELAMENTO
                                     </label>
                                 </div>
@@ -793,14 +818,15 @@
 
                         </div>
                     </div>
-
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="causa_animal"
+                                        value="causado por animais">
+                                    <label class="form-check-label" for="causa_animal">
                                         CAUSADO POR ANIMAIS
                                     </label>
                                 </div>
@@ -809,13 +835,15 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="choque"
+                                        value="choque eletrico">
+                                    <label class="form-check-label" for="choque">
                                         CHOQUE ELÉTRICO
                                     </label>
                                 </div>
@@ -824,13 +852,15 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="meio_transporte"
+                                        value="com meio de transporte">
+                                    <label class="form-check-label" for="meio_transporte">
                                         COM MEIO DE TRANSPORTE
                                     </label>
                                 </div>
@@ -839,13 +869,15 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="desabamento"
+                                        value="desabamento">
+                                    <label class="form-check-label" for="dasabamento">
                                         DESABAMENTO
                                     </label>
                                 </div>
@@ -854,13 +886,15 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="desmoronamento_deslizamento"
+                                        value="desmoronamento/deslizamento">
+                                    <label class="form-check-label" for="desmoronamento_deslizamento">
                                         DESMORONAMENTO / DESLIZAMENTO
                                     </label>
                                 </div>
@@ -869,13 +903,14 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label " for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="domestico" value="domestico">
+                                    <label class="form-check-label " for="domestico">
                                         DOMÉSTICO
                                     </label>
                                 </div>
@@ -884,13 +919,14 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2 ">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label " for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="esportivo" value="esportivo">
+                                    <label class="form-check-label " for="esportivo">
                                         ESPORTIVO
                                     </label>
                                 </div>
@@ -899,30 +935,20 @@
 
                         </div>
                     </div>
-                    <div class="p-2 ">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
-                            <div class="justify-content-center d-flex">
 
-                                <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label " for="afogamento">
-                                        EMERGÊNCIA MÉDICA
-                                    </label>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
+
                 <div class="col">
+                    <!-- divisão dos elementos em duas colunas para telas maiores e coluna unica para telas menores -->
                     <div class="p-2 ">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label " for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="emergencia_medica"
+                                        value="emergencia medica">
+                                    <label class="form-check-label " for="emergencia_medica">
                                         EMERGÊNCIA MÉDICA
                                     </label>
                                 </div>
@@ -931,76 +957,88 @@
 
                         </div>
                     </div>
+                    <!-- caixa de selecao. -->
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="intoxicacao"
+                                        value="intoxicacao">
+                                    <label class="form-check-label" for="intoxicacao">
                                         INTOXICAÇÃO
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <!-- caixa de selecao. -->
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" id="queda">
+                                    <input class="form-check-input " type="checkbox" id="queda" name="queda">
                                     <label class="form-check-label">
                                         QUEDA
                                     </label>
                                 </div>
                             </div>
-
+                            <!-- caixa de selecao escondida. -->
                             <div style="display: none;" id="tipo_queda">
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda">
+                                        <input class="form-check-input " type="radio" name="queda"
+                                            value="queda bicicleta">
                                         <label class="form-check-label" for="queda" id="queda_bicicleta">
                                             BICICLETA
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
+                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m"
+                                            value="que de altura 2m">
                                         <label class="form-check-label" for="queda">
                                             QUEDA DE ALTURA 2M
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m">
+                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
+                                            value="queda nivel menor que 2m">
                                         <label class="form-check-label" for="queda">
                                             QUEDA NIVEL MENOR QUE 2M
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m">
+                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
+                                            value="queda moto">
                                         <label class="form-check-label" for="queda">
                                             QUEDA MOTO
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m">
+                                        <input class="form-check-input " type="radio" name="queda" id="queda_menor_2m"
+                                            value="queda propria altura">
                                         <label class="form-check-label" for="queda">
                                             QUEDA PRÓPRIA ALTURA
                                         </label>
@@ -1013,12 +1051,14 @@
                     </div>
 
                     <div class="p-2">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="tentativa_suicidio"
+                                        value="tentativa de suicidio">
+                                    <label class="form-check-label" for="tentativa_suicidio">
                                         TENTATIVA DE SUICÍDIO
                                     </label>
                                 </div>
@@ -1029,12 +1069,13 @@
                     </div>
 
                     <div class="p-2 ">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="trabalho" value="trabalho">
+                                    <label class="form-check-label" for="trabalho">
                                         TRABALHO
                                     </label>
                                 </div>
@@ -1044,12 +1085,14 @@
                         </div>
                     </div>
                     <div class="p-2 ">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="afogamento" value="">
-                                    <label class="form-check-label" for="afogamento">
+                                    <input class="form-check-input " type="checkbox" name="transferencia"
+                                        value="transferencia">
+                                    <label class="form-check-label" for="transferencia">
                                         TRANFERÊNCIA
                                     </label>
                                 </div>
@@ -1063,7 +1106,7 @@
             </div>
         </div>
     </div>
-
+    <!-- título. -->
     <div class="container-fluid faixa">
         <div class="row">
             <div class="col-12 faixa-titulo p-2 ">
@@ -1071,16 +1114,27 @@
             </div>
         </div>
     </div>
-
+    <!-- caixa de selecao. -->
     <div class="container tamanho-container w-75 p-4">
+    
+
         <div class="CAIXA mb-3 container">
             <div class="row">
                 <div class="col">
+
+                    <div class="p-2">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                            <input type="search" class="form-control" placeholder="Search..." id="searchInput">
+                        
+                        </div>
+                    </div>
+
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="psiquiátrico">
+                                    <input class="form-check-input " type="checkbox" name="psiquiátrico"
+                                        value="psiquiatrico">
                                     <label class="form-check-label" for="psiquiatrico">
                                         PSIQUIÁTRICO
                                     </label>
@@ -1088,35 +1142,40 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- caixa de selecao. -->
                     <div class="p-2">
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" id="queda">
+                                    <input class="form-check-input " type="checkbox" id="respiratorio"
+                                        name="respiratorio">
                                     <label class="form-check-label">
                                         RESPIRATÓRIO
                                     </label>
                                 </div>
                             </div>
-
-                            <div style="display: none;" id="tipo_respiratório">
+                            <!-- caixa de selecao escondida. -->
+                            <div style="display: none;" id="tipo_respiratorio">
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda">
-                                        <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                        <input class="form-check-input " type="radio" name="respiratorio"
+                                            value="respiratorio dpoc">
+                                        <label class="form-check-label">
                                             DPOC
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="respiratorio"
+                                            value="respiratorio inalacao fumaca">
+                                        <label class="form-check-label">
                                             INALAÇÃO FUMAÇA
                                         </label>
                                     </div>
@@ -1126,33 +1185,38 @@
                     </div>
 
                     <div class="p-2">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" id="queda">
+                                    <input class="form-check-input " type="checkbox" name="diabetes" id="diabetes">
                                     <label class="form-check-label">
                                         DIABETES
                                     </label>
                                 </div>
                             </div>
-
+                            <!-- caixa de selecao escondida. -->
                             <div style="display: none;" id="tipo_diabetes">
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda">
-                                        <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                        <input class="form-check-input " type="radio" name="diabetes"
+                                            value="diabetes hiperglecimia">
+                                        <label class="form-check-label">
                                             HIPERGLECIMIA
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="diabetes"
+                                            value="diabetes hipoglecimia">
+                                        <label class="form-check-label">
                                             HIPOGLECIMIA
                                         </label>
                                     </div>
@@ -1162,42 +1226,49 @@
                     </div>
 
                     <div class="p-2">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" id="queda">
+                                    <input class="form-check-input " type="checkbox" name="obstetrico" id="obstetrico">
                                     <label class="form-check-label">
                                         OBSTÉTRICO
                                     </label>
                                 </div>
                             </div>
-
-                            <div style="display: none;" id="tipo_diabetes">
+                            <!-- caixa de selecao escondida. -->
+                            <div style="display: none;" id="tipo_obstetrico">
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda">
-                                        <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                        <input class="form-check-input " type="radio" name="obstetrico"
+                                            value="obstetrico parto emergencial">
+                                        <label class="form-check-label">
                                             PARTO EMERGENCIAL
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="obstetrico"
+                                            value="obstetrico gestante">
+                                        <label class="form-check-label">
                                             GESTANTE
                                         </label>
                                     </div>
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="obstetrico"
+                                            value="obstetrico hemorragia excessiva">
+                                        <label class="form-check-label">
                                             HEMORRAGIA EXCESSIVA
                                         </label>
                                     </div>
@@ -1212,79 +1283,92 @@
 
                 <div class="col">
                     <div class="p-2">
+                        <!-- caixa de selecao. -->
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
 
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" id="queda">
+                                    <input class="form-check-input " type="checkbox" name="transporte" id="transporte">
                                     <label class="form-check-label">
                                         TRANSPORTE
                                     </label>
                                 </div>
                             </div>
-
-                            <div style="display: none;" id="tipo_diabetes">
+                            <!-- caixa de selecao escondida. -->
+                            <div style="display: none;" id="tipo_transporte">
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda">
-                                        <label class="form-check-label" for="queda" id="queda_bicicleta">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte aereo">
+                                        <label class="form-check-label">
                                             AÉREO
                                         </label>
                                     </div>
 
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte clinico">
+                                        <label class="form-check-label">
                                             CLINICO
                                         </label>
                                     </div>
                                 </div>
-
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte emergencial">
+                                        <label class="form-check-label">
                                             EMERGENCIAL
                                         </label>
                                     </div>
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte pos-trauma">
+                                        <label class="form-check-label">
                                             PÓS-TRAUMA
                                         </label>
                                     </div>
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte samu">
+                                        <label class="form-check-label">
                                             SAMU
                                         </label>
                                     </div>
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte"
+                                            value="transporte sem remocao">
+                                        <label class="form-check-label">
                                             SEM REMOÇÃO
                                         </label>
                                     </div>
                                 </div>
+                                <!-- caixa de selecao. -->
                                 <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input " type="radio" name="queda" id="queda_2m">
-                                        <label class="form-check-label" for="queda">
+                                        <input class="form-check-input " type="radio" name="transporte">
+                                        <label class="form-check-label">
                                             OUTRO
                                         </label>
                                     </div>
@@ -1298,10 +1382,46 @@
             </div>
         </div>
     </div>
+<!-- título -->
+<div class="container-fluid faixa">
+        <div class="row">
+            <div class="col-12 faixa-titulo p-2 ">
+                <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MAIORES DE 5 ANOS</p>
+            </div>
+        </div>
+    </div>
+    <!-- subtítulo faixa -->
+    <div class="container-fluid faixa mt-3">
+        <div class="row">
+            <div class="col-12 faixa-subtitulo p-2 ">
+                <p class="m-0 text-center">Nível de Consciência</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="container tamanho-container w-75 p-4">
+    
 
+        <div class="CAIXA mb-3 container">
+            <div class="row">
+                <div class="col">
+                    <img src="/Pages/img/abertura-ocular.png" alt="abertura ocular" width="200px">
+                    <img src="/Pages/img/resposta-verbal.png" alt="a" width="150px">
+                    <img src="/Pages/img/resposta-motora.png" alt="abertura ocular" width="150px">
+                </div>
+                <!-- FIM DA PRIMEIRA COLUNA -->
 
+                <div class="col">
+                   
+                               
+                            </div>
 
+                     
+               
+
+            </div>
+        </div>
+    </div>
 
     <script>
         // Função para mostrar/ocultar o campo de paciente
@@ -1388,6 +1508,29 @@
             tipo_queda.style.display = this.checked ? 'block' : 'none';
         });
 
+        // Função para mostrar/ocultar o campo de respiratório
+        document.getElementById('respiratorio').addEventListener('change', function () {
+            var tipo_respiratorio = document.getElementById('tipo_respiratorio');
+            tipo_respiratorio.style.display = this.checked ? 'block' : 'none';
+        });
+
+        // Função para mostrar/ocultar o campo de diabetes
+        document.getElementById('diabetes').addEventListener('change', function () {
+            var tipo_diabetes = document.getElementById('tipo_diabetes');
+            tipo_diabetes.style.display = this.checked ? 'block' : 'none';
+        });
+
+        // Função para mostrar/ocultar o campo de obstétrico
+        document.getElementById('obstetrico').addEventListener('change', function () {
+            var tipo_obstetrico = document.getElementById('tipo_obstetrico');
+            tipo_obstetrico.style.display = this.checked ? 'block' : 'none';
+        });
+
+        // Função para mostrar/ocultar o campo de transporte
+        document.getElementById('transporte').addEventListener('change', function () {
+            var tipo_transporte = document.getElementById('tipo_transporte');
+            tipo_transporte.style.display = this.checked ? 'block' : 'none';
+        });
 
     </script>
 
@@ -1400,16 +1543,7 @@
 
 
 
-
-
-
-    <div class="container-fluid faixa">
-        <div class="row">
-            <div class="col-12 faixa-titulo p-2 ">
-                <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MAIORES DE 5 ANOS</p>
-            </div>
-        </div>
-    </div>
+    
 
     <div class="container-fluid faixa">
         <div class="row">
