@@ -114,6 +114,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- aqui começa o primeiro tópico da ficha -->
             <div class="container tamanho-container w-75 p-4">
                 <!-- definine os tamanhos da caixa de selacao -->
@@ -224,7 +225,7 @@
 
                             <label class="col text-center">NOME DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="nome_paciente">
+                                <input type="text" class="form-control row" name="nome_paciente" onkeydown="return validarNome(event)">
                             </div>
 
                         </div>
@@ -233,9 +234,9 @@
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
 
-                            <label class="col text-center">RG/CPF DO PACIENTE:</label>
+                            <label class="col text-center" for="campo">RG/CPF DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="rg/cpf_paciente">
+                                <input type="text" class="form-control row" name="rg_cpf_paciente" id="campo" placeholder="Digite o RG/CPF">
                             </div>
 
                         </div>
@@ -246,7 +247,7 @@
 
                             <label class="col text-center">IDADE DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="idade_paciente">
+                                <input type="text" class="form-control row" name="idade_paciente" placeholder="Digite a idade">
                             </div>
 
                         </div>
@@ -257,13 +258,12 @@
 
                             <label class="col text-center">TELEFONE DE CONTATO (DDD):</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100 ">
-                                <input type="text" class="form-control row" name="telefone_paciente">
+                                <input type="text" class="form-control row" name="telefone_paciente" onkeydown="return mascaraTelefone(event)">
                             </div>
                         </div>
                     </div>
                 </div>
-                <button>enviar</button>
-        </form>
+                
 
         <!-- Título -->
         <div class="container-fluid faixa">
@@ -303,7 +303,7 @@
 
                     <label class="col text-center">NOME DO ACOMPANHANTE:</label>
                     <div class="col form-group input-text justify-content-start d-flex w-100">
-                        <input type="text" class="form-control row" name="nome_acompanhante">
+                        <input type="text" class="form-control row" name="nome_acompanhante" onkeydown="return validarNome(event)">
                     </div>
 
                 </div>
@@ -321,6 +321,35 @@
             </div>
         </div>
     </div>
+    
+
+        <script>
+   const campo = document.getElementById("campo");
+
+campo.addEventListener("input", function(event) {
+    let valor = event.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+    if (valor.length <= 9) {
+        event.target.value = formatarRG(valor);
+    } else if (valor.length <= 11) {
+        event.target.value = formatarCPF(valor);
+    } else {
+        event.target.value = valor.substr(0, 11);
+    }
+});
+
+function formatarCPF(valor) {
+    return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+}
+
+function formatarRG(valor) {
+    return valor.replace(/(\d{1,3})(\d{0,3})(\d{0,3})/, "$1.$2.$3");
+}
+
+
+            </script>
+
+
     <!-- Título -->
     <div class="container-fluid faixa">
         <div class="row">
@@ -472,18 +501,19 @@
                 <div style="display: none;" id="horas_aliment_liquid">
                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
-                        <label class="col text-center">SE SIM, ESPECIFIQUE:</label>
+                        <label class="col text-center">HORÁRIO:</label>
                         <div class="col form-group input-text justify-content-start d-flex w-100">
-                            <input type="text" class="form-control" name="especi_aliment_liquid">
+                            <input type="time" class="form-control" name="horario_aliment_liquid">
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
+
+    <button>enviar</button>
+        </form>
     <!-- títutlo. -->
     <div id="gestacional" style="display: none;">
         <div class="container-fluid faixa">
@@ -1387,6 +1417,8 @@
             </div>
         </div>
     </div>
+    <!-- div escondida -->
+    <div style="display: none;" id="glascow_maiores5">
     <!-- título -->
     <div class="container-fluid faixa">
         <div class="row">
@@ -1605,7 +1637,248 @@
                     <div class="p-2">
                         <Div class="form-group selecao-caixa justify-content-center d-flex align-items-center">
                             <div class=" d-flex align-items-center" id="soma-valores">
-                               <div class="">TOTAL (GCS) (3-15):</div>
+                                <div class="">TOTAL (GCS) (3-15):</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div style="display: none;" id="glascow_menores5">
+        <div class="container-fluid faixa">
+            <div class="row">
+                <div class="col-12 faixa-titulo p-2 ">
+                    <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MENORES DE 5 ANOS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid faixa mt-3">
+            <div class="row">
+                <div class="col-12 faixa-subtitulo p-2 ">
+                    <p class="m-0 text-center">Nível de Consciência</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tamanho-container w-75 p-4">
+            <div class="CAIXA mb-3 container">
+                <div class="row-cols">
+                    <div class="col">
+
+                        <div class="row m-auto">
+                            <div class="col m-auto d-flex justify-content-center"><img
+                                    src="/Pages/img/abertura-ocular.png" alt="abertura ocular" width="200px"
+                                    class="p-4"></div>
+                            <div class="col">
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">4</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            ESPONTÂNEA
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="abertura_ocular_menor5"
+                                            value="4">
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">3</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            COMANDO VERBAL
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="abertura_ocular_menor5"
+                                            value="3">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2 d-flex align-items-center">2</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            ESTÍMULO DOLOROSO
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="abertura_ocular_menor5"
+                                            value="2">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">1</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            NENHUMA
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="abertura_ocular_menor5"
+                                            value="1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIM DA PRIMEIRA COLUNA -->
+
+                    <div class="col mt-5">
+                        <div class="row m-auto">
+                            <div class="col m-auto d-flex justify-content-center"><img
+                                    src="/Pages/img/resposta-verbal.png" alt="resposta_motora" width="150px"
+                                    class="p-4 "></div>
+                            <div class="col">
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">5</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            PALAVRAS E FRASES INAPROPRIADAS
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_verbal_menor5"
+                                            value="5">
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">4</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            PALAVRAS INAPROPRIADAS
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_verbal_menor5"
+                                            value="4">
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">3</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            CHOROS PERSISTENTES OU GRITOS
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_verbal_menor5"
+                                            value="3">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2 d-flex align-items-center">2</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            SONS INCOMPREENSÍVEIS
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_verbal_menor5"
+                                            value="2">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">1</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            NENHUMA RESPOSTA VERBAL
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_verbal_menor5"
+                                            value="1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col mt-5">
+                        <div class="row m-auto">
+                            <div class="col m-auto d-flex justify-content-center"><img
+                                    src="/Pages/img/resposta-motora.png" alt="resposta motora" width="150px"
+                                    class="p-4"></div>
+                            <div class="col">
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">6</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            OBEDECE PRONTAMENTE
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="6">
+                                    </div>
+                                </div>
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">5</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            LOCALIZA DOR OU ESTÍMULO TÁTIL
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="5">
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">4</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            RETIRADA DO SEGMENTO ESTIMULADO
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="4">
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">3</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            FLEXÃO ANORMAL (DECORTIZAÇÃO)
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="3">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2 d-flex align-items-center">2</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            EXTENSÃO ANORMAL (DECEREBRAÇÃO)
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="2">
+
+                                    </div>
+                                </div>
+
+                                <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                    <div class="me-2">1</div>
+                                    <div class="form-check col input-radio">
+                                        <label class="form-check-label">
+                                            AUSÊNCIA (PARALISIA, FLÁCIA, HIPOTÔNIA)
+                                        </label>
+                                        <input class="form-check-input " type="radio" name="resposta_motora_menor5"
+                                            value="1">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mt-5">
+                        <div class="p-2">
+                            <Div class="form-group selecao-caixa justify-content-center d-flex align-items-center">
+                                <div class=" d-flex align-items-center" id="soma-valores-menor5">
+                                    <div class="">TOTAL (GCS) (3-15):</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1614,49 +1887,30 @@
         </div>
     </div>
 
-
-
+    <input type="radio" name="opcao" value="opcao1"> Opção 1<br>
+    <input type="radio" name="opcao" value="opcao2"> Opção 2<br>
+    
+    <input type="checkbox" id="checkbox1"> Checkbox 1<br>
+    <input type="checkbox" id="checkbox2"> Checkbox 2<br>
+    
+    <button id="limparSelecao">Limpar Seleção</button>
+    
+    <script>
+    // Adicione um ouvinte de clique ao botão de limpar seleção
+    document.getElementById('limparSelecao').addEventListener('click', function () {
+        // Desmarca todos os elementos de radio com o nome 'opcao'
+        var radios = document.getElementsByName('opcao');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+        }
+    
+        // Desmarca os checkboxes pelo ID
+        document.getElementById('checkbox1').checked = false;
+        document.getElementById('checkbox2').checked = false;
+    });
+    </script>
 
     <script>
-         // Obtém todos os botões de opção com nome "abertura_ocular", "resposta_motora" e "resposta_verbal"
-    const botoesOcular = document.getElementsByName("abertura_ocular");
-    const botoesMotora = document.getElementsByName("resposta_motora");
-    const botoesVerbal = document.getElementsByName("resposta_verbal");
-
-    // Adiciona ouvintes de evento para os botões de opção
-    for (const botao of botoesOcular) {
-        botao.addEventListener("change", calcularSoma);
-    }
-    for (const botao of botoesMotora) {
-        botao.addEventListener("change", calcularSoma);
-    }
-    for (const botao of botoesVerbal) {
-        botao.addEventListener("change", calcularSoma);
-    }
-
-    // Função para calcular a soma dos valores dos botões de opção selecionados
-    function calcularSoma() {
-        // Calcula a soma dos valores selecionados nos grupos de botões de opção
-        const somaOcular = calcularSomaValoresSelecionados(botoesOcular);
-        const somaMotora = calcularSomaValoresSelecionados(botoesMotora);
-        const somaVerbal = calcularSomaValoresSelecionados(botoesVerbal);
-
-        // Exibe a soma dos valores
-        const somaTotal = somaOcular + somaMotora + somaVerbal;
-        document.getElementById("soma-valores").innerText = "TOTAL (GCS) (3-15): " + somaTotal;
-    }
-
-    // Função auxiliar para calcular a soma dos valores selecionados nos botões de opção
-    function calcularSomaValoresSelecionados(botoes) {
-        let soma = 0;
-        for (const botao of botoes) {
-            if (botao.checked) {
-                soma += parseInt(botao.value);
-            }
-        }
-        return soma;
-    }
-
 
         // Função para mostrar/ocultar o campo de paciente
         document.getElementById('pacienteSim').addEventListener('change', function () {
@@ -1766,6 +2020,69 @@
             tipo_transporte.style.display = this.checked ? 'block' : 'none';
         });
 
+        // função para mostrar/ocultar avaliação paciente glascow
+        document.getElementsByName('idade_paciente')[0].addEventListener('input', function () {
+    var idade_paciente = parseInt(this.value);
+    var glascow_menores5 = document.getElementById('glascow_menores5');
+    var glascow_maiores5 = document.getElementById('glascow_maiores5');
+
+    glascow_menores5.style.display = idade_paciente < 5 ? 'block' : 'none';
+    glascow_maiores5.style.display = idade_paciente >= 5 ? 'block' : 'none';
+});
+        // calcular a avaliação do paciente (glascow)
+        const botoesOcular = document.getElementsByName("abertura_ocular");
+        const botoesMotora = document.getElementsByName("resposta_motora");
+        const botoesVerbal = document.getElementsByName("resposta_verbal");
+        const botoesOcularMenor5 = document.getElementsByName("abertura_ocular_menor5");
+        const botoesMotoraMenor5 = document.getElementsByName("resposta_motora_menor5");
+        const botoesVerbalMenor5 = document.getElementsByName("resposta_verbal_menor5");
+
+        for (const botao of botoesOcular) {
+            botao.addEventListener("change", calcularSoma);
+        }
+        for (const botao of botoesMotora) {
+            botao.addEventListener("change", calcularSoma);
+        }
+        for (const botao of botoesVerbal) {
+            botao.addEventListener("change", calcularSoma);
+        }
+        for (const botao of botoesOcularMenor5) {
+            botao.addEventListener("change", calcularSoma);
+        }
+        for (const botao of botoesMotoraMenor5) {
+            botao.addEventListener("change", calcularSoma);
+        }
+        for (const botao of botoesVerbalMenor5) {
+            botao.addEventListener("change", calcularSoma);
+        }
+
+        // Função para calcular a soma dos valores dos botões de opção selecionados
+        function calcularSoma() {
+            // Calcula a soma dos valores selecionados nos grupos de botões de opção
+            const somaOcular = calcularSomaValoresSelecionados(botoesOcular);
+            const somaMotora = calcularSomaValoresSelecionados(botoesMotora);
+            const somaVerbal = calcularSomaValoresSelecionados(botoesVerbal);
+            const somaOcularMenor5 = calcularSomaValoresSelecionados(botoesOcularMenor5);
+            const somaMotoraMenor5 = calcularSomaValoresSelecionados(botoesMotoraMenor5);
+            const somaVerbalMenor5 = calcularSomaValoresSelecionados(botoesVerbalMenor5);
+
+            // Exibe a soma dos valores
+            const somaTotal = somaOcular + somaMotora + somaVerbal;
+            document.getElementById("soma-valores").innerText = "TOTAL (GCS) (3-15): " + somaTotal;
+            const somaTotalMenor5 = somaOcularMenor5 + somaMotoraMenor5 + somaVerbalMenor5;
+            document.getElementById("soma-valores-menor5").innerText = "TOTAL (GCS) (3-15): " + somaTotalMenor5;
+        }
+
+        // Função auxiliar para calcular a soma dos valores selecionados nos botões de opção
+        function calcularSomaValoresSelecionados(botoes) {
+            let soma = 0;
+            for (const botao of botoes) {
+                if (botao.checked) {
+                    soma += parseInt(botao.value);
+                }
+            }
+            return soma;
+        }
     </script>
 
 
@@ -1779,13 +2096,7 @@
 
 
 
-    <div class="container-fluid faixa">
-        <div class="row">
-            <div class="col-12 faixa-titulo p-2 ">
-                <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MENORES DE 5 ANOS</p>
-            </div>
-        </div>
-    </div>
+
 
     <div class="container-fluid faixa">
         <div class="row">

@@ -59,6 +59,7 @@ function mascaraCPF(event) {
     if (!["Backspace", "Delete"].includes(tecla)) {
         return false;
     }
+
 }
 
 // mascara nome

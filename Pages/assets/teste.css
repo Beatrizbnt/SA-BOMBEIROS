@@ -7,6 +7,15 @@ body {
     border-bottom: 2px solid rgb(164, 158, 158);
     
 }
+
+
+#senha-regras p {
+  color: red;
+}
+
+#senha-regras p.valid {
+  color: green;
+}
   
   /*navbar menu*/
   .navbar {
