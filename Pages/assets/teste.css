@@ -5,18 +5,8 @@ body {
   
 .linha{
     border-bottom: 2px solid rgb(164, 158, 158);
-    
 }
 
-
-#senha-regras p {
-  color: red;
-}
-
-#senha-regras p.valid {
-  color: green;
-}
-  
   /*navbar menu*/
   .navbar {
     text-decoration: none;
@@ -227,6 +217,12 @@ body {
     font-weight: 600;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid #818181;
+  }
+
+  .selecao-fundo{
+    background-color: #DFDEDE;
+    padding: 6px;
+    border-radius: 7px;
   }
 
   .caixa-pesquisa{
