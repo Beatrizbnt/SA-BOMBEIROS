@@ -264,7 +264,7 @@
                 <div class="container-fluid faixa">
                     <div class="row">
                         <div class="col-12 subtitulo p-4 ">
-                            <p class="m-0 text-center" id="info-paciente">INFORMAÇÕES DO ACOMPANHANTE</p>
+                            <p class="m-0 text-center" id="info-acompanhante">INFORMAÇÕES DO ACOMPANHANTE</p>
                         </div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
             <div class="container-fluid faixa">
                 <div class="row">
                     <div class="col-12 faixa-titulo p-2 ">
-                        <p class="m-0 text-center fs-5">ANAMNESE DA EMERGENCIA MÉDICA</p>
+                        <p class="m-0 text-center fs-5" id="anmanese-medica">ANAMNESE DA EMERGENCIA MÉDICA</p>
                     </div>
                 </div>
             </div>
@@ -517,7 +517,7 @@
                 <div class="container-fluid faixa">
                     <div class="row">
                         <div class="col-12 faixa-titulo p-2 ">
-                            <p class="m-0 text-center fs-5">ANAMNESE GESTACIONAL</p>
+                            <p class="m-0 text-center fs-5" id="anmanese-gestacional">ANAMNESE GESTACIONAL</p>
                         </div>
                     </div>
                 </div>
@@ -790,7 +790,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">TIPO DE OCORRENCIA (PRÉ-HOSPITALAR):</p>
+                    <p class="m-0 text-center fs-5" id+="tipo-ocorrencia">TIPO DE OCORRENCIA (PRÉ-HOSPITALAR):</p>
                 </div>
             </div>
         </div>
@@ -1085,7 +1085,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">PROBLEMAS ENCONTRADOS SUSPEITOS</p>
+                    <p class="m-0 text-center fs-5" id="problemas-suspeitos">PROBLEMAS ENCONTRADOS SUSPEITOS</p>
                 </div>
             </div>
         </div>
@@ -1333,7 +1333,7 @@
             <div class="container-fluid faixa">
                 <div class="row">
                     <div class="col-12 faixa-titulo p-2 ">
-                        <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MAIORES DE 5 ANOS</p>
+                        <p class="m-0 text-center fs-5" id="avaliacao-paciente">Avaliação do Paciente (Glasgow) MAIORES DE 5 ANOS</p>
                     </div>
                 </div>
             </div>
@@ -1558,7 +1558,7 @@
             <div class="container-fluid faixa">
                 <div class="row">
                     <div class="col-12 faixa-titulo p-2 ">
-                        <p class="m-0 text-center fs-5">Avaliação do Paciente (Glasgow) MENORES DE 5 ANOS</p>
+                        <p class="m-0 text-center fs-5" id="avaliacao-paciente">Avaliação do Paciente (Glasgow) MENORES DE 5 ANOS</p>
                     </div>
                 </div>
             </div>
@@ -1784,7 +1784,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">SINAIS VITAIS</p>
+                    <p class="m-0 text-center fs-5" id="sinais-vitais">SINAIS VITAIS</p>
                 </div>
             </div>
         </div>
@@ -2019,6 +2019,7 @@
             document.getElementsByName('idade_paciente')[0].addEventListener('input', function () {
                 var idade_paciente = parseInt(this.value);
                 var glascow_menores5 = document.getElementById('glascow_menores5');
+                var glascow_menores5 = document.getElementById('glascow_menores5');
                 var glascow_maiores5 = document.getElementById('glascow_maiores5');
 
                 glascow_menores5.style.display = idade_paciente < 5 ? 'block' : 'none';
@@ -2084,7 +2085,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">FERIMENTOS / FRATURAS / ENTORSES / LUXAÇÃO / CONTUSÃO</p>
+                    <p class="m-0 text-center fs-5" id="local-traumas">FERIMENTOS / FRATURAS / ENTORSES / LUXAÇÃO / CONTUSÃO</p>
                 </div>
             </div>
         </div>
@@ -2100,7 +2101,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">VÍTIMA ERA</p>
+                    <p class="m-0 text-center fs-5" id="vitima-era">VÍTIMA ERA</p>
                 </div>
             </div>
         </div>
@@ -2108,7 +2109,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">DECISÃO TRANSPORTE</p>
+                    <p class="m-0 text-center fs-5" id="decisao-transporte">DECISÃO TRANSPORTE</p>
                 </div>
             </div>
         </div>
@@ -2116,7 +2117,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">HISTÓRICO DA OCORRÊNCIA</p>
+                    <p class="m-0 text-center fs-5" id="historico-ocorrencia">HISTÓRICO DA OCORRÊNCIA</p>
                 </div>
             </div>
         </div>
@@ -2124,7 +2125,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">MATERIAIS UTILIZADOS</p>
+                    <p class="m-0 text-center fs-5" id="materiais">MATERIAIS UTILIZADOS</p>
                 </div>
             </div>
         </div>
@@ -2132,7 +2133,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">AVALIAÇÃO CINEMÁTICA</p>
+                    <p class="m-0 text-center fs-5" id="avaliacao-cinematica">AVALIAÇÃO CINEMÁTICA</p>
                 </div>
             </div>
         </div>
@@ -2140,7 +2141,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">OBSERVAÇÕES IMPORTANTES</p>
+                    <p class="m-0 text-center fs-5" id="obs-importantes">OBSERVAÇÕES IMPORTANTES</p>
                 </div>
             </div>
         </div>
@@ -2148,7 +2149,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5">EQUIPE DE ATENDIMENTO</p>
+                    <p class="m-0 text-center fs-5" id="equipe-atendimento">EQUIPE DE ATENDIMENTO</p>
                 </div>
             </div>
         </div>
