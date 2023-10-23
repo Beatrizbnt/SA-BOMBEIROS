@@ -38,7 +38,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!nome || !telefone || !cpf || !senha) {
-        
+
     }
 
     const sql = `INSERT INTO usuario(nome_usuario, telefone_usuario, cpf_usuario, senha_usuario) 
@@ -46,7 +46,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
     conexao.query(sql, (err, result) => {
         if (err) {
-            
+
         } else {
             console.log('Usuário cadastrado com sucesso');
             res.redirect('/Pages/principal.html');
@@ -60,14 +60,14 @@ router.post('/Pages/login', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!cpf || !senha) {
-       
+
     }
 
     const sql = `SELECT cpf_cadastro, senha_cadastro FROM cadastro WHERE cpf_cadastro = ? AND senha_cadastro = ?`;
 
     conexao.query(sql, [cpf, senha], (err, results) => {
         if (err) {
-            
+
         } else {
             if (results.length > 0) {
                 // Login bem-sucedido,
@@ -75,7 +75,7 @@ router.post('/Pages/login', (req, res) => {
                 res.redirect('/Pages/principal.html');
             } else {
                 // CPF ou senha inválidos, redirecione para a página de login
-                
+
             }
         }
     });
@@ -95,7 +95,7 @@ router.post('/Pages/teste', (req, res) => {
     const acompanhante = req.body.acompanhante;
     const nome_acompanhante = req.body.nome_acompanhante;
     const idade_acompanhante = req.body.idade_acompanhante;
-// tabela anamnese emergencial
+    // tabela anamnese emergencial
     const sinais_sintomas = req.body.sinais_sintomas;
     const aconteceu = req.body.aconteceu;
     const uso_medicacao = req.body.uso_medicacao;
@@ -104,50 +104,86 @@ router.post('/Pages/teste', (req, res) => {
     const alergico = req.body.alergico;
     const especi_alergico = req.body.especi_alergico;
     const aliment_liquid = req.body.aliment_liquid;
-    const horario_aliment_liquid = req.body.horario_aliment_liquid_aliment_liquid;
+    const horario_aliment_liquid = req.body.horario_aliment_liquid;
+    // tabela anamnese gestacional
+    const periodo_gestacao = req.body.periodo_gestacao;
+    const pre_natal = req.body.pre_natal;
+    const nome_medico = req.body.nome_medico;
+    const complicacoes = req.body.complicacoes;
+    const primeiro_filho = req.body.primeiro_filho;
+    const horas_contracoes = req.body.horas_contracoes;
+    const tempo_contracoes = req.body.tempo_contracoes;
+    const intervalo_contracoes = req.body.intervalo_contracoes;
+    const quadril_pressao = req.body.quadril_pressao;
+    const ruptura_bolsa = req.body.ruptura_bolsa;
+    const inspecao_visual = req.body.inspecao_visual;
+    const parto_realizado = req.body.parto_realizado;
+    const sexo_bebe = req.body.sexo_bebe;
+    const horas_nascimento = req.body.horas_nascimento;
+    const nome_bebe = req.body.nome_bebe;
 
- // tabela paciente
+    // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, data_ocorrencia, 
         sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
- // tabela acompanhante
+    // tabela acompanhante
     const sqlAcompanhante = `INSERT INTO informacao_acompanhante (identificacao_acompanhante, nome_acompanhante, idade_acompanhante) 
                              VALUES (?, ?, ?)`;
-// tabela anamnese emergencial
-     const sqlAnamneseEmergencial = `INSERT INTO anamnese_emergencia (sinais_sintomas_anamnese, aconteceu_outras_vezes_anamnese,
-         faz_uso_medicacao_anamnese, horario_ultima_medicacao_anamnese, quais_medicacao_anamnese, alergico_anamnese,
-         especificacao_alergico_anamnese, ingeriu_alimento_liquido_anamnese, horario_ingeriu_anamnese) 
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;                         
+    // tabela anamnese emergencial
+    const sqlAnamneseEmergencial = `INSERT INTO anamnese_emergencia (sinais_sintomas_anamnese, aconteceu_outras_vezes_anamnese,
+        faz_uso_medicacao_anamnese, horario_ultima_medicacao_anamnese, quais_medicacao_anamnese, alergico_anamnese,
+        especificacao_alergico_anamnese, ingeriu_alimento_liquido_anamnese, horario_ingeriu_anamnese) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    // tabela anamnese gestacional
+    const sqlAnamneseGestacional = `INSERT INTO anamnese_gestacional (periodo_gestacao_anamnese, fez_pre_natal_anamnese,
+        nome_medico_anamnese, possibilidade_complicacoes_anamnese, primeiro_filho_anamnese, horas_iniciaram_contracoes_anamnese,
+        tempo_contracoes_gestante, intervalo_contracoes_anamnese, pressao_quadril_evacuar_anamnese, houve_ruptura_bolsa_anamnese,
+        feito_inspecao_visual_anamnese, parto_realizado_anamnese, sexo_bebe_anamnese, horario_nascimento_bebe_anamnese,
+        nome_bebe_anamnese) 
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
 
-    conexao.query(sqlPaciente, [pacienteIdentificado, data, sexo, gestante, nome_paciente, 
+    
+
+    conexao.query(sqlPaciente, [pacienteIdentificado, data, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
-        if (errPaciente) {
-            console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
-            // Trate o erro do paciente adequadamente
-        } else {
-            console.log('Dados do paciente inseridos com sucesso');
-            // Inserir dados do acompanhante após o sucesso da inserção do paciente
-            conexao.query(sqlAcompanhante, [acompanhante, nome_acompanhante, idade_acompanhante], (errAcompanhante, resultAcompanhante) => {
-                if (errAcompanhante) {
-                    console.log('Erro ao inserir dados do acompanhante: ' + errAcompanhante.message);
-                    // Trate o erro do acompanhante adequadamente
-                } else {
-                    console.log('Dados do acompanhante inseridos com sucesso');
-                    conexao.query(sqlAnamneseEmergencial, [sinais_sintomas, aconteceu, uso_medicacao, horas_medicacao, quais_medicacao,
-                         alergico, especi_alergico, aliment_liquid, horario_aliment_liquid], (errAnamnese, resultAnamnese) => {
-                        if (errAnamnese) {
-                            console.log('Erro ao inserir dados da anamnese emergencial: ' + errAnamnese.message);
-                            // Trate o erro da anamnese emergencial adequadamente
-                        } else {
-                            console.log('Dados da anamnese emergencial inseridos com sucesso');
-                            // Redirecione ou envie uma resposta ao cliente, se necessário
-                            res.redirect('/Pages/gerarrelatorio.html');
-                        }
-                    });
-                }
-            });
-        }
-    });
+            if (errPaciente) {
+                console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
+                // Trate o erro do paciente adequadamente
+            } else {
+                console.log('Dados do paciente inseridos com sucesso');
+                // Inserir dados do acompanhante após o sucesso da inserção do paciente
+                conexao.query(sqlAcompanhante, [acompanhante, nome_acompanhante, idade_acompanhante], (errAcompanhante, resultAcompanhante) => {
+                    if (errAcompanhante) {
+                        console.log('Erro ao inserir dados do acompanhante: ' + errAcompanhante.message);
+                        // Trate o erro do acompanhante adequadamente
+                    } else {
+                        console.log('Dados do acompanhante inseridos com sucesso');
+                        conexao.query(sqlAnamneseEmergencial, [sinais_sintomas, aconteceu, uso_medicacao, horas_medicacao, quais_medicacao,
+                            alergico, especi_alergico, aliment_liquid, horario_aliment_liquid], (errAnamnese, resultAnamnese) => {
+                                if (errAnamnese) {
+                                    console.log('Erro ao inserir dados da anamnese emergencial: ' + errAnamnese.message);
+                                    // Trate o erro da anamnese emergencial adequadamente
+                                } else {
+                                    console.log('Dados da anamnese emergencial inseridos com sucesso');
+                                    conexao.query(sqlAnamneseGestacional, [periodo_gestacao, pre_natal, nome_medico, complicacoes, primeiro_filho,
+                                        horas_contracoes, tempo_contracoes, intervalo_contracoes, quadril_pressao, ruptura_bolsa,
+                                    inspecao_visual, parto_realizado, sexo_bebe, horas_nascimento, nome_bebe], (errAnamneseGestacional, resultAnamneseGestacional) => {
+                                            if (errAnamneseGestacional) {
+                                                console.log('Erro ao inserir dados da anamnese gestacional: ' + errAnamneseGestacional.message);
+                                                // Trate o erro da anamnese emergencial adequadamente
+                                            } else {
+                                                console.log('Dados da anamnese gestacional inseridos com sucesso');
+                                                res.redirect('/Pages/gerarrelatorio.html');
+                                            }
+                                        });
+    
+                                }
+                            });
+                    }
+                });
+            }
+        });
 });
 
 module.exports = router;
