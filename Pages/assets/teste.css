@@ -95,6 +95,11 @@ body {
     .wrapper {
       margin-top: 230px;
     }
+
+    .tamanho-container .CAIXA{
+      width: 100%;
+    }
+
   }
   
   @media (max-width: 389px) { 
@@ -103,9 +108,8 @@ body {
     }
 
     .tamanho-container .CAIXA{
-        width: 100%;
+        width:100%;
       }
-
 
       .overlay {
       overflow-y: auto;
@@ -379,6 +383,8 @@ body {
     border: none;
    }
    
-   .sinais-vitais{
+   .sinais-vitais .input-text input{
     
    }
+
+   
