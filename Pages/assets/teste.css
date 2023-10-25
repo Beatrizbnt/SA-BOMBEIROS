@@ -90,7 +90,6 @@ body {
       }
   }
 
- 
   
   @media (max-width: 574px) { 
     .wrapper {
@@ -278,6 +277,8 @@ body {
     border: none;
    }
 
+   
+
   .input-radio input:checked{
     box-shadow: none;
     border: none;
@@ -345,4 +346,22 @@ body {
     box-shadow: none;
    }
 
+   .input-radio .input-text input{
+    background-color: rgb(207, 207, 207);
+    width: 100%;
+    border: none;
+    display: flex;
+  
+   }
 
+   .input-radio .input-text input:hover{
+    background-color: rgb(194, 194, 194);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
+   }
+
+   .input-radio .input-text input:focus{
+    background-color: rgb(194, 194, 194);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
+    border: none;
+   }
+   
