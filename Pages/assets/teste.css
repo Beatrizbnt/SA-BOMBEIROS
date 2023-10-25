@@ -82,7 +82,7 @@ body {
     }
   
     .wrapper {
-      margin-top: 200px;
+      margin-top: 220px;
     }
 
     .tamanho-container .CAIXA{
@@ -90,21 +90,36 @@ body {
       }
   }
 
-  
+  /* telas média */
   @media (max-width: 574px) { 
     .wrapper {
-      margin-top: 210px;
+      margin-top: 230px;
     }
   }
   
   @media (max-width: 389px) { 
     .wrapper {
-      margin-top: 220px;
+      margin-top: 280px;
     }
 
     .tamanho-container .CAIXA{
         width: 100%;
       }
+
+
+      .overlay {
+      overflow-y: auto;
+    }
+  
+    .overlay a {
+      font-size: 20px
+    }
+  
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
   }
   
  
@@ -173,7 +188,6 @@ body {
       top: 15px;
       right: 35px;
     }
-  
 
   }
   
@@ -365,3 +379,6 @@ body {
     border: none;
    }
    
+   .sinais-vitais{
+    
+   }
