@@ -2960,7 +2960,7 @@
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="radio" name="vitima_era"
-                                        value="afogamento">
+                                        value="ciclista">
                                     <label class="form-check-label">
                                         CICLISTA
                                     </label>
@@ -2975,7 +2975,7 @@
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="radio" name="vitima_era"
-                                        value="afogamento">
+                                        value="clinico">
                                     <label class="form-check-label">
                                         CLINICO
                                     </label>
@@ -2988,7 +2988,7 @@
                         <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input" type="checkbox" name="condutor" id="condutor">
+                                    <input class="form-check-input " type="radio" name="vitima_era" id="condutor">
                                     <label class="form-check-label">
                                         CONDUTOR
                                     </label>
@@ -3023,7 +3023,7 @@
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="radio" name="vitima_era"
-                                        value="afogamento">
+                                        value="gestante">
                                     <label class="form-check-label">
                                         GESTANTE
                                     </label>
@@ -3039,7 +3039,7 @@
                         <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input" type="checkbox" name="passageiro" id="passageiro">
+                                    <input class="form-check-input " type="radio" name="vitima_era" id="passageiro">
                                     <label class="form-check-label">
                                         PASSAGEIRO
                                     </label>
@@ -3084,7 +3084,7 @@
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="radio" name="vitima_era"
-                                        value="afogamento">
+                                        value="pedestre">
                                     <label class="form-check-label">
                                         PEDESTRE
                                     </label>
@@ -3184,6 +3184,7 @@
             tipo_queda.style.display = this.checked ? 'block' : 'none';
         });
 
+        
         // Função para mostrar/ocultar o campo de respiratório
         document.getElementById('respiratorio').addEventListener('change', function () {
             var tipo_respiratorio = document.getElementById('tipo_respiratorio');
@@ -3236,6 +3237,18 @@
         document.getElementById('pupilas').addEventListener('change', function () {
             var tipo_pupilas = document.getElementById('tipo_pupilas');
             tipo_pupilas.style.display = this.checked ? 'block' : 'none';
+        });
+
+        // Função para mostrar/ocultar o campo de condutor
+        document.getElementById('condutor').addEventListener('change', function () {
+            var tipo_condutor = document.getElementById('tipo_condutor');
+            tipo_condutor.style.display = this.checked ? 'block' : 'none';
+        });
+
+        // Função para mostrar/ocultar o campo de condutor
+        document.getElementById('passageiro').addEventListener('change', function () {
+            var tipo_passageiro = document.getElementById('tipo_passageiro');
+            tipo_passageiro.style.display = this.checked ? 'block' : 'none';
         });
 
         // função para mostrar/ocultar avaliação paciente glascow
