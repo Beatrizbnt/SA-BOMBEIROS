@@ -58,8 +58,13 @@ body {
   
 
   .tamanho-container .CAIXA{
-    width: 50%;
+    width: 60%;
   }
+
+  .tamanho-container .transporte{
+    width: 70%;
+  }
+
 
   /* ajustando o estilo para uma tela menor  */
   @media (max-width: 878px) { 
@@ -383,9 +388,31 @@ body {
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.367);
     border: none;
    }
-   
-   .sinais-vitais .input-text input{
-    
+ 
+   .faixa-titulo select{
+    background-color:#CDCDCD;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    box-shadow: none;
    }
+
+   .faixa-titulo select:focus{
+    background-color:#CDCDCD;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    box-shadow: none;
+    border: none;
+   }
+
+   .faixa-titulo select:hover{
+    background-color: rgb(194, 194, 194);
+   }
+
+   .form-select option:hover::before{
+    background-color: #6d0b0b;
+
+   }
+  
+
 
    
