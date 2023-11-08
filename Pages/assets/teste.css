@@ -347,7 +347,7 @@ body {
     background-color: #DFDEDE;
   }
 
-  .text-area label{
+  .sinais-sin-label{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
   }
@@ -361,13 +361,12 @@ body {
 
    .text-area textarea:hover{
     background-color: rgb(194, 194, 194);
-    border: 2px solid #818181;
    }
 
    .text-area textarea:focus{
     background-color: rgb(194, 194, 194);
-    border: 2px solid #818181;
     box-shadow: none;
+    border: 1px solid #818181;
    }
 
    .input-radio .input-text input{
@@ -413,6 +412,16 @@ body {
 
    }
   
+   .esp-botao button{
+    background-color:#C4391D;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color:white;
+   }
 
+   .esp-botao button:hover{
+    background-color:#eb4422;
+    color:white;
+   }
 
    

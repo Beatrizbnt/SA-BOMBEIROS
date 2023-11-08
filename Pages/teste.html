@@ -359,10 +359,10 @@
             <div class="container tamanho-container w-75 p-4">
 
                 <div class="CAIXA mb-3 container">
-                    <Div class="form-group row d-flex align-items-center text-area">
-                        <label class="col text-center p-2">O QUE ACONTECEU?<br>(SINAIS E SINTOMAS)</label>
-                        <div class="form-floating ">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    <Div class="row d-flex align-items-center">
+                        <label class="col text-center p-2 sinais-sin-label">O QUE ACONTECEU?<br>(SINAIS E SINTOMAS)</label>
+                        <div class="form-group text-area">
+                            <textarea class="form-control" placeholder="Digite os sinais e sintomas"
                                 style="height: 100px" name="sinais_sintomas"></textarea>
                         </div>
                     </div>
@@ -1073,16 +1073,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- caixa de seleção -->
+                        <!-- campo de texto para outro tipo de ocorrencia -->
                         <div class="p-2">
                             <div class="form-group selecao-caixa d-flex align-items-center">
-                                <div class="form-check col input-radio d-flex align-items-center">
-                                    <input class="form-check-input me-2" type="radio" name="tipo_ocorrencia"
-                                        value="outro">
-                                    <div class="col form-group input-text">
-                                        <input type="text" class="form-control" id="outroOcorrencia" placeholder="OUTRO"
-                                            disabled>
-                                    </div>
+                                <div class="col form-group input-text">
+                                        <input type="text" class="form-control" placeholder="Outro">
                                 </div>
                             </div>
                         </div>
@@ -1091,7 +1086,13 @@
                 </div>
             </div>
         </div>
-        <button>enviar</button>
+
+        <div class="container esp-botao d-flex justify-content-center  align-items-center mb-4">
+            
+            <button type="button" class="btn d-flex p-3 fs-5">GERAR RELATÓRIO</button>
+
+        </div>
+
         </form>
         <!-- INÍCIO DE PROBLEMAS ENCONTRADOS SUSPEITOS-->
         <!-- TÍTULO -->
@@ -1323,27 +1324,23 @@
                                             <input class="form-check-input me-2" type="radio" name="transporte"
                                                 value="outro">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" id="outroTransporte"
-                                                    placeholder="OUTRO" disabled>
+                                                <input type="text" class="form-control"
+                                                    placeholder="OURO" disabled>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- caixa de seleção -->
+                        <!-- campo de texto para outro tipo de ocorrencia -->
                         <div class="p-2">
-                            <div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                <div class="form-check col input-radio d-flex align-items-center">
-                                    <input class="form-check-input me-2" type="radio" name="outroProblemas"
-                                        value="outro">
-                                    <div class="col form-group input-text">
-                                        <input type="text" class="form-control" id="outroProblemas" placeholder="OUTRO"
-                                            disabled>
-                                    </div>
+                            <div class="form-group selecao-caixa d-flex align-items-center">
+                                <div class="col form-group input-text">
+                                        <input type="text" class="form-control"  placeholder="Outro">
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <!-- FIM DA COLOUNA -->
                 </div>
@@ -4655,26 +4652,83 @@
                 </div>
             </div>
         </div>
-        <!-- campo de texto para local da ocorrência -->
+        <!-- campo de texto para nº USB -->
         <div class="CAIXA mb-3 container">
-            <div class="row">
-                <div class="col mb-3">
-                    <Div class="form-group row selecao-caixa d-flex align-items-center">
-                        <label class="col-sm text-center" for="campo">Nº USB:</label>
-                        <div class="col-sm form-group input-text justify-content-center d-flex w-100">
-                            <input type="text" class="form-control row" name="local_ocorrencia"
-                                placeholder="Digite o local da ocorrência">
-                        </div>
-                    </div>
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">Nº USB:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="num_usb"
+                        placeholder="Digite o nº USB">
                 </div>
-                <div class="col">
-                    <Div class="form-group row selecao-caixa d-flex align-items-center">
-                        <label class="col-sm text-center" for="campo">CÓD.PS:</label>
-                        <div class="col-sm form-group input-text justify-content-center d-flex w-100">
-                            <input type="text" class="form-control row" name="local_ocorrencia"
-                                placeholder="Digite o local da ocorrência">
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <!-- campo de texto para nº ocorr. -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">Nº OCORR.:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="num_ocorrencia"
+                        placeholder="Digite o nº ocorr.">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto para cód. IR -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">CÓD. IR:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="cod_ir"
+                        placeholder="Digite o cód. IR">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto para cód.PS -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">CÓD. PS:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="cod_ps"
+                        placeholder="Digite o cód. PS">
+                </div>
+            </div>
+        </div>
+         <!-- campo de texto para desp. -->
+         <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">DESP.:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="desp"
+                        placeholder="Digite o desp.">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto para H.CH -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">H.CH:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="h_ch"
+                        placeholder="Digite a H.CH">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto para Km final -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">KM FINAL:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="km_final"
+                        placeholder="Digite o Km final">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto para cód. SIA/SUS -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa d-flex align-items-center">
+                <label class="col-sm-5 text-center" for="campo">CÓD. SIA/SUS:</label>
+                <div class="col-sm form-group input-text justify-content-center d-flex w-100">
+                    <input type="text" class="form-control row" name="cod_sia_sus"
+                        placeholder="Digite o cód. SIA/SUS">
                 </div>
             </div>
         </div>
