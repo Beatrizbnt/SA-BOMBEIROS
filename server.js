@@ -121,6 +121,8 @@ router.post('/Pages/teste', (req, res) => {
     const sexo_bebe = req.body.sexo_bebe;
     const horas_nascimento = req.body.horas_nascimento;
     const nome_bebe = req.body.nome_bebe;
+    // Tabela tipo de ocorrência pré hospitalar
+    const tipo_ocorrencia = req.body.tipo_ocorrencia;
 
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, data_ocorrencia, 
@@ -141,6 +143,10 @@ router.post('/Pages/teste', (req, res) => {
         feito_inspecao_visual_anamnese, parto_realizado_anamnese, sexo_bebe_anamnese, horario_nascimento_bebe_anamnese,
         nome_bebe_anamnese) 
                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
+    // tabela tipo de ocorrência
+    const sqlTipoOcorrencia = `INSERT INTO ocorrencia_pre_hospitalar (ocorrencia_pre_hospitalar) 
+                             VALUES (?)`;
     
 
     
@@ -174,7 +180,12 @@ router.post('/Pages/teste', (req, res) => {
                                                 // Trate o erro da anamnese emergencial adequadamente
                                             } else {
                                                 console.log('Dados da anamnese gestacional inseridos com sucesso');
-                                                res.redirect('/Pages/gerarrelatorio.html');
+                                                conexao.query(sqlTipoOcorrencia, [ocorrencia_pre_hospitalar], (errTipoOcorrencia, resultTipoOcorrencia) => {
+                                                        if (errTipoOcorrencia) {
+                                                            console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
+                                                            // Trate o erro da anamnese emergencial adequadamente
+                                                        } else {
+                                                            console.log('Dados do tipo de ocorrência inseridos com sucesso');
                                             }
                                         });
     

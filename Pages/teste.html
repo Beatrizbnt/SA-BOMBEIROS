@@ -778,8 +778,7 @@
 
                 </div>
             </div>
-            <button>enviar</button>
-        </form>
+            
         <!-- INÍCIO DE TIPO DE OCORRÊNCIA -->
         <!-- TÍTULO -->
         <div class="container-fluid faixa">
@@ -1092,6 +1091,8 @@
                 </div>
             </div>
         </div>
+        <button>enviar</button>
+        </form>
         <!-- INÍCIO DE PROBLEMAS ENCONTRADOS SUSPEITOS-->
         <!-- TÍTULO -->
         <div class="container-fluid faixa">
@@ -4774,12 +4775,6 @@
             gestacional.style.display = this.checked ? 'none' : 'block';
         });
 
-        // Função para mostrar/ocultar o campo de queda
-        document.getElementById('queda').addEventListener('change', function () {
-            var tipo_queda = document.getElementById('tipo_queda');
-            tipo_queda.style.display = this.checked ? 'block' : 'none';
-        });
-
 
         // Função para mostrar/ocultar o campo de respiratório
         document.getElementById('respiratorio').addEventListener('change', function () {
@@ -4891,17 +4886,26 @@
             tipo_samu.style.display = this.checked ? 'block' : 'none';
         });
 
-        // Função para mostrar/ocultar o campo de objetos recolhidos
-        document.getElementById('objSim').addEventListener('change', function () {
-            var objetos = document.getElementById('objetos');
-            objetos.style.display = this.checked ? 'block' : 'none';
-        });
+        // Adiciona um evento de mudança ao botão de rádio "NÃO"
+document.getElementById('objNao').addEventListener('change', function () {
+    var objetos = document.getElementById('objetos');
+    var textarea = objetos.querySelector('textarea'); // Obtém o elemento de textarea dentro do bloco de objetos
+    
+    // Verifica se o usuário selecionou "NÃO"
+    if (this.checked) {
+        // Limpa o conteúdo do textarea
+        textarea.value = '';
+        objetos.style.display = 'none'; // Oculta o bloco de objetos recolhidos
+    } else {
+        objetos.style.display = 'block'; // Mostra o bloco de objetos recolhidos
+    }
+});
 
-        document.getElementById('objNao').addEventListener('change', function () {
-            var objetos = document.getElementById('objetos');
-            objetos.style.display = this.checked ? 'none' : 'block';
-        });
-
+// Adiciona um evento de mudança ao botão de rádio "SIM"
+document.getElementById('objSim').addEventListener('change', function () {
+    var objetos = document.getElementById('objetos');
+    objetos.style.display = this.checked ? 'block' : 'none';
+});
 
 
         // função para mostrar/ocultar avaliação paciente glascow

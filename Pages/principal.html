@@ -84,70 +84,34 @@
 
   <!-- fundo da tela que separa da header e da a cor do fundo -->
   <div class="wrapper bg-light">
-    <!-- Título de cada parte da ficha ele é padrao em todos os outros, aqui também inicia a ficha -->
-    <div class="container-fluid faixa">
-      <div class="row">
-        <div class="col-12 faixa-titulo p-2 ">
-          <p class="m-0 text-center fs-5">FICHA DE ATENDIMENTO</p>
-        </div>
-      </div>
-    </div>
-   <div class="container align-items-center w-100 d-flex justify-content-center">
-      <div class="row d-flex justify-content-between w-75 p-4">
-        <div class="mb-3 mb-md-0 col d-flex">
-          <div class="form-group selecao-caixa">
-            <label class="selecao align-items-center ">PACIENTE IDENTIFICADO
-              <div class="form-group">
-                <input type="checkbox" class="form-control input-check ms-2">
-                <span class="check"></span>
-              </div>
-            </label>
+    <div class="container">
+      <h1 class="text-center mt-5">Respiração Cardiopulmonar</h1>
+      <div class="row mt-5">
+          <div class="col-md-4">
+              <h2>X Avaliação</h2>
+              <ul>
+                  <li>X Avaliação Inicial</li>
+                  <li>Avaliação Diregida</li>
+                  <li>Avaliação Continuada</li>
+              </ul>
           </div>
-        </div>
-        <div class="mb-3 mb-md-0 col d-flex">
-         <div class="form-group data-caixa">
-          <label for="data" class="me-2">DATA:</label>
-          <input type="date" class="form-control w-100" id="data">
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-12 subtitulo d-flex justify-content-center p-2 ">
-          <p class="m-0 text-center fs-5" id="info-paciente">INFORMAÇÕES DO PACIENTE</p>
-        </div>
-      </div>
-
-       <div class="container p-4">
-        <div class="container align-items-center selecao-subcaixa">
-          <p>SEXO:</p>
-          <div class="row g-3">
-            <div class="col-md-6 form-group  mb-3 mb-md-0 subcaixa">
-              <label class="selecao">FEMININO
-                <div class="form-control">
-                  <input type="radio" name="radio" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                    aria-expanded="false" aria-controls="collapseExample" class="ms-2">
-                  <span class="checkmark"></span>
-                </div>
-              </label>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when
-                  the user activates the relevant trigger.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 form-group  mb-3 mb-md-0 subcaixa">
-              <label class="selecao">MASCULINO
-                <div class="form-control">
-                  <input type="radio" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                    aria-controls="collapseExample" name="radio" class="ms-2">
-                  <span class="checkmark"></span>
-                </div>
-              </label>
-            </div>
+          <div class="col-md-4">
+              <h2>Chave de Rautek</h2>
+              <ul>
+                  <li>Ponte</li>
+                  <li>Retirado Capacete</li>
+                  <li>Reanimação Cardiorespiratória</li>
+              </ul>
           </div>
-        </div>
+          <div class="col-md-4">
+              <h2>Cânula de Guedel</h2>
+              <ul>
+                  <li>Desobstrução de V.A</li>
+                  <li>Emprego do D.E.A</li>
+                  <li>Q Outro</li>
+              </ul>
+          </div>
+      </div>
       </div>
 <!--
       <div class="container w-75 d-flex align-items-start ">
