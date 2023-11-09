@@ -84,7 +84,6 @@ router.post('/Pages/login', (req, res) => {
 router.post('/Pages/teste', (req, res) => {
     // tabela paciente
     const pacienteIdentificado = req.body.pacienteIdentificado;
-    const data = req.body.data;
     const sexo = req.body.sexo;
     const gestante = req.body.gestante;
     const nome_paciente = req.body.nome_paciente;
@@ -125,9 +124,9 @@ router.post('/Pages/teste', (req, res) => {
     const tipo_ocorrencia = req.body.tipo_ocorrencia;
 
     // tabela paciente
-    const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, data_ocorrencia, 
+    const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
         sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+                 VALUES (?, ?, ?, ?, ?, ?, ?)`;
     // tabela acompanhante
     const sqlAcompanhante = `INSERT INTO informacao_acompanhante (identificacao_acompanhante, nome_acompanhante, idade_acompanhante) 
                              VALUES (?, ?, ?)`;
@@ -139,19 +138,19 @@ router.post('/Pages/teste', (req, res) => {
     // tabela anamnese gestacional
     const sqlAnamneseGestacional = `INSERT INTO anamnese_gestacional (periodo_gestacao_anamnese, fez_pre_natal_anamnese,
         nome_medico_anamnese, possibilidade_complicacoes_anamnese, primeiro_filho_anamnese, horas_iniciaram_contracoes_anamnese,
-        tempo_contracoes_gestante, intervalo_contracoes_anamnese, pressao_quadril_evacuar_anamnese, houve_ruptura_bolsa_anamnese,
+        tempo_contracoes_anamnese, intervalo_contracoes_anamnese, pressao_quadril_evacuar_anamnese, houve_ruptura_bolsa_anamnese,
         feito_inspecao_visual_anamnese, parto_realizado_anamnese, sexo_bebe_anamnese, horario_nascimento_bebe_anamnese,
         nome_bebe_anamnese) 
                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-    
+
     // tabela tipo de ocorrência
     const sqlTipoOcorrencia = `INSERT INTO ocorrencia_pre_hospitalar (ocorrencia_pre_hospitalar) 
                              VALUES (?)`;
-    
 
-    
 
-    conexao.query(sqlPaciente, [pacienteIdentificado, data, sexo, gestante, nome_paciente,
+
+
+    conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
             if (errPaciente) {
                 console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
@@ -174,21 +173,23 @@ router.post('/Pages/teste', (req, res) => {
                                     console.log('Dados da anamnese emergencial inseridos com sucesso');
                                     conexao.query(sqlAnamneseGestacional, [periodo_gestacao, pre_natal, nome_medico, complicacoes, primeiro_filho,
                                         horas_contracoes, tempo_contracoes, intervalo_contracoes, quadril_pressao, ruptura_bolsa,
-                                    inspecao_visual, parto_realizado, sexo_bebe, horas_nascimento, nome_bebe], (errAnamneseGestacional, resultAnamneseGestacional) => {
+                                        inspecao_visual, parto_realizado, sexo_bebe, horas_nascimento, nome_bebe], (errAnamneseGestacional, resultAnamneseGestacional) => {
                                             if (errAnamneseGestacional) {
                                                 console.log('Erro ao inserir dados da anamnese gestacional: ' + errAnamneseGestacional.message);
                                                 // Trate o erro da anamnese emergencial adequadamente
                                             } else {
                                                 console.log('Dados da anamnese gestacional inseridos com sucesso');
-                                                conexao.query(sqlTipoOcorrencia, [ocorrencia_pre_hospitalar], (errTipoOcorrencia, resultTipoOcorrencia) => {
-                                                        if (errTipoOcorrencia) {
-                                                            console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
-                                                            // Trate o erro da anamnese emergencial adequadamente
-                                                        } else {
-                                                            console.log('Dados do tipo de ocorrência inseridos com sucesso');
+                                                conexao.query(sqlTipoOcorrencia, [tipo_ocorrencia], (errTipoOcorrencia, resultTipoOcorrencia) => {
+                                                    if (errTipoOcorrencia) {
+                                                        console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
+                                                        // Trate o erro da anamnese emergencial adequadamente
+                                                    } else {
+                                                        console.log('Dados do tipo de ocorrência inseridos com sucesso');
+                                                    }
+                                                });
+
                                             }
                                         });
-    
                                 }
                             });
                     }
@@ -200,6 +201,6 @@ router.post('/Pages/teste', (req, res) => {
 module.exports = router;
 app.use('/', router);
 
-app.listen(8080, () => {
-    console.log('O servidor está rodando na porta 8080');
+app.listen(8081, () => {
+    console.log('O servidor está rodando na porta 8081');
 }); 
