@@ -18,7 +18,7 @@ const mysql = require('mysql2');
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'sa_bombeiros'
 });
 
@@ -122,6 +122,25 @@ router.post('/Pages/teste', (req, res) => {
     const nome_bebe = req.body.nome_bebe;
     // Tabela tipo de ocorrência pré hospitalar
     const tipo_ocorrencia = req.body.tipo_ocorrencia;
+    const tipo_ocorrencia_outro = req.body.tipo_ocorrencia_outro;
+    // Tabela problemas encontrados suspeitos
+    const psiquiatrico = req.boby.psiquiatrico;
+    const respiratorio_dpoc = req.body.psiquiatrico;
+    const respiratorio_inalacao_fumaca = req.body.respiratorio_inalacao_fumaca;
+    const diabetes_hiper = req.body.diabetes_hiper;
+    const diabetes_hipo = req.body.diabetes_hipo;
+    const obstetrico_parto = req.body.obstetrico_parto;
+    const obstetrico_gestante = req.body.obstetrico_gestante;
+    const obstetrico_hemorragia = req.body.obstetrico_hemorragia;
+    const transporte_aereo = req.body.transporte_aereo;
+    const transporte_clinico = req.body.transporte_clinico;
+    const transporte_emergencial = req.body.transporte_emergencial;
+    const transporte_pos_trauma = req.body.transporte_pos_trauma;
+    const transporte_samu = req.body.transporte_samu;
+    const transporte_sem_remocao = req.body.transporte_sem_remocao;
+    const transporte_outro = req.body.transporte_outro;
+    const problemas_suspeitos_outro = req.body.problemas_suspeitos_outro;
+    
 
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
@@ -140,18 +159,17 @@ router.post('/Pages/teste', (req, res) => {
         nome_medico_anamnese, possibilidade_complicacoes_anamnese, primeiro_filho_anamnese, horas_iniciaram_contracoes_anamnese,
         tempo_contracoes_anamnese, intervalo_contracoes_anamnese, pressao_quadril_evacuar_anamnese, houve_ruptura_bolsa_anamnese,
         feito_inspecao_visual_anamnese, parto_realizado_anamnese, sexo_bebe_anamnese, horario_nascimento_bebe_anamnese,
-        nome_bebe_anamnese) 
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+        nome_bebe_anamnese) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela tipo de ocorrência
-    const sqlTipoOcorrencia = `INSERT INTO ocorrencia_pre_hospitalar (ocorrencia_pre_hospitalar) 
-                             VALUES (?)`;
+    const sqlTipoOcorrencia = `INSERT INTO ocorrencia_pre_hospitalar (tipo_ocorrencia_pre_hospitalar, outro_tipo_ocorrencia) VALUES (?,?)`;
 
 
 
 
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
+            console.log(sexo)
             if (errPaciente) {
                 console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
                 // Trate o erro do paciente adequadamente
@@ -179,8 +197,11 @@ router.post('/Pages/teste', (req, res) => {
                                                 // Trate o erro da anamnese emergencial adequadamente
                                             } else {
                                                 console.log('Dados da anamnese gestacional inseridos com sucesso');
-                                                conexao.query(sqlTipoOcorrencia, [tipo_ocorrencia], (errTipoOcorrencia, resultTipoOcorrencia) => {
+                                                conexao.query(sqlTipoOcorrencia, [tipo_ocorrencia, tipo_ocorrencia_outro], (errTipoOcorrencia, resultTipoOcorrencia) => {
+                                                    console.log(tipo_ocorrencia)
+                                                    console.log(tipo_ocorrencia_outro)
                                                     if (errTipoOcorrencia) {
+                                                    
                                                         console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
                                                         // Trate o erro da anamnese emergencial adequadamente
                                                     } else {
