@@ -1087,13 +1087,7 @@
             </div>
         </div>
 
-        <div class="container esp-botao d-flex justify-content-center  align-items-center mb-4">
-            
-            <button type="submit" class="btn d-flex p-3 fs-5">GERAR RELATÓRIO</button>
-
-        </div>
-
-        </form>
+        
         <!-- INÍCIO DE PROBLEMAS ENCONTRADOS SUSPEITOS-->
         <!-- TÍTULO -->
         <div class="container-fluid faixa">
@@ -1126,19 +1120,17 @@
                             <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                                 <div class="justify-content-center d-flex">
                                     <div class="form-check input-check">
-                                        <input class="form-check-input " type="checkbox" id="respiratorio"
-                                            name="respiratorio">
                                         <label class="form-check-label">
                                             RESPIRATÓRIO
                                         </label>
                                     </div>
                                 </div>
                                 <!-- caixa de seleção escondida. -->
-                                <div style="display: none;" id="tipo_respiratorio">
+                                <div>
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="respiratorio_dpoc"
+                                            <input class="form-check-input " type="radio" name="tipo_respiratorio"
                                                 value="respiratório DPOC">
                                             <label class="form-check-label">
                                                 DPOC
@@ -1148,7 +1140,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="respiratorio_inalacao_fumaca"
+                                            <input class="form-check-input " type="radio" name="tipo_respiratorio"
                                                 value="respiratório inalação fumaça">
                                             <label class="form-check-label">
                                                 INALAÇÃO FUMAÇA
@@ -1163,18 +1155,17 @@
                             <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                                 <div class="justify-content-center d-flex">
                                     <div class="form-check input-check">
-                                        <input class="form-check-input " type="checkbox" name="diabetes" id="diabetes">
                                         <label class="form-check-label">
                                             DIABETES
                                         </label>
                                     </div>
                                 </div>
                                 <!-- caixa de seleção escondida. -->
-                                <div style="display: none;" id="tipo_diabetes">
+                                <div>
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="diabetes_hiper"
+                                            <input class="form-check-input " type="radio" name="tipo_diabetes"
                                                 value="diabetes hiperglecimia">
                                             <label class="form-check-label">
                                                 HIPERGLECIMIA
@@ -1184,7 +1175,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="diabetes_hipo"
+                                            <input class="form-check-input " type="radio" name="tipo_diabetes"
                                                 value="diabetes hipoglecimia">
                                             <label class="form-check-label">
                                                 HIPOGLECIMIA
@@ -1199,19 +1190,17 @@
                             <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                                 <div class="justify-content-center d-flex">
                                     <div class="form-check input-check">
-                                        <input class="form-check-input " type="checkbox" name="obstetrico"
-                                            id="obstetrico">
                                         <label class="form-check-label">
                                             OBSTÉTRICO
                                         </label>
                                     </div>
                                 </div>
                                 <!-- caixa de seleção escondida. -->
-                                <div style="display: none;" id="tipo_obstetrico">
+                                <div>
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="obstetrico_parto"
+                                            <input class="form-check-input " type="radio" name="tipo_obstetrico"
                                                 value="obstétrico parto emergencial">
                                             <label class="form-check-label">
                                                 PARTO EMERGENCIAL
@@ -1221,7 +1210,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="obstetrico_gestante"
+                                            <input class="form-check-input " type="radio" name="tipo_obstetrico"
                                                 value="obstétrico gestante">
                                             <label class="form-check-label">
                                                 GESTANTE
@@ -1231,7 +1220,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="obstetrico_hemorragia"
+                                            <input class="form-check-input " type="radio" name="tipo_obstetrico"
                                                 value="obstétrico hemorragia excessiva">
                                             <label class="form-check-label">
                                                 HEMORRAGIA EXCESSIVA
@@ -1253,11 +1242,11 @@
                                     </div>
                                 </div>
                                 <!-- caixa de seleção escondida. -->
-                                <div  id="tipo_transporte">
+                                <div>
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte_aereo"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte aéreo">
                                             <label class="form-check-label">
                                                 AÉREO
@@ -1267,7 +1256,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte-clinico"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte clínico">
                                             <label class="form-check-label">
                                                 CLÍNICO
@@ -1277,7 +1266,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte_emergencial"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte emergencial">
                                             <label class="form-check-label">
                                                 EMERGENCIAL
@@ -1287,7 +1276,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte_pos_trauma"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte pós-trauma">
                                             <label class="form-check-label">
                                                 PÓS-TRAUMA
@@ -1297,7 +1286,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte_samu"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte SAMU">
                                             <label class="form-check-label">
                                                 SAMU
@@ -1307,7 +1296,7 @@
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="transporte_sem_remocao"
+                                            <input class="form-check-input " type="radio" name="tipo_transporte"
                                                 value="transporte sem remoção">
                                             <label class="form-check-label">
                                                 SEM REMOÇÃO
@@ -1317,7 +1306,7 @@
                                     <!-- campo de texto para outro de tipo de transporte -->
                                     <div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="transporte_outro"
+                                                <input type="text" class="form-control" name="outro_tipo_transporte"
                                                     placeholder="Outro">
                                             </div>
                                     </div>
@@ -1338,6 +1327,13 @@
                 </div>
             </div>
         </div>
+        <div class="container esp-botao d-flex justify-content-center  align-items-center mb-4">
+            
+            <button type="submit" class="btn d-flex p-3 fs-5">GERAR RELATÓRIO</button>
+
+        </div>
+
+        </form>
         <!-- INÍCIO AVALIAÇÃO GLASGOW MAIORES DE 5 ANOS-->
         <!-- div escondida -->
         <div id="glascow_maiores5">
