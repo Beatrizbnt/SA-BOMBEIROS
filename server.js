@@ -131,7 +131,16 @@ router.post('/Pages/teste', (req, res) => {
     const tipo_transporte = req.body.tipo_transporte;
     const outro_tipo_transporte = req.body.outro_tipo_transporte;
     const problemas_suspeitos_outro = req.body.problemas_suspeitos_outro;
-
+    //tabela Avaliação do Paciente (Glasgow) MAIORES DE 5 ANOS
+    const abertura_ocular_maiores = req.body.abertura_ocular_maiores;
+    const resposta_verbal_maiores = req.body.resposta_verbal_maiores;
+    const resposta_motora_maiores = req.body.resposta_motora_maiores;
+    const soma_avaliacao_glasgow_maiores = req.body.soma_avaliacao_glasgow_maiores;
+    //tabela Avaliação do Paciente (Glasgow) MENORES DE 5 ANOS
+    const abertura_ocular_menores = req.body.abertura_ocular_menores;
+    const resposta_verbal_menores = req.body.resposta_verbal_menores;
+    const resposta_motora_menores = req.body.resposta_motora_menores;
+    const soma_avaliacao_glasgow_menores = req.body.soma_avaliacao_glasgow_menores;
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
         sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
@@ -160,6 +169,13 @@ router.post('/Pages/teste', (req, res) => {
         tipo_diabetes_problemas_suspeitos, tipo_obstetrico_problemas_suspeitos, tipo_transporte_problemas_suspeitos, transporte_outro_problemas_suspeitos, 
         outro_problemas_suspeitos) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
+    // tabela Avaliação Glasgow Maiores
+    const sqlAvaliacaoGlasgowMaiores = `INSERT INTO avaliacao_glasgow_maiores_5 (abertura_ocular_maiores, resposta_verbal_maiores,
+        resposta_motora_maiores, soma_avaliacao_glasgow_maiores) VALUES (?, ?, ?, ?)`;
+
+    // tabela Avaliação Glasgow Menores 
+    const sqlAvaliacaoGlasgowMenores = `INSERT INTO avaliacao_glasgow_menores_5 (abertura_ocular_menores, resposta_verbal_menores,
+        resposta_motora_menores, soma_avaliacao_glasgow_menores) VALUES (?, ?, ?, ?)`;
 
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
@@ -206,7 +222,17 @@ router.post('/Pages/teste', (req, res) => {
                                                                     // erro de problemas encontrados suspeitos
                                                                 } else {
                                                                     console.log('Dados de problemas encontrados suspeitos inseridos com sucesso');
-
+                                                                    conexao.query(sqlAvaliacaoGlasgowMaiores, [abertura_ocular_maiores, resposta_verbal_maiores,resposta_motora_maiores,
+                                                                        soma_avaliacao_glasgow_maiores], (errAvaliacaoGlasgowMaiores, resultAvaliacaoGlasgowMaiores) => {
+                                                                            if (errAvaliacaoGlasgowMaiores) {
+            
+                                                                                console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errProblemasSuspeitos.message);
+                                                                                // erro de Avaliação do Paciente glasgow Maiores que 5 anos
+                                                                            } else {
+                                                                                console.log('Dados de Avaliação do Paciente glasgow Maiores que 5 anos: inseridos com sucesso');
+            
+                                                                            }
+                                                                        });
                                                                 }
                                                             });
                                                     }

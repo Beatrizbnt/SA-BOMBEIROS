@@ -424,4 +424,15 @@ body {
     color:white;
    }
 
+   .esp-botao-limpar button{
+    background-color:rgba(86, 83, 82, 0.872);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color:white;
+   }
+
+   .esp-botao-limpar button:hover{
+    background-color:#333131;
+    color:white;
+   }
    
