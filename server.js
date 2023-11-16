@@ -141,6 +141,81 @@ router.post('/Pages/teste', (req, res) => {
     const resposta_verbal_menores = req.body.resposta_verbal_menores;
     const resposta_motora_menores = req.body.resposta_motora_menores;
     const soma_avaliacao_glasgow_menores = req.body.soma_avaliacao_glasgow_menores;
+    
+//tabela sinais vitais
+const pressao_arterial = req.body.pressao_arterial;
+const pulso = req.body.pulso;
+const respiracao = req.body.respiracao;
+const saturacao = req.body.saturacao;
+const temperatura = req.body.temperatura;
+const perfusao = req.body.perfusao;
+const sinais_vitais_situacao = req.body.sinais_vitais_situacao;
+//tabela local de traumas
+const local = req.body.local;
+const lado = req.body.lado;
+const face = req.body.face;
+const tipo_trauma = req.body.tipo_trauma;
+const tipo_queimadura =  req.body.tipo_queimadura;
+const local_queimadura =  req.body.local_queimadura;
+//tabela vítima era
+const vitima_era = req.body.vitima_era;
+//tabela decisão transporte
+const decisao_transporte = req.body.decisao_transporte;
+const forma_conducao = req.body.forma_conducao;
+//tabela histórico de ocorrência
+const aspiracao = req.body.aspiracao;
+const avaliacao_inicial = req.body.avaliacao_inicial;
+const avaliacao_dirigida = req.body.avaliacao_digirida;
+const avaliacao_continuada = req.body.avaliacao_continuada;
+const chave_rautek = req.body.chave_rautek;
+const canula_guedel = req.body.canula_guedel;
+const desobstrucao_va = req.body.desobstrucao_va;
+const emprego_dea = req.body.emprego_dea;
+const limpeza_ferimento = req.body.limpeza_ferimento;
+const curativos = req.body.curativos;
+const compressivo = req.body.compressivo;
+const encravamento = req.body.encravamento;
+const ocular = req.body.ocular;
+const queimadura = req.body.queimadura;
+const simples = req.body.simples;
+const tres_pontas = req.body.aspiracao;
+const imobilizacoes_membro_inf_dir = req.body.imobilizacoes_membro_inf_dir;
+const imobilizacoes_membro_inf_esq = req.body.imobilizacoes_membro_inf_esq;
+const imobilizacoes_membro_sup_dir = req.body.imobilizacoes_membro_sup_dir;
+const imobilizacoes_membro_sup_esq = req.body.imobilizacoes_membro_sup_esq;
+const imobilizacoes_quadril = req.body.imobilizacoes_quadril;
+const imobilizacoes_cervical = req.body.imobilizacoes_cervical;
+const maca_sobre_rodas = req.body.maca_sobre_rodas;
+const maca_rigida = req.body.maca_rigida;
+//tabela avaliação cinemática
+const disturbio_comportamento = req.body.disturbio_conportamento;
+const encontrado_capacete = req.body.encontrado_capacete;
+const encontrado_cinto = req.body.encontrado_cinto;
+const para_brisas_avariado = req.body.para_brisas_avariado;
+const caminhando_cena = req.body.caminhando_cena;
+const painel_avariado = req.body.painel_avariado;
+const volante_torcido = req.body.volante_torcido;
+//tabela observações importantes
+const objetos_recolhidos = req.body.objetos_recolhidos;
+const objetos = req.body.objetos;
+const observacoes_importantes = req.body.observacoes_importantes;
+//tabela equipe de atendimento
+const motorista = req.body.motorista;
+const socorrista1 = req.body.socorrista1;
+const socorrista2 = req.body.socorrista2;
+const socorrista3 = req.body.socorrista3;
+const demandante = req.body.demandante;
+const equipe = req.body.equipe;
+//tabela informação transporte
+const local_ocorrencia = req.body.local_ocorrencia;
+const num_usb = req.body.num_usb;
+const num_ocorrencia = req.body.num_ocorrencia;
+const cod_ir = req.body. cod_ir;
+const desp = req.body.desp;
+const h_ch = req.body. h_ch;
+const km_final = req.body.km_final;
+const cod_sia_sus = req.body.cod_sia_sus; 
+
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
         sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
