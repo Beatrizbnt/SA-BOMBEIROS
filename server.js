@@ -141,80 +141,143 @@ router.post('/Pages/teste', (req, res) => {
     const resposta_verbal_menores = req.body.resposta_verbal_menores;
     const resposta_motora_menores = req.body.resposta_motora_menores;
     const soma_avaliacao_glasgow_menores = req.body.soma_avaliacao_glasgow_menores;
+
+    //tabela sinais vitais
+    const pressao_arterial = req.body.pressao_arterial;
+    const pulso = req.body.pulso;
+    const respiracao = req.body.respiracao;
+    const saturacao = req.body.saturacao;
+    const temperatura = req.body.temperatura;
+    const perfusao = req.body.perfusao;
+    const sinais_vitais_situacao = req.body.sinais_vitais_situacao;
+    //tabela local de traumas
+    const local = req.body.local;
+    const lado = req.body.lado;
+    const face = req.body.face;
+    const tipo_trauma = req.body.tipo_trauma;
+    const tipo_queimadura = req.body.tipo_queimadura;
+    const local_queimadura = req.body.local_queimadura;
+    //tabela vítima era
+    const vitima_era = req.body.vitima_era;
+    //tabela decisão transporte
+    const decisao_transporte = req.body.decisao_transporte;
+    const forma_conducao = req.body.forma_conducao;
+    //tabela histórico de ocorrência
+    const aspiracao = req.body.aspiracao;
+    const avaliacao_inicial = req.body.avaliacao_inicial;
+    const avaliacao_dirigida = req.body.avaliacao_digirida;
+    const avaliacao_continuada = req.body.avaliacao_continuada;
+    const chave_rautek = req.body.chave_rautek;
+    const canula_guedel = req.body.canula_guedel;
+    const desobstrucao_va = req.body.desobstrucao_va;
+    const emprego_dea = req.body.emprego_dea;
+    const limpeza_ferimento = req.body.limpeza_ferimento;
+    const curativos = req.body.curativos;
+    const compressivo = req.body.compressivo;
+    const encravamento = req.body.encravamento;
+    const ocular = req.body.ocular;
+    const queimadura = req.body.queimadura;
+    const simples = req.body.simples;
+    const tres_pontas = req.body.aspiracao;
+    const imobilizacoes_membro_inf_dir = req.body.imobilizacoes_membro_inf_dir;
+    const imobilizacoes_membro_inf_esq = req.body.imobilizacoes_membro_inf_esq;
+    const imobilizacoes_membro_sup_dir = req.body.imobilizacoes_membro_sup_dir;
+    const imobilizacoes_membro_sup_esq = req.body.imobilizacoes_membro_sup_esq;
+    const imobilizacoes_quadril = req.body.imobilizacoes_quadril;
+    const imobilizacoes_cervical = req.body.imobilizacoes_cervical;
+    const maca_sobre_rodas = req.body.maca_sobre_rodas;
+    const maca_rigida = req.body.maca_rigida;
+    const ponte = req.body.ponte;
+    const retirado_capacete = req.body.retirado_capacete;
+    const reanimacao_cardiorespiratoria = req.body.maca_rigida;
+    const rolamento_90 = req.body.rolamento_90;
+    const maca_rigida_180 = req.body.rolamento_180;
+    const tomada_decisao = req.body.tomada_decisao;
+    const tratado_choque = req.body.tratado_choque;
+    const uso_canula = req.body.uso_canula;
+    const uso_colar = req.body.uso_colar;
+    const uso_colar_tam = req.body.uso_colar_tam;
+    const uso_ttf = req.body.uso_ttf;
+    const uso_ked = req.body.uso_ked;
+    const ventilacao_suporte = req.body.ventilacao_suporte;
+    const oxigenioterapia_lpm = req.body.oxigenioterapia_lpm;
+    const reanimador_lpm = req.body.reanimador_lpm;
+    const celesc = req.body.celesc;
+    const policia_civil = req.body.policia_civil;
+    const policia_militar = req.body.policia_militar;
+    const pre = req.body.pre;
+    const prf = req.body.prf;
+    const defesa_civil = req.body.defesa_civil;
+    const igp_pc = req.body.igp_pc;
+    const samu = req.body.samu;
+    const usa = req.body.usa;
+    const usb = req.body.usb;
+    const cit = req.body.cit;
+    // tabela materiais utilizados
+    const ataduras = req.body.ataduras;
+    const ataduras_tam = req.body.ataduras_tam;
+    const ataduras_qtd = req.body.ataduras_qtd;
+    const cateter_oculos = req.body.cateter_oculos;
+    const cateter_oculos_qtd = req.body.cateter_oculos_qtd;
+    const compressa_comum = req.body.compressa_comum;
+    const compressa_comum_qtd = req.body.compressa_comum_qtd;
+    const kits = req.body.kits;
+    const kits_tam = req.body.kits_tam;
+    const kits_qtd = req.body.kits_qtd;
+    const luva_desc = req.body.luva_desc;
+    const luva_desc_qtd = req.body.luva_desc_qtd;
+    const mascara_desc = req.body.mascara_desc;
+    const mascara_desc_qtd = req.body.mascara_desc_qtd;
+    const manta_aluminizada = req.body.manta_aluminizada;
+    const manta_aluminizada_qtd = req.body.manta_aluminizada_qtd;
+    const pas_dea = req.body.pas_dea;
+    const pas_dea_qtd = req.body.pas_dea_qtd;
+    const sonda_aspiracao = req.body.sonda_aspiracao;
+    const sonda_aspiracao_qtd = req.body.sonda_aspiracao_qtd;
+    const soro_fisiologico = req.body.sonda_fisiologico;
+    const soro_fisiologico_qtd = req.body.sonda_fisiologico_qtd;
+    const talas_pap = req.body.talas_pap;
+    const talas_pap_tam = req.body.talas_pap_tam;
+    const talas_pap_qtd = req.body.talas_pap_qtd;
+    const outro_material_utilizado_descartavel = req.body.outro_material_utilizado_descartavel;
+    const outro_material_utilizado_descartavel_tam = req.body.outro_material_utilizado_descartavel_tam;
+    const outro_material_utilizado_descartavel_qtd = req.body.outro_material_utilizado_descartavel_qtd;
+    const base_estabilizador = req.body.base_estabilizador;
+    const base_estabilizador_qtd = req.body.base_estabilizador_qtd;
+    const colar = req.body.colar;
+    const colar_tam = req.body.colar_tam;
+    const colar_qtd = req.body.colar_qtd;
     
-//tabela sinais vitais
-const pressao_arterial = req.body.pressao_arterial;
-const pulso = req.body.pulso;
-const respiracao = req.body.respiracao;
-const saturacao = req.body.saturacao;
-const temperatura = req.body.temperatura;
-const perfusao = req.body.perfusao;
-const sinais_vitais_situacao = req.body.sinais_vitais_situacao;
-//tabela local de traumas
-const local = req.body.local;
-const lado = req.body.lado;
-const face = req.body.face;
-const tipo_trauma = req.body.tipo_trauma;
-const tipo_queimadura =  req.body.tipo_queimadura;
-const local_queimadura =  req.body.local_queimadura;
-//tabela vítima era
-const vitima_era = req.body.vitima_era;
-//tabela decisão transporte
-const decisao_transporte = req.body.decisao_transporte;
-const forma_conducao = req.body.forma_conducao;
-//tabela histórico de ocorrência
-const aspiracao = req.body.aspiracao;
-const avaliacao_inicial = req.body.avaliacao_inicial;
-const avaliacao_dirigida = req.body.avaliacao_digirida;
-const avaliacao_continuada = req.body.avaliacao_continuada;
-const chave_rautek = req.body.chave_rautek;
-const canula_guedel = req.body.canula_guedel;
-const desobstrucao_va = req.body.desobstrucao_va;
-const emprego_dea = req.body.emprego_dea;
-const limpeza_ferimento = req.body.limpeza_ferimento;
-const curativos = req.body.curativos;
-const compressivo = req.body.compressivo;
-const encravamento = req.body.encravamento;
-const ocular = req.body.ocular;
-const queimadura = req.body.queimadura;
-const simples = req.body.simples;
-const tres_pontas = req.body.aspiracao;
-const imobilizacoes_membro_inf_dir = req.body.imobilizacoes_membro_inf_dir;
-const imobilizacoes_membro_inf_esq = req.body.imobilizacoes_membro_inf_esq;
-const imobilizacoes_membro_sup_dir = req.body.imobilizacoes_membro_sup_dir;
-const imobilizacoes_membro_sup_esq = req.body.imobilizacoes_membro_sup_esq;
-const imobilizacoes_quadril = req.body.imobilizacoes_quadril;
-const imobilizacoes_cervical = req.body.imobilizacoes_cervical;
-const maca_sobre_rodas = req.body.maca_sobre_rodas;
-const maca_rigida = req.body.maca_rigida;
-//tabela avaliação cinemática
-const disturbio_comportamento = req.body.disturbio_conportamento;
-const encontrado_capacete = req.body.encontrado_capacete;
-const encontrado_cinto = req.body.encontrado_cinto;
-const para_brisas_avariado = req.body.para_brisas_avariado;
-const caminhando_cena = req.body.caminhando_cena;
-const painel_avariado = req.body.painel_avariado;
-const volante_torcido = req.body.volante_torcido;
-//tabela observações importantes
-const objetos_recolhidos = req.body.objetos_recolhidos;
-const objetos = req.body.objetos;
-const observacoes_importantes = req.body.observacoes_importantes;
-//tabela equipe de atendimento
-const motorista = req.body.motorista;
-const socorrista1 = req.body.socorrista1;
-const socorrista2 = req.body.socorrista2;
-const socorrista3 = req.body.socorrista3;
-const demandante = req.body.demandante;
-const equipe = req.body.equipe;
-//tabela informação transporte
-const local_ocorrencia = req.body.local_ocorrencia;
-const num_usb = req.body.num_usb;
-const num_ocorrencia = req.body.num_ocorrencia;
-const cod_ir = req.body. cod_ir;
-const desp = req.body.desp;
-const h_ch = req.body. h_ch;
-const km_final = req.body.km_final;
-const cod_sia_sus = req.body.cod_sia_sus; 
+    //tabela avaliação cinemática
+    const disturbio_comportamento = req.body.disturbio_conportamento;
+    const encontrado_capacete = req.body.encontrado_capacete;
+    const encontrado_cinto = req.body.encontrado_cinto;
+    const para_brisas_avariado = req.body.para_brisas_avariado;
+    const caminhando_cena = req.body.caminhando_cena;
+    const painel_avariado = req.body.painel_avariado;
+    const volante_torcido = req.body.volante_torcido;
+    //tabela observações importantes
+    const objetos_recolhidos = req.body.objetos_recolhidos;
+    const objetos = req.body.objetos;
+    const observacoes_importantes = req.body.observacoes_importantes;
+    //tabela equipe de atendimento
+    const motorista = req.body.motorista;
+    const socorrista1 = req.body.socorrista1;
+    const socorrista2 = req.body.socorrista2;
+    const socorrista3 = req.body.socorrista3;
+    const demandante = req.body.demandante;
+    const equipe = req.body.equipe;
+    //tabela informação transporte
+    const local_ocorrencia = req.body.local_ocorrencia;
+    const num_usb = req.body.num_usb;
+    const num_ocorrencia = req.body.num_ocorrencia;
+    const cod_ir = req.body.cod_ir;
+    const desp = req.body.desp;
+    const h_ch = req.body.h_ch;
+    const km_final = req.body.km_final;
+    const cod_sia_sus = req.body.cod_sia_sus;
+    const outro_meio_auxiliar = req.body.outro_meio_auxiliar;
+    const outro_historico_ocorrencia = req.body.outro_historico_ocorrencia;
 
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
@@ -297,15 +360,15 @@ const cod_sia_sus = req.body.cod_sia_sus;
                                                                     // erro de problemas encontrados suspeitos
                                                                 } else {
                                                                     console.log('Dados de problemas encontrados suspeitos inseridos com sucesso');
-                                                                    conexao.query(sqlAvaliacaoGlasgowMaiores, [abertura_ocular_maiores, resposta_verbal_maiores,resposta_motora_maiores,
+                                                                    conexao.query(sqlAvaliacaoGlasgowMaiores, [abertura_ocular_maiores, resposta_verbal_maiores, resposta_motora_maiores,
                                                                         soma_avaliacao_glasgow_maiores], (errAvaliacaoGlasgowMaiores, resultAvaliacaoGlasgowMaiores) => {
                                                                             if (errAvaliacaoGlasgowMaiores) {
-            
+
                                                                                 console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errProblemasSuspeitos.message);
                                                                                 // erro de Avaliação do Paciente glasgow Maiores que 5 anos
                                                                             } else {
                                                                                 console.log('Dados de Avaliação do Paciente glasgow Maiores que 5 anos: inseridos com sucesso');
-            
+
                                                                             }
                                                                         });
                                                                 }

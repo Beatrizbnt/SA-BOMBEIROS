@@ -14,6 +14,31 @@
 //   document.getElementById("myNav").style.height = "0%";
 // }
 
+// mascara rg e cpf
+const campo = document.getElementById("campo");
+
+if(campo != null){
+campo.addEventListener("input", function (event) {
+    let valor = event.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+    if (valor.length <= 9) {
+        event.target.value = formatarRG(valor);
+    } else if (valor.length <= 11) {
+        event.target.value = formatarCPF(valor);
+    } else {
+        event.target.value = valor.substr(0, 11);
+    }
+});
+}
+function formatarCPF(valor) {
+    return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+}
+
+function formatarRG(valor) {
+    return valor.replace(/(\d{1,3})(\d{0,3})(\d{0,3})/, "$1.$2.$3");
+}
+
+
 // mascara cpf
 function mascaraCPF(event) {
   let tecla = event.key;
@@ -89,14 +114,35 @@ function validarNome(event) {
     }
 }
 
-const nomeInput = document.getElementById('nome');
+// const nomeInput = document.getElementById('nome');
 
-nomeInput.addEventListener('input', validarNome);
+// nomeInput.addEventListener('input', validarNome);
 
-document.addEventListener('DOMContentLoaded', function () {
+const tipo_transporte = document.getElementsByName('tipo_transporte');
+// for ( let tipo of tipo_transporte){
+//    tipo.addEventListener("click", function(){
+//    
+//     outroTransporte.value = ""
+//    })
+// } 
+
+var check_outro = document.getElementById('outro_tipo_transporte');
+check_outro.addEventListener("click", function(){
+    var outroTransporte = document.getElementById('outroTransporte');
+    
+    console.log(check_outro.checked)
+    if(check_outro.checked){
+        outroTransporte.style.display="block"
+        
+    }
+    else{
+        outroTransporte.style.display="none"
+    }
+});
+
     var outroOcorrencia = document.getElementById('outroOcorrencia');
     var outroProblemas = document.getElementById('outroProblemas');
-    var outroTransporte = document.getElementById('outroTransporte');
+   
     var radioOutro = document.querySelector('input[name="transporte"][value="outro"]');
     var radioOutro = document.querySelector('input[name="transporte"][value="outro"]');
     var radioOutro = document.querySelector('input[name="transporte"][value="outro"]');
@@ -386,4 +432,3 @@ function calcularSomaValoresSelecionados(botoes) {
     }
     return soma;
 }
-});
