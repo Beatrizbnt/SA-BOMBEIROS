@@ -143,7 +143,8 @@ router.post('/Pages/teste', (req, res) => {
     const soma_avaliacao_glasgow_menores = req.body.soma_avaliacao_glasgow_menores;
 
     //tabela sinais vitais
-    const pressao_arterial = req.body.pressao_arterial;
+    const pressao_arterial_mm = req.body.pressao_arterial_mm;
+    const pressao_arterial_hg = req.body.pressao_arterial_hg;
     const pulso = req.body.pulso;
     const respiracao = req.body.respiracao;
     const saturacao = req.body.saturacao;
@@ -315,6 +316,10 @@ router.post('/Pages/teste', (req, res) => {
     const sqlAvaliacaoGlasgowMenores = `INSERT INTO avaliacao_glasgow_menores_5 (abertura_ocular_menores, resposta_verbal_menores,
         resposta_motora_menores, soma_avaliacao_glasgow_menores) VALUES (?, ?, ?, ?)`;
 
+    // tabela sinais vitais
+    const sqlSinaisVitais = `INSERT INTO sinais_vitais_paciente (pressao_arterial_mm_sinais, pressao_arterial_hg_sinais, pulso_sinais,
+        respiracao_sinais, saturacao_sinais, temperatura_sinais, perfusao_sinais, situacao_sinais) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
             console.log(sexo)
@@ -364,11 +369,31 @@ router.post('/Pages/teste', (req, res) => {
                                                                         soma_avaliacao_glasgow_maiores], (errAvaliacaoGlasgowMaiores, resultAvaliacaoGlasgowMaiores) => {
                                                                             if (errAvaliacaoGlasgowMaiores) {
 
-                                                                                console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errProblemasSuspeitos.message);
+                                                                                console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errAvaliacaoGlasgowMaiores.message);
                                                                                 // erro de Avaliação do Paciente glasgow Maiores que 5 anos
                                                                             } else {
                                                                                 console.log('Dados de Avaliação do Paciente glasgow Maiores que 5 anos: inseridos com sucesso');
-
+                                                                                conexao.query(sqlAvaliacaoGlasgowMenores, [abertura_ocular_menores, resposta_verbal_menores, resposta_motora_menores,
+                                                                                    soma_avaliacao_glasgow_menores], (errAvaliacaoGlasgowMenores, resultAvaliacaoGlasgowMenores) => {
+                                                                                        if (errAvaliacaoGlasgowMenores) {
+            
+                                                                                            console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Menores que 5 anos: ' + errAvaliacaoGlasgowMenores.message);
+                                                                                            // erro de Avaliação do Paciente glasgow Menores que 5 anos
+                                                                                        } else {
+                                                                                            console.log('Dados de Avaliação do Paciente glasgow Menores que 5 anos: inseridos com sucesso');
+                                                                                            conexao.query(sqlSinaisVitais, [pressao_arterial_mm, pressao_arterial_hg, pulso, respiracao, saturacao,
+                                                                                                temperatura, perfusao, sinais_vitais_situacao], (errSinaisVitais, resultSinaisVitais) => {
+                                                                                                    if (errSinaisVitais) {
+                        
+                                                                                                        console.log('Erro ao inserir dados de sinais vitais: ' + errSinaisVitais.message);
+                                                                                                        // erro de sinais vitais
+                                                                                                    } else {
+                                                                                                        console.log('Dados de sinais vitais: inseridos com sucesso');
+                        
+                                                                                                    }
+                                                                                                });
+                                                                                        }
+                                                                                    });
                                                                             }
                                                                         });
                                                                 }

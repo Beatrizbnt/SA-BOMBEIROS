@@ -1581,12 +1581,7 @@
                 </div>
             </div>
         </div>
-        <div class="container esp-botao d-flex justify-content-center  align-items-center mb-4">
-            
-            <button type="submit" class="btn d-flex p-3 fs-5">GERAR RELATÓRIO</button>
-
-        </div>
-         </form>
+       
         <!-- INÍCIO AVALIAÇÃO GLASGOW MENORES DE 5 ANOS -->
         <div id="glascow_menores5">
             <div class="container-fluid faixa">
@@ -1824,6 +1819,7 @@
                 </div>
             </div>
         </div>
+         
         <!-- INÍCIO SINAIS VITAIS -->
         <div class="container-fluid faixa">
             <div class="row">
@@ -1840,11 +1836,11 @@
                     <div class="col">
                         <div class="row align-items-center p-2">
                             <div class="col form-group input-text justify-content-center m-0 p-0 d-flex w-100">
-                                <input type="text" class="form-control row" name="pressao_arterial">
+                                <input type="text" class="form-control row" name="pressao_arterial_mm">
                             </div>
                             <div class="col text-center">X</div>
                             <div class="col form-group input-text justify-content-center p-0 m-0 d-flex m-0 w-100">
-                                <input type="text" class="form-control row" name="pressao_arterial">
+                                <input type="text" class="form-control row" name="pressao_arterial_hg">
                             </div>
                             <label class="col text-center">mmHg</label>
                         </div>
@@ -1894,6 +1890,15 @@
                     </div>
                 </div>
             </div>
+            <!-- campo de texto temperatura -->
+            <div class="CAIXA mb-3 container">
+                <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
+                    <label class="col-sm-4 text-center">TEMPERATURA:</label>
+                    <div class="col-sm-8 form-group input-text d-flex justify-content-center">
+                        <input type="text" class="form-control row" name="temperatura">
+                    </div>
+                </div>
+            </div>
             <!-- perfusão -->
             <div class="CAIXA mb-3 container">
                 <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
@@ -1903,13 +1908,13 @@
                         <div class="row">
                             <!-- caixa de seleção perfusão -->
                             <div class="form-check col input-radio ms-2">
-                                <input class="form-check-input" type="radio" name="perfusao">
+                                <input class="form-check-input" type="radio" name="perfusao" value="maior que 2 segundos">
                                 <label class="form-check-label">
                                     > 2 SEGUNDOS
                                 </label>
                             </div>
                             <div class="form-check col input-radio ms-2">
-                                <input class="form-check-input" type="radio" name="perfusao">
+                                <input class="form-check-input" type="radio" name="perfusao" value="manor que 2 segundos">
                                 <label class="form-check-label">
                                     < 2 SEGUNDOS </label>
                             </div>
@@ -1931,13 +1936,13 @@
                     class="form-group selecao-caixa sinais-vitais d-flex justify-content-center align-items-center mt-2">
                     <div class="row">
                         <div class="form-check col input-radio ms-2">
-                            <input class="form-check-input" type="radio" name="sinais_vitais_situacao">
+                            <input class="form-check-input" type="radio" name="sinais_vitais_situacao" value="normal">
                             <label class="form-check-label">
                                 NORMAL
                             </label>
                         </div>
                         <div class="form-check col input-radio ms-2">
-                            <input class="form-check-input" type="radio" name="sianis_viatis_situacao">
+                            <input class="form-check-input" type="radio" name="sianis_viatis_situacao" value="anormal">
                             <label class="form-check-label">
                                 ANORMAL </label>
                         </div>
@@ -1946,6 +1951,12 @@
             </div>
         </div>
     </div>
+    <div class="container esp-botao d-flex justify-content-center  align-items-center mb-4">
+            
+            <button type="submit" class="btn d-flex p-3 fs-5">GERAR RELATÓRIO</button>
+
+        </div>
+         </form>
     <!-- INÍCIO LOCAL DE TRAUMAS -->
     <div class="container-fluid faixa">
         <div class="row">
