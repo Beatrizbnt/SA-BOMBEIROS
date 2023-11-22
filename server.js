@@ -1,11 +1,12 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const router = express.Router();
+const express = require('express');// Importa o framework Express
+const app = express();// Inicializa o aplicativo Express
+const path = require('path');// Importa o módulo path para lidar com caminhos de arquivo
+const router = express.Router();// Cria um roteador Express
 
 app.use(express.json()); // Para analisar dados JSON no corpo da solicitação
 app.use(express.urlencoded({ extended: true })); // Para analisar dados de formulário no corpo da solicitação
 
+// Rota para a página inicial
 router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'Pages', 'inicio.html'));
 });
@@ -13,7 +14,7 @@ router.get('/', function (req, res) {
 app.use("/assets", express.static("assets"));
 app.use("/img", express.static("img"));
 app.use("/Pages", express.static("Pages"));
-
+// conexão com o banco
 const mysql = require('mysql2');
 const conexao = mysql.createConnection({
     host: 'localhost',
@@ -21,7 +22,7 @@ const conexao = mysql.createConnection({
     password: '',
     database: 'sa_bombeiros'
 });
-
+// Estabelece a conexão com o banco de dados
 conexao.connect((err) => {
     if (err) {
         console.error('Erro de conexão com o banco de dados: ' + err.stack);
@@ -30,6 +31,7 @@ conexao.connect((err) => {
     console.log('Conectado ao banco de dados MySQL como ID ' + conexao.threadId);
 });
 
+// Realizar o cadastro dos atendentes no banco
 router.post('/Pages/cadastro', (req, res) => {
     const nome = req.body.nome;
     const telefone = req.body.telefone;
@@ -38,7 +40,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!nome || !telefone || !cpf || !senha) {
-
+        return res.status(400).send('Todos os campos são obrigatórios.');
     }
 
     const sql = `INSERT INTO usuario(nome_usuario, telefone_usuario, cpf_usuario, senha_usuario) 
@@ -60,27 +62,27 @@ router.post('/Pages/login', (req, res) => {
 
     // Verificar se todos os campos estão preenchidos
     if (!cpf || !senha) {
-
+        return res.status(400).send('Todos os campos são obrigatórios.');
     }
 
     const sql = `SELECT cpf_cadastro, senha_cadastro FROM cadastro WHERE cpf_cadastro = ? AND senha_cadastro = ?`;
 
     conexao.query(sql, [cpf, senha], (err, results) => {
         if (err) {
-
+            return res.status(500).send('Erro ao cadastrar usuário.');
         } else {
             if (results.length > 0) {
                 // Login bem-sucedido,
                 console.log("Login realizado com sucesso!");
                 res.redirect('/Pages/principal.html');
             } else {
-                // CPF ou senha inválidos, redirecione para a página de login
+                // CPF ou senha inválidos, redireciona para a página de login
 
             }
         }
     });
 });
-
+// Enviar as informações da ficha para o banco
 router.post('/Pages/teste', (req, res) => {
     // tabela paciente
     const pacienteIdentificado = req.body.pacienteIdentificado;
@@ -248,7 +250,7 @@ router.post('/Pages/teste', (req, res) => {
     const colar = req.body.colar;
     const colar_tam = req.body.colar_tam;
     const colar_qtd = req.body.colar_qtd;
-    
+
     //tabela avaliação cinemática
     const disturbio_comportamento = req.body.disturbio_conportamento;
     const encontrado_capacete = req.body.encontrado_capacete;
@@ -320,6 +322,33 @@ router.post('/Pages/teste', (req, res) => {
     const sqlSinaisVitais = `INSERT INTO sinais_vitais_paciente (pressao_arterial_mm_sinais, pressao_arterial_hg_sinais, pulso_sinais,
         respiracao_sinais, saturacao_sinais, temperatura_sinais, perfusao_sinais, situacao_sinais) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
+    // tabela local de trauma
+    const sqLocalTrauma = `INSERT INTO local_trauma () VALUES (?)`;
+
+    // tabela vítima era
+    const sqlVitimaEra = `INSERT INTO vitima_era (vitima_era) VALUES (?)`;
+
+    // tabela decisão transporte
+    const sqlDecisaoTransporte = `INSERT INTO decisao_transporte (decisao_transporte, forma_conducao) VALUES (?, ?)`;
+
+    // tabela histórico da ocorrencia
+    const sqlHistoricoOcorrencia = `INSERT INTO historico_ocorrencia () VALUES (?, ?)`;
+
+    // tabela materiais utilizados
+    const sqlMateriaisUtilizados = `INSERT INTO materiais_utilizados () VALUES (?, ?)`;
+
+    // tabela avaliação cinemática
+    const sqlAvaliacaoCinematica = `INSERT INTO avaliacao_cinematica () VALUES (?, ?)`;
+
+    // tabela obsercações importantes
+    const sqlObservacoesImportantes = `INSERT INTO observacoes_importantes () VALUES (?, ?)`;
+
+    // tabela equipe de atendimento
+    const sqlEquipeAtendimento = `INSERT INTO equipe_atendimento () VALUES (?, ?)`;
+
+     // tabela informação transporte
+     const sqlInformacaoTransporte = `INSERT INTO informacao_transporte () VALUES (?, ?)`;
+
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
             console.log(sexo)
@@ -376,7 +405,7 @@ router.post('/Pages/teste', (req, res) => {
                                                                                 conexao.query(sqlAvaliacaoGlasgowMenores, [abertura_ocular_menores, resposta_verbal_menores, resposta_motora_menores,
                                                                                     soma_avaliacao_glasgow_menores], (errAvaliacaoGlasgowMenores, resultAvaliacaoGlasgowMenores) => {
                                                                                         if (errAvaliacaoGlasgowMenores) {
-            
+
                                                                                             console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Menores que 5 anos: ' + errAvaliacaoGlasgowMenores.message);
                                                                                             // erro de Avaliação do Paciente glasgow Menores que 5 anos
                                                                                         } else {
@@ -384,12 +413,104 @@ router.post('/Pages/teste', (req, res) => {
                                                                                             conexao.query(sqlSinaisVitais, [pressao_arterial_mm, pressao_arterial_hg, pulso, respiracao, saturacao,
                                                                                                 temperatura, perfusao, sinais_vitais_situacao], (errSinaisVitais, resultSinaisVitais) => {
                                                                                                     if (errSinaisVitais) {
-                        
+
                                                                                                         console.log('Erro ao inserir dados de sinais vitais: ' + errSinaisVitais.message);
                                                                                                         // erro de sinais vitais
                                                                                                     } else {
                                                                                                         console.log('Dados de sinais vitais: inseridos com sucesso');
-                        
+                                                                                                        conexao.query(sqlLocalTraumas, [local, lado, face, tipo_trauma, tipo_queimadura, local_queimadura], (errlLocalTraumas, resultLocalTraumas) => {
+                                                                                                                if (errLocalTraumas) {
+            
+                                                                                                                    console.log('Erro ao inserir dados de Local de traumas: ' + errLocalTraumas.message);
+                                                                                                                    // erro de Local de traumas
+                                                                                                                } else {
+                                                                                                                    console.log('Dados de Local de traumas: inseridos com sucesso');
+                                                                                                        conexao.query(sqlVitimaEra, [vitima_era], (errVitimaEra, resultVitimaEra) => {
+                                                                                                                if (errVitimaEra) {
+            
+                                                                                                                    console.log('Erro ao inserir dados de Vítima era: ' + errVitimaEra.message);
+                                                                                                                    // erro de vitíma era
+                                                                                                                } else {
+                                                                                                                    console.log('Dados de vítima era: inseridos com sucesso');
+                                                                                                                    conexao.query(sqlDecisaoTransporte, [decisao_transporte, forma_conducao], (errDecisaoTransporte, resultDecisaoTransporte) => {
+                                                                                                                        if (errVitimaEra) {
+                    
+                                                                                                                            console.log('Erro ao inserir dados de Decisão transporte: ' + errDecisaoTransporte.message);
+                                                                                                                            // erro de desisão transporte
+                                                                                                                        } else {
+                                                                                                                            console.log('Dados de decisão transporte: inseridos com sucesso');
+                                                                                                                            conexao.query(sqlHistoricoOcorrencia, [aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek,
+                                                                                                                                canula_guedel, desobstrucao_va, emprego_dea, limpeza_ferimento, curativos, compressivo, encravamento, ocular,  queimadura,
+                                                                                                                                simples, tres_pontas, imobilizacoes_membro_inf_dir, imobilizacoes_membro_inf_esq, imobilizacoes_membro_sup_dir,
+                                                                                                                                imobilizacoes_membro_sup_esq, imobilizacoes_quadril, imobilizacoes_cervical, maca_sobre_rodas, maca_rigida, ponte,
+                                                                                                                                retirado_capacete, reanimacao_cardiorespiratoria, rolamento_90, maca_rigida_180, tomada_decisao, tratado_choque,
+                                                                                                                                uso_canula, uso_colar, uso_colar_tam, uso_ttf,  uso_ked, ventilacao_suporte, oxigenioterapia_lpm, reanimador_lpm,
+                                                                                                                                celesc, policia_civil, policia_militar, pre, prf, defesa_civil, igp_pc, samu, usa, usb, cit], (errHistoricoOcorrencia, resultHistoricoOcorrencia) => {
+                                                                                                                                if (errHistoricoOcorrencia) {
+                            
+                                                                                                                                    console.log('Erro ao inserir dados de Histórico de ocorrência: ' + errHistoricoOcorrencia.message);
+                                                                                                                                    // erro de Histórico de ocorrência
+                                                                                                                                } else {
+                                                                                                                                    console.log('Dados de Histórico de ocorrência: inseridos com sucesso');
+                                                                                                                                    conexao.query(sqlMateriaisUtilizados, [ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd,
+                                                                                                                                        compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd, luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd,
+                                                                                                                                        manta_aluminizada, manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, soro_fisiologico,
+                                                                                                                                        soro_fisiologico_qtd, talas_pap, talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam, 
+                                                                                                                                        outro_material_utilizado_descartavel_qtd, base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd], (errMateriaisUtilizados, resultMateriaisUtilizados) => {
+                                                                                                                                        if (errMateriaisUtilizados) {
+                                    
+                                                                                                                                            console.log('Erro ao inserir dados de materiais utilizados: ' + errMateriaisUtilizados.message);
+                                                                                                                                            // erro de materiais utilizados
+                                                                                                                                        } else {
+                                                                                                                                            console.log('Dados de materiais utilizados: inseridos com sucesso');
+                                                                                                                                            conexao.query(sqlAvaliacaoCinematica, [disturbio_comportamento, encontrado_capacete, encontrado_cinto,
+                                                                                                                                                para_brisas_avariado, caminhando_cena, painel_avariado, volante_torcido], (errAvaliacaoCinematica, resultAvaliacaoCinematica) => {
+                                                                                                                                                if (errAvaliacaoCinematica) {
+                                            
+                                                                                                                                                    console.log('Erro ao inserir dados de avaliação cinemática: ' + errAvaliacaoCinematica.message);
+                                                                                                                                                    // erro de avaliação cinemática
+                                                                                                                                                } else {
+                                                                                                                                                    console.log('Dados de avaliação cinemática: inseridos com sucesso');
+                                                                                                                                                    conexao.query(sqlObservacoesImportantes, [objetos_recolhidos, objetos, observacoes_importantes], (errObservacoesImportantes, resultObservacoesImportantes) => {
+                                                                                                                                                        if (errObservacoesImportantes) {
+                                                    
+                                                                                                                                                            console.log('Erro ao inserir dados de observações importantes: ' + errObservacoesImportantes.message);
+                                                                                                                                                            // erro de observações importantes
+                                                                                                                                                        } else {
+                                                                                                                                                            console.log('Dados de observações importantes: inseridos com sucesso');
+                                                                                                                                                            conexao.query(sqlEquipeAtendimento, [motorista, socorrista1, socorrista2, socorrista3, demandante,
+                                                                                                                                                                equipe], (errEquipeAtendimento, resultEquipeAtendimento) => {
+                                                                                                                                                                if (errEquipeAtendimento) {
+                                                            
+                                                                                                                                                                    console.log('Erro ao inserir dados de equipe de atendimento: ' + errEquipeAtendimento.message);
+                                                                                                                                                                    // erro de equipe de atendimento
+                                                                                                                                                                } else {
+                                                                                                                                                                    console.log('Dados de equipe de atendimento: inseridos com sucesso');
+                                                                                                                                                                    conexao.query(sqlInformacaoTransporte, [local_ocorrencia, num_usb, num_ocorrencia, cod_ir, desp, h_ch,
+                                                                                                                                                                        km_final, cod_sia_sus, outro_meio_auxiliar, outro_historico_ocorrencia], (errInformacaoTransporte, resultInformacaoTransporte) => {
+                                                                                                                                                                        if (errInformacaoTransporte) {
+                                                                    
+                                                                                                                                                                            console.log('Erro ao inserir dados de informação transporte: ' + errInformacaoTransporte.message);
+                                                                                                                                                                            // erro de informação transporte
+                                                                                                                                                                        } else {
+                                                                                                                                                                            console.log('Dados de informação transporte: inseridos com sucesso');
+                                                                                                                                                                            
+                                                                                                                                                                        }
+                                                                                                                                                                    });
+                                                                                                                                                                }
+                                                                                                                                                            });
+                                                                                                                                                        }
+                                                                                                                                                    });
+                                                                                                                                                }
+                                                                                                                                            }); 
+                                                                                                                                        }
+                                                                                                                                    }); 
+                                                                                                                                }
+                                                                                                                            });
+                                                                                                                        }
+                                                                                                                    });
+                                                                                                                }
+                                                                                                            });
                                                                                                     }
                                                                                                 });
                                                                                         }
@@ -413,7 +534,7 @@ router.post('/Pages/teste', (req, res) => {
 
 module.exports = router;
 app.use('/', router);
-
+// Verificar a\ porta do servidor
 app.listen(8081, () => {
     console.log('O servidor está rodando na porta 8081');
 }); 
