@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Define o conjunto de caracteres da página como UTF-8 -->
   <meta charset="UTF-8">
+
+  <!-- Configura a visualização em dispositivos móveis -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Define o título da página exibido na guia do navegador -->
   <title>Bombeiros Voluntários de Guaramirim</title>
-  <script src="/Pages/scripts/cadastro.js"></script>
-  <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
+
+  <!-- CSS externo  -->
   <link rel="stylesheet" href="/Pages/assets/cadastro.css">
+  <!-- Ícone da página -->
+  <link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
+  <!-- link das fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -15,53 +24,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <!-- arquivo Bootstrap CSS externo de uma CDN (Content Delivery Network) com integridade e configuração de origem segura -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body class="m-0 p-0">
-  
-  <div class="wrapper m-0 p-0 h-100 d-flex align-items-center justify-content-center" >
- 
+  <!-- fundo -->
+  <div class="wrapper m-0 p-0 h-100 d-flex align-items-center justify-content-center">
+    <!-- caixa centralizada -->
     <div class="d-flex align-items-center justify-content-center Caixa-transparente">
-   
+
       <div class="col-md-6  col-sm-12 text-center  d-flex justify-content-center">
-     
-        
-      <form action="/Pages/cadastro" method="post" class="col-md-12 "> 
-        <div class="ms-3">
-          <a class="cadastro" href="#cadastro">
-            <img src="/Pages/img/boneco-cadastro.png" alt="cadastro" width="80">
-          </a>
-        </div>
-        <h1 class="p-3 fs-4">CADASTRO</h1>
-        <div class="form-group">
-          <input type="text" name="nome" class="form-control input-caixa" placeholder="Nome completo" onkeydown="return validarNome(event)" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="telefone" class="form-control input-caixa" placeholder="N° de telefone" onkeydown="return mascaraTelefone(event)" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="cpf" class="form-control input-caixa" placeholder="CPF" onkeydown="return mascaraCPF(event)" required>
-        </div>
-        <div class="form-group"> 
-          <input type="password" name="senha" class="form-control input-caixa" placeholder="Crie uma senha" required>
-        </div>
-        <a href="/Pages/login.html">Já tenho cadastro!</a>
-        <div class="botao mt-3">
-          <button class="btn btn-primary">CADASTRAR</button>
-        </div>
-      </form>
+
+        <!-- Formulário de cadastro -->
+        <form action="/Pages/cadastro" method="post" class="col-md-12 ">
+          <div class="ms-3">
+            <!-- imagem do boneco de cadastro -->
+            <a class="cadastro" href="#cadastro">
+              <img src="/Pages/img/boneco-cadastro.png" alt="cadastro" width="80">
+            </a>
+          </div>
+          <h1 class="p-3 fs-4">CADASTRO</h1>
+          <!-- espaço para nome -->
+          <div class="form-group">
+            <input type="text" name="nome" class="form-control input-caixa" placeholder="Nome completo"
+              onkeydown="return validarNome(event)" required>
+          </div>
+          <!-- espaço para telefone -->
+          <div class="form-group">
+            <input type="text" name="telefone" class="form-control input-caixa" placeholder="N° de telefone"
+              onkeydown="return mascaraTelefone(event)" required>
+          </div>
+          <!-- espaço para CPF -->
+          <div class="form-group">
+            <input type="text" name="cpf" class="form-control input-caixa" placeholder="CPF"
+              onkeydown="return mascaraCPF(event)" required>
+          </div>
+          <!-- espaço para senha -->
+          <div class="form-group">
+            <input type="password" name="senha" class="form-control input-caixa" placeholder="Crie uma senha" required>
+          </div>
+          <!-- link direcionando para o login -->
+          <a href="/Pages/login.html">Já tenho cadastro!</a>
+          <!-- botão para realizar cadastro -->
+          <div class="botao mt-3">
+            <button class="btn btn-primary">CADASTRAR</button>
+          </div>
+        </form>
+      </div>
     </div>
+    <!-- ícone de ajuda -->
+    <a href="/Pages/ajuda.html">
+      <img src="/Pages/img/ajuda.png" alt="ajuda" id="ajuda" class="ms-2 ajuda-img" width=30;>
+    </a>
   </div>
-  <a href="/Pages/ajuda.html">
-    <img src="/Pages/img/ajuda.png" alt="ajuda" id="ajuda" class="ms-2 ajuda-img"
-      width=30;>
-  </a>
-  
-</div>
+  <!-- link bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
+  <!-- JavaScript externo -->
+  <script src="/Pages/scripts/cadastro.js"></script>
 </body>
 </html>
