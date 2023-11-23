@@ -1,18 +1,27 @@
-// function openNav() {
-//   document.getElementById("myNav").style.height = "100%";
+// função para abrir e fechar menu
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
   
+    var menuItems = document.querySelectorAll(".overlay-content a");
+    menuItems.forEach(function(item) {
+      item.addEventListener("click", function() {
+        closeNav();
+      });
+    });
   
-//   var menuItems = document.querySelectorAll(".overlay-content a");
-//   menuItems.forEach(function(item) {
-//       item.addEventListener("click", function() {
-//           closeNav();
-//       });
-//   });
-// }
+    // fechs o menu quando o ícone "X" é clicado
+    var closeButton = document.querySelector(".closebtn");
+    if (closeButton) {
+      closeButton.addEventListener("click", function() {
+        closeNav();
+      });
+    }
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
 
-// function closeNav() {
-//   document.getElementById("myNav").style.height = "0%";
-// }
 
 // mascara rg e cpf
 const campo = document.getElementById("campo");

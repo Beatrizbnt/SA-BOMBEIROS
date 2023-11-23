@@ -82,17 +82,16 @@
                                 AVALIAÇÃO CINEMÁTICA</a>
                             <a href="#obs-importantes">
                                 OBSERVAÇÕES IMPORTANTES</a>
+                                <a href="#equipe-atendimento">
+                                EQUIPE DE ATENDIMENTO</a>
                             <a href="#km-final">
                                 KM FINAL</a>
-                            <a href="#equipe-atendimento">
-                                EQUIPE DE ATENDIMENTO</a>
-                            <a href="#resp-preenchimento">
-                                RESPONSÁVEL PELO PREENCHIMENTO</a>
+                            
                         </menu>
                     </div>
                     <!-- icone do menu -->
                     <span class="icon-menu me-4 ms-4" style="font-size: 30px; color: white; cursor:pointer"
-                        id="clickmenu">&#9776</span>
+                        id="clickmenu" onclick="openNav()">&#9776</span>
                 </div>
             </div>
         </nav>
@@ -479,7 +478,7 @@
 
 
             <!-- títutlo. -->
-            <div id="gestacional" style="display: none;">
+            <div id="gestacional">
                 <div class="container-fluid faixa">
                     <div class="row">
                         <div class="col-12 faixa-titulo p-2 ">
@@ -750,7 +749,7 @@
         <div class="container-fluid faixa">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2 ">
-                    <p class="m-0 text-center fs-5" id+="tipo-ocorrencia">TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR):</p>
+                    <p class="m-0 text-center fs-5" id="tipo-ocorrencia">TIPO DE OCORRÊNCIA (PRÉ-HOSPITALAR):</p>
                 </div>
             </div>
         </div>
@@ -3156,7 +3155,7 @@
                 <div class="container-fluid faixa mt-5">
                     <div class="row">
                         <div class="col-12 faixa-titulo p-2">
-                            <p class="m-0 fs-5" id="vitima-era">FORMA DE CONDUÇÃO</p>
+                            <p class="m-0 fs-5" id="forma-conducao">FORMA DE CONDUÇÃO</p>
                             <select class="form-select" placeholder="selecione" name="forma_conducao">
                                 <option selected></option>
                                 <option value="deitada">DEITADA</option>
@@ -4644,7 +4643,7 @@
             </div>
         </div>
         <!-- campo de texto para local da ocorrência -->
-        <div class="CAIXA mb-3 container">
+        <div class="CAIXA mb-3 container" id="km-final">
             <Div class="form-group row selecao-caixa d-flex align-items-center">
                 <label class="col-sm-5 text-center" for="campo">LOCAL DA OCORRÊNCIA:</label>
                 <div class="col-sm form-group input-text justify-content-center d-flex w-100">
