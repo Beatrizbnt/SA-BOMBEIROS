@@ -164,6 +164,7 @@ router.post('/Pages/teste', (req, res) => {
     const vitima_era = req.body.vitima_era;
     //tabela decisão transporte
     const decisao_transporte = req.body.decisao_transporte;
+    //tabela forma de condução
     const forma_conducao = req.body.forma_conducao;
     //tabela histórico de ocorrência
     const aspiracao = req.body.aspiracao;
@@ -323,13 +324,17 @@ router.post('/Pages/teste', (req, res) => {
         respiracao_sinais, saturacao_sinais, temperatura_sinais, perfusao_sinais, situacao_sinais) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela local de trauma
-    const sqlLocalTrauma = `INSERT INTO local_trauma () VALUES (?)`;
+    const sqlLocalTrauma = `INSERT INTO local_traumas (local_traumas, lado_traumas, face_traumas, tipo_traumas, 
+        queimadura_traumas, grau_queimaduras_trauma) VALUES (?, ?, ?, ?, ?, ?)`;
 
     // tabela vítima era
     const sqlVitimaEra = `INSERT INTO vitima_era (vitima_era) VALUES (?)`;
 
     // tabela decisão transporte
-    const sqlDecisaoTransporte = `INSERT INTO decisao_transporte (decisao_transporte, forma_conducao) VALUES (?, ?)`;
+    const sqlDecisaoTransporte = `INSERT INTO decisao_transporte (decisao_transporte) VALUES (?)`;
+
+    // tabela forma de condução
+    const sqlFormaConducao = `INSERT INTO forma_conducao (forma_conducao) VALUES (?)`;
 
     // tabela histórico da ocorrencia
     const sqlHistoricoOcorrencia = `INSERT INTO historico_ocorrencia () VALUES (?, ?)`;
@@ -348,7 +353,7 @@ router.post('/Pages/teste', (req, res) => {
 
     // tabela informação transporte
     const sqlInformacaoTransporte = `INSERT INTO informacao_transporte () VALUES (?, ?)`;
-
+    
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
             console.log(sexo)
@@ -432,13 +437,20 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                                         // erro de vitíma era
                                                                                                                     } else {
                                                                                                                         console.log('Dados de vítima era: inseridos com sucesso');
-                                                                                                                        conexao.query(sqlDecisaoTransporte, [decisao_transporte, forma_conducao], (errDecisaoTransporte, resultDecisaoTransporte) => {
-                                                                                                                            if (errVitimaEra) {
+                                                                                                                        conexao.query(sqlDecisaoTransporte, [decisao_transporte], (errDecisaoTransporte, resultDecisaoTransporte) => {
+                                                                                                                            if (errDecisaoTransporte) {
 
                                                                                                                                 console.log('Erro ao inserir dados de Decisão transporte: ' + errDecisaoTransporte.message);
                                                                                                                                 // erro de desisão transporte
                                                                                                                             } else {
                                                                                                                                 console.log('Dados de decisão transporte: inseridos com sucesso');
+                                                                                                                                conexao.query(sqlFormaConducao, [forma_conducao], (errFormaConducao, resultFormaConducao) => {
+                                                                                                                                    if (errFormaConducao) {
+        
+                                                                                                                                        console.log('Erro ao inserir dados de forma de condução: ' + errFormaConducao.message);
+                                                                                                                                        // erro de forma de condução
+                                                                                                                                    } else {
+                                                                                                                                        console.log('Dados de forma de condução: inseridos com sucesso');
                                                                                                                                 conexao.query(sqlHistoricoOcorrencia, [aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek,
                                                                                                                                     canula_guedel, desobstrucao_va, emprego_dea, limpeza_ferimento, curativos, compressivo, encravamento, ocular, queimadura,
                                                                                                                                     simples, tres_pontas, imobilizacoes_membro_inf_dir, imobilizacoes_membro_inf_esq, imobilizacoes_membro_sup_dir,
@@ -532,7 +544,7 @@ router.post('/Pages/teste', (req, res) => {
                 });
             }
         });
-
+})
     module.exports = router;
     app.use('/', router);
     // Verificar a porta do servidor
