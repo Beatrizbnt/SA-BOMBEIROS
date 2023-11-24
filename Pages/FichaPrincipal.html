@@ -213,7 +213,7 @@
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
                             <label class="col text-center">NOME DO PACIENTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="nome_paciente"
+                                <input type="text" class="form-control row" name="nome_paciente" placeholder="Digite o nome"
                                     onkeydown="return validarNome(event)">
                             </div>
                         </div>
@@ -248,7 +248,7 @@
 
                             <label class="col text-center">TELEFONE DE CONTATO (DDD):</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100 ">
-                                <input type="text" class="form-control row" name="telefone_paciente"
+                                <input type="text" class="form-control row" name="telefone_paciente" placeholder="Digite o telefone"
                                     onkeydown="return mascaraTelefone(event)">
                             </div>
                         </div>
@@ -294,7 +294,7 @@
 
                             <label class="col text-center">NOME DO ACOMPANHANTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="nome_acompanhante"
+                                <input type="text" class="form-control row" name="nome_acompanhante" placeholder="Digite o nome"
                                     onkeydown="return validarNome(event)">
                             </div>
 
@@ -306,7 +306,7 @@
 
                             <label class="col text-center">IDADE DO ACOMPANHANTE:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="idade_acompanhante">
+                                <input type="text" class="form-control row" name="idade_acompanhante" placeholder="Digite a idade">
                             </div>
                         </div>
                     </div>
@@ -384,9 +384,9 @@
                         <div id="medicacao">
                             <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
 
-                                <label class="col text-center">QUAIS?:</label>
+                                <label class="col-sm-2 text-center">QUAIS?:</label>
                                 <div class="col form-group input-text justify-content-start d-flex w-100">
-                                    <input type="text" class="form-control" name="quais_medicacao">
+                                    <input type="text" class="form-control" name="quais_medicacao" placeholder="especifique">
                                 </div>
 
                             </div>
@@ -394,7 +394,7 @@
                             <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                 <div class="row">
                                     <label class="text-center col">HORÁRIO DA ÚLTIMA MEDICAÇÃO?</label>
-                                    <div class="col form-group input-text justify-content-start d-flex w-100">
+                                    <div class="col form-group input-text d-flex w-100">
                                         <input type="time" class="form-control" name="horas_medicacao">
                                     </div>
                                 </div>
@@ -494,7 +494,7 @@
 
                             <label class="col text-center">PERÍODO DA GESTAÇÃO:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="periodo_gestacao">
+                                <input type="text" class="form-control row" name="periodo_gestacao" placeholder="semanas">
                             </div>
 
                         </div>
@@ -528,7 +528,7 @@
 
                             <label class="col text-center">NOME DO MÉDICO:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="nome_medico">
+                                <input type="text" class="form-control row" name="nome_medico" placeholder="Digite o nome">
                             </div>
 
                         </div>
@@ -591,7 +591,7 @@
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
                             <label class="col text-center">TEMPO DAS CONTRAÇÕES:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="time" class="form-control row" name="tempo_contracoes">
+                                <input type="text" class="form-control row" name="tempo_contracoes" placeholder="horas ou minutos">
                             </div>
                         </div>
                     </div>
@@ -600,7 +600,7 @@
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
                             <label class="col text-center">INTERVALO:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="time" class="form-control row" name="intervalo_contracoes">
+                                <input type="tempo" class="form-control row" name="intervalo_contracoes" placeholder="horas ou minutos">
                             </div>
                         </div>
                     </div>
@@ -736,7 +736,7 @@
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
                             <label class="col text-center">NOME DO BEBÊ:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
-                                <input type="text" class="form-control row" name="nome_bebe">
+                                <input type="text" class="form-control row" name="nome_bebe" placeholder="Digite o nome">
                             </div>
                         </div>
                     </div>
@@ -1271,8 +1271,7 @@
                                     <!-- campo de texto para outro de tipo de transporte -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="tipo_transporte" id="outro_tipo_transporte"> 
-                                                                                              
+                                            <input class="form-check-input " type="radio" name="tipo_transporte" id="outro_tipo_transporte">                        
                                             <label class="form-check-label">
                                                 OUTRO
                                             </label>
@@ -1304,30 +1303,6 @@
         <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
             <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoes()">LIMPAR SELEÇÕES</button>
           </div>
-        
-
-          <script>
-            function limparSelecoes() {
-              var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
-          
-              // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
-              var radios = secaoProblemasSuspeitos.querySelectorAll('input[type="radio"]');
-              radios.forEach(function(radio) {
-                radio.checked = false;
-              });
-          
-              var checkboxes = secaoProblemasSuspeitos.querySelectorAll('input[type="checkbox"]');
-              checkboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-              });
-          
-              var textInputs = secaoProblemasSuspeitos.querySelectorAll('input[type="text"]');
-              textInputs.forEach(function(textInput) {
-                textInput.value = '';
-              });
-            }
-          </script>
-       
         <!-- INÍCIO AVALIAÇÃO GLASGOW MAIORES DE 5 ANOS-->
         <!-- div escondida -->
         <div id="glascow_maiores5">
@@ -1353,11 +1328,10 @@
                         <div class="col">
                             <div class="row m-auto">
                                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex flex-column justify-content-center"><img
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
                                         src="/Pages/img/abertura-ocular.png" alt="abertura ocular" width="200px"
                                         class="p-4">
-                                        <p class="ps-3">ABERTURA OCULAR</p>
-                                        
+                                        <p class="text-center">ABERTURA OCULAR</p>
                                 </div>
                                 <!-- FIM DA PRIMEIRA COLUNA -->
                                 <div class="col">
@@ -1423,9 +1397,10 @@
                         <div class="col mt-5">
                             <div class="row m-auto">
                                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex justify-content-center"><img
-                                        src="/Pages/img/resposta-verbal.png" alt="resposta_motora" width="150px"
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
+                                        src="/Pages/img/resposta-verbal.png" alt="resposta_verbal" width="150px"
                                         class="p-4 ">
+                                        <p class="text-center">RESPOSTA VERBAL</p>
                                 </div>
                                 <!-- FIM DA PRIMEIRA COLUNA -->
                                 <div class="col">
@@ -1491,9 +1466,10 @@
                         <div class="col mt-5">
                             <div class="row m-auto">
                                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex justify-content-center"><img
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
                                         src="/Pages/img/resposta-motora.png" alt="resposta motora" width="150px"
                                         class="p-4">
+                                        <p class="text-center">RESPOSTA MOTORA</p>
                                 </div>
                                 <!-- FIM DA SEGUNDA COLUNA -->
                                 <div class="col">
@@ -1605,9 +1581,10 @@
                         <div class="col">
                             <div class="row m-auto">
                                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex justify-content-center"><img
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
                                         src="/Pages/img/abertura-ocular.png" alt="abertura ocular" width="200px"
                                         class="p-4">
+                                        <p class="text-center">ABERTURA OCULAR</p>
                                 </div>
                                 <!-- FIM DA PRIMEIRA COLUNA -->
                                 <!-- caixa de seleção -->
@@ -1662,9 +1639,10 @@
                         <div class="col mt-5">
                             <div class="row m-auto">
                                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex justify-content-center"><img
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
                                         src="/Pages/img/resposta-verbal.png" alt="resposta_motora" width="150px"
                                         class="p-4 ">
+                                        <p class="text-center">RESPOSTA MOTORA</p>
                                 </div>
                                 <!-- FIM DA PRIMEIRA COLUNA -->
                                 <!-- caixa de seleção  -->
@@ -1730,9 +1708,10 @@
                         <div class="col mt-5">
                             <div class="row m-auto">
                                 <!-- INÍCIO PRIMEIRA COLUNA -->
-                                <div class="col m-auto d-flex justify-content-center"><img
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
                                         src="/Pages/img/resposta-motora.png" alt="resposta motora" width="150px"
-                                        class="p-4"></div>
+                                        class="p-4">
+                                        <p class="text-center">RESPOSTA MOTORA</p></div>
                                 <!-- FIM PRIMEIRA COLUNA -->
                                 <div class="col">
                                     <!-- caixa de seleção  -->
@@ -4164,47 +4143,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="p-1 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    8
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-2 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    12
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-1 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    20
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
                             <div class="container-fluid faixa">
                                 <div class="row">
                                     <div class="col-12 subtitulo p-1 ">
@@ -4223,23 +4162,63 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" value="colar" name="colar">
+                                    <input class="form-check-input " type="checkbox" value="colar"
+                                        name="uso_colar">
                                     <label class="form-check-label">
                                         COLAR
                                     </label>
                                 </div>
                             </div>
+                            
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control"
+                                                    placeholder="TAM" name="uso_colar_tam">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            <div class="container-fluid faixa">
+                                <div class="row">
+                                    <div class="col-12 subtitulo p-1 ">
+                                        <p class="m-0 text-center">QUANTIDADE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="p-1 col">
+                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                        <div class="col form-group input-text">
+                                            <input type="text" class="form-control" id="outroProblemas"
+                                                placeholder="QTD">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" value="coxins estabiliza."
@@ -4249,11 +4228,30 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" id="outroProblemas"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" value="kit's" name="ked"
@@ -4263,6 +4261,43 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control"
+                                                    placeholder="TAM">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            <div class="container-fluid faixa">
+                                <div class="row">
+                                    <div class="col-12 subtitulo p-1 ">
+                                        <p class="m-0 text-center">QUANTIDADE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="p-1 col">
+                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                        <div class="col form-group input-text">
+                                            <input type="text" class="form-control" id="outroProblemas"
+                                                placeholder="QTD">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <!-- caixa de seleção. -->

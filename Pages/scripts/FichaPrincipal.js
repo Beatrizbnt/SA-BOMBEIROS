@@ -441,3 +441,23 @@ function calcularSomaValoresSelecionados(botoes) {
     }
     return soma;
 }
+// limpar seções de problemas
+function limparSelecoes() {
+    var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
+
+    // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
+    var radios = secaoProblemasSuspeitos.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoProblemasSuspeitos.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoProblemasSuspeitos.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+  }
