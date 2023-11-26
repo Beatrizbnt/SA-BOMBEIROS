@@ -143,7 +143,6 @@ router.post('/Pages/teste', (req, res) => {
     const resposta_verbal_menores = req.body.resposta_verbal_menores;
     const resposta_motora_menores = req.body.resposta_motora_menores;
     const soma_avaliacao_glasgow_menores = req.body.soma_avaliacao_glasgow_menores;
-
     //tabela sinais vitais
     const pressao_arterial_mm = req.body.pressao_arterial_mm;
     const pressao_arterial_hg = req.body.pressao_arterial_hg;
@@ -160,6 +159,55 @@ router.post('/Pages/teste', (req, res) => {
     const tipo_trauma = req.body.tipo_trauma;
     const tipo_queimadura = req.body.tipo_queimadura;
     const local_queimadura = req.body.local_queimadura;
+    //tabela sinais e sintomas
+    const abdomen_sensivel_rigido = req.body.abdomen_sensivel_rigido;
+    const afundamento_cranio = req.body.afundamento_cranio;
+    const agitacao = req.body.agitacao;
+    const amnesia = req.body.amnesia;
+    const angia_peito = req.body.angia_peito;
+    const bradipneia = req.body.bradipneia;
+    const bronco_aspirando = req.body.bronco_aspirando;
+    const cefaleia = req.body.cefaleia;
+    const cianose_labios = req.body.cianose_labios;
+    const cianose_extremidade = req.body.cianose_extremidade;
+    const convulsao = req.body.convulsao;
+    const decorticacao = req.body.decorticacao;
+    const deformidade = req.body.deformidade;
+    const descerebracao = req.body.descerebracao;
+    const desmaio = req.body.desmaio;
+    const desvio_traqueia = req.body.desvio_traqueia;
+    const dispneia = req.body.dispneia;
+    const dor_local = req.body.dor_local;
+    const edema_generalizado = req.body.edema_generalizado;
+    const edema_localizado = req.body.edema_localizado;
+    const enfisema_subcutaneo = req.body.enfisema_subcutaneo;
+    const face_palida = req.body.face_palida;
+    const hemorragia_interna = req.body.hemorragia_interna;
+    const hemorragia_externa = req.body.hemorragia_externa;
+    const hipertensao = req.body.hipertensao;
+    const hipotensao = req.body.hipotensao;
+    const nauseas_vomitos = req.body.nauseas_vomitos;
+    const nasoragia = req.body.nasoragia;
+    const obito = req.body.obito;
+    const otorreia = req.body.otorreia;
+    const otorragia = req.body.otorragia;
+    const ovace = req.body.ovace;
+    const parada_cardiaca = req.body.parada_cardiaca;
+    const parada_respiratoria = req.body.parada_respiratoria;
+    const priaprismo = req.body.priaprismo;
+    const prurido_pele = req.body.prurido_pele;
+    const pupilas_anisocoria = req.body.pupilas_anisocoria;
+    const pupilas_miose = req.body.pupilas_miose;
+    const pupilas_isocoria = req.body.pupilas_isocoria;
+    const pupilas_midrise = req.body.pupilas_midrise;
+    const pupilas_reagente = req.body.pupilas_reagente;
+    const pupilas_nao_reagente = req.body.pupilas_nao_reagente;
+    const sede = req.body.sede;
+    const sinal_battle = req.body.sinal_battle;
+    const sinal_guaxinim = req.body.sinal_guaxinim;
+    const sudorese = req.body.sudorese;
+    const tontura = req.body.tontura;
+    const outro_sinais_sintomas = req.body.outro_sinais_sintomas;
     //tabela vítima era
     const vitima_era = req.body.vitima_era;
     //tabela decisão transporte
@@ -195,7 +243,7 @@ router.post('/Pages/teste', (req, res) => {
     const retirado_capacete = req.body.retirado_capacete;
     const reanimacao_cardiorespiratoria = req.body.maca_rigida;
     const rolamento_90 = req.body.rolamento_90;
-    const maca_rigida_180 = req.body.rolamento_180;
+    const rolamento_180 = req.body.rolamento_180;
     const tomada_decisao = req.body.tomada_decisao;
     const tratado_choque = req.body.tratado_choque;
     const uso_canula = req.body.uso_canula;
@@ -206,17 +254,18 @@ router.post('/Pages/teste', (req, res) => {
     const ventilacao_suporte = req.body.ventilacao_suporte;
     const oxigenioterapia_lpm = req.body.oxigenioterapia_lpm;
     const reanimador_lpm = req.body.reanimador_lpm;
-    const celesc = req.body.celesc;
-    const policia_civil = req.body.policia_civil;
-    const policia_militar = req.body.policia_militar;
-    const pre = req.body.pre;
-    const prf = req.body.prf;
-    const defesa_civil = req.body.defesa_civil;
-    const igp_pc = req.body.igp_pc;
-    const samu = req.body.samu;
-    const usa = req.body.usa;
-    const usb = req.body.usb;
-    const cit = req.body.cit;
+    const meios_auxiliares_celesc = req.body.meios_auxiliares_celesc;
+    const meios_auxiliares_defesa_civil = req.body.meios_auxiliares_defesa_civil;
+    const meios_auxiliares_igp_pc = req.body.meios_auxiliares_igp_pc;
+    const meios_auxiliares_policia_civil = req.body.meios_auxiliares_policia_civil;
+    const meios_auxiliares_policia_militar = req.body.meios_auxiliares_policia_militar;
+    const meios_auxiliares_policia_prf = req.body.meios_auxiliares_policia_prf;
+    const meios_auxiliares_policia_pre = req.body.meios_auxiliares_policia_pre;
+    const meios_auxiliares_samu_usa = req.body.meios_auxiliares_samu_usa;
+    const meios_auxiliares_samu_usb = req.body.meios_auxiliares_samu_usb;
+    const meios_auxiliares_cit = req.body.meios_auxiliares_cit;
+    const outro_meios_auxiliares = req.body.outro_meios_auxiliares;
+    const outros_procedimentos = req.body.outros_procedimentos;
     // tabela materiais utilizados
     const ataduras = req.body.ataduras;
     const ataduras_tam = req.body.ataduras_tam;
@@ -251,12 +300,28 @@ router.post('/Pages/teste', (req, res) => {
     const colar = req.body.colar;
     const colar_tam = req.body.colar_tam;
     const colar_qtd = req.body.colar_qtd;
-
+    const coxins_estabiliza = req.body.coxins_estabiliza;
+    const coxins_estabiliza_qtd = req.body.coxins_estabiliza_qtd;
+    const ked = req.body.ked;
+    const ked_tam = req.body.ked_tam;
+    const ked_qtd = req.body.ked_qtd;
+    const maca_rigida_utilizados = req.body.maca_rigida_utilizados;
+    const maca_rigida_utilizados_qtd = req.body.maca_rigida_utilizados_qtd;
+    const t_t_f = req.body.t_t_f;
+    const t_t_f_tam = req.body.t_t_f_tam;
+    const t_t_f_qtd = req.body.t_t_f_qtd;
+    const tirante_aranha = req.body.tirante_aranha;
+    const tirante_aranha_qtd = req.body.tirante_aranha_qtd;
+    const tirante_cabeca = req.body.tirante_cabeca;
+    const tirante_cabeca_qtd = req.body.tirante_cabeca_qtd;
+    const outro_material_utilizado_deixados = req.body.outro_material_utilizado_deixados;
+    const outro_material_utilizado_deixados_tam = req.body.outro_material_utilizado_deixados_tam;
+    const outro_material_utilizado_deixados_qtd = req.body.outro_material_utilizado_deixados_qtd;
     //tabela avaliação cinemática
     const disturbio_comportamento = req.body.disturbio_conportamento;
     const encontrado_capacete = req.body.encontrado_capacete;
     const encontrado_cinto = req.body.encontrado_cinto;
-    const para_brisas_avariado = req.body.para_brisas_avariado;
+    const parabrisas_avariado = req.body.parabrisas_avariado;
     const caminhando_cena = req.body.caminhando_cena;
     const painel_avariado = req.body.painel_avariado;
     const volante_torcido = req.body.volante_torcido;
@@ -276,13 +341,11 @@ router.post('/Pages/teste', (req, res) => {
     const num_usb = req.body.num_usb;
     const num_ocorrencia = req.body.num_ocorrencia;
     const cod_ir = req.body.cod_ir;
+    const cod_ps = req.body.cod_ps;
     const desp = req.body.desp;
     const h_ch = req.body.h_ch;
     const km_final = req.body.km_final;
     const cod_sia_sus = req.body.cod_sia_sus;
-    const outro_meio_auxiliar = req.body.outro_meio_auxiliar;
-    const outro_historico_ocorrencia = req.body.outro_historico_ocorrencia;
-
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
         sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
@@ -327,6 +390,14 @@ router.post('/Pages/teste', (req, res) => {
     const sqlLocalTrauma = `INSERT INTO local_traumas (local_traumas, lado_traumas, face_traumas, tipo_traumas, 
         queimadura_traumas, grau_queimaduras_trauma) VALUES (?, ?, ?, ?, ?, ?)`;
 
+    // tabela sinais e sintomas
+    const sqlSinaisSintomas = `INSERT INTO sinais_sintomas (abdomen_sensivel_rigido, afundamento_cranio, agitacao, amnesia, angia_peito, bradipneia, bronco_aspirando,
+         cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local,
+          edema_generalizado, edema_localizado, enfisema_subcutaneo, face_palida, hemorragia_interna, hemorragia_externa, hipertensao, hipotensao, nauseas_vomitos,
+           nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_miose,
+            pupilas_isocoria, pupilas_midrise, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, tontura, outro_sinais_sintomas) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
     // tabela vítima era
     const sqlVitimaEra = `INSERT INTO vitima_era (vitima_era) VALUES (?)`;
 
@@ -336,24 +407,42 @@ router.post('/Pages/teste', (req, res) => {
     // tabela forma de condução
     const sqlFormaConducao = `INSERT INTO forma_conducao (forma_conducao) VALUES (?)`;
 
-    // tabela histórico da ocorrencia
-    const sqlHistoricoOcorrencia = `INSERT INTO historico_ocorrencia () VALUES (?, ?)`;
+    // tabela procedimentos efetuados
+    const sqlProcedimentosEfetuados = `INSERT INTO procedimentos_efetuados (aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, canula_guedel, desobstrucao_va,
+        emprego_dea, limpeza_ferimento, curativo, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes_membro_inf_dir, imobilizacoes_membro_inf_esq, imobilizacoes_membro_sup_dir,
+        imobilizacoes_membro_sup_esq, imobilizacoes_quadril, imobilizacoes_cervical, maca_sobre_rodas, maca_rigida, ponte, retirado_capacete, reanimacao_cardiorespiratoria, rolamento_90, rolamento_180,
+        tomada_decisao, tratado_choque, uso_canula, uso_colar, uso_colar_tam, uso_ttf, uso_ked, ventilacao_suporte, oxigenioterapia_lpm, reanimador_lpm,
+        meios_auxiliares_celesc, meios_auxiliares_defesa_civil, meios_auxiliares_igp_pc, meios_auxiliares_policia_civil, meios_auxiliares_policia_militar, meios_auxiliares_policia_prf,
+        meios_auxiliares_policia_pre, meios_auxiliares_samu_usa, meios_auxiliares_samu_usb, meios_auxiliares_cit, outro_meios_auxiliares, outros_procedimentos)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela materiais utilizados
-    const sqlMateriaisUtilizados = `INSERT INTO materiais_utilizados () VALUES (?, ?)`;
+    const sqlMateriaisUtilizados = `INSERT INTO materiais_utilizados (ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd,
+         compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd, luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd, manta_aluminizada,
+          manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, soro_fisiologico, soro_fisiologico_qtd, talas_pap,
+           talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam, outro_material_utilizado_descartavel_qtd,
+            base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza, coxins_estabiliza_qtd, ked, ked_tam, ked_qtd,
+             maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca,
+              tirante_cabeca_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela avaliação cinemática
-    const sqlAvaliacaoCinematica = `INSERT INTO avaliacao_cinematica () VALUES (?, ?)`;
+    const sqlAvaliacaoCinematica = `INSERT INTO avaliacao_cinematica (disturbio_comportamento, encontrado_capacete, encontrado_cinto,
+        parabrisas_avariado, caminhando_cena, painel_avariado, volante_torcido) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela obsercações importantes
-    const sqlObservacoesImportantes = `INSERT INTO observacoes_importantes () VALUES (?, ?)`;
+    const sqlObservacoesImportantes = `INSERT INTO observacoes_importantes (objetos_recolhidos, objetos,
+        observacoes_importantes) VALUES (?, ?, ?)`;
 
     // tabela equipe de atendimento
-    const sqlEquipeAtendimento = `INSERT INTO equipe_atendimento () VALUES (?, ?)`;
+    const sqlEquipeAtendimento = `INSERT INTO equipe_atendimento (motorista, socorrista1, socorrista2, socorrista3, demandante, equipe)
+     VALUES (?, ?, ?, ?, ?, ?)`;
 
     // tabela informação transporte
-    const sqlInformacaoTransporte = `INSERT INTO informacao_transporte () VALUES (?, ?)`;
-    
+    const sqlInformacaoTransporte = `INSERT INTO informacao_transporte ( local_ocorrencia, num_usb, num_ocorrencia, cod_ir, cod_ps,
+    desp, h_ch, km_final, cod_sia_sus, outro_meio_auxiliar
+       outro_historico_ocorrencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
             console.log(sexo)
@@ -430,110 +519,131 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                                 // erro de Local de traumas
                                                                                                             } else {
                                                                                                                 console.log('Dados de Local de traumas: inseridos com sucesso');
-                                                                                                                conexao.query(sqlVitimaEra, [vitima_era], (errVitimaEra, resultVitimaEra) => {
-                                                                                                                    if (errVitimaEra) {
+                                                                                                                conexao.query(sqlSinaisSintomas, [abdomen_sensivel_rigido, afundamento_cranio, agitacao, amnesia, angia_peito, bradipneia, bronco_aspirando,
+                                                                                                                    cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local,
+                                                                                                                    edema_generalizado, edema_localizado, enfisema_subcutaneo, face_palida, hemorragia_interna, hemorragia_externa, hipertensao, hipotensao, nauseas_vomitos,
+                                                                                                                    nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_miose,
+                                                                                                                    pupilas_isocoria, pupilas_midrise, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, tontura, outro_sinais_sintomas]
+                                                                                                                    , (errSinaisSintomas, resultSinaisSintomas) => {
+                                                                                                                        if (errSinaisSintomas) {
 
-                                                                                                                        console.log('Erro ao inserir dados de Vítima era: ' + errVitimaEra.message);
-                                                                                                                        // erro de vitíma era
-                                                                                                                    } else {
-                                                                                                                        console.log('Dados de vítima era: inseridos com sucesso');
-                                                                                                                        conexao.query(sqlDecisaoTransporte, [decisao_transporte], (errDecisaoTransporte, resultDecisaoTransporte) => {
-                                                                                                                            if (errDecisaoTransporte) {
+                                                                                                                            console.log('Erro ao inserir dados de sinais e sintomas: ' + errSinasSintomas.message);
+                                                                                                                            // erro de sinais e sintomas
+                                                                                                                        } else {
+                                                                                                                            console.log('Dados de Sinais e Sintomas: inseridos com sucesso');
+                                                                                                                            conexao.query(sqlVitimaEra, [vitima_era], (errVitimaEra, resultVitimaEra) => {
+                                                                                                                                if (errVitimaEra) {
 
-                                                                                                                                console.log('Erro ao inserir dados de Decisão transporte: ' + errDecisaoTransporte.message);
-                                                                                                                                // erro de desisão transporte
-                                                                                                                            } else {
-                                                                                                                                console.log('Dados de decisão transporte: inseridos com sucesso');
-                                                                                                                                conexao.query(sqlFormaConducao, [forma_conducao], (errFormaConducao, resultFormaConducao) => {
-                                                                                                                                    if (errFormaConducao) {
-        
-                                                                                                                                        console.log('Erro ao inserir dados de forma de condução: ' + errFormaConducao.message);
-                                                                                                                                        // erro de forma de condução
-                                                                                                                                    } else {
-                                                                                                                                        console.log('Dados de forma de condução: inseridos com sucesso');
-                                                                                                                                conexao.query(sqlHistoricoOcorrencia, [aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek,
-                                                                                                                                    canula_guedel, desobstrucao_va, emprego_dea, limpeza_ferimento, curativos, compressivo, encravamento, ocular, queimadura,
-                                                                                                                                    simples, tres_pontas, imobilizacoes_membro_inf_dir, imobilizacoes_membro_inf_esq, imobilizacoes_membro_sup_dir,
-                                                                                                                                    imobilizacoes_membro_sup_esq, imobilizacoes_quadril, imobilizacoes_cervical, maca_sobre_rodas, maca_rigida, ponte,
-                                                                                                                                    retirado_capacete, reanimacao_cardiorespiratoria, rolamento_90, maca_rigida_180, tomada_decisao, tratado_choque,
-                                                                                                                                    uso_canula, uso_colar, uso_colar_tam, uso_ttf, uso_ked, ventilacao_suporte, oxigenioterapia_lpm, reanimador_lpm,
-                                                                                                                                    celesc, policia_civil, policia_militar, pre, prf, defesa_civil, igp_pc, samu, usa, usb, cit], (errHistoricoOcorrencia, resultHistoricoOcorrencia) => {
-                                                                                                                                        if (errHistoricoOcorrencia) {
+                                                                                                                                    console.log('Erro ao inserir dados de Vítima era: ' + errVitimaEra.message);
+                                                                                                                                    // erro de vitíma era
+                                                                                                                                } else {
+                                                                                                                                    console.log('Dados de vítima era: inseridos com sucesso');
+                                                                                                                                    conexao.query(sqlDecisaoTransporte, [decisao_transporte], (errDecisaoTransporte, resultDecisaoTransporte) => {
+                                                                                                                                        if (errDecisaoTransporte) {
 
-                                                                                                                                            console.log('Erro ao inserir dados de Histórico de ocorrência: ' + errHistoricoOcorrencia.message);
-                                                                                                                                            // erro de Histórico de ocorrência
+                                                                                                                                            console.log('Erro ao inserir dados de Decisão transporte: ' + errDecisaoTransporte.message);
+                                                                                                                                            // erro de desisão transporte
                                                                                                                                         } else {
-                                                                                                                                            console.log('Dados de Histórico de ocorrência: inseridos com sucesso');
-                                                                                                                                            conexao.query(sqlMateriaisUtilizados, [ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd,
-                                                                                                                                                compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd, luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd,
-                                                                                                                                                manta_aluminizada, manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, soro_fisiologico,
-                                                                                                                                                soro_fisiologico_qtd, talas_pap, talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam,
-                                                                                                                                                outro_material_utilizado_descartavel_qtd, base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd], (errMateriaisUtilizados, resultMateriaisUtilizados) => {
-                                                                                                                                                    if (errMateriaisUtilizados) {
+                                                                                                                                            console.log('Dados de decisão transporte: inseridos com sucesso');
+                                                                                                                                            conexao.query(sqlFormaConducao, [forma_conducao], (errFormaConducao, resultFormaConducao) => {
+                                                                                                                                                if (errFormaConducao) {
 
-                                                                                                                                                        console.log('Erro ao inserir dados de materiais utilizados: ' + errMateriaisUtilizados.message);
-                                                                                                                                                        // erro de materiais utilizados
-                                                                                                                                                    } else {
-                                                                                                                                                        console.log('Dados de materiais utilizados: inseridos com sucesso');
-                                                                                                                                                        conexao.query(sqlAvaliacaoCinematica, [disturbio_comportamento, encontrado_capacete, encontrado_cinto,
-                                                                                                                                                            para_brisas_avariado, caminhando_cena, painel_avariado, volante_torcido], (errAvaliacaoCinematica, resultAvaliacaoCinematica) => {
-                                                                                                                                                                if (errAvaliacaoCinematica) {
+                                                                                                                                                    console.log('Erro ao inserir dados de forma de condução: ' + errFormaConducao.message);
+                                                                                                                                                    // erro de forma de condução
+                                                                                                                                                } else {
+                                                                                                                                                    console.log('Dados de forma de condução: inseridos com sucesso');
+                                                                                                                                                    conexao.query(sqlProcedimentosEfetuados, [aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek,
+                                                                                                                                                        canula_guedel, desobstrucao_va, emprego_dea, limpeza_ferimento, curativos, compressivo, encravamento, ocular, queimadura,
+                                                                                                                                                        simples, tres_pontas, imobilizacoes_membro_inf_dir, imobilizacoes_membro_inf_esq, imobilizacoes_membro_sup_dir,
+                                                                                                                                                        imobilizacoes_membro_sup_esq, imobilizacoes_quadril, imobilizacoes_cervical, maca_sobre_rodas, maca_rigida, ponte,
+                                                                                                                                                        retirado_capacete, reanimacao_cardiorespiratoria, rolamento_90, rolamento_180, tomada_decisao, tratado_choque,
+                                                                                                                                                        uso_canula, uso_colar, uso_colar_tam, uso_ttf, uso_ked, ventilacao_suporte, oxigenioterapia_lpm, reanimador_lpm,
+                                                                                                                                                        meios_auxiliares_celesc, meios_auxiliares_defesa_civil, meios_auxiliares_igp_pc, meios_auxiliares_policia_civil,
+                                                                                                                                                        meios_auxiliares_policia_militar, meios_auxiliares_policia_prf, meios_auxiliares_policia_pre, meios_auxiliares_samu_usa,
+                                                                                                                                                        meios_auxiliares_samu_usb, meios_auxiliares_cit, outro_meios_auxiliares, outros_procedimentos], (errProcedimentosEfetuados, resultProcedimentosEfetuados) => {
+                                                                                                                                                            if (errProcedimentosEfetuados) {
 
-                                                                                                                                                                    console.log('Erro ao inserir dados de avaliação cinemática: ' + errAvaliacaoCinematica.message);
-                                                                                                                                                                    // erro de avaliação cinemática
-                                                                                                                                                                } else {
-                                                                                                                                                                    console.log('Dados de avaliação cinemática: inseridos com sucesso');
-                                                                                                                                                                    conexao.query(sqlObservacoesImportantes, [objetos_recolhidos, objetos, observacoes_importantes], (errObservacoesImportantes, resultObservacoesImportantes) => {
-                                                                                                                                                                        if (errObservacoesImportantes) {
+                                                                                                                                                                console.log('Erro ao inserir dados de procedimentos efetuados: ' + errProcedimentosEfetuados.message);
+                                                                                                                                                                // erro de procedimentos Efetuados
+                                                                                                                                                            } else {
+                                                                                                                                                                console.log('Dados de procedimentos efetuados: inseridos com sucesso');
+                                                                                                                                                                conexao.query(sqlMateriaisUtilizados, [ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd,
+                                                                                                                                                                    compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd, luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd,
+                                                                                                                                                                    manta_aluminizada, manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, soro_fisiologico,
+                                                                                                                                                                    soro_fisiologico_qtd, talas_pap, talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam,
+                                                                                                                                                                    outro_material_utilizado_descartavel_qtd, base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza,
+                                                                                                                                                                    coxins_estabiliza_qtd, ked, ked_tam, ked_qtd,
+                                                                                                                                                                    maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca,
+                                                                                                                                                                    tirante_cabeca_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd], (errMateriaisUtilizados, resultMateriaisUtilizados) => {
+                                                                                                                                                                        if (errMateriaisUtilizados) {
 
-                                                                                                                                                                            console.log('Erro ao inserir dados de observações importantes: ' + errObservacoesImportantes.message);
-                                                                                                                                                                            // erro de observações importantes
+                                                                                                                                                                            console.log('Erro ao inserir dados de materiais utilizados: ' + errMateriaisUtilizados.message);
+                                                                                                                                                                            // erro de materiais utilizados
                                                                                                                                                                         } else {
-                                                                                                                                                                            console.log('Dados de observações importantes: inseridos com sucesso');
-                                                                                                                                                                            conexao.query(sqlEquipeAtendimento, [motorista, socorrista1, socorrista2, socorrista3, demandante,
-                                                                                                                                                                                equipe], (errEquipeAtendimento, resultEquipeAtendimento) => {
-                                                                                                                                                                                    if (errEquipeAtendimento) {
+                                                                                                                                                                            console.log('Dados de materiais utilizados: inseridos com sucesso');
+                                                                                                                                                                            conexao.query(sqlAvaliacaoCinematica, [disturbio_comportamento, encontrado_capacete, encontrado_cinto,
+                                                                                                                                                                                parabrisas_avariado, caminhando_cena, painel_avariado, volante_torcido], (errAvaliacaoCinematica, resultAvaliacaoCinematica) => {
+                                                                                                                                                                                    if (errAvaliacaoCinematica) {
 
-                                                                                                                                                                                        console.log('Erro ao inserir dados de equipe de atendimento: ' + errEquipeAtendimento.message);
-                                                                                                                                                                                        // erro de equipe de atendimento
+                                                                                                                                                                                        console.log('Erro ao inserir dados de avaliação cinemática: ' + errAvaliacaoCinematica.message);
+                                                                                                                                                                                        // erro de avaliação cinemática
                                                                                                                                                                                     } else {
-                                                                                                                                                                                        console.log('Dados de equipe de atendimento: inseridos com sucesso');
-                                                                                                                                                                                        conexao.query(sqlInformacaoTransporte, [local_ocorrencia, num_usb, num_ocorrencia, cod_ir, desp, h_ch,
-                                                                                                                                                                                            km_final, cod_sia_sus, outro_meio_auxiliar, outro_historico_ocorrencia], (errInformacaoTransporte, resultInformacaoTransporte) => {
-                                                                                                                                                                                                if (errInformacaoTransporte) {
+                                                                                                                                                                                        console.log('Dados de avaliação cinemática: inseridos com sucesso');
+                                                                                                                                                                                        conexao.query(sqlObservacoesImportantes, [objetos_recolhidos, objetos, observacoes_importantes], (errObservacoesImportantes, resultObservacoesImportantes) => {
+                                                                                                                                                                                            if (errObservacoesImportantes) {
 
-                                                                                                                                                                                                    console.log('Erro ao inserir dados de informação transporte: ' + errInformacaoTransporte.message);
-                                                                                                                                                                                                    // erro de informação transporte
-                                                                                                                                                                                                } else {
-                                                                                                                                                                                                    console.log('Dados de informação transporte: inseridos com sucesso');
+                                                                                                                                                                                                console.log('Erro ao inserir dados de observações importantes: ' + errObservacoesImportantes.message);
+                                                                                                                                                                                                // erro de observações importantes
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                console.log('Dados de observações importantes: inseridos com sucesso');
+                                                                                                                                                                                                conexao.query(sqlEquipeAtendimento, [motorista, socorrista1, socorrista2, socorrista3, demandante,
+                                                                                                                                                                                                    equipe], (errEquipeAtendimento, resultEquipeAtendimento) => {
+                                                                                                                                                                                                        if (errEquipeAtendimento) {
 
-                                                                                                                                                                                                }
-                                                                                                                                                                                            });
+                                                                                                                                                                                                            console.log('Erro ao inserir dados de equipe de atendimento: ' + errEquipeAtendimento.message);
+                                                                                                                                                                                                            // erro de equipe de atendimento
+                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                            console.log('Dados de equipe de atendimento: inseridos com sucesso');
+                                                                                                                                                                                                            conexao.query(sqlInformacaoTransporte, [local_ocorrencia, num_usb, num_ocorrencia, cod_ir, cod_ps, desp, h_ch,
+                                                                                                                                                                                                                km_final, cod_sia_sus, outro_meio_auxiliar, outro_historico_ocorrencia], (errInformacaoTransporte, resultInformacaoTransporte) => {
+                                                                                                                                                                                                                    if (errInformacaoTransporte) {
+
+                                                                                                                                                                                                                        console.log('Erro ao inserir dados de informação transporte: ' + errInformacaoTransporte.message);
+                                                                                                                                                                                                                        // erro de informação transporte
+                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                        console.log('Dados de informação transporte: inseridos com sucesso');
+
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                });
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    });
+                                                                                                                                                                                            }
+                                                                                                                                                                                        });
                                                                                                                                                                                     }
                                                                                                                                                                                 });
                                                                                                                                                                         }
                                                                                                                                                                     });
-                                                                                                                                                                }
-                                                                                                                                                            });
-                                                                                                                                                    }
-                                                                                                                                                });
+                                                                                                                                                            }
+                                                                                                                                                        });
+                                                                                                                                                }
+                                                                                                                                            });
                                                                                                                                         }
                                                                                                                                     });
-                                                                                                                            }
-                                                                                                                        });
-                                                                                                                    }
-                                                                                                                });
+                                                                                                                                }
+                                                                                                                            });
+                                                                                                                        }
+                                                                                                                    });
                                                                                                             }
                                                                                                         });
                                                                                                     }
                                                                                                 });
                                                                                         }
                                                                                     });
+
                                                                             }
                                                                         });
                                                                 }
                                                             });
-
                                                     }
                                                 });
                                             }
@@ -541,13 +651,15 @@ router.post('/Pages/teste', (req, res) => {
                                 }
                             });
                     }
-                });
+                })
             }
-        });
+        })
 })
-    module.exports = router;
-    app.use('/', router);
-    // Verificar a porta do servidor
-    app.listen(8081, () => {
-        console.log('O servidor está rodando na porta 8081');
-    });
+
+module.exports = router;
+app.use('/', router);
+
+// Verificar a porta do servidor
+app.listen(8081, () => {
+    console.log('O servidor está rodando na porta 8081');
+});
