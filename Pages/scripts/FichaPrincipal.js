@@ -165,194 +165,6 @@ function validarNome(event) {
         }
     });
 
-// Função para mostrar/ocultar o campo de paciente
-document.getElementById('pacienteSim').addEventListener('change', function () {
-    var paciente = document.getElementById('paciente');
-    paciente.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('pacienteNao').addEventListener('change', function () {
-    var paciente = document.getElementById('paciente');
-    paciente.style.display = this.checked ? 'none' : 'block';
-});
-
-// Função para mostrar/ocultar o campo de gestante com base na seleção de sexo
-document.getElementById('sexofem').addEventListener('change', function () {
-    var gestanteDiv = document.getElementById('gestante');
-    gestanteDiv.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('sexomasc').addEventListener('change', function () {
-    var gestanteDiv = document.getElementById('gestante');
-    gestanteDiv.style.display = this.checked ? 'none' : 'block';
-});
-
-
-// Função para mostrar/ocultar o campo de acompanhante
-document.getElementById('acompsim').addEventListener('change', function () {
-    var acompanhante = document.getElementById('acompanhante');
-    acompanhante.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('acompnao').addEventListener('change', function () {
-    var acompanhante = document.getElementById('acompanhante');
-    acompanhante.style.display = this.checked ? 'none' : 'block';
-});
-
-// Função para mostrar/ocultar o campo de medicação
-document.getElementById('uso_medicacaosim').addEventListener('change', function () {
-    var medicacao = document.getElementById('medicacao');
-    medicacao.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('uso_medicacaonao').addEventListener('change', function () {
-    var medicacao = document.getElementById('medicacao');
-    medicacao.style.display = this.checked ? 'none' : 'block';
-});
-
-// Função para mostrar/ocultar o campo de alergico
-document.getElementById('alergicosim').addEventListener('change', function () {
-    var especi_alergico = document.getElementById('especi_alergico');
-    especi_alergico.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('alergiconao').addEventListener('change', function () {
-    var medicacao = document.getElementById('especi_alergico');
-    especi_alergico.style.display = this.checked ? 'none' : 'block';
-});
-
-// Função para mostrar/ocultar o campo de ingeriu alimento ou liquido
-document.getElementById('aliment_liquidsim').addEventListener('change', function () {
-    var horas_aliment_liquid = document.getElementById('horas_aliment_liquid');
-    horas_aliment_liquid.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('aliment_liquidnao').addEventListener('change', function () {
-    var horas_aliment_liquid = document.getElementById('horas_aliment_liquid');
-    horas_aliment_liquid.style.display = this.checked ? 'none' : 'block';
-});
-
-// Função para mostrar/ocultar o campo de anmanese gestacional
-document.getElementById('gestantesim').addEventListener('change', function () {
-    var gestacional = document.getElementById('gestacional');
-    gestacional.style.display = this.checked ? 'block' : 'none';
-});
-
-document.getElementById('gestantenao').addEventListener('change', function () {
-    var gestacional = document.getElementById('gestacional');
-    gestacional.style.display = this.checked ? 'none' : 'block';
-});
-
-
-// Função para mostrar/ocultar o campo de respiratório
-document.getElementById('respiratorio').addEventListener('change', function () {
-    var tipo_respiratorio = document.getElementById('tipo_respiratorio');
-    tipo_respiratorio.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de diabetes
-document.getElementById('diabetes').addEventListener('change', function () {
-    var tipo_diabetes = document.getElementById('tipo_diabetes');
-    tipo_diabetes.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de obstétrico
-document.getElementById('obstetrico').addEventListener('change', function () {
-    var tipo_obstetrico = document.getElementById('tipo_obstetrico');
-    tipo_obstetrico.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de transporte
-document.getElementById('transporte').addEventListener('change', function () {
-    var tipo_transporte = document.getElementById('tipo_transporte');
-    tipo_transporte.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de cianose
-document.getElementById('cianose').addEventListener('change', function () {
-    var tipo_cianose = document.getElementById('tipo_cianose');
-    tipo_cianose.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de edema
-document.getElementById('edema').addEventListener('change', function () {
-    var tipo_edema = document.getElementById('tipo_edema');
-    tipo_edema.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de hemorragia
-document.getElementById('hemorragia').addEventListener('change', function () {
-    var tipo_hemorragia = document.getElementById('tipo_hemorragia');
-    tipo_hemorragia.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de parada
-document.getElementById('parada').addEventListener('change', function () {
-    var tipo_parada = document.getElementById('tipo_parada');
-    tipo_parada.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de pupilas
-document.getElementById('pupilas').addEventListener('change', function () {
-    var tipo_pupilas = document.getElementById('tipo_pupilas');
-    tipo_pupilas.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de condutor
-document.getElementById('condutor').addEventListener('change', function () {
-    var tipo_condutor = document.getElementById('tipo_condutor');
-    tipo_condutor.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de condutor
-document.getElementById('passageiro').addEventListener('change', function () {
-    var tipo_passageiro = document.getElementById('tipo_passageiro');
-    tipo_passageiro.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de avaliação
-document.getElementById('avaliacao').addEventListener('change', function () {
-    var tipo_avaliacao = document.getElementById('tipo_avaliacao');
-    tipo_avaliacao.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de imobilizações
-document.getElementById('imobilizacoes').addEventListener('change', function () {
-    var tipo_imbilizacoes = document.getElementById('tipo_imobilizacoes');
-    tipo_imobilizacoes.style.display = this.checked ? 'block' : 'none';
-});
-
-
-// Função para mostrar/ocultar o campo de maca
-document.getElementById('maca').addEventListener('change', function () {
-    var tipo_maca = document.getElementById('tipo_maca');
-    tipo_maca.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de rolamento
-document.getElementById('rolamento').addEventListener('change', function () {
-    var tipo_rolamento = document.getElementById('tipo_rolamento');
-    tipo_rolamento.style.display = this.checked ? 'block' : 'none';
-});
-
-
-// Função para mostrar/ocultar o campo de meios auxiliares
-document.getElementById('meios_auxiliares').addEventListener('change', function () {
-    var tipo_meios_auxiliares = document.getElementById('tipo_meios_auxiliares');
-    tipo_meios_auxiliares.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de policiais
-document.getElementById('policias').addEventListener('change', function () {
-    var tipo_policias = document.getElementById('tipo_policias');
-    tipo_policias.style.display = this.checked ? 'block' : 'none';
-});
-
-// Função para mostrar/ocultar o campo de samu
-document.getElementById('samu').addEventListener('change', function () {
-    var tipo_samu = document.getElementById('tipo_samu');
-    tipo_samu.style.display = this.checked ? 'block' : 'none';
-});
 
 // Adiciona um evento de mudança ao botão de rádio "NÃO"
 document.getElementById('objNao').addEventListener('change', function () {
@@ -375,24 +187,17 @@ var objetos = document.getElementById('objetos');
 objetos.style.display = this.checked ? 'block' : 'none';
 });
 
-
-
-// limpar seções de problemas
-function limparSelecoes() {
-    var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
+// limpar seções de sinais vitais
+function limparSelecoesSinaisVitais() {
+    var secaoSinaisVitais = document.getElementById('sinais-vitais');
 
     // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
-    var radios = secaoProblemasSuspeitos.querySelectorAll('input[type="radio"]');
+    var radios = secaoSinaisVitais.querySelectorAll('input[type="radio"]');
     radios.forEach(function(radio) {
       radio.checked = false;
     });
 
-    var checkboxes = secaoProblemasSuspeitos.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function(checkbox) {
-      checkbox.checked = false;
-    });
-
-    var textInputs = secaoProblemasSuspeitos.querySelectorAll('input[type="text"]');
+    var textInputs = secaoSinaisVitais.querySelectorAll('input[type="text"]');
     textInputs.forEach(function(textInput) {
       textInput.value = '';
     });
@@ -457,6 +262,114 @@ function limparSelecoesProblemasSuspeitos() {
     textInputs.forEach(function(textInput) {
       textInput.value = '';
     });
+  }
 
+  // limpar seção anamnese emergencial
+  function limparSelecoesAnamneseEmergencia() {
+    var secaoAnamneseEmergencia = document.getElementById('anmanese-medica');
 
+    var radios = secaoAnamneseEmergencia.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoAnamneseEmergencia.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoAnamneseEmergencia.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+
+    var timeInputs = secaoAnamneseEmergencia.querySelectorAll('input[type="time"]');
+    timeInputs.forEach(function(timeInput) {
+      timeInput.value = '';
+    });
+  }
+
+  // limpar seção anamnese gestacional
+  function limparSelecoesAnamneseGestacional() {
+    var secaoAnamneseGestacional = document.getElementById('gestacional');
+
+    var radios = secaoAnamneseGestacional.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoAnamneseGestacional.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoAnamneseGestacional.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+
+    var timeInputs = secaoAnamneseGestacional.querySelectorAll('input[type="time"]');
+    timeInputs.forEach(function(timeInput) {
+      timeInput.value = '';
+    });
+  }
+
+  // limpar seção glasglow maiores
+  function limparSelecoesGlasgowMaiores() {
+    var secaoGlasgowMaiores = document.getElementById('glasgow_maiores5');
+
+    var radios = secaoGlasgowMaiores.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+  }
+
+  // limpar seção glasglow menores
+  function limparSelecoesGlasgowMenores() {
+    var secaoGlasgowMenores = document.getElementById('glasgow_menores5');
+
+    var radios = secaoGlasgowMenores.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+  }
+
+  // limpar seção sinais e sintomas
+  function limparSelecoesSinaisSintomas() {
+    var secaoSinaisSintomas = document.getElementById('sinais-sintomas');
+
+    var checkboxes = secaoSinaisSintomas.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var radios = secaoSinaisSintomas.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+  }
+
+  // limpar seção vítima era
+  function limparSelecoesSinaisSintomas() {
+    var secaoVitimaEra = document.getElementById('vitima');
+
+    var radios = secaoVitimaEra.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+  }
+
+  // limpar seção desição transporte
+  function limparSelecoesDecisaoTransporte() {
+    var secaoDecisaoTransporte = document.getElementById('transporte');
+
+    var radios = secaoDecisaoTransporte.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var options = secaoDecisaoTransporte.querySelectorAll('option');
+    options.forEach(function(option) {
+      option.selected = false;
+    });
   }

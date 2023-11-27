@@ -10,6 +10,8 @@
 <!-- Define o título da página exibido na guia do navegador -->
 <title>Bombeiros Voluntários de Guaramirim</title>
 
+<!-- Ícone da página -->
+<link rel="icon" type="image/x-icon" href="/Pages/img/logo_pequena.png">
 
 <!-- CSS externo  -->
 <link rel="stylesheet" href="/Pages/assets/FichaPrincipal.css">
@@ -482,9 +484,11 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- títutlo. -->
+            <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+                <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesAnamneseEmergencia()">LIMPAR
+                    SELEÇÕES</button>
+            </div>
+            <!-- títuto para anamnese gestacional-->
             <div id="gestacional">
                 <div class="container-fluid faixa">
                     <div class="row">
@@ -495,16 +499,13 @@
                 </div>
                 <!-- caixa de selecao. -->
                 <div class="container tamanho-container w-75 p-4">
-
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
-
                             <label class="col text-center">PERÍODO DA GESTAÇÃO:</label>
                             <div class="col form-group input-text justify-content-start d-flex w-100">
                                 <input type="text" class="form-control row" name="periodo_gestacao"
                                     placeholder="semanas">
                             </div>
-
                         </div>
                     </div>
                     <!-- caixa de selecao. -->
@@ -618,7 +619,6 @@
                     <!-- caixa de seleção pressão no quadril ou vontade de evacuar -->
                     <div class="CAIXA mb-3 container">
                         <Div class="form-group row selecao-caixa d-flex align-items-center">
-
                             <label class="col">SENTE PRESSÃO NO QUADRIL OU VONTADE DE EVACUAR?:</label>
                             <div class="col">
                                 <div class="row">
@@ -752,10 +752,12 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
+            <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+                <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesAnamneseGestacional()">LIMPAR
+                    SELEÇÕES</button>
+            </div>
             <!-- INÍCIO DE TIPO DE OCORRÊNCIA -->
             <!-- TÍTULO -->
             <div class="container-fluid faixa">
@@ -965,26 +967,26 @@
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                             <div class="justify-content-center d-flex">
-                                            <div class="form-check col input-radio d-flex align-items-center">
-                                                <input class="form-check-input me-2" type="radio" name="queda" id="queda_2m"
-                                                    value="que de altura 2m">
-                                                <label class="form-check-label" for="queda">
-                                                    QUEDA DE ALTURA 2M
-                                                </label>
+                                                <div class="form-check col input-radio d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="queda"
+                                                        id="queda_2m" value="que de altura 2m">
+                                                    <label class="form-check-label" for="queda">
+                                                        QUEDA DE ALTURA 2M
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                             <div class="justify-content-center d-flex">
-                                            <div class="form-check col input-radio d-flex align-items-center">
-                                                <input class="form-check-input me-2" type="radio" name="queda"
-                                                    id="queda_menor_2m" value="queda nivel menor que 2m">
-                                                <label class="form-check-label" for="queda">
-                                                    QUEDA NIVEL MENOR QUE 2M
-                                                </label>
+                                                <div class="form-check col input-radio d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio" name="queda"
+                                                        id="queda_menor_2m" value="queda nivel menor que 2m">
+                                                    <label class="form-check-label" for="queda">
+                                                        QUEDA NIVEL MENOR QUE 2M
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
@@ -999,14 +1001,14 @@
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                             <div class="justify-content-center d-flex">
-                                            <div class="form-check col input-radio align-items-center d-flex">
-                                                <input class="form-check-input me-2" type="radio" name="queda"
-                                                    id="queda_menor_2m" value="queda propria altura">
-                                                <label class="form-check-label" for="queda">
-                                                    QUEDA PRÓPRIA ALTURA
-                                                </label>
+                                                <div class="form-check col input-radio align-items-center d-flex">
+                                                    <input class="form-check-input me-2" type="radio" name="queda"
+                                                        id="queda_menor_2m" value="queda propria altura">
+                                                    <label class="form-check-label" for="queda">
+                                                        QUEDA PRÓPRIA ALTURA
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1178,14 +1180,14 @@
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                             <div class="justify-content-center d-flex">
-                                            <div class="form-check col input-radio d-flex align-items-center">
-                                                <input class="form-check-input me-2" type="radio" name="tipo_obstetrico"
-                                                    value="obstétrico parto emergencial">
-                                                <label class="form-check-label">
-                                                    PARTO EMERGENCIAL
-                                                </label>
+                                                <div class="form-check col input-radio d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="radio"
+                                                        name="tipo_obstetrico" value="obstétrico parto emergencial">
+                                                    <label class="form-check-label">
+                                                        PARTO EMERGENCIAL
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
@@ -1200,15 +1202,15 @@
                                         <!-- caixa de seleção -->
                                         <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                             <div class="justify-content-center d-flex">
-                                            <div class="form-check col input-radio align-items-center d-flex">
-                                                <input class="form-check-input me-2" type="radio" name="tipo_obstetrico"
-                                                    value="obstétrico hemorragia excessiva">
-                                                <label class="form-check-label">
-                                                    HEMORRAGIA EXCESSIVA
-                                                </label>
+                                                <div class="form-check col input-radio align-items-center d-flex">
+                                                    <input class="form-check-input me-2" type="radio"
+                                                        name="tipo_obstetrico" value="obstétrico hemorragia excessiva">
+                                                    <label class="form-check-label">
+                                                        HEMORRAGIA EXCESSIVA
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1353,8 +1355,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">4</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_maiores"
-                                                    value="4">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_maiores" value="4">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1366,8 +1368,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">3</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_maiores"
-                                                    value="3">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_maiores" value="3">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1379,8 +1381,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">2</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_maiores"
-                                                    value="2">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_maiores" value="2">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1392,8 +1394,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">1</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_maiores"
-                                                    value="1">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_maiores" value="1">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1419,8 +1421,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">5</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal_maiores"
-                                                    value="5">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_verbal_maiores" value="5">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1432,8 +1434,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">4</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal_maiores"
-                                                    value="4">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_verbal_maiores" value="4">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1445,8 +1447,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">3</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal_maiores"
-                                                    value="3">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_verbal_maiores" value="3">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1458,8 +1460,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">2</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal_maiores"
-                                                    value="2">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_verbal_maiores" value="2">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1471,8 +1473,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">1</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal_maiores"
-                                                    value="1">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_verbal_maiores" value="1">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1498,8 +1500,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">6</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="6">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="6">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1511,8 +1513,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">5</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="5">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="5">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1524,12 +1526,12 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">4</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="4">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="4">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
-                                                   MOVIMENTO DE RETIRADA
+                                                    MOVIMENTO DE RETIRADA
                                                 </label>
                                             </div>
                                         </div>
@@ -1537,8 +1539,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">3</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="3">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="3">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1550,12 +1552,12 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">2</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="2">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="2">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
-                                                   EXTENÃO ANORMAL
+                                                    EXTENÃO ANORMAL
                                                 </label>
                                             </div>
                                         </div>
@@ -1563,12 +1565,12 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">1</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora_maiores"
-                                                    value="1">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="resposta_motora_maiores" value="1">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
-                                                   NENHUMA
+                                                    NENHUMA
                                                 </label>
                                             </div>
                                         </div>
@@ -1590,7 +1592,10 @@
                     </div>
                 </div>
             </div>
-
+            <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+                <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesGlasgowMaiores()">LIMPAR
+                    SELEÇÕES</button>
+            </div>
             <!-- INÍCIO AVALIAÇÃO GLASGOW MENORES DE 5 ANOS -->
             <div id="glascow_menores5">
                 <div class="container-fluid faixa">
@@ -1626,8 +1631,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">4</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_menores"
-                                                    value="4">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_menores" value="4">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1639,8 +1644,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">3</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_menores"
-                                                    value="3">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_menores" value="3">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1652,8 +1657,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">2</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_menores"
-                                                    value="2">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_menores" value="2">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1665,8 +1670,8 @@
                                         <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
                                             <div class="me-2 d-flex align-items-center">1</div>
                                             <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="abertura_ocular_menores"
-                                                    value="1">
+                                                <input class="form-check-input col" type="radio"
+                                                    name="abertura_ocular_menores" value="1">
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <label class="col form-check-label">
@@ -1676,334 +1681,329 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <!-- FIM DA SEGUNDA COLUNA -->
-                                </div>
+                                <!-- FIM DA SEGUNDA COLUNA -->
                             </div>
-                            <div class="col mt-5">
-                                <div class="row m-auto">
-                                    <!-- INÍCIO DA PRIMEIRA COLUNA -->
-                                    <div class="col m-auto d-flex flex-column align-items-center"><img
-                                            src="/Pages/img/resposta-verbal.png" alt="resposta_motora" width="150px"
-                                            class="p-4 ">
-                                        <p class="text-center">RESPOSTA MOTORA</p>
-                                    </div>
-                                    <!-- FIM DA PRIMEIRA COLUNA -->
-                                    <div class="col">
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">5</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal__menores"
-                                                    value="5">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    PALAVRAS E FRASES INAPROPRIADAS
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">4</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal__menores"
-                                                    value="4">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    PALAVRAS INAPROPRIADAS
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">3</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal__menores"
-                                                    value="3">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    CHOROS PERSISTENTES OU GRITOS
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">2</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal__menores"
-                                                    value="2">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    SONS INCOMPREENSÍVEIS
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">1</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_verbal__menores"
-                                                    value="1">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    NENHUMA RESPOSTA VERBAL
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row m-auto">
+                                <!-- INÍCIO DA PRIMEIRA COLUNA -->
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
+                                        src="/Pages/img/resposta-verbal.png" alt="resposta_motora" width="150px"
+                                        class="p-4 ">
+                                    <p class="text-center">RESPOSTA MOTORA</p>
                                 </div>
-                                    <!-- FIM DA SEGUNDA COLUNA -->
-                                </div>
-                            <div class="col mt-5">
-                                <div class="row m-auto">
-                                    <!-- INÍCIO PRIMEIRA COLUNA -->
-                                    <div class="col m-auto d-flex flex-column align-items-center"><img
-                                            src="/Pages/img/resposta-motora.png" alt="resposta motora" width="150px"
-                                            class="p-4">
-                                        <p class="text-center">RESPOSTA MOTORA</p>
+                                <!-- FIM DA PRIMEIRA COLUNA -->
+                                <div class="col">
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">5</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_verbal__menores" value="5">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                PALAVRAS E FRASES INAPROPRIADAS
+                                            </label>
+                                        </div>
                                     </div>
-                                    <!-- FIM PRIMEIRA COLUNA -->
-                                    <div class="col">
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">6</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="6">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    OBEDECE PRONTAMENTE
-                                                </label>
-                                            </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">4</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_verbal__menores" value="4">
                                         </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">5</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="5">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    LOCALIZA DOR OU ESTÍMULO TÁTIL
-                                                </label>
-                                            </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                PALAVRAS INAPROPRIADAS
+                                            </label>
                                         </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">4</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="4">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    RESTIRADA DO SEGMENTO ESTIMULADO
-                                                </label>
-                                            </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">3</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_verbal__menores" value="3">
                                         </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">3</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="3">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    FLEXÃO ANORMAL (DECORTIZAÇÃO)
-                                                </label>
-                                            </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                CHOROS PERSISTENTES OU GRITOS
+                                            </label>
                                         </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">2</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="2">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    EXTENSÃO ANORMAL (DECEREBRAÇÃO)
-                                                </label>
-                                            </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">2</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_verbal__menores" value="2">
                                         </div>
-                                        <!-- caixa de seleção -->
-                                        <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                                            <div class="me-2 d-flex align-items-center">1</div>
-                                            <div class="me-1 form-check input-radio ">
-                                                <input class="form-check-input col" type="radio" name="resposta_motora__menores"
-                                                    value="1">
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <label class="col form-check-label">
-                                                    AUSÊNCIA (PARALISIA, FLÁCIA, HIPOTÔNIA)
-                                                </label>
-                                            </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                SONS INCOMPREENSÍVEIS
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">1</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_verbal__menores" value="1">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                NENHUMA RESPOSTA VERBAL
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- soma avaliação glasgow -->
-                            <div class="col mt-5">
-                                <div class="p-2">
-                                    <Div
-                                        class="form-group selecao-caixa justify-content-center d-flex align-items-center">
-                                        <div class=" d-flex align-items-center" id="soma-valores-menor5">
-                                            <div class="">TOTAL (GCS) (3-15):</div>
+                            <!-- FIM DA SEGUNDA COLUNA -->
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row m-auto">
+                                <!-- INÍCIO PRIMEIRA COLUNA -->
+                                <div class="col m-auto d-flex flex-column align-items-center"><img
+                                        src="/Pages/img/resposta-motora.png" alt="resposta motora" width="150px"
+                                        class="p-4">
+                                    <p class="text-center">RESPOSTA MOTORA</p>
+                                </div>
+                                <!-- FIM PRIMEIRA COLUNA -->
+                                <div class="col">
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">6</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="6">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                OBEDECE PRONTAMENTE
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">5</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="5">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                LOCALIZA DOR OU ESTÍMULO TÁTIL
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">4</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="4">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                RESTIRADA DO SEGMENTO ESTIMULADO
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">3</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="3">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                FLEXÃO ANORMAL (DECORTIZAÇÃO)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">2</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="2">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                EXTENSÃO ANORMAL (DECEREBRAÇÃO)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- caixa de seleção -->
+                                    <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="me-2 d-flex align-items-center">1</div>
+                                        <div class="me-1 form-check input-radio ">
+                                            <input class="form-check-input col" type="radio"
+                                                name="resposta_motora__menores" value="1">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <label class="col form-check-label">
+                                                AUSÊNCIA (PARALISIA, FLÁCIA, HIPOTÔNIA)
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- INÍCIO SINAIS VITAIS -->
-            <div class="container-fluid faixa">
-                <div class="row">
-                    <div class="col-12 faixa-titulo p-2 ">
-                        <p class="m-0 text-center fs-5" id="sinais-vitais">SINAIS VITAIS</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container tamanho-container w-75 p-4">
-                <div class="CAIXA mb-3 container">
-                    <!-- campo de texto pressão arterial -->
-                    <Div
-                        class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-itens-center">
-                        <label class="col text-center p-0">PRESSÃO ARTERIAL:</label>
-                        <div class="col">
-                            <div class="row align-items-center p-2">
-                                <div class="col form-group input-text justify-content-center m-0 p-0 d-flex w-100">
-                                    <input type="text" class="form-control row" name="pressao_arterial_mm">
-                                </div>
-                                <div class="col text-center">X</div>
-                                <div class="col form-group input-text justify-content-center p-0 m-0 d-flex m-0 w-100">
-                                    <input type="text" class="form-control row" name="pressao_arterial_hg">
-                                </div>
-                                <label class="col text-center">mmHg</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- campo de texto pulso -->
-                <div class="CAIXA mb-3 container">
-                    <Div
-                        class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-content-center">
-                        <class class="row align-items-center ">
-                            <label class="col-sm-3 text-center">PULSO:</label>
-                            <div class="col">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-8 form-group input-text">
-                                        <input type="text" class="form-control w-100" name="pulso">
+                        <!-- soma avaliação glasgow -->
+                        <div class="col mt-5">
+                            <div class="p-2">
+                                <Div class="form-group selecao-caixa justify-content-center d-flex align-items-center">
+                                    <div class=" d-flex align-items-center" id="soma-valores-menor5">
+                                        <div class="">TOTAL (GCS) (3-15):</div>
                                     </div>
-                                    <label class="col text-center">B.C.P.M</label>
                                 </div>
-                            </div>
-                        </class>
-                    </div>
-                </div>
-                <!-- campo de texto respiração -->
-                <div class="CAIXA mb-3 container">
-                    <Div
-                        class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-content-center">
-                        <class class="row d-flex align-items-center">
-                            <label class="col-sm-4 text-center">RESPIRACÃO:</label>
-                            <div class="col">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-8 form-group input-text">
-                                        <input type="text" class="form-control" name="respiracao">
-                                    </div>
-                                    <label class="col text-center">M.R.M</label>
-                                </div>
-                            </div>
-                        </class>
-                    </div>
-                </div>
-                <!-- campo de texto saturação -->
-                <div class="CAIXA mb-3 container">
-                    <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
-                        <label class="col-sm-4 text-center">SATURAÇÃO:</label>
-                        <div class="col-sm-8 form-group input-text d-flex justify-content-center">
-                            <input type="text" class="form-control row" name="saturacao">
-                        </div>
-                    </div>
-                </div>
-                <!-- campo de texto temperatura -->
-                <div class="CAIXA mb-3 container">
-                    <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
-                        <label class="col-sm-4 text-center">TEMPERATURA:</label>
-                        <div class="col-sm-8 form-group input-text d-flex justify-content-center">
-                            <input type="text" class="form-control row" name="temperatura">
-                        </div>
-                    </div>
-                </div>
-                <!-- perfusão -->
-                <div class="CAIXA mb-3 container">
-                    <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
-                        <div class="text-center">PERFUSÃO</div>
-                        <Div
-                            class="form-group selecao-subcaixa sinais-vitais d-flex justify-content-center align-items-center mt-2">
-                            <div class="row">
-                                <!-- caixa de seleção perfusão -->
-                                <div class="form-check col input-radio ms-2">
-                                    <input class="form-check-input" type="radio" name="perfusao"
-                                        value="maior que 2 segundos">
-                                    <label class="form-check-label">
-                                        > 2 SEGUNDOS
-                                    </label>
-                                </div>
-                                <div class="form-check col input-radio ms-2">
-                                    <input class="form-check-input" type="radio" name="perfusao"
-                                        value="manor que 2 segundos">
-                                    <label class="form-check-label">
-                                        < 2 SEGUNDOS </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- situação -->
-                <div class="CAIXA mb-3 container">
-                    <div class="container-fluid faixa">
-                        <div class="row">
-                            <div class="col-12 subtitulo p-2 ">
-                                <p class="m-0 text-center">SITUAÇÃO</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- caixa de seleção normal e anormal -->
-                    <Div
-                        class="form-group selecao-caixa sinais-vitais d-flex justify-content-center align-items-center mt-2">
-                        <div class="row">
-                            <div class="form-check col input-radio ms-2">
-                                <input class="form-check-input" type="radio" name="sinais_vitais_situacao"
-                                    value="normal">
-                                <label class="form-check-label">
-                                    NORMAL
-                                </label>
-                            </div>
-                            <div class="form-check col input-radio ms-2">
-                                <input class="form-check-input" type="radio" name="sianis_viatis_situacao"
-                                    value="anormal">
-                                <label class="form-check-label">
-                                    ANORMAL </label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
+    <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesGlasgowMenores()">LIMPAR
+            SELEÇÕES</button>
+    </div>
+    <!-- INÍCIO SINAIS VITAIS -->
+    <div class="container-fluid faixa">
+        <div class="row">
+            <div class="col-12 faixa-titulo p-2 ">
+                <p class="m-0 text-center fs-5" id="sinais-vitais">SINAIS VITAIS</p>
+            </div>
+        </div>
+    </div>
+    <div class="container tamanho-container w-75 p-4" id="sinais-vitais">
+        <div class="CAIXA mb-3 container">
+            <!-- campo de texto pressão arterial -->
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-itens-center">
+                <label class="col text-center p-0">PRESSÃO ARTERIAL:</label>
+                <div class="col">
+                    <div class="row align-items-center p-2">
+                        <div class="col form-group input-text justify-content-center m-0 p-0 d-flex w-100">
+                            <input type="text" class="form-control row" name="pressao_arterial_mm">
+                        </div>
+                        <div class="col text-center">X</div>
+                        <div class="col form-group input-text justify-content-center p-0 m-0 d-flex m-0 w-100">
+                            <input type="text" class="form-control row" name="pressao_arterial_hg">
+                        </div>
+                        <label class="col text-center">mmHg</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto pulso -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-content-center">
+                <class class="row align-items-center ">
+                    <label class="col-sm-3 text-center">PULSO:</label>
+                    <div class="col">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 form-group input-text">
+                                <input type="text" class="form-control w-100" name="pulso">
+                            </div>
+                            <label class="col text-center">B.C.P.M</label>
+                        </div>
+                    </div>
+                </class>
+            </div>
+        </div>
+        <!-- campo de texto respiração -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-content-center">
+                <class class="row d-flex align-items-center">
+                    <label class="col-sm-4 text-center">RESPIRACÃO:</label>
+                    <div class="col">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 form-group input-text">
+                                <input type="text" class="form-control" name="respiracao">
+                            </div>
+                            <label class="col text-center">M.R.M</label>
+                        </div>
+                    </div>
+                </class>
+            </div>
+        </div>
+        <!-- campo de texto saturação -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
+                <label class="col-sm-4 text-center">SATURAÇÃO:</label>
+                <div class="col-sm-8 form-group input-text d-flex justify-content-center">
+                    <input type="text" class="form-control row" name="saturacao">
+                </div>
+            </div>
+        </div>
+        <!-- campo de texto temperatura -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
+                <label class="col-sm-4 text-center">TEMPERATURA:</label>
+                <div class="col-sm-8 form-group input-text d-flex justify-content-center">
+                    <input type="text" class="form-control row" name="temperatura">
+                </div>
+            </div>
+        </div>
+        <!-- perfusão -->
+        <div class="CAIXA mb-3 container">
+            <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center">
+                <div class="text-center">PERFUSÃO</div>
+                <Div
+                    class="form-group selecao-subcaixa sinais-vitais d-flex justify-content-center align-items-center mt-2">
+                    <div class="row">
+                        <!-- caixa de seleção perfusão -->
+                        <div class="form-check col input-radio ms-2">
+                            <input class="form-check-input" type="radio" name="perfusao" value="maior que 2 segundos">
+                            <label class="form-check-label">
+                                > 2 SEGUNDOS
+                            </label>
+                        </div>
+                        <div class="form-check col input-radio ms-2">
+                            <input class="form-check-input" type="radio" name="perfusao" value="manor que 2 segundos">
+                            <label class="form-check-label">
+                                < 2 SEGUNDOS </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- situação -->
+        <div class="CAIXA mb-3 container">
+            <div class="container-fluid faixa">
+                <div class="row">
+                    <div class="col-12 subtitulo p-2 ">
+                        <p class="m-0 text-center">SITUAÇÃO</p>
+                    </div>
+                </div>
+            </div>
+            <!-- caixa de seleção normal e anormal -->
+            <Div class="form-group selecao-caixa sinais-vitais d-flex justify-content-center align-items-center mt-2">
+                <div class="row">
+                    <div class="form-check col input-radio ms-2">
+                        <input class="form-check-input" type="radio" name="sinais_vitais_situacao" value="normal">
+                        <label class="form-check-label">
+                            NORMAL
+                        </label>
+                    </div>
+                    <div class="form-check col input-radio ms-2">
+                        <input class="form-check-input" type="radio" name="sianis_viatis_situacao" value="anormal">
+                        <label class="form-check-label">
+                            ANORMAL </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- botao para limpar os locais preenchidos -->
     <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
-        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoes()">LIMPAR SELEÇÕES</button>
+        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesSinaisVitais()">LIMPAR
+            SELEÇÕES</button>
     </div>
 
     <!-- INÍCIO LOCAL DE TRAUMAS -->
@@ -2179,6 +2179,10 @@
                 </div>
             </div>
         </div>
+        <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+            <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesLocalTraumas()">LIMPAR
+                SELEÇÕES</button>
+        </div>
         <!-- TABELA QUE APRESENTA OS DADOS SELECIONADOS -->
         <div class="container mt-5">
             <div class="table-responsive">
@@ -2247,7 +2251,7 @@
             </div>
         </div>
     </div>
-    <div class="container tamanho-container w-75 p-4">
+    <div class="container tamanho-container w-75 p-4" id="sinais-sintomas">
         <div class="CAIXA mb-3 container">
             <div class="row">
                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
@@ -2257,8 +2261,8 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check d-flex align-items-center">
-                                    <input class="form-check-input me-2" type="checkbox" value="abdomen sensível ou rígido"
-                                        name="abdomen_sensivel_rigido">
+                                    <input class="form-check-input me-2" type="checkbox"
+                                        value="abdomen sensível ou rígido" name="abdomen_sensivel_rigido">
                                     <label class="form-check-label">
                                         ABDOMEN SENSÍVEL OU RÍGIDO
                                     </label>
@@ -2937,7 +2941,7 @@
                             <div class="form-check col input-radio d-flex align-items-center">
                                 <input class="form-check-input me-2" type="radio">
                                 <div class="col form-group input-text" name="outro_sinais_sintomas">
-                                    <input type="text" class="form-control" placeholder="OUTRO" disabled>
+                                    <input type="text" class="form-control" placeholder="OUTRO">
                                 </div>
                             </div>
                         </div>
@@ -2947,6 +2951,10 @@
             </div>
         </div>
     </div>
+    <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesSinaisSintomas()">LIMPAR
+            SELEÇÕES</button>
+    </div>
     <!-- INÍCIO DE VÍTIMA ERA -->
     <div class="container-fluid faixa">
         <div class="row">
@@ -2955,7 +2963,7 @@
             </div>
         </div>
     </div>
-    <div class="container tamanho-container w-75 p-4">
+    <div class="container tamanho-container w-75 p-4" id="vitima">
         <div class="CAIXA mb-3 container">
             <div class="row">
                 <!-- INÍCIO DA PRIMEIRA COLUNA -->
@@ -3095,6 +3103,9 @@
             </div>
         </div>
     </div>
+    <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesVitima()">LIMPAR SELEÇÕES</button>
+    </div>
     <!-- INÍCIO DECIÇÃO TRANSPORTE -->
     <div class="container-fluid faixa">
         <div class="row">
@@ -3103,7 +3114,7 @@
             </div>
         </div>
     </div>
-    <div class="container tamanho-container p-4">
+    <div class="container tamanho-container p-4" id="transporte">
         <div class="transporte mb-3 container">
             <div class="row">
                 <!-- INÍCIO PRIMEIRA COLUNA -->
@@ -3193,6 +3204,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+        <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesTransporte()">LIMPAR SELEÇÕES</button>
     </div>
     <!-- INÍCIO HISTÓRICO DE OCORRÊNCIA -->
     <div class="container-fluid faixa">
@@ -3447,9 +3461,9 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox"
-                                            name="imobilizacoes_membro_inf_dir" value="membro_inf_dir">
+                                            name="imobilizacoes_membro_inf_dir" value="imobilizações membro inf. dir.">
                                         <label class="form-check-label">
-                                            MEMBRO INF. DIR
+                                            MEMBRO INF. DIR.
                                         </label>
                                     </div>
                                 </div>
@@ -3457,7 +3471,7 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox"
-                                            name="imobilizacoes_membro_inf_esq" value="membro_inf_esq">
+                                            name="imobilizacoes_membro_inf_esq" value="imobilizações membro inf. esq.">
                                         <label class="form-check-label">
                                             MEMBRO INF. ESQ.
                                         </label>
@@ -3467,7 +3481,7 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox"
-                                            name="imobilizacoes_membro_sup_dir" value="membro_sup_dir">
+                                            name="imobilizacoes_membro_sup_dir" value="imobilizações membro sup. dir.">
                                         <label class="form-check-label">
                                             MEMBRO SUP. DIR.
                                         </label>
@@ -3477,7 +3491,7 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox"
-                                            name="imobilizacoes_membro_sup_esq" value="membro_sup_esq">
+                                            name="imobilizacoes_membro_sup_esq" value="imobilizações membro sup. esq.">
                                         <label class="form-check-label">
                                             MEMBRO SUP. ESQ.
                                         </label>
@@ -3487,7 +3501,7 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox" name="imobilizacoes_quadril"
-                                            value="quadril">
+                                            value="imobilizações quadril">
                                         <label class="form-check-label">
                                             QUADRIL
                                         </label>
@@ -3497,7 +3511,7 @@
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
                                         <input class="form-check-input" type="checkbox" name="imobilizacoes_cervical"
-                                            value="cervical">
+                                            value="imobilizações cervical">
                                         <label class="form-check-label">
                                             CERVICAL
                                         </label>
@@ -3952,59 +3966,40 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="p-1 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    8
-                                                </label>
+                            <!-- campo tamanho -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="ataduras_tam">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-2 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    12
-                                                </label>
-                                            </div>
+<!-- campo quantidade -->
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-1 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="justify-content-center d-flex">
-                                            <div class="form-check input-check">
-                                                <input class="form-check-input " type="radio" value="ataduras"
-                                                    name="tam_ataduras">
-                                                <label class="form-check-label">
-                                                    20
-                                                </label>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="ataduras_qtd"
+                                                    placeholder="QTD">
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container-fluid faixa">
-                                <div class="row">
-                                    <div class="col-12 subtitulo p-1 ">
-                                        <p class="m-0 text-center">QUANTIDADE</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="p-1 col">
-                                    <Div class="form-group  selecao-subcaixa d-flex align-items-center">
-                                        <div class="col form-group input-text">
-                                            <input type="text" class="form-control" placeholder="QTD">
                                         </div>
                                     </div>
                                 </div>
@@ -4023,6 +4018,26 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="cateter_ocuulos_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
@@ -4035,6 +4050,26 @@
                                     <label class="form-check-label">
                                         COMPRESSA COMUM
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="compressa_comum_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4050,6 +4085,44 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo tamanho -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="kits_tam">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<!-- campo quantidade -->
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="kits_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção. -->
@@ -4057,11 +4130,99 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" value="angia de peito"
-                                        name="manta_aluminizada" value="manta aluminizada">
+                                    <input class="form-check-input " type="checkbox" name="luvas_desc"
+                                        value="luvas desc. (pares)">
+                                    <label class="form-check-label">
+                                        LUVAS DESC. (PARES)
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="luvas_desc_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção. -->
+                    <div class="p-2">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                            <div class="justify-content-center d-flex">
+                                <div class="form-check input-check">
+                                    <input class="form-check-input " type="checkbox" name="mascara_desc"
+                                        value="máscara desc.">
+                                    <label class="form-check-label">
+                                        MÁSCARA DESC.
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="manta_aluminizada_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção. -->
+                    <div class="p-2">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                            <div class="justify-content-center d-flex">
+                                <div class="form-check input-check">
+                                    <input class="form-check-input " type="checkbox" name="manta_aluminizada"
+                                        value="manta aluminizada">
                                     <label class="form-check-label">
                                         MANTA ALUMINIZADA
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="manta_aluminizada_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4080,6 +4241,26 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="pas_dea_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
@@ -4092,6 +4273,26 @@
                                     <label class="form-check-label">
                                         SONDA DE ASPIRAÇÃO
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="sonda_aspiracao_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4108,6 +4309,26 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="soro_fisiologico_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção  -->
@@ -4119,6 +4340,44 @@
                                     <label class="form-check-label">
                                         TALAS PAP.
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo tamanho -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="talas_pap_tam">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<!-- campo quantidade -->
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="talas_pap_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4164,6 +4423,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
                             <div class="d-flex align-items-center flex-column selecao-caixa">
                                 <div class="container-fluid faixa">
                                     <div class="row">
@@ -4176,7 +4436,8 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" placeholder="QTD">
+                                                <input type="text" class="form-control" placeholder="QTD"
+                                                    name="base_estabilizador_qtd">
                                             </div>
                                         </div>
                                     </div>
@@ -4195,7 +4456,7 @@
                                     </label>
                                 </div>
                             </div>
-
+<!-- campo tamanho -->
                             <div class="d-flex align-items-center flex-column selecao-caixa">
                                 <div class="container-fluid faixa">
                                     <div class="row">
@@ -4214,7 +4475,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+<!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4226,7 +4487,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" id="outroProblemas"
+                                                <input type="text" class="form-control" name="uso_colar_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4247,6 +4508,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
                             <div class="d-flex align-items-center flex-column selecao-caixa">
                                 <div class="container-fluid faixa">
                                     <div class="row">
@@ -4279,6 +4541,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo tamanho -->
                             <div class="d-flex align-items-center flex-column selecao-caixa">
                                 <div class="container-fluid faixa">
                                     <div class="row">
@@ -4291,12 +4554,13 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" placeholder="TAM">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="ked_tam">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+<!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4308,7 +4572,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" id="outroProblemas"
+                                                <input type="text" class="form-control" name="ked_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4322,11 +4586,31 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" value="angia de peito"
+                                    <input class="form-check-input " type="checkbox"
                                         name="maca_rigida_utilizados" value="maca rígida">
                                     <label class="form-check-label">
                                         MACA RÍGIDA
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control"
+                                                    name="maca_rigida_utilizados_qtd" placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4345,6 +4629,44 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo tamanho -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">TAMANHO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="t_t_f_tam">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<!-- campo quantidade -->
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="t_t_f_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
@@ -4357,6 +4679,26 @@
                                     <label class="form-check-label">
                                         TIRANTE ARANHA
                                     </label>
+                                </div>
+                            </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="tirante_aranha_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4373,6 +4715,26 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="tirante_cabeca_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção  -->
@@ -4386,6 +4748,26 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo quantidade -->
+                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                                <div class="container-fluid faixa">
+                                    <div class="row">
+                                        <div class="col-12 subtitulo p-1 ">
+                                            <p class="m-0 text-center">QUANTIDADE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" name="canula_qtd"
+                                                    placeholder="QTD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- caixa de seleção -->
@@ -4394,8 +4776,7 @@
                             <div class="form-check col input-radio d-flex align-items-center">
                                 <input class="form-check-input me-2" type="radio" name="outroProblemas" value="outro">
                                 <div class="col form-group input-text">
-                                    <input type="text" class="form-control" id="outroProblemas" placeholder="OUTRO"
-                                        disabled>
+                                    <input type="text" class="form-control" id="outroProblemas" placeholder="OUTRO">
                                 </div>
                             </div>
                         </div>

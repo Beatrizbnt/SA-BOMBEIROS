@@ -314,6 +314,8 @@ router.post('/Pages/teste', (req, res) => {
     const tirante_aranha_qtd = req.body.tirante_aranha_qtd;
     const tirante_cabeca = req.body.tirante_cabeca;
     const tirante_cabeca_qtd = req.body.tirante_cabeca_qtd;
+    const canula = req.body.canula;
+    const canula_qtd = req.body.canula_qtd;
     const outro_material_utilizado_deixados = req.body.outro_material_utilizado_deixados;
     const outro_material_utilizado_deixados_tam = req.body.outro_material_utilizado_deixados_tam;
     const outro_material_utilizado_deixados_qtd = req.body.outro_material_utilizado_deixados_qtd;
@@ -423,8 +425,8 @@ router.post('/Pages/teste', (req, res) => {
            talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam, outro_material_utilizado_descartavel_qtd,
             base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza, coxins_estabiliza_qtd, ked, ked_tam, ked_qtd,
              maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca,
-              tirante_cabeca_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+              tirante_cabeca_qtd, canula, canula_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela avaliação cinemática
     const sqlAvaliacaoCinematica = `INSERT INTO avaliacao_cinematica (disturbio_comportamento, encontrado_capacete, encontrado_cinto,
@@ -574,7 +576,7 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                                                                                     outro_material_utilizado_descartavel_qtd, base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza,
                                                                                                                                                                     coxins_estabiliza_qtd, ked, ked_tam, ked_qtd,
                                                                                                                                                                     maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca,
-                                                                                                                                                                    tirante_cabeca_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd], (errMateriaisUtilizados, resultMateriaisUtilizados) => {
+                                                                                                                                                                    tirante_cabeca_qtd, canula, canula_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd], (errMateriaisUtilizados, resultMateriaisUtilizados) => {
                                                                                                                                                                         if (errMateriaisUtilizados) {
 
                                                                                                                                                                             console.log('Erro ao inserir dados de materiais utilizados: ' + errMateriaisUtilizados.message);
