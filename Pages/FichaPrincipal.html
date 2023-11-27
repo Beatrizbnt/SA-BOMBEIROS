@@ -109,7 +109,7 @@
                 </div>
             </div>
             <!-- aqui começa o primeiro tópico da ficha -->
-            <div class="container tamanho-container w-75 p-4">
+            <div class="container tamanho-container w-75 p-4" id="PaciAcomp">
                 <!-- definine os tamanhos da caixa de selacao -->
                 <div class="CAIXA mb-3 container">
                     <!-- aqui é uma caixa de selecao. Ela é padrao para os diferente campos de input -->
@@ -312,6 +312,9 @@
                     </div>
                 </div>
             </div>
+            <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+                <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesPaciAcomp()">LIMPAR SELEÇÕES</button>
+              </div>
             <!-- Título -->
             <div class="container-fluid faixa">
                 <div class="row">
@@ -754,7 +757,7 @@
             </div>
         </div>
         <!-- caixa de seleção -->
-        <div class="container tamanho-container w-75 p-4">
+        <div class="container tamanho-container w-75 p-4" id="TipoOcorrencia">
             <div class="CAIXA mb-3 container">
                 <div class="row">
                     <div class="col">
@@ -932,17 +935,14 @@
                         </div>
                         <!-- caixa de seleção -->
                         <div class="p-2">
-                            <Div class="form-group  selecao-caixa d-flex align-items-center">
+                            <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                                 <div class="justify-content-center d-flex">
-                                    <div class="form-check input-check">
-                                        <input class="form-check-input " type="radio" name="tipo_ocorrencia" id="queda">
-                                        <label class="form-check-label">
+                                        <label class="form-check-label text-center">
                                             QUEDA
                                         </label>
-                                    </div>
                                 </div>
                                 <!-- caixa de seleção escondida. -->
-                                <div style="display: none;" id="tipo_queda">
+                                <div id="tipo_queda">
                                     <!-- caixa de seleção -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                         <div class="form-check col input-radio">
@@ -1051,6 +1051,9 @@
                 </div>
             </div>
         </div>
+        <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+            <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesTipoOcorrencia()">LIMPAR SELEÇÕES</button>
+          </div>
 
         
         <!-- INÍCIO DE PROBLEMAS ENCONTRADOS SUSPEITOS-->
@@ -1270,18 +1273,11 @@
                                     </div>
                                     <!-- campo de texto para outro de tipo de transporte -->
                                     <Div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-                                        <div class="form-check col input-radio">
-                                            <input class="form-check-input " type="radio" name="tipo_transporte" id="outro_tipo_transporte">                        
-                                            <label class="form-check-label">
-                                                OUTRO
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                                        <div class="form-group d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="outro_tipo_transporte" id="outroTransporte"
-                                                    placeholder="Outro" style="display: none;">
+                                                    <input type="text" class="form-control"  placeholder="Outro tipo transporte" name="outro_tipo_transporte">
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1299,9 +1295,9 @@
                     <!-- FIM DA COLOUNA -->
                 </div>
             </div>
-        </div>
+        
         <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
-            <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoes()">LIMPAR SELEÇÕES</button>
+            <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesProblemasSuspeitos()">LIMPAR SELEÇÕES</button>
           </div>
         <!-- INÍCIO AVALIAÇÃO GLASGOW MAIORES DE 5 ANOS-->
         <!-- div escondida -->
@@ -4770,6 +4766,7 @@
         </div>
          </form>
     </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

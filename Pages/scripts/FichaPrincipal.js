@@ -127,7 +127,7 @@ function validarNome(event) {
 
 // nomeInput.addEventListener('input', validarNome);
 
-const tipo_transporte = document.getElementsByName('tipo_transporte');
+// const tipo_transporte = document.getElementsByName('tipo_transporte');
 // for ( let tipo of tipo_transporte){
 //    tipo.addEventListener("click", function(){
 //    
@@ -135,19 +135,19 @@ const tipo_transporte = document.getElementsByName('tipo_transporte');
 //    })
 // } 
 
-var check_outro = document.getElementById('outro_tipo_transporte');
-check_outro.addEventListener("click", function(){
-    var outroTransporte = document.getElementById('outroTransporte');
+// var check_outro = document.getElementById('outro_tipo_transporte');
+// check_outro.addEventListener("click", function(){
+//     var outroTransporte = document.getElementById('outroTransporte');
     
-    console.log(check_outro.checked)
-    if(check_outro.checked){
-        outroTransporte.style.display="block"
+//     console.log(check_outro.checked)
+//     if(check_outro.checked){
+//         outroTransporte.style.display="block"
         
-    }
-    else{
-        outroTransporte.style.display="none"
-    }
-});
+//     }
+//     else{
+//         outroTransporte.style.display="none"
+//     }
+// });
 
     var outroOcorrencia = document.getElementById('outroOcorrencia');
     var outroProblemas = document.getElementById('outroProblemas');
@@ -376,71 +376,7 @@ objetos.style.display = this.checked ? 'block' : 'none';
 });
 
 
-// função para mostrar/ocultar avaliação paciente glascow
-document.getElementsByName('idade_paciente')[0].addEventListener('input', function () {
-    var idade_paciente = parseInt(this.value);
-    var glascow_menores5 = document.getElementById('glascow_menores5');
-    var glascow_maiores5 = document.getElementById('glascow_maiores5');
 
-    glascow_menores5.style.display = idade_paciente < 5 ? 'block' : 'none';
-    glascow_maiores5.style.display = idade_paciente >= 5 ? 'block' : 'none';
-});
-// calcular a avaliação do paciente (glascow)
-const botoesOcular = document.getElementsByName("abertura_ocular_maiores");
-const botoesMotora = document.getElementsByName("resposta_motora_maiores");
-const botoesVerbal = document.getElementsByName("resposta_verbal_maiores");
-const botoesOcularMenor5 = document.getElementsByName("abertura_ocular_menores");
-const botoesMotoraMenor5 = document.getElementsByName("resposta_motora_menores");
-const botoesVerbalMenor5 = document.getElementsByName("resposta_verbal_menores");
-
-for (const botao of botoesOcular) {
-    botao.addEventListener("change", calcularSoma);
-    console.log("Botão ocular: ", botao);  // Adicione esta linha
-}
-for (const botao of botoesMotora) {
-    botao.addEventListener("change", calcularSoma);
-}
-for (const botao of botoesVerbal) {
-    botao.addEventListener("change", calcularSoma);
-}
-for (const botao of botoesOcularMenor5) {
-    botao.addEventListener("change", calcularSoma);
-}
-for (const botao of botoesMotoraMenor5) {
-    botao.addEventListener("change", calcularSoma);
-}
-for (const botao of botoesVerbalMenor5) {
-    botao.addEventListener("change", calcularSoma);
-}
-
-// Função para calcular a soma dos valores dos botões de opção selecionados
-function calcularSoma() {
-    console.log("Função calcularSoma foi chamada");  // Adicione esta linha
-    // Calcula a soma dos valores selecionados nos grupos de botões de opção
-    const somaOcular = calcularSomaValoresSelecionados(botoesOcular);
-    const somaMotora = calcularSomaValoresSelecionados(botoesMotora);
-    const somaVerbal = calcularSomaValoresSelecionados(botoesVerbal);
-    const somaOcularMenor5 = calcularSomaValoresSelecionados(botoesOcularMenor5);
-    const somaMotoraMenor5 = calcularSomaValoresSelecionados(botoesMotoraMenor5);
-    const somaVerbalMenor5 = calcularSomaValoresSelecionados(botoesVerbalMenor5);
-
-    // Exibe a soma dos valores
-    const somaTotal = somaOcular + somaMotora + somaVerbal;
-    document.getElementById("soma-valores").innerText = "TOTAL (GCS) (3-15): " + somaTotal;
-    const somaTotalMenor5 = somaOcularMenor5 + somaMotoraMenor5 + somaVerbalMenor5;
-    document.getElementById("soma-valores-menor5").innerText = "TOTAL (GCS) (3-15): " + somaTotalMenor5;
-}
-
-// Função auxiliar para calcular a soma dos valores selecionados nos botões de opção
-function calcularSomaValoresSelecionados(botoes) {
-    let soma = 0;
-    for (const botao of botoes) {
-        if (botao.checked) {
-            soma += parseInt(botao.value);
-        }
-    }
-    return soma;
-}
 // limpar seções de problemas
 function limparSelecoes() {
     var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
@@ -460,4 +396,67 @@ function limparSelecoes() {
     textInputs.forEach(function(textInput) {
       textInput.value = '';
     });
+  }
+
+  // limpar seções de problemas
+function limparSelecoesProblemasSuspeitos() {
+    var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
+
+    // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
+    var radios = secaoProblemasSuspeitos.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoProblemasSuspeitos.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoProblemasSuspeitos.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+  }
+
+  // limpar seções de Ocorrencia pré-hospitalar
+  function limparSelecoesTipoOcorrencia() {
+    var secaoTipoOcorrencia = document.getElementById('TipoOcorrencia');
+
+    var radios = secaoTipoOcorrencia.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoTipoOcorrencia.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoTipoOcorrencia.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+  }
+
+  // limpar seções de paciente e acompanhante
+  function limparSelecoesPaciAcomp() {
+    var secaoPaciAcomp = document.getElementById('PaciAcomp');
+
+    var radios = secaoPaciAcomp.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+      radio.checked = false;
+    });
+
+    var checkboxes = secaoPaciAcomp.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+
+    var textInputs = secaoPaciAcomp.querySelectorAll('input[type="text"]');
+    textInputs.forEach(function(textInput) {
+      textInput.value = '';
+    });
+
+
   }

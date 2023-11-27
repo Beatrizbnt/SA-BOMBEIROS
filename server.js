@@ -153,12 +153,12 @@ router.post('/Pages/teste', (req, res) => {
     const perfusao = req.body.perfusao;
     const sinais_vitais_situacao = req.body.sinais_vitais_situacao;
     //tabela local de traumas
-    const local = req.body.local;
-    const lado = req.body.lado;
-    const face = req.body.face;
-    const tipo_trauma = req.body.tipo_trauma;
-    const tipo_queimadura = req.body.tipo_queimadura;
-    const local_queimadura = req.body.local_queimadura;
+    // const local = req.body.local;
+    // const lado = req.body.lado;
+    // const face = req.body.face;
+    // const tipo_trauma = req.body.tipo_trauma;
+    // const tipo_queimadura = req.body.tipo_queimadura;
+    // const local_queimadura = req.body.local_queimadura;
     //tabela sinais e sintomas
     const abdomen_sensivel_rigido = req.body.abdomen_sensivel_rigido;
     const afundamento_cranio = req.body.afundamento_cranio;
@@ -387,8 +387,8 @@ router.post('/Pages/teste', (req, res) => {
         respiracao_sinais, saturacao_sinais, temperatura_sinais, perfusao_sinais, situacao_sinais) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela local de trauma
-    const sqlLocalTrauma = `INSERT INTO local_traumas (local_traumas, lado_traumas, face_traumas, tipo_traumas, 
-        queimadura_traumas, grau_queimaduras_trauma) VALUES (?, ?, ?, ?, ?, ?)`;
+    // const sqlLocalTrauma = `INSERT INTO local_traumas (local_traumas, lado_traumas, face_traumas, tipo_traumas, 
+    //     queimadura_traumas, grau_queimaduras_trauma) VALUES (?, ?, ?, ?, ?, ?)`;
 
     // tabela sinais e sintomas
     const sqlSinaisSintomas = `INSERT INTO sinais_sintomas (abdomen_sensivel_rigido, afundamento_cranio, agitacao, amnesia, angia_peito, bradipneia, bronco_aspirando,
@@ -512,13 +512,13 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                         // erro de sinais vitais
                                                                                                     } else {
                                                                                                         console.log('Dados de sinais vitais: inseridos com sucesso');
-                                                                                                        conexao.query(sqlLocalTrauma, [local, lado, face, tipo_trauma, tipo_queimadura, local_queimadura], (errlLocalTrauma, resultLocalTrauma) => {
-                                                                                                            if (errLocalTrauma) {
+                                                                                                        // conexao.query(sqlLocalTrauma, [local, lado, face, tipo_trauma, tipo_queimadura, local_queimadura], (errlLocalTrauma, resultLocalTrauma) => {
+                                                                                                        //     if (errLocalTrauma) {
 
-                                                                                                                console.log('Erro ao inserir dados de Local de traumas: ' + errLocalTrauma.message);
+                                                                                                        //         console.log('Erro ao inserir dados de Local de traumas: ' + errLocalTrauma.message);
                                                                                                                 // erro de Local de traumas
-                                                                                                            } else {
-                                                                                                                console.log('Dados de Local de traumas: inseridos com sucesso');
+                                                                                                            // } else {
+                                                                                                            //     console.log('Dados de Local de traumas: inseridos com sucesso');
                                                                                                                 conexao.query(sqlSinaisSintomas, [abdomen_sensivel_rigido, afundamento_cranio, agitacao, amnesia, angia_peito, bradipneia, bronco_aspirando,
                                                                                                                     cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local,
                                                                                                                     edema_generalizado, edema_localizado, enfisema_subcutaneo, face_palida, hemorragia_interna, hemorragia_externa, hipertensao, hipotensao, nauseas_vomitos,
@@ -633,8 +633,8 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                                             });
                                                                                                                         }
                                                                                                                     });
-                                                                                                            }
-                                                                                                        });
+                                                                                                        //     }
+                                                                                                        // });
                                                                                                     }
                                                                                                 });
                                                                                         }
