@@ -91,7 +91,7 @@ body {
     }
 
     .tamanho-container .CAIXA{
-        width: 80%;
+        width: 90%;
       }
   }
 
@@ -103,6 +103,10 @@ body {
 
     .tamanho-container .CAIXA{
       width: 100%;
+    }
+
+    #local-traumas{
+      font-size:large;
     }
 
   }
@@ -129,6 +133,15 @@ body {
       top: 15px;
       right: 35px;
     }
+
+    label{
+      font-size:smaller;
+    }
+
+    #local-traumas{
+      font-size:medium;
+    }
+
   }
   
  
@@ -233,6 +246,7 @@ body {
 
 
   .selecao-subcaixa{
+    width: 100%;
     background-color:#CDCDCD;
     border-radius: 7px;
     padding: 6px;
