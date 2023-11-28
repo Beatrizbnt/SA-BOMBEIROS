@@ -544,7 +544,7 @@ router.post('/Pages/teste', (req, res) => {
                                                                                                                                         if (errDecisaoTransporte) {
 
                                                                                                                                             console.log('Erro ao inserir dados de Decisão transporte: ' + errDecisaoTransporte.message);
-                                                                                                                                            // erro de desisão transporte
+                                                                                                                                            // erro de decisão transporte
                                                                                                                                         } else {
                                                                                                                                             console.log('Dados de decisão transporte: inseridos com sucesso');
                                                                                                                                             conexao.query(sqlFormaConducao, [forma_conducao], (errFormaConducao, resultFormaConducao) => {

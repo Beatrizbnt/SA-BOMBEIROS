@@ -1321,7 +1321,7 @@
             </div>
             <!-- INÍCIO AVALIAÇÃO GLASGOW MAIORES DE 5 ANOS-->
             <!-- div escondida -->
-            <div id="glascow_maiores5">
+            <div id="glasgow_maiores5">
                 <div class="container-fluid faixa">
                     <div class="row">
                         <div class="col-12 faixa-titulo p-2 ">
@@ -1597,7 +1597,7 @@
                     SELEÇÕES</button>
             </div>
             <!-- INÍCIO AVALIAÇÃO GLASGOW MENORES DE 5 ANOS -->
-            <div id="glascow_menores5">
+            <div id="glasgow_menores5">
                 <div class="container-fluid faixa">
                     <div class="row">
                         <div class="col-12 faixa-titulo p-2 ">
@@ -1880,7 +1880,7 @@
             </div>
         </div>
     </div>
-    <div class="container tamanho-container w-75 p-4" id="sinais-vitais">
+    <div class="container tamanho-container w-75 p-4" id="sinais_vitais">
         <div class="CAIXA mb-3 container">
             <!-- campo de texto pressão arterial -->
             <Div class="form-group row selecao-caixa  sinais-vitais d-flex align-items-center justify-itens-center">
@@ -2179,7 +2179,7 @@
                 </div>
             </div>
         </div>
-        <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4">
+        <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4 mt-4">
             <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesLocalTraumas()">LIMPAR
                 SELEÇÕES</button>
         </div>
@@ -2937,12 +2937,10 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                            <div class="form-check col input-radio d-flex align-items-center">
-                                <input class="form-check-input me-2" type="radio">
-                                <div class="col form-group input-text" name="outro_sinais_sintomas">
-                                    <input type="text" class="form-control" placeholder="OUTRO">
-                                </div>
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="Outro"
+                                    name="outro_sinais_sintomas">
                             </div>
                         </div>
                     </div>
@@ -3691,15 +3689,19 @@
                                     </label>
                                 </div>
                             </div>
-                            <!-- caixa de seleção escondida. -->
-                            <div id="tipo_uso_colar">
-                                <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
-                                    <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="text" name="uso_colar_tam"
-                                            id="uso_colar_tam" placeholder="Tamanho">
+                            <!-- campo tamanho -->
+                            <div class="d-flex align-items-center flex-column ">
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="TAM"
+                                                    name="talas_pap_tam">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                         </div>
 
                     </div>
@@ -3748,7 +3750,7 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="oxigenioterapia_lpm"
@@ -3758,12 +3760,25 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo lpm -->
+                            <div class="d-flex align-items-center flex-column ">
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="LPM"
+                                                    name="oxigenioterapia_lpm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
 
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="reanimador_lpm"
@@ -3773,6 +3788,19 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- campo lpm -->
+                            <div class="d-flex align-items-center flex-column ">
+                                <div class="d-flex align-items-center">
+                                    <div class="p-1 col">
+                                        <Div class="form-group  selecao-subcaixa d-flex align-items-center">
+                                            <div class="col form-group input-text">
+                                                <input type="text" class="form-control" placeholder="LPM"
+                                                    name="reanimador_lpm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
                     <!-- caixa de seleção para tipo de meios auxiliares-->
@@ -3851,7 +3879,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            
                             <!-- caixa de seleção  -->
                             <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                 <div class="form-check col input-radio">
@@ -3874,7 +3902,7 @@
                             </div>
                             <!-- caixa de seleção  -->
                             <div class="mt-2">
-                                <div class="form-group selecao-caixa d-flex align-items-center flex-column">
+                                <div class="form-group selecao-caixa  d-flex align-items-center flex-column">
                                     <div class="justify-content-center d-flex">
                                         <label class="form-check-label">
                                             SAMU
@@ -3887,7 +3915,7 @@
                                                 <input class="form-check-input" type="checkbox"
                                                     name="meios_auxiliares_samu_usa" value="meios auxiliares samu USA">
                                                 <label class="form-check-label">
-                                                    USA
+                                                   USA
                                                 </label>
                                             </div>
                                         </div>
@@ -3905,6 +3933,7 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção  -->
+                            
                             <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                 <div class="form-check col input-radio">
                                     <input class="form-check-input" type="checkbox" name="meios_auxiliares_cit"
@@ -3914,16 +3943,25 @@
                                     </label>
                                 </div>
                             </div>
+                        
+                            <!-- caixa de seleção  -->
+                    
+                        <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="Outro"
+                                    name="outro_meios_auxiliares">
+                            </div>
+                        </div>
+                
                         </div>
                     </div>
+                </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                            <div class="form-check col input-radio d-flex align-items-center">
-                                <input class="form-check-input me-2" type="radio" name="outroProblemas" value="outro">
-                                <div class="col form-group input-text">
-                                    <input type="text" class="form-control" id="outroProblemas" placeholder="OUTRO">
-                                </div>
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="Outro"
+                                    name="outros_procedimentos">
                             </div>
                         </div>
                     </div>
@@ -3985,7 +4023,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4008,7 +4046,7 @@
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" value="cateter tp. óculos"
@@ -4042,7 +4080,7 @@
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" value="compressa comum"
@@ -4076,7 +4114,7 @@
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" value="kit's" name="kits">
@@ -4086,7 +4124,7 @@
                                 </div>
                             </div>
                             <!-- campo tamanho -->
-                            <div class="d-flex align-items-center flex-column selecao-caixa">
+                            <div class="d-flex align-items-center flex-column selecao-caixa flex-column">
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4104,7 +4142,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4127,7 +4165,7 @@
                     </div>
                     <!-- caixa de seleção. -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" name="luvas_desc"
@@ -4161,7 +4199,7 @@
                     </div>
                     <!-- caixa de seleção. -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" name="mascara_desc"
@@ -4184,7 +4222,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="manta_aluminizada_qtd"
+                                                <input type="text" class="form-control" name="mascara_desc_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4193,9 +4231,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- FIM DA PRIMEIRA COLUNA -->
+                <div class="col">
                     <!-- caixa de seleção. -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input " type="checkbox" name="manta_aluminizada"
@@ -4227,12 +4268,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- FIM DA PRIMEIRA COLUNA -->
-                <div class="col">
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="pás do dea" name="pas_dea">
@@ -4265,7 +4303,7 @@
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="sonda de aspiração"
@@ -4299,7 +4337,7 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="soro fisiológico"
@@ -4333,7 +4371,7 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="talas pap." name="talas_pap">
@@ -4361,7 +4399,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4382,14 +4420,30 @@
                             </div>
                         </div>
                     </div>
-                    <!-- caixa de seleção -->
+                    <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                            <div class="form-check col input-radio d-flex align-items-center">
-                                <input class="form-check-input me-2" type="radio">
-                                <div class="col form-group input-text">
-                                    <input type="text" class="form-control" placeholder="OUTRO" disabled>
-                                </div>
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="Outro"
+                                    name="outro_material_utilizado_descartavel">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção  -->
+                    <div class="p-2">
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="TAM"
+                                    name="outro_material_utilizado_descartavel_tam">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção  -->
+                    <div class="p-2">
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="QTD"
+                                    name="outro_material_utilizado_descartavel_qtd">
                             </div>
                         </div>
                     </div>
@@ -4456,7 +4510,7 @@
                                     </label>
                                 </div>
                             </div>
-<!-- campo tamanho -->
+                            <!-- campo tamanho -->
                             <div class="d-flex align-items-center flex-column selecao-caixa">
                                 <div class="container-fluid faixa">
                                     <div class="row">
@@ -4475,7 +4529,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4560,7 +4614,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4583,11 +4637,11 @@
                     </div>
                     <!-- caixa de seleção. -->
                     <div class="p-2">
-                        <Div class="form-group  selecao-caixa d-flex align-items-center">
+                        <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox"
-                                        name="maca_rigida_utilizados" value="maca rígida">
+                                    <input class="form-check-input " type="checkbox" name="maca_rigida_utilizados"
+                                        value="maca rígida">
                                     <label class="form-check-label">
                                         MACA RÍGIDA
                                     </label>
@@ -4620,7 +4674,7 @@
                 <div class="col">
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="t.t.f." name="t_t_f">
@@ -4648,7 +4702,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- campo quantidade -->
+                                <!-- campo quantidade -->
                                 <div class="container-fluid faixa">
                                     <div class="row">
                                         <div class="col-12 subtitulo p-1 ">
@@ -4671,7 +4725,7 @@
                     </div>
                     <!-- caixa de seleção -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="tirante aranha"
@@ -4705,7 +4759,7 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="tirante de cabeça"
@@ -4739,7 +4793,7 @@
                     </div>
                     <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center">
+                        <div class="form-group selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
                                     <input class="form-check-input" type="checkbox" value="cânula" name="canula">
@@ -4770,14 +4824,30 @@
                             </div>
                         </div>
                     </div>
-                    <!-- caixa de seleção -->
+                    <!-- caixa de seleção  -->
                     <div class="p-2">
-                        <div class="form-group selecao-caixa d-flex align-items-center mt-2">
-                            <div class="form-check col input-radio d-flex align-items-center">
-                                <input class="form-check-input me-2" type="radio" name="outroProblemas" value="outro">
-                                <div class="col form-group input-text">
-                                    <input type="text" class="form-control" id="outroProblemas" placeholder="OUTRO">
-                                </div>
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="Outro"
+                                    name="outro_material_utilizado_deixados">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção  -->
+                    <div class="p-2">
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="TAM"
+                                    name="outro_material_utilizado_deixados_tam">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- caixa de seleção  -->
+                    <div class="p-2">
+                        <div class="form-group selecao-caixa d-flex align-items-center">
+                            <div class="col form-group input-text">
+                                <input type="text" class="form-control" placeholder="QTD"
+                                    name="outro_material_utilizado_deixados_qtd">
                             </div>
                         </div>
                     </div>

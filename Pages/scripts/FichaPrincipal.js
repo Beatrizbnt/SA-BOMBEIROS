@@ -189,9 +189,9 @@ objetos.style.display = this.checked ? 'block' : 'none';
 
 // limpar seções de sinais vitais
 function limparSelecoesSinaisVitais() {
-    var secaoSinaisVitais = document.getElementById('sinais-vitais');
+    var secaoSinaisVitais = document.getElementById('sinais_vitais');
 
-    // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
+    
     var radios = secaoSinaisVitais.querySelectorAll('input[type="radio"]');
     radios.forEach(function(radio) {
       radio.checked = false;
@@ -207,7 +207,6 @@ function limparSelecoesSinaisVitais() {
 function limparSelecoesProblemasSuspeitos() {
     var secaoProblemasSuspeitos = document.getElementById('ProblemasSuspeitos');
 
-    // Limpa seleções apenas dentro da seção 'PROBLEMAS ENCONTRADOS SUSPEITOS'
     var radios = secaoProblemasSuspeitos.querySelectorAll('input[type="radio"]');
     radios.forEach(function(radio) {
       radio.checked = false;
@@ -350,7 +349,7 @@ function limparSelecoesProblemasSuspeitos() {
   }
 
   // limpar seção vítima era
-  function limparSelecoesSinaisSintomas() {
+  function limparSelecoesVitima() {
     var secaoVitimaEra = document.getElementById('vitima');
 
     var radios = secaoVitimaEra.querySelectorAll('input[type="radio"]');
