@@ -1,9 +1,6 @@
 body{
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
-    background-image: url("/Pages/img/Ambulancia-Bombeiros-17-730x548.jpeg");
-    backdrop-filter: blur(8px); 
+    overflow: hidden;
 }
 .caixa-cinza {
   

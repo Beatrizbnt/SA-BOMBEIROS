@@ -19,7 +19,7 @@ const mysql = require('mysql2');
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'sa_bombeiros'
 });
 // Estabelece a conexão com o banco de dados
@@ -65,7 +65,7 @@ router.post('/Pages/login', (req, res) => {
         return res.status(400).send('Todos os campos são obrigatórios.');
     }
 
-    const sql = `SELECT cpf_cadastro, senha_cadastro FROM cadastro WHERE cpf_cadastro = ? AND senha_cadastro = ?`;
+    const sql = `SELECT cpf_usuario, senha_usuario FROM usuario WHERE cpf_usuario = ? AND senha_usuario = ?`;
 
     conexao.query(sql, [cpf, senha], (err, results) => {
         if (err) {
@@ -74,16 +74,18 @@ router.post('/Pages/login', (req, res) => {
             if (results.length > 0) {
                 // Login bem-sucedido,
                 console.log("Login realizado com sucesso!");
-                res.redirect('/Pages/principal.html');
+                res.redirect('/Pages/inicio.html');
             } else {
                 // CPF ou senha inválidos, redireciona para a página de login
-
+                const mensagemErro = "CPF ou senha incorretos!";
+                const script = `<script>alert('${mensagemErro}'); window.location.href='/Pages/login.html';</script>`;
+                res.send(script);
             }
         }
     });
 });
 // Enviar as informações da ficha para o banco
-router.post('/Pages/teste', (req, res) => {
+router.post('/Pages/gerarRelatorio', (req, res) => {
     // tabela paciente
     const pacienteIdentificado = req.body.pacienteIdentificado;
     const sexo = req.body.sexo;
