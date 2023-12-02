@@ -19,7 +19,7 @@ const mysql = require('mysql2');
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'sa_bombeiros'
 });
 // Estabelece a conexão com o banco de dados
