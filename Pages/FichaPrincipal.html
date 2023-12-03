@@ -101,7 +101,7 @@
     <!-- envelopamento dos elementos da página -->
     <div class="wrapper bg-light">
         <!-- inicio do forms -->
-        <form action="/Pages/gerarRelatorio" method="post">
+        <form action="/Pages/gerarRelatorio" method="post" id="ficha">
             <!-- Título de cada parte da ficha ele é padrao em todos os outros, aqui também inicia a ficha -->
             <div class="container-fluid faixa">
                 <div class="row">
@@ -2030,16 +2030,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="legenda">
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="FRATURAS / LUXAÇÕES / ENTORSES">
                                 <div class="me-1 p-1"><span class="p-2"
                                         style='font-size:20px; color:rgb(202, 26, 26);'>&#10008;</span></div>
                                 <div class="d-flex align-items-center">
                                     <div>FRATURAS / LUXAÇÕES / ENTORSES</div>
                                 </div>
-                            </div>
+                            </Div>
+                            
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="FERIMENTOS DIVERSOS">
                                 <div class="me-1 p-1"><img src="/Pages/img/triangulo-laranja.png" alt="ferimentos"
                                         width="35px" class="p-2"></div>
                                 <div class="d-flex align-items-center">
@@ -2047,7 +2049,7 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="HEMORRAGIAS">
                                 <div class="me-1 p-1"><img src="/Pages/img/triangulo.png" alt="hemorragias" width="35px"
                                         class="p-2"></div>
                                 <div class="d-flex align-items-center">
@@ -2055,7 +2057,7 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="EVICERAÇÃO">
                                 <div class="me-1 p-1"><span class="p-2"
                                         style='font-size:22px; color:rgb(255, 143, 15);'>&#10042;</span></div>
                                 <div class="d-flex align-items-center">
@@ -2063,7 +2065,7 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="F.A.B. / F.A.F.">
                                 <div class="me-1 p-1"><img src="/Pages/img/circulo.png" alt="F.A.B. / F.A.F."
                                         width="35px" class="p-2"></div>
                                 <div class="d-flex align-items-center">
@@ -2071,14 +2073,14 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="AMPUTAÇÃO">
                                 <div class="me-1 p-1"><span class="p-2" style='font-size:23px;'>&#9744;</span></div>
                                 <div class="d-flex align-items-center">
                                     <div class="text-center">AMPUTAÇÃO</div>
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="QUEIMADURA 1ºGRAU">
                                 <div class="me-1 P-1"><img src="/Pages/img/linhas_cruz.png" alt="QUEIMADURA 1ºGRAU"
                                         width="47px" class="p-2"></div>
                                 <div class="d-flex align-items-center">
@@ -2086,7 +2088,7 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="QUEIMADURA 2ºGRAU">
                                 <div class="me-1 p-1"><img src="/Pages/img/linhas_circulo.png" alt="QUEIMADURA 2ºGRAU"
                                         width="47px" class="p-2"></div>
                                 <div class="d-flex align-items-center">
@@ -2094,30 +2096,45 @@
                                 </div>
                             </div>
                             <!-- caixa de seleção legenda -->
-                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2">
+                            <Div class="form-group selecao-caixa d-flex align-items-center mt-2 item-legenda" data-trauma="QUEIMADURA 3ºGRAU">
                                 <div class="me-1 p-1"><img src="/Pages/img/linhas.png" alt="QUEIMADURA 3ºGRAU"
                                         width="47px" class="p-2"></div>
                                 <div class="d-flex align-items-center">
                                     <div class="">QUEIMADURA 3ºGRAU</div>
                                 </div>
                             </div>
+                        </div></div>
                             <!-- caixa de seleção legenda -->
-                        </div>
                         <!-- FIM DA PRIMEIRA COLUNA -->
                         <div class="col">
                             <div class="col m-auto d-flex justify-content-center"><img
                                     src="/Pages/img/FOLHA_1-PhotoRoom.png-PhotoRoom.png" alt="Local de Trauma Criança"
-                                    width="300px" class="p-2"></div>
-
+                                    width="500" class="p-2"></div>
+                                    
+                                    <div id="local_trauma_adulto">
                             <div class="col m-auto d-flex justify-content-center"><img
                                     src="/Pages/img/Design sem nome (4)-PhotoRoom.png-PhotoRoom.png"
-                                    alt="Local de Trauma Adulto" width="300px" class="p-2"></div>
+                                    alt="Local Traumas adulto" usemap="#local_trauma_adulto" width="500" class="p-2"></div>
+                                    <div id="marcador"></div>
+                                    <map name="local_trauma_adulto">
+                                        <area class="area" data-area="M. Inferior Esquerdo Frente" id="m_inferior_esquerdo" shape="poly" coords="80,222,106,235,116,268,116,345,116,482,86,481,88,374,77,271,83,225 " alt="M. Inferior Esquerdo">
+                                        <area class="area" data-area="M. Inferior Direito Frente" id="m_inferior_direito" shape="poly" coords="165,222,167,272,160,375,162,479,130,479,134,342,128,270,140,232,163,220" alt="M. Inferior Direito">
+                                        <area class="area" data-area="M. Superior Esquerdo Frente" id="m_superior_esquerdo" shape="poly" coords="90,98,64,106,40,238,20,258,31,282,46,282,53,242,73, 194,80,133" alt="M. Superior Esquerdo">
+                                        <area class="area" data-area="M. Superior Direito Frente" id="m_superior_direito" shape="poly" coords="160,97,185,106,208,240,228,259,215,282,200,283,192,242,173,188,168,132" alt="M. Superior Direito">
+                                        <area class="area" data-area="Pescoço Frente" id="Pescoço" shape="poly" coords="91,97,124,103,159,98,143,90,136,76,122,79,109,75,107,90" alt="Pescoço">
+                                        <area class="area" data-area="Cabeça Frente" id="Cabeça" shape="poly" coords="103,24,146,24,140,70,122,78,109,72" alt="Cabeça">
+                                        <area class="area" data-area="Tronco Frente" id="Tronco" shape="poly" coords="90,100,123,104,159,98,167,130,159,209,140,234,123,234,108,234,89,213,80,131" alt="Tronco">
+                                        <area class="area" data-area="Genitália Frente" id="Genitália" shape="poly" coords="107,235,137,234,131,269,117,269" alt="Genitália">
+                                </map>
+                        </div>
                         </div>
                         <!-- FIM DA SEGUNDA COLUNA -->
                     </div>
                 </div>
             </div>
         </div>
+
+        
         <div class="container-fluid faixa pt-4">
             <div class="row">
                 <div class="col-12 faixa-titulo p-2">
@@ -2129,32 +2146,73 @@
         <!-- TABELA QUE APRESENTA OS DADOS SELECIONADOS -->
         <div class="container mt-5">
             <div class="table-responsive">
-                <table class="table text-center">
+                <table class="table text-center" id="tabela">
                     <thead>
                         <tr>
                             <th>LOCAL</th>
-                            <th>LADO</th>
-                            <th>FACE</th>
-                            <th>TIPO</th>
+                            <th>TIPO DE TRAUMA</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>CABEÇA</td>
-                            <td>DIREITO</td>
-                            <td>FRENTE</td>
-                            <td>FERIMENTOS DIVERSOS</td>
-                        </tr>
-                        <tr>
-                            <td>M.I.</td>
-                            <td>ESQUERDO</td>
-                            <td>TRÁS</td>
-                            <td>FRATURAS / LUXAÇÕES / ENTORSES</td>
-                        </tr>
+                       
                     </tbody>
                 </table>
             </div>
         </div>
+        <!-- script local de traumas -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const areas = document.querySelectorAll('area');
+                const legendaItens = document.querySelectorAll('.item-legenda');
+                const tabela = document.getElementById('tabela');
+                const marcador = document.getElementById('marcador');
+            
+                areas.forEach(area => {
+                    area.addEventListener('mouseover', function () {
+                        this.classList.add('hovered');
+                    });
+            
+                    area.addEventListener('mouseout', function () {
+                        this.classList.remove('hovered');
+                    });
+            
+                    area.addEventListener('click', function () {
+                        // Limpar a tabela antes de adicionar uma nova linha
+                        tabela.querySelectorAll('tbody tr').forEach(row => row.remove());
+            
+                        const selectedArea = this.getAttribute('data-area');
+                        const selectedTrauma = document.querySelector('.item-legenda.active')?.getAttribute('data-trauma');
+            
+                        if (selectedTrauma) {
+                            const newRow = tabela.insertRow();
+                            newRow.innerHTML = `<td>${selectedArea}</td><td>${selectedTrauma}</td>`;
+                        } else {
+                            alert('Selecione um tipo de trauma na legenda.');
+                        }
+            
+                        // Exibir o marcador nas coordenadas da área clicada
+                        const coords = this.coords.split(',').map(coord => parseInt(coord));
+                        const centerX = (Math.max(...coords) + Math.min(...coords)) / 2;
+                        const centerY = (Math.max(...coords.slice(1)) + Math.min(...coords.slice(1))) / 2;
+            
+                        marcador.style.left = `${centerX}px`;
+                        marcador.style.top = `${centerY}px`;
+                        marcador.style.display = 'block';
+                    });
+                });
+            
+                legendaItens.forEach(item => {
+                    item.addEventListener('click', function () {
+                        legendaItens.forEach(item => item.classList.remove('active'));
+                        this.classList.add('active');
+            
+                        // Adicionar a cor da legenda ao marcador
+                        const selectedColor = this.querySelector('.legenda-cor').style.backgroundColor;
+                        marcador.style.backgroundColor = selectedColor;
+                    });
+                });
+            });
+                </script>
         <div class="CAIXA mt-5 container">
             <!-- caixa de seleção para sim ou não -->
             <Div class="form-group row selecao-caixa d-flex align-items-center">
@@ -4069,7 +4127,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="cateter_ocuulos_qtd"
+                                                <input type="text" class="form-control" name="cateter_oculos_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4168,7 +4226,7 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" name="luvas_desc"
+                                    <input class="form-check-input " type="checkbox" name="luva_desc"
                                         value="luvas desc. (pares)">
                                     <label class="form-check-label">
                                         LUVAS DESC. (PARES)
@@ -4188,7 +4246,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="luvas_desc_qtd"
+                                                <input type="text" class="form-control" name="luva_desc_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4504,7 +4562,7 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" value="colar" name="uso_colar">
+                                    <input class="form-check-input " type="checkbox" value="colar" name="colar">
                                     <label class="form-check-label">
                                         COLAR
                                     </label>
@@ -4524,7 +4582,7 @@
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
                                                 <input type="text" class="form-control" placeholder="TAM"
-                                                    name="uso_colar_tam">
+                                                    name="colar_tam">
                                             </div>
                                         </div>
                                     </div>
@@ -4541,7 +4599,7 @@
                                     <div class="p-1 col">
                                         <Div class="form-group  selecao-subcaixa d-flex align-items-center">
                                             <div class="col form-group input-text">
-                                                <input type="text" class="form-control" name="uso_colar_qtd"
+                                                <input type="text" class="form-control" name="colar_qtd"
                                                     placeholder="QTD">
                                             </div>
                                         </div>
@@ -4589,7 +4647,7 @@
                         <Div class="form-group  selecao-caixa d-flex align-items-center flex-column">
                             <div class="justify-content-center d-flex">
                                 <div class="form-check input-check">
-                                    <input class="form-check-input " type="checkbox" value="ked" name="ked" value="ked">
+                                    <input class="form-check-input " type="checkbox" value="ked" name="ked">
                                     <label class="form-check-label">
                                         KED
                                     </label>

@@ -51,7 +51,7 @@ router.post('/Pages/cadastro', (req, res) => {
 
         } else {
             console.log('Usuário cadastrado com sucesso');
-            res.redirect('/Pages/principal.html');
+            // res.redirect('/Pages/principal.html');
         }
     });
 });
@@ -421,14 +421,14 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela materiais utilizados
-    const sqlMateriaisUtilizados = `INSERT INTO materiais_utilizados (ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd,
-         compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd, luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd, manta_aluminizada,
-          manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, soro_fisiologico, soro_fisiologico_qtd, talas_pap,
-           talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam, outro_material_utilizado_descartavel_qtd,
-            base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza, coxins_estabiliza_qtd, ked, ked_tam, ked_qtd,
-             maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca,
-              tirante_cabeca_qtd, canula, canula_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const sqlMateriaisUtilizados = `INSERT INTO materiais_utilizados (
+        ataduras, ataduras_tam, ataduras_qtd, cateter_oculos, cateter_oculos_qtd, compressa_comum, compressa_comum_qtd, kits, kits_tam, kits_qtd,
+        luva_desc, luva_desc_qtd, mascara_desc, mascara_desc_qtd, manta_aluminizada, manta_aluminizada_qtd, pas_dea, pas_dea_qtd, sonda_aspiracao, sonda_aspiracao_qtd, 
+        soro_fisiologico, soro_fisiologico_qtd, talas_pap, talas_pap_tam, talas_pap_qtd, outro_material_utilizado_descartavel, outro_material_utilizado_descartavel_tam, 
+        outro_material_utilizado_descartavel_qtd, base_estabilizador, base_estabilizador_qtd, colar, colar_tam, colar_qtd, coxins_estabiliza, coxins_estabiliza_qtd, 
+        ked, ked_tam, ked_qtd, maca_rigida_utilizados, maca_rigida_utilizados_qtd, t_t_f, t_t_f_tam, t_t_f_qtd, tirante_aranha, tirante_aranha_qtd, tirante_cabeca, 
+        tirante_cabeca_qtd, canula, canula_qtd, outro_material_utilizado_deixados, outro_material_utilizado_deixados_tam, outro_material_utilizado_deixados_qtd
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // tabela avaliação cinemática
     const sqlAvaliacaoCinematica = `INSERT INTO avaliacao_cinematica (disturbio_comportamento, encontrado_capacete, encontrado_cinto,
@@ -444,8 +444,7 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
 
     // tabela informação transporte
     const sqlInformacaoTransporte = `INSERT INTO informacao_transporte ( local_ocorrencia, num_usb, num_ocorrencia, cod_ir, cod_ps,
-    desp, h_ch, km_final, cod_sia_sus, outro_meio_auxiliar
-       outro_historico_ocorrencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    desp, h_ch, km_final, cod_sia_sus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
         rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
@@ -609,15 +608,16 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
                                                                                                                                                                                                         } else {
                                                                                                                                                                                                             console.log('Dados de equipe de atendimento: inseridos com sucesso');
                                                                                                                                                                                                             conexao.query(sqlInformacaoTransporte, [local_ocorrencia, num_usb, num_ocorrencia, cod_ir, cod_ps, desp, h_ch,
-                                                                                                                                                                                                                km_final, cod_sia_sus, outro_meio_auxiliar, outro_historico_ocorrencia], (errInformacaoTransporte, resultInformacaoTransporte) => {
+                                                                                                                                                                                                                km_final, cod_sia_sus], (errInformacaoTransporte, resultInformacaoTransporte) => {
                                                                                                                                                                                                                     if (errInformacaoTransporte) {
 
                                                                                                                                                                                                                         console.log('Erro ao inserir dados de informação transporte: ' + errInformacaoTransporte.message);
                                                                                                                                                                                                                         // erro de informação transporte
                                                                                                                                                                                                                     } else {
                                                                                                                                                                                                                         console.log('Dados de informação transporte: inseridos com sucesso');
-
+                                                                                                                                                                                                                        res.redirect('/Pages/gerarRelatorio.html');
                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                    
                                                                                                                                                                                                                 });
                                                                                                                                                                                                         }
                                                                                                                                                                                                     });
@@ -658,12 +658,12 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
                 })
             }
         })
-})
+});
 
 module.exports = router;
 app.use('/', router);
 
 // Verificar a porta do servidor
-app.listen(8081, () => {
-    console.log('O servidor está rodando na porta 8081');
+app.listen(8080, () => {
+    console.log('O servidor está rodando na porta 8080');
 });
