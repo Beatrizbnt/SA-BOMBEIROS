@@ -565,7 +565,10 @@ area {
     background-color: rgba(0, 0, 255, 0.3); /* Azul semi-transparente */
     border: 1px solid #0000FF; /* Borda azul */
     z-index: -1; /* Coloca o polígono atrás da área */
-    clip-path: polygon(107px 235px,137px 234px,131px 269px,117px 269px); /
+    clip-path: polygon(64px, 141px
+    83px, 140px
+    78px, 161px
+    71px, 161px); /
   }
 
   #marcador {

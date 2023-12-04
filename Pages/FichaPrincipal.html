@@ -2109,22 +2109,22 @@
                         <div class="col">
                             <div class="col m-auto d-flex justify-content-center"><img
                                     src="/Pages/img/FOLHA_1-PhotoRoom.png-PhotoRoom.png" alt="Local de Trauma Criança"
-                                    width="500" class="p-2"></div>
+                                    width="300" height="300" class="p-2"></div>
                                     
                                     <div id="local_trauma_adulto">
                             <div class="col m-auto d-flex justify-content-center"><img
                                     src="/Pages/img/Design sem nome (4)-PhotoRoom.png-PhotoRoom.png"
-                                    alt="Local Traumas adulto" usemap="#local_trauma_adulto" width="500" class="p-2"></div>
+                                    alt="Local Traumas adulto" usemap="#local_trauma_adulto" width="300" height="300" class="p-2"></div>
                                     <div id="marcador"></div>
                                     <map name="local_trauma_adulto">
-                                        <area class="area" data-area="M. Inferior Esquerdo Frente" id="m_inferior_esquerdo" shape="poly" coords="80,222,106,235,116,268,116,345,116,482,86,481,88,374,77,271,83,225 " alt="M. Inferior Esquerdo">
-                                        <area class="area" data-area="M. Inferior Direito Frente" id="m_inferior_direito" shape="poly" coords="165,222,167,272,160,375,162,479,130,479,134,342,128,270,140,232,163,220" alt="M. Inferior Direito">
-                                        <area class="area" data-area="M. Superior Esquerdo Frente" id="m_superior_esquerdo" shape="poly" coords="90,98,64,106,40,238,20,258,31,282,46,282,53,242,73, 194,80,133" alt="M. Superior Esquerdo">
-                                        <area class="area" data-area="M. Superior Direito Frente" id="m_superior_direito" shape="poly" coords="160,97,185,106,208,240,228,259,215,282,200,283,192,242,173,188,168,132" alt="M. Superior Direito">
-                                        <area class="area" data-area="Pescoço Frente" id="Pescoço" shape="poly" coords="91,97,124,103,159,98,143,90,136,76,122,79,109,75,107,90" alt="Pescoço">
-                                        <area class="area" data-area="Cabeça Frente" id="Cabeça" shape="poly" coords="103,24,146,24,140,70,122,78,109,72" alt="Cabeça">
-                                        <area class="area" data-area="Tronco Frente" id="Tronco" shape="poly" coords="90,100,123,104,159,98,167,130,159,209,140,234,123,234,108,234,89,213,80,131" alt="Tronco">
-                                        <area class="area" data-area="Genitália Frente" id="Genitália" shape="poly" coords="107,235,137,234,131,269,117,269" alt="Genitália">
+                                        <area class="area" data-area="M. Inferior Esquerdo Frente" id="m_inferior_esquerdo" shape="poly" coords="48,177,63.36,188.4,69.12,214.08,69.12,276,69.12,375.36,52.32,374.88,53.76,287.52,46.08,216.72,49.92,178.56" alt="M. Inferior Esquerdo">
+                                        <area class="area" data-area="M. Inferior Direito Frente" id="m_inferior_direito" shape="poly" coords="99.6,177,100.8,216.48,96.96,281.52,97.92,356.16,78.72,355.68,81.12,205.92,76.8,162,84.48,139.2,97.92,132.48" alt="M. Inferior Direito">
+                                        <area class="area" data-area="M. Superior Esquerdo Frente" id="m_superior_esquerdo" shape="poly" coords="54,88.32,38.88,93.12,24,166.08,12,180,16.32,196.32,27.84,196.32,31.68,161.28,43.2,116.64,48,79.2" alt="M. Superior Esquerdo">
+                                        <area class="area" data-area="M. Superior Direito Frente" id="m_superior_direito" shape="poly" coords="96,88.32,111.6,93.12,125.28,166.08,136.8,180,129.6,196.32,120,196.32,115.2,161.28,103.2,116.64,100.8,79.2" alt="M. Superior Direito">
+                                        <area class="area" data-area="Pescoço Frente" id="Pescoço" shape="poly" coords="54.72,88.32,74.88,92.16,95.04,87.84,85.44,81.6,81.6,72,73.92,72.96,65.76,70.08,64.32,81.6" alt="Pescoço">
+                                        <area class="area" data-area="Cabeça Frente" id="Cabeça" shape="poly" coords="61.92,19.2,87.36,19.2,84,42.72,73.92,72,65.76,57.6" alt="Cabeça">
+                                        <area class="area" data-area="Tronco Frente" id="Tronco" shape="poly" coords="54,88.32,74.88,92.16,95.04,87.84,100.08,114.72,96.96,167.04,84,187.2,73.92,187.2,65.28,187.2,54.72,159.84,48,78.72" alt="Tronco">
+                                        <area class="area" data-area="Genitália Frente" id="Genitália" shape="poly" coords="64, 141,83, 140,78, 161,71, 161" alt="Genitália">
                                 </map>
                         </div>
                         </div>
@@ -2212,6 +2212,8 @@
                     });
                 });
             });
+            
+            
                 </script>
         <div class="CAIXA mt-5 container">
             <!-- caixa de seleção para sim ou não -->
@@ -2238,7 +2240,7 @@
             </div>
         </div>
         <div class="container esp-botao-limpar d-flex justify-content-center align-items-center mb-4 mt-4">
-            <button type="button" class="btn d-flex p-2 fs-6" onclick="limparSelecoesLocalTraumas()">LIMPAR
+            <button type="button" class="btn d-flex p-2 fs-6" id="limparDadosBtn">LIMPAR
                 SELEÇÕES</button>
         </div>
         <!-- TABELA QUE APRESENTA OS DADOS SELECIONADOS -->
@@ -2435,7 +2437,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="cianose_labios"
+                                        <input class="form-check-input" type="checkbox" name="cianose_labios"
                                             value="cianose lábios">
                                         <label class="form-check-label">
                                             LÁBIOS
@@ -2445,7 +2447,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="cianose_extremidade"
+                                        <input class="form-check-input" type="checkbox" name="cianose_extremidade"
                                             value="cianose extremidade">
                                         <label class="form-check-label">
                                             EXTREMIDADE
@@ -2575,7 +2577,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="edema_generalizado"
+                                        <input class="form-check-input" type="checkbox" name="edema_generalizado"
                                             value="edema generalizado">
                                         <label class="form-check-label">
                                             GENERALIZADO
@@ -2585,7 +2587,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="edema_localizado"
+                                        <input class="form-check-input" type="checkbox" name="edema_localizado"
                                             value="edema localizado">
                                         <label class="form-check-label">
                                             LOCALIZADO
@@ -2650,7 +2652,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="hemorragia_interna"
+                                        <input class="form-check-input" type="checkbox" name="hemorragia_interna"
                                             value="hemorragia interna">
                                         <label class="form-check-label">
                                             INTERNA
@@ -2660,7 +2662,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="hemorragia_externa"
+                                        <input class="form-check-input" type="checkbox" name="hemorragia_externa"
                                             value="hemorragia externa">
                                         <label class="form-check-label">
                                             EXTERNA
@@ -2792,7 +2794,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="parada_cardiaca"
+                                        <input class="form-check-input" type="checkbox" name="parada_cardiaca"
                                             value="parada cardíaca">
                                         <label class="form-check-label">
                                             CARDÍACA
@@ -2802,7 +2804,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="parada_respiratoria"
+                                        <input class="form-check-input" type="checkbox" name="parada_respiratoria"
                                             value="parada respiratória">
                                         <label class="form-check-label">
                                             RESPIRATÓRIA
@@ -2852,7 +2854,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="pupilas_anisocoria"
+                                        <input class="form-check-input" type="checkbox" name="pupilas_anisocoria"
                                             value="pupilas anisocoria">
                                         <label class="form-check-label">
                                             ANISOCORIA
@@ -2862,7 +2864,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="pupilas_miose"
+                                        <input class="form-check-input" type="checkbox" name="pupilas_miose"
                                             value="pupilas miose">
                                         <label class="form-check-label">
                                             MIOSE
@@ -2872,7 +2874,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="pupilas_isocoria"
+                                        <input class="form-check-input" type="checkbox" name="pupilas_isocoria"
                                             value="pupilas isocoria">
                                         <label class="form-check-label">
                                             ISOCORIA
@@ -2882,7 +2884,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="pupilas_midrise"
+                                        <input class="form-check-input" type="checkbox" name="pupilas_midrise"
                                             value="pupilas midríse">
                                         <label class="form-check-label">
                                             MIDRÍSE
@@ -2892,7 +2894,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="pupilas_reagente"
+                                        <input class="form-check-input" type="checkbox" name="pupilas_reagente"
                                             value="pupilas reagente">
                                         <label class="form-check-label">
                                             REAGENTE
@@ -2902,7 +2904,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="radio" name="pupilas_nao_reagente"
+                                        <input class="form-check-input me-2" type="checkbox" name="pupilas_nao_reagente"
                                             value="pupilas não reagente">
                                         <label class="form-check-label">
                                             NÃO REAGENTE
@@ -3062,7 +3064,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio d-flex align-items-center">
-                                        <input class="form-check-input me-2" type="radio" name="vitimas_era"
+                                        <input class="form-check-input me-2" type="radio" name="vitima_era"
                                             value="condutor carro">
                                         <label class="form-check-label">
                                             CONDUTOR CARRO
@@ -3680,7 +3682,7 @@
                                 <!-- caixa de seleção  -->
                                 <div class="form-group selecao-subcaixa d-flex align-items-center mt-2">
                                     <div class="form-check col input-radio">
-                                        <input class="form-check-input" type="radio" name="rolamento_180"
+                                        <input class="form-check-input" type="checkbox" name="rolamento_180"
                                             value="rolamento 180°">
                                         <label class="form-check-label">
                                             ROLAMENTO 180°
@@ -5118,7 +5120,7 @@
                 </div>
             </div>
         </div>
-        <div class="CAIXA mb-3 container" style="display: none;" id="objetos">
+        <div class="CAIXA mb-3 container" id="objetos">
             <Div class="form-group row d-flex align-items-center text-area">
                 <div class="form-floating ">
                     <textarea class="form-control" style="height: 100px" name="objetos"></textarea>

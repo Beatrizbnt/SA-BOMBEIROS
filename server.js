@@ -330,9 +330,9 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
     const painel_avariado = req.body.painel_avariado;
     const volante_torcido = req.body.volante_torcido;
     //tabela observações importantes
-    const objetos_recolhidos = req.body.objetos_recolhidos;
+    const obj_recolhidos = req.body.obj_recolhidos;
     const objetos = req.body.objetos;
-    const observacoes_importantes = req.body.observacoes_importantes;
+    const observacoes = req.body.observacoes;
     //tabela equipe de atendimento
     const motorista = req.body.motorista;
     const socorrista1 = req.body.socorrista1;
@@ -592,7 +592,7 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
                                                                                                                                                                                         // erro de avaliação cinemática
                                                                                                                                                                                     } else {
                                                                                                                                                                                         console.log('Dados de avaliação cinemática: inseridos com sucesso');
-                                                                                                                                                                                        conexao.query(sqlObservacoesImportantes, [objetos_recolhidos, objetos, observacoes_importantes], (errObservacoesImportantes, resultObservacoesImportantes) => {
+                                                                                                                                                                                        conexao.query(sqlObservacoesImportantes, [obj_recolhidos, objetos, observacoes], (errObservacoesImportantes, resultObservacoesImportantes) => {
                                                                                                                                                                                             if (errObservacoesImportantes) {
 
                                                                                                                                                                                                 console.log('Erro ao inserir dados de observações importantes: ' + errObservacoesImportantes.message);
