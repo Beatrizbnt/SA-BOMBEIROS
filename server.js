@@ -94,6 +94,7 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
     const rg_cpf_paciente = req.body.rg_cpf_paciente;
     const idade_paciente = req.body.idade_paciente;
     const telefone_paciente = req.body.telefone_paciente;
+    const data = req.body.data;
     // tabela acompanhante
     const acompanhante = req.body.acompanhante;
     const nome_acompanhante = req.body.nome_acompanhante;
@@ -350,10 +351,11 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
     const h_ch = req.body.h_ch;
     const km_final = req.body.km_final;
     const cod_sia_sus = req.body.cod_sia_sus;
+
     // tabela paciente
     const sqlPaciente = `INSERT INTO informacao_paciente (identificacao_paciente, 
-        sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente) 
-                 VALUES (?, ?, ?, ?, ?, ?, ?)`;
+        sexo_paciente, gestante_paciente, nome_paciente, rg_cpf_paciente, idade_paciente, telefone_paciente, data_ocorrencia) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
     // tabela acompanhante
     const sqlAcompanhante = `INSERT INTO informacao_acompanhante (identificacao_acompanhante, nome_acompanhante, idade_acompanhante) 
                              VALUES (?, ?, ?)`;
@@ -446,82 +448,81 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
     const sqlInformacaoTransporte = `INSERT INTO informacao_transporte ( local_ocorrencia, num_usb, num_ocorrencia, cod_ir, cod_ps,
     desp, h_ch, km_final, cod_sia_sus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-    conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
-        rg_cpf_paciente, idade_paciente, telefone_paciente], (errPaciente, resultPaciente) => {
-            console.log(sexo)
-            if (errPaciente) {
-                console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
-                // Trate o erro do paciente adequadamente
-            } else {
-                console.log('Dados do paciente inseridos com sucesso');
-                // Inserir dados do acompanhante após o sucesso da inserção do paciente
-                conexao.query(sqlAcompanhante, [acompanhante, nome_acompanhante, idade_acompanhante], (errAcompanhante, resultAcompanhante) => {
-                    if (errAcompanhante) {
-                        console.log('Erro ao inserir dados do acompanhante: ' + errAcompanhante.message);
-                        //  erro do acompanhante adequadamente
+            conexao.query(sqlPaciente, [pacienteIdentificado, sexo, gestante, nome_paciente,
+                rg_cpf_paciente, idade_paciente, telefone_paciente, data], (errPaciente, resultPaciente) => {
+                    if (errPaciente) {
+                        console.log('Erro ao inserir dados do paciente: ' + errPaciente.message);
+                        // Trate o erro do paciente adequadamente
                     } else {
-                        console.log('Dados do acompanhante inseridos com sucesso');
-                        conexao.query(sqlAnamneseEmergencial, [sinais_sintomas, aconteceu, uso_medicacao, horas_medicacao, quais_medicacao,
-                            alergico, especi_alergico, aliment_liquid, horario_aliment_liquid], (errAnamnese, resultAnamnese) => {
-                                if (errAnamnese) {
-                                    console.log('Erro ao inserir dados da anamnese emergencial: ' + errAnamnese.message);
-                                    //  erro da anamnese emergencial adequadamente
-                                } else {
-                                    console.log('Dados da anamnese emergencial inseridos com sucesso');
-                                    conexao.query(sqlAnamneseGestacional, [periodo_gestacao, pre_natal, nome_medico, complicacoes, primeiro_filho,
-                                        horas_contracoes, tempo_contracoes, intervalo_contracoes, quadril_pressao, ruptura_bolsa,
-                                        inspecao_visual, parto_realizado, sexo_bebe, horas_nascimento, nome_bebe], (errAnamneseGestacional, resultAnamneseGestacional) => {
-                                            if (errAnamneseGestacional) {
-                                                console.log('Erro ao inserir dados da anamnese gestacional: ' + errAnamneseGestacional.message);
-                                                // erro da anamnese gestacional adequadamente
-                                            } else {
-                                                console.log('Dados da anamnese gestacional inseridos com sucesso');
-                                                conexao.query(sqlTipoOcorrencia, [tipo_ocorrencia, tipo_ocorrencia_outro], (errTipoOcorrencia, resultTipoOcorrencia) => {
-                                                    if (errTipoOcorrencia) {
-
-                                                        console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
-                                                        // erro do tipo de ocorrência pré-hospitalar
+                        console.log('Dados do paciente inseridos com sucesso');
+                        // Inserir dados do acompanhante após o sucesso da inserção do paciente
+                        conexao.query(sqlAcompanhante, [acompanhante, nome_acompanhante, idade_acompanhante], (errAcompanhante, resultAcompanhante) => {
+                            if (errAcompanhante) {
+                                console.log('Erro ao inserir dados do acompanhante: ' + errAcompanhante.message);
+                                //  erro do acompanhante adequadamente
+                            } else {
+                                console.log('Dados do acompanhante inseridos com sucesso');
+                                conexao.query(sqlAnamneseEmergencial, [sinais_sintomas, aconteceu, uso_medicacao, horas_medicacao, quais_medicacao,
+                                    alergico, especi_alergico, aliment_liquid, horario_aliment_liquid], (errAnamnese, resultAnamnese) => {
+                                        if (errAnamnese) {
+                                            console.log('Erro ao inserir dados da anamnese emergencial: ' + errAnamnese.message);
+                                            //  erro da anamnese emergencial adequadamente
+                                        } else {
+                                            console.log('Dados da anamnese emergencial inseridos com sucesso');
+                                            conexao.query(sqlAnamneseGestacional, [periodo_gestacao, pre_natal, nome_medico, complicacoes, primeiro_filho,
+                                                horas_contracoes, tempo_contracoes, intervalo_contracoes, quadril_pressao, ruptura_bolsa,
+                                                inspecao_visual, parto_realizado, sexo_bebe, horas_nascimento, nome_bebe], (errAnamneseGestacional, resultAnamneseGestacional) => {
+                                                    if (errAnamneseGestacional) {
+                                                        console.log('Erro ao inserir dados da anamnese gestacional: ' + errAnamneseGestacional.message);
+                                                        // erro da anamnese gestacional adequadamente
                                                     } else {
-                                                        console.log('Dados do tipo de ocorrência inseridos com sucesso');
-                                                        conexao.query(sqlProblemasSuspeitos, [psiquiatrico, tipo_respiratorio, tipo_diabetes, tipo_obstetrico,
-                                                            tipo_transporte, outro_tipo_transporte, problemas_suspeitos_outro], (errProblemasSuspeitos, resultProblemasSuspeitos) => {
-                                                                if (errProblemasSuspeitos) {
+                                                        console.log('Dados da anamnese gestacional inseridos com sucesso');
+                                                        conexao.query(sqlTipoOcorrencia, [tipo_ocorrencia, tipo_ocorrencia_outro], (errTipoOcorrencia, resultTipoOcorrencia) => {
+                                                            if (errTipoOcorrencia) {
 
-                                                                    console.log('Erro ao inserir dados de problemas encontrados suspeitos: ' + errProblemasSuspeitos.message);
-                                                                    // erro de problemas encontrados suspeitos
-                                                                } else {
-                                                                    console.log('Dados de problemas encontrados suspeitos inseridos com sucesso');
-                                                                    conexao.query(sqlAvaliacaoGlasgowMaiores, [abertura_ocular_maiores, resposta_verbal_maiores, resposta_motora_maiores,
-                                                                        soma_avaliacao_glasgow_maiores], (errAvaliacaoGlasgowMaiores, resultAvaliacaoGlasgowMaiores) => {
-                                                                            if (errAvaliacaoGlasgowMaiores) {
+                                                                console.log('Erro ao inserir dados do tipo de ocorrência: ' + errTipoOcorrencia.message);
+                                                                // erro do tipo de ocorrência pré-hospitalar
+                                                            } else {
+                                                                console.log('Dados do tipo de ocorrência inseridos com sucesso');
+                                                                conexao.query(sqlProblemasSuspeitos, [psiquiatrico, tipo_respiratorio, tipo_diabetes, tipo_obstetrico,
+                                                                    tipo_transporte, outro_tipo_transporte, problemas_suspeitos_outro], (errProblemasSuspeitos, resultProblemasSuspeitos) => {
+                                                                        if (errProblemasSuspeitos) {
 
-                                                                                console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errAvaliacaoGlasgowMaiores.message);
-                                                                                // erro de Avaliação do Paciente glasgow Maiores que 5 anos
-                                                                            } else {
-                                                                                console.log('Dados de Avaliação do Paciente glasgow Maiores que 5 anos: inseridos com sucesso');
-                                                                                conexao.query(sqlAvaliacaoGlasgowMenores, [abertura_ocular_menores, resposta_verbal_menores, resposta_motora_menores,
-                                                                                    soma_avaliacao_glasgow_menores], (errAvaliacaoGlasgowMenores, resultAvaliacaoGlasgowMenores) => {
-                                                                                        if (errAvaliacaoGlasgowMenores) {
+                                                                            console.log('Erro ao inserir dados de problemas encontrados suspeitos: ' + errProblemasSuspeitos.message);
+                                                                            // erro de problemas encontrados suspeitos
+                                                                        } else {
+                                                                            console.log('Dados de problemas encontrados suspeitos inseridos com sucesso');
+                                                                            conexao.query(sqlAvaliacaoGlasgowMaiores, [abertura_ocular_maiores, resposta_verbal_maiores, resposta_motora_maiores,
+                                                                                soma_avaliacao_glasgow_maiores], (errAvaliacaoGlasgowMaiores, resultAvaliacaoGlasgowMaiores) => {
+                                                                                    if (errAvaliacaoGlasgowMaiores) {
 
-                                                                                            console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Menores que 5 anos: ' + errAvaliacaoGlasgowMenores.message);
-                                                                                            // erro de Avaliação do Paciente glasgow Menores que 5 anos
-                                                                                        } else {
-                                                                                            console.log('Dados de Avaliação do Paciente glasgow Menores que 5 anos: inseridos com sucesso');
-                                                                                            conexao.query(sqlSinaisVitais, [pressao_arterial_mm, pressao_arterial_hg, pulso, respiracao, saturacao,
-                                                                                                temperatura, perfusao, sinais_vitais_situacao], (errSinaisVitais, resultSinaisVitais) => {
-                                                                                                    if (errSinaisVitais) {
+                                                                                        console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Maiores que 5 anos: ' + errAvaliacaoGlasgowMaiores.message);
+                                                                                        // erro de Avaliação do Paciente glasgow Maiores que 5 anos
+                                                                                    } else {
+                                                                                        console.log('Dados de Avaliação do Paciente glasgow Maiores que 5 anos: inseridos com sucesso');
+                                                                                        conexao.query(sqlAvaliacaoGlasgowMenores, [abertura_ocular_menores, resposta_verbal_menores, resposta_motora_menores,
+                                                                                            soma_avaliacao_glasgow_menores], (errAvaliacaoGlasgowMenores, resultAvaliacaoGlasgowMenores) => {
+                                                                                                if (errAvaliacaoGlasgowMenores) {
 
-                                                                                                        console.log('Erro ao inserir dados de sinais vitais: ' + errSinaisVitais.message);
-                                                                                                        // erro de sinais vitais
-                                                                                                    } else {
-                                                                                                        console.log('Dados de sinais vitais: inseridos com sucesso');
-                                                                                                        // conexao.query(sqlLocalTrauma, [local, lado, face, tipo_trauma, tipo_queimadura, local_queimadura], (errlLocalTrauma, resultLocalTrauma) => {
-                                                                                                        //     if (errLocalTrauma) {
+                                                                                                    console.log('Erro ao inserir dados de Avaliação do Paciente glasgow Menores que 5 anos: ' + errAvaliacaoGlasgowMenores.message);
+                                                                                                    // erro de Avaliação do Paciente glasgow Menores que 5 anos
+                                                                                                } else {
+                                                                                                    console.log('Dados de Avaliação do Paciente glasgow Menores que 5 anos: inseridos com sucesso');
+                                                                                                    conexao.query(sqlSinaisVitais, [pressao_arterial_mm, pressao_arterial_hg, pulso, respiracao, saturacao,
+                                                                                                        temperatura, perfusao, sinais_vitais_situacao], (errSinaisVitais, resultSinaisVitais) => {
+                                                                                                            if (errSinaisVitais) {
 
-                                                                                                        //         console.log('Erro ao inserir dados de Local de traumas: ' + errLocalTrauma.message);
+                                                                                                                console.log('Erro ao inserir dados de sinais vitais: ' + errSinaisVitais.message);
+                                                                                                                // erro de sinais vitais
+                                                                                                            } else {
+                                                                                                                console.log('Dados de sinais vitais: inseridos com sucesso');
+                                                                                                                // conexao.query(sqlLocalTrauma, [local, lado, face, tipo_trauma, tipo_queimadura, local_queimadura], (errlLocalTrauma, resultLocalTrauma) => {
+                                                                                                                //     if (errLocalTrauma) {
+
+                                                                                                                //         console.log('Erro ao inserir dados de Local de traumas: ' + errLocalTrauma.message);
                                                                                                                 // erro de Local de traumas
-                                                                                                            // } else {
-                                                                                                            //     console.log('Dados de Local de traumas: inseridos com sucesso');
+                                                                                                                // } else {
+                                                                                                                //     console.log('Dados de Local de traumas: inseridos com sucesso');
                                                                                                                 conexao.query(sqlSinaisSintomas, [abdomen_sensivel_rigido, afundamento_cranio, agitacao, amnesia, angia_peito, bradipneia, bronco_aspirando,
                                                                                                                     cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local,
                                                                                                                     edema_generalizado, edema_localizado, enfisema_subcutaneo, face_palida, hemorragia_interna, hemorragia_externa, hipertensao, hipotensao, nauseas_vomitos,
@@ -617,7 +618,7 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
                                                                                                                                                                                                                         console.log('Dados de informação transporte: inseridos com sucesso');
                                                                                                                                                                                                                         res.redirect('/Pages/gerarRelatorio.html');
                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                    
+
                                                                                                                                                                                                                 });
                                                                                                                                                                                                         }
                                                                                                                                                                                                     });
@@ -637,28 +638,30 @@ router.post('/Pages/gerarRelatorio', (req, res) => {
                                                                                                                             });
                                                                                                                         }
                                                                                                                     });
-                                                                                                        //     }
-                                                                                                        // });
-                                                                                                    }
-                                                                                                });
-                                                                                        }
-                                                                                    });
+                                                                                                                //     }
+                                                                                                                // });
+                                                                                                            }
+                                                                                                        });
+                                                                                                }
+                                                                                            });
 
-                                                                            }
-                                                                        });
-                                                                }
-                                                            });
+                                                                                    }
+                                                                                });
+                                                                        }
+                                                                    });
+                                                            }
+                                                        });
                                                     }
                                                 });
-                                            }
-                                        });
-                                }
-                            });
+                                        }
+                                    });
+                            }
+                        })
                     }
                 })
-            }
-        })
-});
+        }
+
+    );
 
 module.exports = router;
 app.use('/', router);
